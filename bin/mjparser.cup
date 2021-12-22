@@ -1,0 +1,171 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+
+
+:}
+
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+
+
+terminal PROG, IDENT, EQUAL, LBRACE, RBRACE, LPAREN, RPAREN, LBRACKET, RBRACKET;
+terminal CONST, CLASS, RECORD, COMMA, SEMI, POINT, EQUAL, AND, OR;
+terminal EQ, NE, GT, GE, LT, LE, PLUS, MINUS, MUL, DIV, MOD, INC, DEC;
+nonterminal Program, ConstDecl, Type, VarDecl, ClassDecl;
+nonterminal RecordDecl, ConstructorDecl, MethodDecl, FormPars;
+nonterminal Statement, SingleStatement, Statements, DesignatorStatement;
+nonterminal ActPars, Condition, CondTerm, CondFact, Expr, Term, Factor;
+nonterminal Designator, Label, Assignop, Relop, Addop, Mulop;
+
+
+
+
+Program ::= (Program) PROG IDENT
+/*
+ConstDecl ::= CONST Type IDENT EQUAL numConst LBRACE 
+
+VarDecl ::= Type IDENT 
+
+ClassDecl ::= (ClassDecl) CLASS IDENT []
+
+RecordDecl ::= (RecordDecl) RECORD IDENT
+
+ConstructorDecl ::= (ConstructorDecl) IDENT LPAREN RPAREN
+
+MethodDecl ::= Type IDENT LPAREN FormPars RPAREN 
+			|
+			Type IDENT LPAREN RPAREN 
+			|
+			VOID IDENT LPAREN FormPars RPAREN 
+			|
+			VOID IDENT LPAREN RPAREN 
+			
+FormPars ::= Type IDENT 			
+
+Type ::= (Type) IDENT;
+
+Statement ::= (Statement)
+
+Statements ::= (Statements) Statements Statement
+			|*/
+			/*epsilon*/
+			
+/*DesignatorStatement ::= Designator
+
+ActPars ::= (ActualParams) Expr
+		|
+		ActPars COMMA Expr
+		
+Condition ::= CondTerm 
+			|
+			Condition OR CondTerm
+			
+CondTerm ::= CondFact 
+			|
+			CondTerm AND CondFact
+			
+CondFact ::= Expr
+			|
+			Expr RelopExpr
+			
+Expr ::= Expr Addop Term
+		|
+		Term
+		|
+		MINUS Term;
+		
+Term ::= Term Mulop Factor
+		|
+		Factor;
+		
+Factor ::= Designator
+		|
+		Designator LPAREN ActPars RPAREN
+		|
+		numConst
+		|
+		charConst
+		|
+		boolConst
+		| 
+		NEW Type
+		|
+		NEW Type LBRACKET Expr RBRACKET
+		|
+		LPAREN Expr RPAREN;
+		
+Designator ::= Designator POINT IDENT
+			|
+			Designator LBRACKET Expr RBRACKET
+			|
+			IDENT;
+			
+Label ::= (Label) IDENT
+
+Assignop ::= (AssignOp) EQUAL;
+
+Relop ::= (RelOpEq) EQ
+		|
+		(RelOpNe) NE
+		|
+		(RelOpGt) GT
+		|
+		(RelOpGe) GE
+		|
+		(RelOpLt) LT
+		|
+		(RelOpLe) LE;
+		
+Addop ::= (AddOpPlus) PLUS
+		|
+		(AddOpMinus) MINUS;
+		
+Mulop ::= (MulOpMul) MUL
+		|
+		(MulOpDiv) DIV
+		|
+		(MulOpMod) MOD;
+		*/
+		
+		
+
+
+			
+			
+			
