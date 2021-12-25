@@ -1,0 +1,83 @@
+INFO  17:05:35,531 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  17:05:35,558 - #2 program
+INFO  17:05:35,559 - #22 MJProgram
+INFO  17:05:35,559 - #11 const
+INFO  17:05:35,559 - #22 int
+INFO  17:05:35,560 - #22 a
+INFO  17:05:35,562 - #39 =
+INFO  17:05:35,562 - #23 5
+INFO  17:05:35,562 - #44 ,
+INFO  17:05:35,563 - #22 b
+INFO  17:05:35,564 - #39 =
+INFO  17:05:35,564 - #23 6
+INFO  17:05:35,564 - #42 ;
+INFO  17:05:35,564 - #11 const
+INFO  17:05:35,565 - #22 char
+INFO  17:05:35,565 - #22 c
+INFO  17:05:35,565 - #39 =
+INFO  17:05:35,566 - #25 a
+INFO  17:05:35,566 - #42 ;
+INFO  17:05:35,566 - #22 int
+INFO  17:05:35,567 - #22 p
+INFO  17:05:35,567 - #42 ;
+INFO  17:05:35,567 - #50 {
+INFO  17:05:35,570 - #6 void
+INFO  17:05:35,571 - #22 main
+INFO  17:05:35,572 - #46 (
+INFO  17:05:35,572 - #47 )
+INFO  17:05:35,573 - #50 {
+INFO  17:05:35,573 - #51 }
+INFO  17:05:35,574 - #51 }
+INFO  17:05:35,577 - Program(
+  DeclListVar(
+    DeclListConst(
+      DeclListConst(
+        NoDeclList(
+        ) [NoDeclList]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      ConstDecl(
+        ConstantDecl(
+          Type(
+          ) [Type]
+          CharConst(
+          ) [CharConst]
+        ) [ConstantDecl]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    VarDeclsList(
+      VariableDecl(
+        Type(
+        ) [Type]
+      ) [VariableDecl]
+    ) [VarDeclsList]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDecl(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStmt(
+      ) [NoStmt]
+    ) [MethodDecl]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  17:05:35,577 - ===================================
+INFO  17:05:35,582 -  Print count calls = 2
+INFO  17:05:35,582 -  Deklarisanih promenljivih ima = 0

@@ -1,0 +1,27 @@
+INFO  22:37:10,478 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  22:37:10,505 - #2 program
+INFO  22:37:10,506 - #22 MJProgram
+INFO  22:37:10,506 - #11 const
+INFO  22:37:10,507 - #22 int
+INFO  22:37:10,507 - #22 a
+INFO  22:37:10,508 - #39 =
+INFO  22:37:10,508 - #23 5
+INFO  22:37:10,508 - #44 ,
+INFO  22:37:10,510 - #22 b
+INFO  22:37:10,510 - #39 =
+INFO  22:37:10,510 - #23 6
+INFO  22:37:10,510 - #42 ;
+INFO  22:37:10,510 - #11 const
+INFO  22:37:10,511 - #22 char
+INFO  22:37:10,511 - #22 c
+INFO  22:37:10,512 - #39 =
+INFO  22:37:10,512 - #25 a
+INFO  22:37:10,512 - #42 ;
+INFO  22:37:10,513 - #22 int
+INFO  22:37:10,513 - #22 p
+INFO  22:37:10,513 - #42 ;
+INFO  22:37:10,513 - #50 {
+INFO  22:37:10,515 - #7 class
+ERROR 22:37:10,515 - 
+Sintaksna greska na liniji 10
+ERROR 22:37:10,515 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10

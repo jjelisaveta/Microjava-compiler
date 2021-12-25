@@ -1,0 +1,192 @@
+INFO  23:46:14,592 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  23:46:14,616 - #2 program
+INFO  23:46:14,618 - #22 MJProgram
+INFO  23:46:14,618 - #7 class
+INFO  23:46:14,619 - #22 Bhh
+INFO  23:46:14,619 - #50 {
+INFO  23:46:14,620 - #22 int
+INFO  23:46:14,621 - #22 a
+INFO  23:46:14,622 - #44 ,
+INFO  23:46:14,622 - #22 rhh
+INFO  23:46:14,622 - #48 [
+INFO  23:46:14,622 - #49 ]
+INFO  23:46:14,622 - #42 ;
+INFO  23:46:14,623 - #22 int
+INFO  23:46:14,623 - #22 ppp
+INFO  23:46:14,623 - #48 [
+INFO  23:46:14,623 - #49 ]
+INFO  23:46:14,623 - #44 ,
+INFO  23:46:14,623 - #22 b
+INFO  23:46:14,624 - #42 ;
+INFO  23:46:14,624 - #22 int
+INFO  23:46:14,624 - #22 da
+INFO  23:46:14,624 - #48 [
+INFO  23:46:14,632 - #49 ]
+INFO  23:46:14,632 - #42 ;
+INFO  23:46:14,632 - #50 {
+INFO  23:46:14,632 - #22 Bhh
+INFO  23:46:14,632 - #46 (
+INFO  23:46:14,633 - #47 )
+INFO  23:46:14,633 - #22 int
+INFO  23:46:14,633 - #22 n
+INFO  23:46:14,634 - #42 ;
+INFO  23:46:14,634 - #50 {
+INFO  23:46:14,634 - #51 }
+INFO  23:46:14,635 - #6 void
+INFO  23:46:14,636 - #22 p
+INFO  23:46:14,637 - #46 (
+INFO  23:46:14,637 - #47 )
+INFO  23:46:14,638 - #50 {
+INFO  23:46:14,638 - #51 }
+INFO  23:46:14,638 - #51 }
+INFO  23:46:14,640 - #51 }
+INFO  23:46:14,640 - #21 record
+INFO  23:46:14,641 - #22 werwrw
+INFO  23:46:14,641 - #50 {
+INFO  23:46:14,641 - #22 char
+INFO  23:46:14,641 - #22 b
+INFO  23:46:14,641 - #42 ;
+INFO  23:46:14,641 - #51 }
+INFO  23:46:14,641 - #50 {
+INFO  23:46:14,642 - #6 void
+INFO  23:46:14,643 - #22 main
+INFO  23:46:14,643 - #46 (
+INFO  23:46:14,643 - #47 )
+INFO  23:46:14,643 - #50 {
+INFO  23:46:14,643 - #51 }
+INFO  23:46:14,643 - #22 int
+INFO  23:46:14,643 - #22 fungcija
+INFO  23:46:14,643 - #46 (
+INFO  23:46:14,643 - #22 int
+INFO  23:46:14,643 - #22 a
+INFO  23:46:14,643 - #44 ,
+INFO  23:46:14,644 - #22 int
+INFO  23:46:14,644 - #22 b
+INFO  23:46:14,644 - #44 ,
+INFO  23:46:14,644 - #22 char
+INFO  23:46:14,645 - #22 c
+INFO  23:46:14,645 - #47 )
+INFO  23:46:14,645 - #50 {
+INFO  23:46:14,645 - #51 }
+INFO  23:46:14,645 - #51 }
+INFO  23:46:14,646 - Program(
+  DeclListRecord(
+    DeclListClass(
+      NoDeclList(
+      ) [NoDeclList]
+      ClassDeclMethods(
+        ClassNameSingle(
+        ) [ClassNameSingle]
+        VarDecls(
+          VarDecls(
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                ArrayVariableDecls(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                  ) [VariableDecl]
+                ) [ArrayVariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+            VarDecl(
+              VariableDecls(
+                ArrayVariableDecl(
+                  Type(
+                  ) [Type]
+                ) [ArrayVariableDecl]
+              ) [VariableDecls]
+            ) [VarDecl]
+          ) [VarDecls]
+          VarDecl(
+            ArrayVariableDecl(
+              Type(
+              ) [Type]
+            ) [ArrayVariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        ConstructorDecl(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              VariableDecl(
+                Type(
+                ) [Type]
+              ) [VariableDecl]
+            ) [VarDecl]
+          ) [VarDecls]
+          NoStmt(
+          ) [NoStmt]
+        ) [ConstructorDecl]
+        MethodsDecl(
+          MethodDecl(
+            ReturnVoid(
+            ) [ReturnVoid]
+            NoMethodFormParams(
+            ) [NoMethodFormParams]
+            NoVarDecl(
+            ) [NoVarDecl]
+            NoStmt(
+            ) [NoStmt]
+          ) [MethodDecl]
+          NoMetodDecl(
+          ) [NoMetodDecl]
+        ) [MethodsDecl]
+      ) [ClassDeclMethods]
+    ) [DeclListClass]
+    RecordDecl(
+      VarDecl(
+        VariableDecl(
+          Type(
+          ) [Type]
+        ) [VariableDecl]
+      ) [VarDecl]
+    ) [RecordDecl]
+  ) [DeclListRecord]
+  MethodsDecl(
+    MethodDecl(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      NoStmt(
+      ) [NoStmt]
+    ) [MethodDecl]
+    MethodsDecl(
+      MethodDecl(
+        ReturnType(
+          Type(
+          ) [Type]
+        ) [ReturnType]
+        MethodFormParams(
+          FormParams(
+            FormParams(
+              FormParam(
+                Type(
+                ) [Type]
+              ) [FormParam]
+              Type(
+              ) [Type]
+            ) [FormParams]
+            Type(
+            ) [Type]
+          ) [FormParams]
+        ) [MethodFormParams]
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStmt(
+        ) [NoStmt]
+      ) [MethodDecl]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  23:46:14,647 - ===================================
+INFO  23:46:14,651 -  Print count calls = 0
+INFO  23:46:14,652 -  Deklarisanih promenljivih ima = 5

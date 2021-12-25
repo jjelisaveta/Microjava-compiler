@@ -1,5 +1,4 @@
 package rs.ac.bg.etf.pp1;
-
 import java_cup.runtime.*;
 import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
@@ -42,130 +41,254 @@ scan with {:
 	return s;
 :}
 
+terminal PROG, BREAK, PRINT, RETURN, VOID, CLASS, ENUM, IF, ELSE, CONST, DO, WHILE, NEW, READ, EXTENDS, CONTINUE;
+terminal THIS, SUPER, GOTO, RECORD, IDENT, NUMBER, BOOL, CHAR;
+terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
+terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
+
+nonterminal Program, DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl;
+nonterminal TypeConst, Type, VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl;
+nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars;
+nonterminal Statement, LabelOpt, SingleStatement, NumConstList, Statements, StatementList, ExprOpt;
+nonterminal DesignatorStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
+nonterminal Term, Factor, Designator, Label;
+nonterminal Assignop, Relop, Addop, Mulop;
 
 
-terminal PROG, IDENT, EQUAL, LBRACE, RBRACE, LPAREN, RPAREN, LBRACKET, RBRACKET;
-terminal CONST, CLASS, RECORD, COMMA, SEMI, POINT, EQUAL, AND, OR;
-terminal EQ, NE, GT, GE, LT, LE, PLUS, MINUS, MUL, DIV, MOD, INC, DEC;
-nonterminal Program, ConstDecl, Type, VarDecl, ClassDecl;
-nonterminal RecordDecl, ConstructorDecl, MethodDecl, FormPars;
-nonterminal Statement, SingleStatement, Statements, DesignatorStatement;
-nonterminal ActPars, Condition, CondTerm, CondFact, Expr, Term, Factor;
-nonterminal Designator, Label, Assignop, Relop, Addop, Mulop;
+Program ::= 		(Program) PROG IDENT DeclList LBRACE MethodDeclList RBRACE
+					;	
+
+DeclList ::= 		(DeclListConst) DeclList ConstDecl
+					| 
+					(DeclListVar) DeclList VarDecl
+					|
+					(DeclListClass) DeclList ClassDecl
+					|
+					(DeclListRecord) DeclList RecordDecl
+					|
+					(NoDeclList) //epsilon
+					;
+
+MethodDeclList ::= 	(MethodsDecl) MethodDecl MethodDeclList 
+					|
+					(NoMetodDecl) //epsilon
+					;
+					
+TypeConst ::= 		(NumConst) NUMBER
+					|
+					(CharConst) CHAR
+					|
+					(BoolConst) BOOL
+					;
+	
+
+ConstDecl ::=		(ConstDecl)  ConstDeclList SEMI
+					;
+					
+ConstDeclList ::= 	(ConstantDecls) ConstDeclList COMMA IDENT EQUAL TypeConst
+					|
+					(ConstantDecl) CONST Type IDENT EQUAL TypeConst
+					;
+
+VarDecl ::=			(VarDecl) VarDeclList SEMI
+					;
+					
+VarDeclList ::= 	(VariableDecls) VarDeclList COMMA IDENT
+					|
+					(ArrayVariableDecls) VarDeclList COMMA IDENT LBRACKET RBRACKET
+					|
+					(VariableDecl) Type IDENT
+					|
+					(ArrayVariableDecl) Type IDENT LBRACKET RBRACKET
+					;
+					
+ClassName ::= 		(ClassNameSingle) CLASS IDENT 
+					|
+					(ClassNameExtends) CLASS IDENT EXTENDS Type
+					;
+					
+ClassDecl ::=		(ClassDeclMethods) ClassName LBRACE MultipleVarDecl LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE
+					|
+					(ClassDeclMethodsNoConstr) ClassName LBRACE MultipleVarDecl LBRACE MethodDeclList RBRACE RBRACE
+					|
+					(ClassDeclNoMethods) ClassName LBRACE MultipleVarDecl RBRACE
+					;
+	
+ 
+MultipleVarDecl ::= (VarDecls) MultipleVarDecl VarDecl
+					|
+					(NoVarDecl) //epsilon
+ 					;
+ 
+ 
+RecordDecl ::= 		(RecordDecl) RECORD IDENT LBRACE MultipleVarDecl RBRACE ;
+
+ConstructorDecl ::=	(ConstructorDecl) IDENT LPAREN RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
+
+MethodReturnValue ::= (ReturnType) Type
+				  	|
+				  	(ReturnVoid) VOID
+				  	;
+
+MethodDecl ::= 		(MethodDecl) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
+
+MethodFormPars ::= 	(MethodFormParams) FormPars
+					|
+					(NoMethodFormParams) //epsilon
+					;
+					
+
+FormPars ::= 		(FormParams) FormPars COMMA Type IDENT 
+					| 
+					(ArrayFormParams) FormPars COMMA Type IDENT LBRACKET RBRACKET
+					|
+					(FormParam) Type IDENT 
+					|
+					(ArrayFormParam) Type IDENT LBRACKET RBRACKET
+					;
+					
+Type ::=			(Type) IDENT ;
+
+Statement ::=		(LabelStatement)Type COLON SingleStatement
+					|
+					(OneStatement) SingleStatement
+					|
+					(MultipleStatements)Statements
+					;
+					
+					
+SingleStatement ::=	(DesignatorStmt) DesignatorStatement SEMI
+					|
+					(DoStmt) DO Statement WHILE LPAREN Condition RPAREN SEMI
+					|
+					(BreakStmt) BREAK SEMI
+					|
+					(ContinueStmt) CONTINUE SEMI
+					|
+					(ReturnStmtExpr) RETURN Expr SEMI
+					|
+					(ReturnStmt) RETURN SEMI
+					|
+					(ReadStmt) READ LPAREN Designator RPAREN SEMI
+					|
+					(PrintStmtNum) PRINT LPAREN Expr NumConstList RPAREN SEMI
+					|
+					(PrintStmt) PRINT LPAREN Expr RPAREN SEMI
+					|
+					(GotoStmt) GOTO Type
+					;
+
+					
+NumConstList ::=	(NumConstsList) NumConstList COMMA NUMBER
+					|
+					(OneNumber) NUMBER
+					;
+					
+Statements ::=		(Stmts) LBRACE StatementList RBRACE ;
+
+StatementList ::=	(StmtList) StatementList Statement
+					|
+					(OneStmt) Statement
+					;
+					
+DesignatorStatement ::= (DesignatorStmtAssign) Designator Assignop 
+					|
+					(DesignatorStmtPars) Designator LPAREN ActParsList RPAREN 
+					|
+					(DesignatorStmtInc) Designator INC
+					|
+					(DesignatorStmtDec) Designator DEC
+					;
+					
+ActPars ::= 		(ActParams) ActPars COMMA Expr	
+					|
+					(ActParam) Expr
+					;
+					
+ActParsList ::= 	(ActParamsList) ActPars
+					|
+					(NoActParams) /* epsilon */ 
+					;
+					
+Condition ::= 		(Conditions) Condition OR CondTerm
+					|
+					(ConditionCondTerm) CondTerm
+					;
+
+CondTerm ::=		(CondTerms) CondTerm AND CondFact
+					|
+					(ConditionCondFact) CondFact
+					;
+					
+CondFact ::=		(CondFactExpr) Expr
+					|
+					(CondFactExprRelop) Expr Relop Expr				
+					;
+					
+Expr ::= 			(ExprPlusAddop) Term AddopList
+					|
+					(ExprPlus) Term
+					|
+					(ExprMinusAddop) MINUS Term AddopList
+					|
+					(ExprMinus) MINUS Term
+					;
+				
+AddopList ::=		(AddOpsList) AddopList Addop Term 	
+					|
+					(NoAddopList) Addop Term
+					;
+					
+Term ::=			(Terms) Term Mulop Factor
+					|
+					(TermFactor) Factor
+					;
+					
+Factor ::= 			(FactorNoParen) Designator
+					|
+					(FactorParen) Designator LPAREN ActParsList RPAREN
+					|
+					(FactorTypeConst) TypeConst
+					|
+					(FacorType) NEW Type 
+					|
+					(FactorArrayType) NEW Type LBRACKET Expr RBRACKET
+					|
+					(FactorExpr) LPAREN Expr RPAREN
+					;
+								
+Designator ::=		(DesignatorPoint) Designator POINT IDENT
+					|
+					(DesignatorBracket) Designator LBRACKET Expr RBRACKET
+					|
+					(DesignatorIdent) IDENT
+					;
+									
 
 
+Assignop ::= 		(AssignOp) EQUAL ;
 
-
-Program ::= (Program) PROG IDENT
-/*
-ConstDecl ::= CONST Type IDENT EQUAL numConst LBRACE 
-
-VarDecl ::= Type IDENT 
-
-ClassDecl ::= (ClassDecl) CLASS IDENT []
-
-RecordDecl ::= (RecordDecl) RECORD IDENT
-
-ConstructorDecl ::= (ConstructorDecl) IDENT LPAREN RPAREN
-
-MethodDecl ::= Type IDENT LPAREN FormPars RPAREN 
-			|
-			Type IDENT LPAREN RPAREN 
-			|
-			VOID IDENT LPAREN FormPars RPAREN 
-			|
-			VOID IDENT LPAREN RPAREN 
-			
-FormPars ::= Type IDENT 			
-
-Type ::= (Type) IDENT;
-
-Statement ::= (Statement)
-
-Statements ::= (Statements) Statements Statement
-			|*/
-			/*epsilon*/
-			
-/*DesignatorStatement ::= Designator
-
-ActPars ::= (ActualParams) Expr
-		|
-		ActPars COMMA Expr
+Relop ::= 			(RelOpEq) EQ
+					|
+					(RelOpNe) NE
+					|
+					(RelOpGt) GT
+					|
+					(RelOpGe) GE
+					|
+					(RelOpLt) LT
+					|
+					(RelOpLe) LE
+					;
 		
-Condition ::= CondTerm 
-			|
-			Condition OR CondTerm
-			
-CondTerm ::= CondFact 
-			|
-			CondTerm AND CondFact
-			
-CondFact ::= Expr
-			|
-			Expr RelopExpr
-			
-Expr ::= Expr Addop Term
-		|
-		Term
-		|
-		MINUS Term;
+Addop ::= 			(AddOpPlus) PLUS
+					|
+					(AddOpMinus) MINUS
+					;
 		
-Term ::= Term Mulop Factor
-		|
-		Factor;
-		
-Factor ::= Designator
-		|
-		Designator LPAREN ActPars RPAREN
-		|
-		numConst
-		|
-		charConst
-		|
-		boolConst
-		| 
-		NEW Type
-		|
-		NEW Type LBRACKET Expr RBRACKET
-		|
-		LPAREN Expr RPAREN;
-		
-Designator ::= Designator POINT IDENT
-			|
-			Designator LBRACKET Expr RBRACKET
-			|
-			IDENT;
-			
-Label ::= (Label) IDENT
-
-Assignop ::= (AssignOp) EQUAL;
-
-Relop ::= (RelOpEq) EQ
-		|
-		(RelOpNe) NE
-		|
-		(RelOpGt) GT
-		|
-		(RelOpGe) GE
-		|
-		(RelOpLt) LT
-		|
-		(RelOpLe) LE;
-		
-Addop ::= (AddOpPlus) PLUS
-		|
-		(AddOpMinus) MINUS;
-		
-Mulop ::= (MulOpMul) MUL
-		|
-		(MulOpDiv) DIV
-		|
-		(MulOpMod) MOD;
-		*/
-		
-		
-
-
-			
-			
-			
+Mulop ::= 			(MulOpMul) MUL
+					|
+					(MulOpDiv) DIV
+					|
+					(MulOpMod) MOD
+					;

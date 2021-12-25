@@ -61,5 +61,3 @@ public class sym_old {
 	
 	public static final int EOF = 51;
 }
-
-
