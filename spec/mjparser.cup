@@ -46,21 +46,21 @@ terminal THIS, SUPER, GOTO, RECORD, IDENT, NUMBER, BOOL, CHAR;
 terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
-nonterminal Program, DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl;
-nonterminal TypeConst, Type, VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl;
-nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars;
-nonterminal Statement, LabelOpt, SingleStatement, NumConstList, Statements, StatementList, ExprOpt;
-nonterminal DesignatorStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
-nonterminal Term, Factor, Designator, Label;
-nonterminal Assignop, Relop, Addop, Mulop;
+nonterminal Program, DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
+nonterminal TypeConst, Type, VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
+nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
+nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
+nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
+nonterminal Term, Factor, Designator, Assignop, Relop, Addop, Mulop;
 
+precedence left ELSE;
 
 Program ::= 		(Program) PROG IDENT DeclList LBRACE MethodDeclList RBRACE
 					;	
 
 DeclList ::= 		(DeclListConst) DeclList ConstDecl
 					| 
-					(DeclListVar) DeclList VarDecl
+					(DeclListVar) DeclList GlobalVarDecl
 					|
 					(DeclListClass) DeclList ClassDecl
 					|
@@ -90,31 +90,73 @@ ConstDeclList ::= 	(ConstantDecls) ConstDeclList COMMA IDENT EQUAL TypeConst
 					(ConstantDecl) CONST Type IDENT EQUAL TypeConst
 					;
 
-VarDecl ::=			(VarDecl) VarDeclList SEMI
+				
+OneVarDecl ::= 		(OneVariableDecl) IDENT
+					|
+					(OneArrayVariableDecl) IDENT LBRACKET RBRACKET
 					;
 					
-VarDeclList ::= 	(VariableDecls) VarDeclList COMMA IDENT
+VarDeclList ::= 	(VariableDecls) VarDeclList COMMA OneVarDecl
 					|
-					(ArrayVariableDecls) VarDeclList COMMA IDENT LBRACKET RBRACKET
+					(VariableDecl) Type OneVarDecl
+					;
+					
+VarDecl ::=			(VarDecl) VarDeclList SEMI ;	
+							
+ClassVarDeclList ::= (ClassVariableDecls) ClassVarDeclList COMMA OneVarDecl
 					|
-					(VariableDecl) Type IDENT
+					(ClassVariableDecl) Type OneVarDecl
+					;
+					
+ClassVarDecl ::=	(ClassVariableDel) ClassVarDeclList SEMI
 					|
-					(ArrayVariableDecl) Type IDENT LBRACKET RBRACKET
+					(ErrorClassVariableDeclSemi) error SEMI:er1
+					{: parser.report_error("Greska 1 u deklaraciji polja unutrasnje klase u liniji " + er1left, null);  :}
+					|
+					(ErrorClassVariableDecl) error:er2
+					{: parser.report_error("Greska 2 u deklaraciji polja unutrasnje klase u liniji " + er2left, null);  :}
+					;
+					
+					
+GlobalOneVarDecl ::= (GlobalOneVariableDecl) OneVarDecl
+					|
+					(ErrorGlobalOneVariableDecl) error:e
+					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
+					;
+					
+GlobalVarDecl ::=	(GlobalVarDecls) GlobalVarDeclList SEMI
+					|
+					(ErrorGlobalVarDecl) error:e SEMI
+					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
+					;
+					
+					
+GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList COMMA GlobalOneVarDecl
+					|
+					(GlobalVariableDecl) Type GlobalOneVarDecl
 					;
 					
 ClassName ::= 		(ClassNameSingle) CLASS IDENT 
 					|
 					(ClassNameExtends) CLASS IDENT EXTENDS Type
+					|
+					(ErrorClassName) CLASS IDENT error:e
+					{: parser.report_error("Greska u deklaraciji prosirenja natklase u liniji " + eleft, null);  :}
 					;
 					
-ClassDecl ::=		(ClassDeclMethods) ClassName LBRACE MultipleVarDecl LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE
+ClassDecl ::=		(ClassDeclMethods) ClassName LBRACE ClassFields LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE
 					|
-					(ClassDeclMethodsNoConstr) ClassName LBRACE MultipleVarDecl LBRACE MethodDeclList RBRACE RBRACE
+					(ClassDeclMethodsNoConstr) ClassName LBRACE ClassFields LBRACE MethodDeclList RBRACE RBRACE
 					|
-					(ClassDeclNoMethods) ClassName LBRACE MultipleVarDecl RBRACE
+					(ClassDeclNoMethods) ClassName LBRACE ClassFields RBRACE
 					;
-	
- 
+					
+
+ClassFields ::= 	(MultipleClassFields) ClassFields ClassVarDecl
+					|
+					(NoClassFields) // epsilon
+					;
+					
 MultipleVarDecl ::= (VarDecls) MultipleVarDecl VarDecl
 					|
 					(NoVarDecl) //epsilon
@@ -130,34 +172,33 @@ MethodReturnValue ::= (ReturnType) Type
 				  	(ReturnVoid) VOID
 				  	;
 
-MethodDecl ::= 		(MethodDecl) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
+MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE StatementList RBRACE 
+					|
+					(MethodDeclNoStmt) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE RBRACE 
+					;
+
 
 MethodFormPars ::= 	(MethodFormParams) FormPars
 					|
 					(NoMethodFormParams) //epsilon
 					;
-					
 
-FormPars ::= 		(FormParams) FormPars COMMA Type IDENT 
-					| 
-					(ArrayFormParams) FormPars COMMA Type IDENT LBRACKET RBRACKET
+OneFormPar ::= 		(OneFormParam) Type IDENT
 					|
-					(FormParam) Type IDENT 
+					(OneArrayFormParam) Type IDENT LBRACKET RBRACKET
 					|
-					(ArrayFormParam) Type IDENT LBRACKET RBRACKET
+					(ErrorOneArrayFormParam) error:e
+					{: parser.report_error("Greska u deklaraciji formalnog parametra funkcije u liniji " + eleft, null);  :}
+					;		
+
+FormPars ::= 		(FormParams) FormPars COMMA OneFormPar
+					|
+					(FormParam) OneFormPar
 					;
 					
 Type ::=			(Type) IDENT ;
 
-Statement ::=		(LabelStatement)Type COLON SingleStatement
-					|
-					(OneStatement) SingleStatement
-					|
-					(MultipleStatements)Statements
-					;
-					
-					
-SingleStatement ::=	(DesignatorStmt) DesignatorStatement SEMI
+Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
 					(DoStmt) DO Statement WHILE LPAREN Condition RPAREN SEMI
 					|
@@ -175,13 +216,22 @@ SingleStatement ::=	(DesignatorStmt) DesignatorStatement SEMI
 					|
 					(PrintStmt) PRINT LPAREN Expr RPAREN SEMI
 					|
-					(GotoStmt) GOTO Type
+					(IfStmt) IF LPAREN IfCondition RPAREN Statement
+					|
+					(IfElseStmt) IF LPAREN IfCondition RPAREN Statement ELSE Statement
+					|
+					(MultipleStatements)Statements
 					;
-
+					
+IfCondition ::= 	(OkIfCondition) Condition
+					|
+					(ErrorIfCondition) error:e
+					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :}
+					;
 					
 NumConstList ::=	(NumConstsList) NumConstList COMMA NUMBER
 					|
-					(OneNumber) NUMBER
+					(OneNumber) COMMA NUMBER
 					;
 					
 Statements ::=		(Stmts) LBRACE StatementList RBRACE ;
@@ -191,13 +241,19 @@ StatementList ::=	(StmtList) StatementList Statement
 					(OneStmt) Statement
 					;
 					
-DesignatorStatement ::= (DesignatorStmtAssign) Designator Assignop 
+DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement
 					|
 					(DesignatorStmtPars) Designator LPAREN ActParsList RPAREN 
 					|
 					(DesignatorStmtInc) Designator INC
 					|
 					(DesignatorStmtDec) Designator DEC
+					;
+					
+AssignStatement ::= (AssignStmt) Designator Assignop Expr
+					|
+					(ErrorAssignStmt)  error:e
+					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :}
 					;
 					
 ActPars ::= 		(ActParams) ActPars COMMA Expr	
@@ -207,7 +263,7 @@ ActPars ::= 		(ActParams) ActPars COMMA Expr
 					
 ActParsList ::= 	(ActParamsList) ActPars
 					|
-					(NoActParams) /* epsilon */ 
+					(NoActParams) // epsilon 
 					;
 					
 Condition ::= 		(Conditions) Condition OR CondTerm
@@ -264,9 +320,7 @@ Designator ::=		(DesignatorPoint) Designator POINT IDENT
 					(DesignatorIdent) IDENT
 					;
 									
-
-
-Assignop ::= 		(AssignOp) EQUAL ;
+Assignop ::= 		(AssignOperator) EQUAL ;
 
 Relop ::= 			(RelOpEq) EQ
 					|

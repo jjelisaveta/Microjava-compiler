@@ -1,0 +1,258 @@
+INFO  13:30:21,846 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  13:30:21,904 - #2 program
+INFO  13:30:21,904 - #22 Program
+INFO  13:30:21,904 - #7 class
+INFO  13:30:21,905 - #22 A
+INFO  13:30:21,905 - #50 {
+INFO  13:30:21,906 - #22 int
+INFO  13:30:21,906 - #22 x
+INFO  13:30:21,907 - #48 [
+INFO  13:30:21,907 - #49 ]
+INFO  13:30:21,907 - #44 ,
+INFO  13:30:21,908 - #22 y
+INFO  13:30:21,908 - #48 [
+INFO  13:30:21,908 - #49 ]
+INFO  13:30:21,908 - #42 ;
+INFO  13:30:21,909 - #51 }
+INFO  13:30:21,909 - #11 const
+INFO  13:30:21,910 - #22 int
+INFO  13:30:21,910 - #22 pi
+INFO  13:30:21,910 - #39 =
+INFO  13:30:21,910 - #23 3
+INFO  13:30:21,910 - #44 ,
+INFO  13:30:21,911 - #22 e
+INFO  13:30:21,911 - #39 =
+INFO  13:30:21,912 - #23 2
+INFO  13:30:21,912 - #42 ;
+INFO  13:30:21,912 - #22 int
+INFO  13:30:21,912 - #22 g
+INFO  13:30:21,912 - #44 ,
+INFO  13:30:21,913 - #22 a
+INFO  13:30:21,913 - #44 ,
+INFO  13:30:21,913 - #22 n
+INFO  13:30:21,913 - #42 ;
+INFO  13:30:21,913 - #22 int
+INFO  13:30:21,914 - #22 cjujhoh
+INFO  13:30:21,914 - #42 ;
+INFO  13:30:21,914 - #50 {
+INFO  13:30:21,914 - #6 void
+INFO  13:30:21,914 - #22 main
+INFO  13:30:21,915 - #46 (
+INFO  13:30:21,915 - #22 int
+INFO  13:30:21,915 - #22 ttp
+INFO  13:30:21,915 - #48 [
+INFO  13:30:21,915 - #49 ]
+INFO  13:30:21,915 - #44 ,
+INFO  13:30:21,915 - #22 int
+INFO  13:30:21,916 - #22 ppp
+INFO  13:30:21,916 - #47 )
+INFO  13:30:21,916 - #50 {
+INFO  13:30:21,916 - #50 {
+INFO  13:30:21,916 - #22 a
+INFO  13:30:21,916 - #39 =
+INFO  13:30:21,917 - #22 b
+INFO  13:30:21,918 - #26 +
+INFO  13:30:21,918 - #23 1
+INFO  13:30:21,920 - #22 c
+ERROR 13:30:21,920 - 
+Sintaksna greska na liniji 12
+INFO  13:30:21,920 - #42 ;
+INFO  13:30:21,920 - #9 if
+INFO  13:30:21,920 - #46 (
+INFO  13:30:21,921 - #22 a
+ERROR 13:30:21,921 - Greska u iskazu dodele u liniji 11
+INFO  13:30:21,922 - #39 =
+ERROR 13:30:21,922 - 
+Sintaksna greska na liniji 13
+INFO  13:30:21,922 - #23 1
+INFO  13:30:21,922 - #39 =
+INFO  13:30:21,922 - #22 wedw
+INFO  13:30:21,922 - #47 )
+INFO  13:30:21,922 - #50 {
+INFO  13:30:21,922 - #22 w
+INFO  13:30:21,922 - #40 ++
+ERROR 13:30:21,923 - Greska u logickom izrazu u if konstrukciji u liniji 13
+INFO  13:30:21,923 - #42 ;
+INFO  13:30:21,924 - #22 jebaosamte
+INFO  13:30:21,924 - #46 (
+INFO  13:30:21,924 - #47 )
+INFO  13:30:21,924 - #42 ;
+INFO  13:30:21,924 - #51 }
+INFO  13:30:21,924 - #10 else
+INFO  13:30:21,925 - #50 {
+INFO  13:30:21,925 - #22 jebalisume
+INFO  13:30:21,925 - #46 (
+INFO  13:30:21,925 - #47 )
+INFO  13:30:21,925 - #42 ;
+INFO  13:30:21,925 - #22 a
+INFO  13:30:21,925 - #40 ++
+INFO  13:30:21,926 - #42 ;
+INFO  13:30:21,926 - #51 }
+INFO  13:30:21,926 - #51 }
+INFO  13:30:21,926 - #51 }
+INFO  13:30:21,926 - #51 }
+INFO  13:30:21,928 - Program(
+  DeclListVar(
+    DeclListVar(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecls(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneArrayVariableDecl(
+                    ) [OneArrayVariableDecl]
+                  ) [VariableDecl]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [VariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              Type(
+              ) [Type]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    GlobalVarDecls(
+      GlobalVariableDecl(
+        Type(
+        ) [Type]
+        GlobalOneVariableDecl(
+          OneVariableDecl(
+          ) [OneVariableDecl]
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecl]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            OneArrayFormParam(
+              Type(
+              ) [Type]
+            ) [OneArrayFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+            ) [Type]
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      MultipleStatements(
+        Stmts(
+          StmtList(
+            OneStmt(
+              DesignatorStmt(
+                DesignatorStmtAssign(
+                  ErrorAssignStmt(
+                  ) [ErrorAssignStmt]
+                ) [DesignatorStmtAssign]
+              ) [DesignatorStmt]
+            ) [OneStmt]
+            IfElseStmt(
+              ErrorIfCondition(
+              ) [ErrorIfCondition]
+              MultipleStatements(
+                Stmts(
+                  StmtList(
+                    OneStmt(
+                      DesignatorStmt(
+                        DesignatorStmtInc(
+                          DesignatorIdent(
+                          ) [DesignatorIdent]
+                        ) [DesignatorStmtInc]
+                      ) [DesignatorStmt]
+                    ) [OneStmt]
+                    DesignatorStmt(
+                      DesignatorStmtPars(
+                        DesignatorIdent(
+                        ) [DesignatorIdent]
+                        NoActParams(
+                        ) [NoActParams]
+                      ) [DesignatorStmtPars]
+                    ) [DesignatorStmt]
+                  ) [StmtList]
+                ) [Stmts]
+              ) [MultipleStatements]
+              MultipleStatements(
+                Stmts(
+                  StmtList(
+                    OneStmt(
+                      DesignatorStmt(
+                        DesignatorStmtPars(
+                          DesignatorIdent(
+                          ) [DesignatorIdent]
+                          NoActParams(
+                          ) [NoActParams]
+                        ) [DesignatorStmtPars]
+                      ) [DesignatorStmt]
+                    ) [OneStmt]
+                    DesignatorStmt(
+                      DesignatorStmtInc(
+                        DesignatorIdent(
+                        ) [DesignatorIdent]
+                      ) [DesignatorStmtInc]
+                    ) [DesignatorStmt]
+                  ) [StmtList]
+                ) [Stmts]
+              ) [MultipleStatements]
+            ) [IfElseStmt]
+          ) [StmtList]
+        ) [Stmts]
+      ) [MultipleStatements]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  13:30:21,928 - ===================================
+INFO  13:30:21,930 -  Print count calls = 1
+INFO  13:30:21,931 -  Deklarisanih promenljivih ima = 1

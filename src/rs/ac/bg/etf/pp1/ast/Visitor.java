@@ -1,42 +1,53 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/11/2021 1:9:29
+// 28/11/2021 18:27:14
 
 
-package src.rs.ac.bg.etf.pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
+    public void visit(OneVarDecl OneVarDecl);
     public void visit(Mulop Mulop);
+    public void visit(MethodDecl MethodDecl);
+    public void visit(OneFormPar OneFormPar);
+    public void visit(MatchedStatement MatchedStatement);
     public void visit(RecordDeclList RecordDeclList);
     public void visit(Relop Relop);
     public void visit(Assignop Assignop);
     public void visit(NumConstList NumConstList);
     public void visit(MethodReturnValue MethodReturnValue);
     public void visit(StatementList StatementList);
+    public void visit(ClassVarDecl ClassVarDecl);
     public void visit(ClassName ClassName);
     public void visit(Addop Addop);
     public void visit(Factor Factor);
     public void visit(ExprOpt ExprOpt);
     public void visit(CondTerm CondTerm);
+    public void visit(GlobalOneVarDecl GlobalOneVarDecl);
+    public void visit(GlobalVarDecl GlobalVarDecl);
     public void visit(DeclList DeclList);
     public void visit(Designator Designator);
+    public void visit(ClassVarDeclList ClassVarDeclList);
     public void visit(TypeConst TypeConst);
     public void visit(Term Term);
     public void visit(Condition Condition);
+    public void visit(AssignStatement AssignStatement);
     public void visit(MethodFormPars MethodFormPars);
     public void visit(Statements Statements);
     public void visit(ConstDeclList ConstDeclList);
     public void visit(MultipleVarDecl MultipleVarDecl);
     public void visit(ActParsList ActParsList);
-    public void visit(LabelOpt LabelOpt);
-    public void visit(Label Label);
+    public void visit(IfCondition IfCondition);
+    public void visit(ElseStatement ElseStatement);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(AddopList AddopList);
     public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
+    public void visit(UnmatchedStatement UnmatchedStatement);
     public void visit(ClassDeclList ClassDeclList);
+    public void visit(ClassFields ClassFields);
     public void visit(ClassConstructor ClassConstructor);
     public void visit(Statement Statement);
     public void visit(ClassDecl ClassDecl);
@@ -44,6 +55,7 @@ public interface Visitor {
     public void visit(MethodDeclList MethodDeclList);
     public void visit(SingleStatement SingleStatement);
     public void visit(FormPars FormPars);
+    public void visit(GlobalVarDeclList GlobalVarDeclList);
     public void visit(ClassMethods ClassMethods);
     public void visit(MulOpMod MulOpMod);
     public void visit(MulOpDiv MulOpDiv);
@@ -56,7 +68,7 @@ public interface Visitor {
     public void visit(RelOpGt RelOpGt);
     public void visit(RelOpNe RelOpNe);
     public void visit(RelOpEq RelOpEq);
-    public void visit(AssignOp AssignOp);
+    public void visit(AssignOperator AssignOperator);
     public void visit(DesignatorIdent DesignatorIdent);
     public void visit(DesignatorBracket DesignatorBracket);
     public void visit(DesignatorPoint DesignatorPoint);
@@ -84,6 +96,8 @@ public interface Visitor {
     public void visit(ActParamsList ActParamsList);
     public void visit(ActParam ActParam);
     public void visit(ActParams ActParams);
+    public void visit(ErrorAssignStmt ErrorAssignStmt);
+    public void visit(AssignStmt AssignStmt);
     public void visit(DesignatorStmtDec DesignatorStmtDec);
     public void visit(DesignatorStmtInc DesignatorStmtInc);
     public void visit(DesignatorStmtPars DesignatorStmtPars);
@@ -93,7 +107,11 @@ public interface Visitor {
     public void visit(Stmts Stmts);
     public void visit(OneNumber OneNumber);
     public void visit(NumConstsList NumConstsList);
-    public void visit(GotoStmt GotoStmt);
+    public void visit(ErrorIfCondition ErrorIfCondition);
+    public void visit(OkIfCondition OkIfCondition);
+    public void visit(MultipleStatements MultipleStatements);
+    public void visit(IfElseStmt IfElseStmt);
+    public void visit(IfStmt IfStmt);
     public void visit(PrintStmt PrintStmt);
     public void visit(PrintStmtNum PrintStmtNum);
     public void visit(ReadStmt ReadStmt);
@@ -103,35 +121,46 @@ public interface Visitor {
     public void visit(BreakStmt BreakStmt);
     public void visit(DoStmt DoStmt);
     public void visit(DesignatorStmt DesignatorStmt);
-    public void visit(NoLabel NoLabel);
-    public void visit(LabelColon LabelColon);
-    public void visit(MultipleStatements MultipleStatements);
-    public void visit(OneStatement OneStatement);
-    public void visit(LabelStatement LabelStatement);
     public void visit(Type Type);
-    public void visit(ArrayFormParam ArrayFormParam);
     public void visit(FormParam FormParam);
-    public void visit(ArrayFormParams ArrayFormParams);
     public void visit(FormParams FormParams);
+    public void visit(ErrorOneArrayFormParam ErrorOneArrayFormParam);
+    public void visit(OneArrayFormParam OneArrayFormParam);
+    public void visit(OneFormParam OneFormParam);
     public void visit(NoMethodFormParams NoMethodFormParams);
     public void visit(MethodFormParams MethodFormParams);
-    public void visit(MethodDecl MethodDecl);
+    public void visit(MethodDeclNoStmt MethodDeclNoStmt);
+    public void visit(MethodDeclStmt MethodDeclStmt);
     public void visit(ReturnVoid ReturnVoid);
     public void visit(ReturnType ReturnType);
     public void visit(ConstructorDecl ConstructorDecl);
     public void visit(RecordDecl RecordDecl);
     public void visit(NoVarDecl NoVarDecl);
     public void visit(VarDecls VarDecls);
+    public void visit(NoClassFields NoClassFields);
+    public void visit(MultipleClassFields MultipleClassFields);
     public void visit(ClassDeclNoMethods ClassDeclNoMethods);
     public void visit(ClassDeclMethodsNoConstr ClassDeclMethodsNoConstr);
     public void visit(ClassDeclMethods ClassDeclMethods);
+    public void visit(ErrorClassName ErrorClassName);
     public void visit(ClassNameExtends ClassNameExtends);
     public void visit(ClassNameSingle ClassNameSingle);
-    public void visit(ArrayVariableDecl ArrayVariableDecl);
-    public void visit(VariableDecl VariableDecl);
-    public void visit(ArrayVariableDecls ArrayVariableDecls);
-    public void visit(VariableDecls VariableDecls);
+    public void visit(GlobalVariableDecl GlobalVariableDecl);
+    public void visit(GlobalVariableDecls GlobalVariableDecls);
+    public void visit(ErrorGlobalVarDecl ErrorGlobalVarDecl);
+    public void visit(GlobalVarDecls GlobalVarDecls);
+    public void visit(ErrorGlobalOneVariableDecl ErrorGlobalOneVariableDecl);
+    public void visit(GlobalOneVariableDecl GlobalOneVariableDecl);
+    public void visit(ErrorClassVariableDecl ErrorClassVariableDecl);
+    public void visit(ErrorClassVariableDeclSemi ErrorClassVariableDeclSemi);
+    public void visit(ClassVariableDel ClassVariableDel);
+    public void visit(ClassVariableDecl ClassVariableDecl);
+    public void visit(ClassVariableDecls ClassVariableDecls);
     public void visit(VarDecl VarDecl);
+    public void visit(VariableDecl VariableDecl);
+    public void visit(VariableDecls VariableDecls);
+    public void visit(OneArrayVariableDecl OneArrayVariableDecl);
+    public void visit(OneVariableDecl OneVariableDecl);
     public void visit(ConstantDecl ConstantDecl);
     public void visit(ConstantDecls ConstantDecls);
     public void visit(ConstDecl ConstDecl);

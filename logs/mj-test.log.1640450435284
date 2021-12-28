@@ -1,0 +1,92 @@
+INFO  17:32:51,991 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  17:32:52,051 - #2 program
+INFO  17:32:52,051 - #22 MJProgram
+INFO  17:32:52,052 - #50 {
+INFO  17:32:52,053 - #6 void
+INFO  17:32:52,053 - #22 main
+INFO  17:32:52,053 - #46 (
+INFO  17:32:52,054 - #22 int
+INFO  17:32:52,054 - #22 a
+INFO  17:32:52,055 - #44 ,
+INFO  17:32:52,055 - #22 int
+INFO  17:32:52,055 - #22 b
+INFO  17:32:52,055 - #47 )
+INFO  17:32:52,055 - #22 int
+INFO  17:32:52,056 - #22 c
+INFO  17:32:52,056 - #42 ;
+INFO  17:32:52,056 - #50 {
+INFO  17:32:52,057 - #50 {
+INFO  17:32:52,057 - #22 c
+INFO  17:32:52,058 - #39 =
+INFO  17:32:52,058 - #22 a
+INFO  17:32:52,060 - #42 ;
+INFO  17:32:52,060 - #5 return
+INFO  17:32:52,061 - #42 ;
+INFO  17:32:52,061 - #51 }
+INFO  17:32:52,063 - #51 }
+INFO  17:32:52,063 - #51 }
+INFO  17:32:52,065 - Program(
+  NoDeclList(
+  ) [NoDeclList]
+  MethodsDecl(
+    MethodDecl(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            Type(
+            ) [Type]
+          ) [FormParam]
+          Type(
+          ) [Type]
+        ) [FormParams]
+      ) [MethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+            ) [Type]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      MultipleStatements(
+        Stmts(
+          StmtList(
+            OneStmt(
+              OneStatement(
+                DesignatorStmt(
+                  DesignatorStmtAssign(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                    AssignOperta(
+                    ) [AssignOperta]
+                    ExprPlus(
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorIdent(
+                          ) [DesignatorIdent]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [DesignatorStmtAssign]
+                ) [DesignatorStmt]
+              ) [OneStatement]
+            ) [OneStmt]
+            OneStatement(
+              ReturnStmt(
+              ) [ReturnStmt]
+            ) [OneStatement]
+          ) [StmtList]
+        ) [Stmts]
+      ) [MultipleStatements]
+    ) [MethodDecl]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  17:32:52,066 - ===================================
+INFO  17:32:52,068 -  Print count calls = 0
+INFO  17:32:52,068 -  Deklarisanih promenljivih ima = 1

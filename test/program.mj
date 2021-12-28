@@ -1,8 +1,21 @@
-program MJProgram
-	
-{
-	void main() {
-	
+program Program
+	int a, x, q1b, 1adf;
+
+	class B extends s A {
+		int s, f;
+		{
+		}
 	}
-	
-}
+	{
+		void main(int b re, int x) {
+			a =+ s+bs+b+sb ; 
+			
+			if (a =eqr= b) {
+				a++;
+				b++;
+			} else {
+				a++;
+				b++;
+			}
+		}
+	}

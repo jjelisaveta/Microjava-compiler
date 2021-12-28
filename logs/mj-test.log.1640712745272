@@ -1,0 +1,92 @@
+INFO  18:32:04,573 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:32:04,644 - #2 program
+INFO  18:32:04,645 - #22 Program
+INFO  18:32:04,645 - #22 int
+INFO  18:32:04,646 - #22 a
+INFO  18:32:04,647 - #42 ;
+INFO  18:32:04,648 - #22 int
+INFO  18:32:04,648 - #22 b
+INFO  18:32:04,648 - #42 ;
+INFO  18:32:04,648 - #22 int
+INFO  18:32:04,649 - #22 x
+INFO  18:32:04,649 - #42 ;
+INFO  18:32:04,649 - #7 class
+INFO  18:32:04,649 - #22 B
+INFO  18:32:04,649 - #16 extends
+INFO  18:32:04,649 - #22 A
+INFO  18:32:04,649 - #50 {
+INFO  18:32:04,649 - #22 int
+INFO  18:32:04,650 - #22 s
+INFO  18:32:04,650 - #44 ,
+INFO  18:32:04,651 - #23 1
+ERROR 18:32:04,651 - 
+Sintaksna greska na liniji 7
+INFO  18:32:04,651 - #22 f
+INFO  18:32:04,651 - #42 ;
+INFO  18:32:04,651 - #50 {
+INFO  18:32:04,652 - #51 }
+INFO  18:32:04,652 - #51 }
+ERROR 18:32:04,652 - Greska 1 u deklaraciji polja unutrasnje klase u liniji 7
+INFO  18:32:04,654 - #50 {
+INFO  18:32:04,654 - #51 }
+INFO  18:32:04,655 - Program(
+  DeclListClass(
+    DeclListVar(
+      DeclListVar(
+        DeclListVar(
+          NoDeclList(
+          ) [NoDeclList]
+          GlobalVarDecls(
+            GlobalVariableDecl(
+              Type(
+              ) [Type]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        GlobalVarDecls(
+          GlobalVariableDecl(
+            Type(
+            ) [Type]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      GlobalVarDecls(
+        GlobalVariableDecl(
+          Type(
+          ) [Type]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecl]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ErrorClassVariableDeclSemi(
+        ) [ErrorClassVariableDeclSemi]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  18:32:04,656 - ===================================
+INFO  18:32:04,658 -  Print count calls = 0
+INFO  18:32:04,658 -  Deklarisanih promenljivih ima = 0

@@ -1,0 +1,45 @@
+INFO  18:10:30,030 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:10:30,105 - #2 program
+INFO  18:10:30,105 - #22 Program
+INFO  18:10:30,105 - #7 class
+INFO  18:10:30,106 - #22 B
+INFO  18:10:30,106 - #16 extends
+INFO  18:10:30,107 - #22 A
+INFO  18:10:30,107 - #50 {
+INFO  18:10:30,107 - #22 int
+INFO  18:10:30,108 - #22 s
+INFO  18:10:30,108 - #44 ,
+INFO  18:10:30,109 - #22 f
+INFO  18:10:30,109 - #50 {
+ERROR 18:10:30,109 - 
+Sintaksna greska na liniji 4
+INFO  18:10:30,109 - #51 }
+INFO  18:10:30,109 - #51 }
+INFO  18:10:30,110 - #50 {
+ERROR 18:10:30,110 - Greska 2 u deklaraciji polja unutrasnje klase u liniji 19
+INFO  18:10:30,112 - #51 }
+INFO  18:10:30,112 - Program(
+  DeclListClass(
+    NoDeclList(
+    ) [NoDeclList]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ErrorClassVariableDecl(
+        ) [ErrorClassVariableDecl]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  18:10:30,113 - ===================================
+INFO  18:10:30,115 -  Print count calls = 0
+INFO  18:10:30,115 -  Deklarisanih promenljivih ima = 0

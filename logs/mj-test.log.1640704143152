@@ -1,0 +1,120 @@
+INFO  16:08:35,534 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  16:08:35,569 - #2 program
+INFO  16:08:35,569 - #22 Program
+INFO  16:08:35,569 - #7 class
+INFO  16:08:35,569 - #22 A
+INFO  16:08:35,569 - #50 {
+INFO  16:08:35,570 - #22 int
+INFO  16:08:35,570 - #22 x
+INFO  16:08:35,571 - #48 [
+INFO  16:08:35,571 - #49 ]
+INFO  16:08:35,571 - #44 ,
+INFO  16:08:35,571 - #22 y
+INFO  16:08:35,571 - #48 [
+INFO  16:08:35,571 - #49 ]
+INFO  16:08:35,572 - #42 ;
+INFO  16:08:35,572 - #51 }
+INFO  16:08:35,572 - #11 const
+INFO  16:08:35,572 - #22 int
+INFO  16:08:35,572 - #22 pi
+INFO  16:08:35,572 - #39 =
+INFO  16:08:35,572 - #23 3
+INFO  16:08:35,572 - #44 ,
+INFO  16:08:35,573 - #22 e
+INFO  16:08:35,573 - #39 =
+INFO  16:08:35,573 - #23 2
+INFO  16:08:35,573 - #42 ;
+INFO  16:08:35,573 - #7 class
+INFO  16:08:35,574 - #22 B
+INFO  16:08:35,574 - #16 extends
+INFO  16:08:35,574 - #22 A
+INFO  16:08:35,574 - #50 {
+INFO  16:08:35,574 - #22 int
+INFO  16:08:35,574 - #23 1
+ERROR 16:08:35,574 - 
+Sintaksna greska na liniji 5
+INFO  16:08:35,574 - #22 a
+INFO  16:08:35,574 - #42 ;
+INFO  16:08:35,574 - #50 {
+INFO  16:08:35,575 - #6 void
+INFO  16:08:35,575 - #22 m
+ERROR 16:08:35,575 - Greska 1 u deklaraciji polja unutrasnje klase u liniji 19
+INFO  16:08:35,575 - #46 (
+INFO  16:08:35,576 - #47 )
+INFO  16:08:35,576 - #50 {
+INFO  16:08:35,576 - #51 }
+INFO  16:08:35,576 - #51 }
+INFO  16:08:35,577 - #51 }
+INFO  16:08:35,577 - #50 {
+INFO  16:08:35,577 - #51 }
+INFO  16:08:35,578 - Program(
+  DeclListClass(
+    DeclListConst(
+      DeclListClass(
+        NoDeclList(
+        ) [NoDeclList]
+        ClassDeclNoMethods(
+          ClassNameSingle(
+          ) [ClassNameSingle]
+          MultipleClassFields(
+            NoClassFields(
+            ) [NoClassFields]
+            ClassVariableDel(
+              ClassVariableDecls(
+                ClassVariableDecl(
+                  Type(
+                  ) [Type]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [ClassVariableDecl]
+                OneArrayVariableDecl(
+                ) [OneArrayVariableDecl]
+              ) [ClassVariableDecls]
+            ) [ClassVariableDel]
+          ) [MultipleClassFields]
+        ) [ClassDeclNoMethods]
+      ) [DeclListClass]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+            ) [Type]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecl]
+          NumConst(
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ErrorClassVariableDeclSemi(
+        ) [ErrorClassVariableDeclSemi]
+      ) [MultipleClassFields]
+      MethodsDecl(
+        MethodDeclNoStmt(
+          ReturnVoid(
+          ) [ReturnVoid]
+          NoMethodFormParams(
+          ) [NoMethodFormParams]
+          NoVarDecl(
+          ) [NoVarDecl]
+        ) [MethodDeclNoStmt]
+        NoMetodDecl(
+        ) [NoMetodDecl]
+      ) [MethodsDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  16:08:35,578 - ===================================
+INFO  16:08:35,580 -  Print count calls = 1
+INFO  16:08:35,580 -  Deklarisanih promenljivih ima = 0

@@ -1,9 +1,9 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/11/2021 1:9:29
+// 28/11/2021 18:27:14
 
 
-package src.rs.ac.bg.etf.pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public class AddOpsList extends AddopList {
 

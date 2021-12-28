@@ -1,0 +1,225 @@
+INFO  18:41:01,667 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:41:01,724 - #2 program
+INFO  18:41:01,724 - #22 Program
+INFO  18:41:01,724 - #22 int
+INFO  18:41:01,725 - #22 a
+INFO  18:41:01,726 - #44 ,
+INFO  18:41:01,727 - #22 x
+INFO  18:41:01,727 - #44 ,
+INFO  18:41:01,727 - #22 q1b
+INFO  18:41:01,727 - #44 ,
+INFO  18:41:01,727 - #23 1
+ERROR 18:41:01,727 - 
+Sintaksna greska na liniji 2
+INFO  18:41:01,728 - #22 adf
+INFO  18:41:01,728 - #42 ;
+INFO  18:41:01,728 - #7 class
+INFO  18:41:01,728 - #22 B
+INFO  18:41:01,728 - #16 extends
+ERROR 18:41:01,729 - Greska u deklaraciji globalne promenljive u liniji 2
+INFO  18:41:01,729 - #22 A
+INFO  18:41:01,730 - #50 {
+INFO  18:41:01,730 - #22 int
+INFO  18:41:01,731 - #22 s
+INFO  18:41:01,731 - #44 ,
+INFO  18:41:01,731 - #22 f
+INFO  18:41:01,731 - #42 ;
+INFO  18:41:01,731 - #50 {
+INFO  18:41:01,731 - #51 }
+INFO  18:41:01,732 - #51 }
+INFO  18:41:01,732 - #50 {
+INFO  18:41:01,732 - #6 void
+INFO  18:41:01,732 - #22 main
+INFO  18:41:01,733 - #46 (
+INFO  18:41:01,733 - #22 int
+INFO  18:41:01,733 - #22 b
+INFO  18:41:01,733 - #22 re
+ERROR 18:41:01,733 - 
+Sintaksna greska na liniji 10
+INFO  18:41:01,733 - #44 ,
+INFO  18:41:01,733 - #22 int
+INFO  18:41:01,734 - #22 x
+INFO  18:41:01,734 - #47 )
+ERROR 18:41:01,734 - Greska u deklaraciji formalnog parametra funkcije u liniji 10
+INFO  18:41:01,735 - #50 {
+INFO  18:41:01,736 - #22 a
+INFO  18:41:01,736 - #39 =
+INFO  18:41:01,737 - #26 +
+ERROR 18:41:01,737 - 
+Sintaksna greska na liniji 11
+INFO  18:41:01,737 - #22 s
+INFO  18:41:01,737 - #26 +
+INFO  18:41:01,737 - #22 bs
+INFO  18:41:01,737 - #26 +
+INFO  18:41:01,737 - #22 b
+INFO  18:41:01,737 - #26 +
+INFO  18:41:01,737 - #22 sb
+INFO  18:41:01,737 - #42 ;
+INFO  18:41:01,737 - #9 if
+INFO  18:41:01,737 - #46 (
+INFO  18:41:01,738 - #22 a
+ERROR 18:41:01,738 - Greska u iskazu dodele u liniji 10
+INFO  18:41:01,739 - #39 =
+ERROR 18:41:01,739 - 
+Sintaksna greska na liniji 13
+INFO  18:41:01,739 - #22 eqr
+INFO  18:41:01,739 - #39 =
+INFO  18:41:01,739 - #22 b
+INFO  18:41:01,739 - #47 )
+INFO  18:41:01,739 - #50 {
+INFO  18:41:01,739 - #22 a
+INFO  18:41:01,740 - #40 ++
+ERROR 18:41:01,740 - Greska u logickom izrazu u if konstrukciji u liniji 13
+INFO  18:41:01,740 - #42 ;
+INFO  18:41:01,741 - #22 b
+INFO  18:41:01,741 - #40 ++
+INFO  18:41:01,741 - #42 ;
+INFO  18:41:01,741 - #51 }
+INFO  18:41:01,741 - #10 else
+INFO  18:41:01,741 - #50 {
+INFO  18:41:01,741 - #22 a
+INFO  18:41:01,741 - #40 ++
+INFO  18:41:01,741 - #42 ;
+INFO  18:41:01,741 - #22 b
+INFO  18:41:01,741 - #40 ++
+INFO  18:41:01,741 - #42 ;
+INFO  18:41:01,741 - #51 }
+INFO  18:41:01,742 - #51 }
+INFO  18:41:01,742 - #51 }
+INFO  18:41:01,743 - Program(
+  DeclListClass(
+    DeclListVar(
+      NoDeclList(
+      ) [NoDeclList]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                Type(
+                ) [Type]
+                GlobalOneVariableDecl(
+                  OneVariableDecl(
+                  ) [OneVariableDecl]
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          ErrorGlobalOneVariableDecl(
+          ) [ErrorGlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ClassVariableDel(
+          ClassVariableDecls(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [ClassVariableDecls]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            ErrorOneArrayFormParam(
+            ) [ErrorOneArrayFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+            ) [Type]
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      StmtList(
+        OneStmt(
+          DesignatorStmt(
+            DesignatorStmtAssign(
+              ErrorAssignStmt(
+              ) [ErrorAssignStmt]
+            ) [DesignatorStmtAssign]
+          ) [DesignatorStmt]
+        ) [OneStmt]
+        IfElseStmt(
+          ErrorIfCondition(
+          ) [ErrorIfCondition]
+          MultipleStatements(
+            Stmts(
+              StmtList(
+                OneStmt(
+                  DesignatorStmt(
+                    DesignatorStmtInc(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [DesignatorStmtInc]
+                  ) [DesignatorStmt]
+                ) [OneStmt]
+                DesignatorStmt(
+                  DesignatorStmtInc(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                  ) [DesignatorStmtInc]
+                ) [DesignatorStmt]
+              ) [StmtList]
+            ) [Stmts]
+          ) [MultipleStatements]
+          MultipleStatements(
+            Stmts(
+              StmtList(
+                OneStmt(
+                  DesignatorStmt(
+                    DesignatorStmtInc(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [DesignatorStmtInc]
+                  ) [DesignatorStmt]
+                ) [OneStmt]
+                DesignatorStmt(
+                  DesignatorStmtInc(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                  ) [DesignatorStmtInc]
+                ) [DesignatorStmt]
+              ) [StmtList]
+            ) [Stmts]
+          ) [MultipleStatements]
+        ) [IfElseStmt]
+      ) [StmtList]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:41:01,744 - ===================================
+INFO  18:41:01,746 -  Print count calls = 0
+INFO  18:41:01,746 -  Deklarisanih promenljivih ima = 0

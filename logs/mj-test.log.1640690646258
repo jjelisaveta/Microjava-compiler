@@ -1,0 +1,110 @@
+INFO  12:23:49,660 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  12:23:49,712 - #2 program
+INFO  12:23:49,712 - #22 Program
+INFO  12:23:49,712 - #7 class
+INFO  12:23:49,713 - #22 A
+INFO  12:23:49,713 - #50 {
+INFO  12:23:49,714 - #22 int
+INFO  12:23:49,715 - #22 x
+INFO  12:23:49,716 - #48 [
+INFO  12:23:49,716 - #49 ]
+INFO  12:23:49,716 - #44 ,
+INFO  12:23:49,717 - #22 y
+INFO  12:23:49,717 - #48 [
+INFO  12:23:49,717 - #49 ]
+INFO  12:23:49,717 - #42 ;
+INFO  12:23:49,717 - #51 }
+INFO  12:23:49,718 - #11 const
+INFO  12:23:49,719 - #22 int
+INFO  12:23:49,719 - #22 pi
+INFO  12:23:49,719 - #39 =
+INFO  12:23:49,719 - #23 3
+INFO  12:23:49,719 - #44 ,
+INFO  12:23:49,720 - #22 e
+INFO  12:23:49,720 - #39 =
+INFO  12:23:49,721 - #23 2
+INFO  12:23:49,721 - #42 ;
+INFO  12:23:49,721 - #22 int
+INFO  12:23:49,721 - #22 g
+INFO  12:23:49,722 - #44 ,
+INFO  12:23:49,722 - #22 a
+INFO  12:23:49,722 - #44 ,
+INFO  12:23:49,722 - #22 n
+INFO  12:23:49,722 - #42 ;
+INFO  12:23:49,722 - #22 int
+INFO  12:23:49,723 - #22 cjujhoh
+INFO  12:23:49,723 - #41 --
+ERROR 12:23:49,723 - 
+Sintaksna greska na liniji 8
+INFO  12:23:49,723 - #27 -
+INFO  12:23:49,723 - #42 ;
+INFO  12:23:49,723 - #50 {
+INFO  12:23:49,724 - #51 }
+ERROR 12:23:49,724 - Izvrsen oporavak do ; u liniji 8
+INFO  12:23:49,726 - Program(
+  DeclListVar(
+    DeclListVar(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecls(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneArrayVariableDecl(
+                    ) [OneArrayVariableDecl]
+                  ) [VariableDecl]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [VariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      GlobalVarDecls(
+        VariableDecls(
+          VariableDecls(
+            VariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [VariableDecls]
+          OneVariableDecl(
+          ) [OneVariableDecl]
+        ) [VariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ErrorGlobalVarDecl(
+    ) [ErrorGlobalVarDecl]
+  ) [DeclListVar]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  12:23:49,726 - ===================================
+INFO  12:23:49,729 -  Print count calls = 1
+INFO  12:23:49,729 -  Deklarisanih promenljivih ima = 1

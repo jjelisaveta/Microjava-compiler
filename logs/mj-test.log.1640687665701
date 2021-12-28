@@ -1,0 +1,84 @@
+INFO  11:34:12,725 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  11:34:12,791 - #2 program
+INFO  11:34:12,791 - #22 Program
+INFO  11:34:12,791 - #7 class
+INFO  11:34:12,792 - #22 A
+INFO  11:34:12,793 - #50 {
+INFO  11:34:12,793 - #22 int
+INFO  11:34:12,794 - #22 x
+INFO  11:34:12,795 - #48 [
+INFO  11:34:12,795 - #49 ]
+INFO  11:34:12,795 - #44 ,
+INFO  11:34:12,795 - #22 y
+INFO  11:34:12,795 - #48 [
+INFO  11:34:12,796 - #49 ]
+INFO  11:34:12,796 - #42 ;
+INFO  11:34:12,796 - #51 }
+INFO  11:34:12,797 - #11 const
+INFO  11:34:12,797 - #22 int
+INFO  11:34:12,797 - #22 pi
+INFO  11:34:12,797 - #39 =
+INFO  11:34:12,797 - #23 3
+INFO  11:34:12,798 - #44 ,
+INFO  11:34:12,799 - #22 e
+INFO  11:34:12,799 - #39 =
+INFO  11:34:12,799 - #23 2
+INFO  11:34:12,799 - #42 ;
+INFO  11:34:12,799 - #22 int
+INFO  11:34:12,800 - #22 a
+INFO  11:34:12,800 - #44 ,
+INFO  11:34:12,801 - #22 n
+INFO  11:34:12,801 - #42 ;
+INFO  11:34:12,801 - #50 {
+INFO  11:34:12,801 - #51 }
+INFO  11:34:12,803 - Program(
+  DeclListVar(
+    DeclListConst(
+      DeclListClass(
+        NoDeclList(
+        ) [NoDeclList]
+        ClassDeclNoMethods(
+          ClassNameSingle(
+          ) [ClassNameSingle]
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              ArrayVariableDecls(
+                ArrayVariableDecl(
+                  Type(
+                  ) [Type]
+                ) [ArrayVariableDecl]
+              ) [ArrayVariableDecls]
+            ) [VarDecl]
+          ) [VarDecls]
+        ) [ClassDeclNoMethods]
+      ) [DeclListClass]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+            ) [Type]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecl]
+          NumConst(
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    GlobalVarDecls(
+      VariableDecls(
+        VariableDecl(
+          Type(
+          ) [Type]
+        ) [VariableDecl]
+      ) [VariableDecls]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  11:34:12,803 - ===================================
+INFO  11:34:12,806 -  Print count calls = 1
+INFO  11:34:12,806 -  Deklarisanih promenljivih ima = 1

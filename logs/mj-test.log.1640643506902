@@ -1,0 +1,246 @@
+INFO  22:30:24,307 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  22:30:24,365 - #2 program
+INFO  22:30:24,365 - #22 MJProgram
+INFO  22:30:24,366 - #50 {
+INFO  22:30:24,366 - #22 int
+INFO  22:30:24,366 - #22 main
+INFO  22:30:24,367 - #46 (
+INFO  22:30:24,367 - #22 int
+INFO  22:30:24,367 - #22 a
+INFO  22:30:24,367 - #44 ,
+INFO  22:30:24,368 - #22 int
+INFO  22:30:24,368 - #22 b
+INFO  22:30:24,368 - #48 [
+INFO  22:30:24,368 - #49 ]
+INFO  22:30:24,368 - #47 )
+INFO  22:30:24,368 - #22 int
+INFO  22:30:24,369 - #22 c
+INFO  22:30:24,369 - #42 ;
+INFO  22:30:24,369 - #50 {
+INFO  22:30:24,370 - #50 {
+INFO  22:30:24,370 - #9 if
+INFO  22:30:24,370 - #46 (
+INFO  22:30:24,370 - #22 a
+INFO  22:30:24,371 - #31 ==
+INFO  22:30:24,372 - #22 b
+INFO  22:30:24,373 - #47 )
+INFO  22:30:24,374 - #50 {
+INFO  22:30:24,374 - #22 a
+INFO  22:30:24,374 - #26 +
+ERROR 22:30:24,374 - 
+Sintaksna greska na liniji 9
+INFO  22:30:24,374 - #42 ;
+INFO  22:30:24,375 - #22 a
+INFO  22:30:24,375 - #40 ++
+INFO  22:30:24,375 - #42 ;
+ERROR 22:30:24,376 - Izvrsen oporavak do ; u liniji 9
+INFO  22:30:24,377 - #51 }
+INFO  22:30:24,377 - #10 else
+INFO  22:30:24,377 - #50 {
+INFO  22:30:24,377 - #22 a
+INFO  22:30:24,377 - #40 ++
+INFO  22:30:24,377 - #42 ;
+INFO  22:30:24,377 - #22 b
+INFO  22:30:24,378 - #39 =
+INFO  22:30:24,378 - #26 +
+ERROR 22:30:24,378 - 
+Sintaksna greska na liniji 13
+INFO  22:30:24,378 - #42 ;
+INFO  22:30:24,378 - #51 }
+INFO  22:30:24,378 - #9 if
+INFO  22:30:24,378 - #46 (
+ERROR 22:30:24,378 - Izvrsen oporavak do ; u liniji 13
+INFO  22:30:24,379 - #22 a
+INFO  22:30:24,379 - #34 >=
+INFO  22:30:24,379 - #22 b
+INFO  22:30:24,379 - #47 )
+INFO  22:30:24,379 - #5 return
+INFO  22:30:24,380 - #22 c
+INFO  22:30:24,380 - #42 ;
+INFO  22:30:24,380 - #5 return
+INFO  22:30:24,380 - #22 a
+INFO  22:30:24,380 - #26 +
+INFO  22:30:24,380 - #22 b
+INFO  22:30:24,381 - #42 ;
+INFO  22:30:24,381 - #51 }
+INFO  22:30:24,382 - #51 }
+INFO  22:30:24,382 - #51 }
+INFO  22:30:24,385 - Program(
+  NoDeclList(
+  ) [NoDeclList]
+  MethodsDecl(
+    MethodDecl(
+      ReturnType(
+        Type(
+        ) [Type]
+      ) [ReturnType]
+      MethodFormParams(
+        ArrayFormParams(
+          FormParam(
+            Type(
+            ) [Type]
+          ) [FormParam]
+          Type(
+          ) [Type]
+        ) [ArrayFormParams]
+      ) [MethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+            ) [Type]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      MatchedStmt(
+        MultipleStatements(
+          Stmts(
+            StmtList(
+              StmtList(
+                OneStmt(
+                  MatchedStmt(
+                    IfElseStmt(
+                      ConditionCondTerm(
+                        ConditionCondFact(
+                          CondFactExprRelop(
+                            ExprPlus(
+                              TermFactor(
+                                FactorNoParen(
+                                  DesignatorIdent(
+                                  ) [DesignatorIdent]
+                                ) [FactorNoParen]
+                              ) [TermFactor]
+                            ) [ExprPlus]
+                            RelOpEq(
+                            ) [RelOpEq]
+                            ExprPlus(
+                              TermFactor(
+                                FactorNoParen(
+                                  DesignatorIdent(
+                                  ) [DesignatorIdent]
+                                ) [FactorNoParen]
+                              ) [TermFactor]
+                            ) [ExprPlus]
+                          ) [CondFactExprRelop]
+                        ) [ConditionCondFact]
+                      ) [ConditionCondTerm]
+                      MultipleStatements(
+                        Stmts(
+                          StmtList(
+                            OneStmt(
+                              MatchedStmt(
+                                ErrorStmt(
+                                ) [ErrorStmt]
+                              ) [MatchedStmt]
+                            ) [OneStmt]
+                            MatchedStmt(
+                              DesignatorStmt(
+                                DesignatorStmtInc(
+                                  DesignatorIdent(
+                                  ) [DesignatorIdent]
+                                ) [DesignatorStmtInc]
+                              ) [DesignatorStmt]
+                            ) [MatchedStmt]
+                          ) [StmtList]
+                        ) [Stmts]
+                      ) [MultipleStatements]
+                      MultipleStatements(
+                        Stmts(
+                          StmtList(
+                            OneStmt(
+                              MatchedStmt(
+                                DesignatorStmt(
+                                  DesignatorStmtInc(
+                                    DesignatorIdent(
+                                    ) [DesignatorIdent]
+                                  ) [DesignatorStmtInc]
+                                ) [DesignatorStmt]
+                              ) [MatchedStmt]
+                            ) [OneStmt]
+                            MatchedStmt(
+                              ErrorStmt(
+                              ) [ErrorStmt]
+                            ) [MatchedStmt]
+                          ) [StmtList]
+                        ) [Stmts]
+                      ) [MultipleStatements]
+                    ) [IfElseStmt]
+                  ) [MatchedStmt]
+                ) [OneStmt]
+                UnmatchedStmt(
+                  UnmatchedIfStmt(
+                    ConditionCondTerm(
+                      ConditionCondFact(
+                        CondFactExprRelop(
+                          ExprPlus(
+                            TermFactor(
+                              FactorNoParen(
+                                DesignatorIdent(
+                                ) [DesignatorIdent]
+                              ) [FactorNoParen]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                          RelOpGe(
+                          ) [RelOpGe]
+                          ExprPlus(
+                            TermFactor(
+                              FactorNoParen(
+                                DesignatorIdent(
+                                ) [DesignatorIdent]
+                              ) [FactorNoParen]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                        ) [CondFactExprRelop]
+                      ) [ConditionCondFact]
+                    ) [ConditionCondTerm]
+                    MatchedStmt(
+                      ReturnStmtExpr(
+                        ExprPlus(
+                          TermFactor(
+                            FactorNoParen(
+                              DesignatorIdent(
+                              ) [DesignatorIdent]
+                            ) [FactorNoParen]
+                          ) [TermFactor]
+                        ) [ExprPlus]
+                      ) [ReturnStmtExpr]
+                    ) [MatchedStmt]
+                  ) [UnmatchedIfStmt]
+                ) [UnmatchedStmt]
+              ) [StmtList]
+              MatchedStmt(
+                ReturnStmtExpr(
+                  ExprPlusAddop(
+                    TermFactor(
+                      FactorNoParen(
+                        DesignatorIdent(
+                        ) [DesignatorIdent]
+                      ) [FactorNoParen]
+                    ) [TermFactor]
+                    NoAddopList(
+                      AddOpPlus(
+                      ) [AddOpPlus]
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorIdent(
+                          ) [DesignatorIdent]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [NoAddopList]
+                  ) [ExprPlusAddop]
+                ) [ReturnStmtExpr]
+              ) [MatchedStmt]
+            ) [StmtList]
+          ) [Stmts]
+        ) [MultipleStatements]
+      ) [MatchedStmt]
+    ) [MethodDecl]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  22:30:24,386 - ===================================
+INFO  22:30:24,388 -  Print count calls = 0
+INFO  22:30:24,388 -  Deklarisanih promenljivih ima = 1

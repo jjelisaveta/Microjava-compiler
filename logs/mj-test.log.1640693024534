@@ -1,0 +1,188 @@
+INFO  12:59:26,884 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  12:59:26,942 - #2 program
+INFO  12:59:26,942 - #22 Program
+INFO  12:59:26,942 - #7 class
+INFO  12:59:26,943 - #22 A
+INFO  12:59:26,943 - #50 {
+INFO  12:59:26,944 - #22 int
+INFO  12:59:26,945 - #22 x
+INFO  12:59:26,945 - #48 [
+INFO  12:59:26,946 - #49 ]
+INFO  12:59:26,946 - #44 ,
+INFO  12:59:26,947 - #22 y
+INFO  12:59:26,947 - #48 [
+INFO  12:59:26,947 - #49 ]
+INFO  12:59:26,947 - #42 ;
+INFO  12:59:26,947 - #51 }
+INFO  12:59:26,948 - #11 const
+INFO  12:59:26,948 - #22 int
+INFO  12:59:26,949 - #22 pi
+INFO  12:59:26,949 - #39 =
+INFO  12:59:26,949 - #23 3
+INFO  12:59:26,949 - #44 ,
+INFO  12:59:26,950 - #22 e
+INFO  12:59:26,951 - #39 =
+INFO  12:59:26,951 - #23 2
+INFO  12:59:26,951 - #42 ;
+INFO  12:59:26,951 - #22 int
+INFO  12:59:26,952 - #22 g
+INFO  12:59:26,952 - #44 ,
+INFO  12:59:26,953 - #22 a
+INFO  12:59:26,953 - #44 ,
+INFO  12:59:26,953 - #22 n
+INFO  12:59:26,953 - #42 ;
+INFO  12:59:26,953 - #22 int
+INFO  12:59:26,953 - #22 cjujhoh
+INFO  12:59:26,953 - #42 ;
+INFO  12:59:26,953 - #50 {
+INFO  12:59:26,953 - #6 void
+INFO  12:59:26,953 - #22 main
+INFO  12:59:26,954 - #46 (
+INFO  12:59:26,954 - #22 int
+INFO  12:59:26,954 - #22 ttp
+INFO  12:59:26,954 - #48 [
+INFO  12:59:26,954 - #49 ]
+INFO  12:59:26,954 - #44 ,
+INFO  12:59:26,954 - #22 int
+INFO  12:59:26,955 - #22 ppp
+INFO  12:59:26,955 - #47 )
+INFO  12:59:26,955 - #50 {
+INFO  12:59:26,955 - #22 a
+INFO  12:59:26,955 - #39 =
+INFO  12:59:26,956 - #22 b
+INFO  12:59:26,957 - #26 +
+INFO  12:59:26,957 - #22 c
+INFO  12:59:26,958 - #42 ;
+INFO  12:59:26,959 - #51 }
+INFO  12:59:26,959 - #51 }
+INFO  12:59:26,963 - Program(
+  DeclListVar(
+    DeclListVar(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecls(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneArrayVariableDecl(
+                    ) [OneArrayVariableDecl]
+                  ) [VariableDecl]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [VariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              Type(
+              ) [Type]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    GlobalVarDecls(
+      GlobalVariableDecl(
+        Type(
+        ) [Type]
+        GlobalOneVariableDecl(
+          OneVariableDecl(
+          ) [OneVariableDecl]
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecl]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            OneArrayFormParam(
+              Type(
+              ) [Type]
+            ) [OneArrayFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+            ) [Type]
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      DesignatorStmt(
+        DesignatorStmtAssign(
+          AssignStmt(
+            DesignatorIdent(
+            ) [DesignatorIdent]
+            AssignOperator(
+            ) [AssignOperator]
+            ExprPlusAddop(
+              TermFactor(
+                FactorNoParen(
+                  DesignatorIdent(
+                  ) [DesignatorIdent]
+                ) [FactorNoParen]
+              ) [TermFactor]
+              NoAddopList(
+                AddOpPlus(
+                ) [AddOpPlus]
+                TermFactor(
+                  FactorNoParen(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                  ) [FactorNoParen]
+                ) [TermFactor]
+              ) [NoAddopList]
+            ) [ExprPlusAddop]
+          ) [AssignStmt]
+        ) [DesignatorStmtAssign]
+      ) [DesignatorStmt]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  12:59:26,963 - ===================================
+INFO  12:59:26,965 -  Print count calls = 1
+INFO  12:59:26,965 -  Deklarisanih promenljivih ima = 1

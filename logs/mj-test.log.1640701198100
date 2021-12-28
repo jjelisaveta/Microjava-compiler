@@ -1,0 +1,470 @@
+INFO  15:19:35,100 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  15:19:35,133 - #2 program
+INFO  15:19:35,133 - #22 Program
+INFO  15:19:35,133 - #7 class
+INFO  15:19:35,133 - #22 A
+INFO  15:19:35,133 - #50 {
+INFO  15:19:35,134 - #22 int
+INFO  15:19:35,134 - #22 x
+INFO  15:19:35,134 - #48 [
+INFO  15:19:35,134 - #49 ]
+INFO  15:19:35,134 - #44 ,
+INFO  15:19:35,135 - #22 y
+INFO  15:19:35,135 - #48 [
+INFO  15:19:35,135 - #49 ]
+INFO  15:19:35,135 - #42 ;
+INFO  15:19:35,135 - #51 }
+INFO  15:19:35,136 - #11 const
+INFO  15:19:35,136 - #22 int
+INFO  15:19:35,136 - #22 pi
+INFO  15:19:35,136 - #39 =
+INFO  15:19:35,136 - #23 3
+INFO  15:19:35,136 - #44 ,
+INFO  15:19:35,137 - #22 e
+INFO  15:19:35,137 - #39 =
+INFO  15:19:35,137 - #23 2
+INFO  15:19:35,137 - #42 ;
+INFO  15:19:35,137 - #7 class
+INFO  15:19:35,137 - #22 B
+INFO  15:19:35,137 - #16 extends
+INFO  15:19:35,138 - #22 A
+INFO  15:19:35,138 - #50 {
+INFO  15:19:35,138 - #22 int
+INFO  15:19:35,138 - #22 i
+INFO  15:19:35,138 - #42 ;
+INFO  15:19:35,138 - #50 {
+INFO  15:19:35,138 - #22 int
+INFO  15:19:35,138 - #22 getValue
+INFO  15:19:35,138 - #46 (
+INFO  15:19:35,138 - #22 int
+INFO  15:19:35,138 - #22 a
+INFO  15:19:35,139 - #47 )
+INFO  15:19:35,139 - #22 int
+INFO  15:19:35,140 - #22 b
+INFO  15:19:35,140 - #42 ;
+INFO  15:19:35,140 - #22 bool
+INFO  15:19:35,141 - #22 c
+INFO  15:19:35,141 - #42 ;
+INFO  15:19:35,141 - #50 {
+INFO  15:19:35,141 - #5 return
+INFO  15:19:35,141 - #22 a
+INFO  15:19:35,141 - #45 .
+INFO  15:19:35,141 - #22 i
+INFO  15:19:35,141 - #26 +
+INFO  15:19:35,141 - #22 a
+INFO  15:19:35,142 - #45 .
+INFO  15:19:35,142 - #22 x
+INFO  15:19:35,142 - #48 [
+INFO  15:19:35,142 - #23 0
+INFO  15:19:35,142 - #49 ]
+INFO  15:19:35,142 - #26 +
+INFO  15:19:35,143 - #22 a
+INFO  15:19:35,143 - #42 ;
+INFO  15:19:35,143 - #51 }
+INFO  15:19:35,143 - #6 void
+INFO  15:19:35,143 - #22 m
+INFO  15:19:35,143 - #46 (
+INFO  15:19:35,143 - #47 )
+INFO  15:19:35,144 - #50 {
+INFO  15:19:35,144 - #51 }
+INFO  15:19:35,144 - #51 }
+INFO  15:19:35,144 - #51 }
+INFO  15:19:35,144 - #7 class
+INFO  15:19:35,144 - #22 C
+INFO  15:19:35,144 - #16 extends
+INFO  15:19:35,144 - #22 B
+INFO  15:19:35,144 - #50 {
+INFO  15:19:35,145 - #22 A
+INFO  15:19:35,145 - #22 theA
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #22 int
+INFO  15:19:35,145 - #22 a
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #51 }
+INFO  15:19:35,145 - #50 {
+INFO  15:19:35,145 - #6 void
+INFO  15:19:35,145 - #22 main
+INFO  15:19:35,145 - #46 (
+INFO  15:19:35,145 - #47 )
+INFO  15:19:35,145 - #22 A
+INFO  15:19:35,145 - #22 a
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #22 C
+INFO  15:19:35,145 - #22 c
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #22 int
+INFO  15:19:35,145 - #22 i
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #22 int
+INFO  15:19:35,145 - #22 x
+INFO  15:19:35,145 - #48 [
+INFO  15:19:35,145 - #49 ]
+INFO  15:19:35,145 - #42 ;
+INFO  15:19:35,145 - #22 char
+INFO  15:19:35,145 - #22 ch
+INFO  15:19:35,146 - #42 ;
+INFO  15:19:35,146 - #50 {
+INFO  15:19:35,146 - #22 a
+INFO  15:19:35,146 - #45 .
+INFO  15:19:35,146 - #22 x
+INFO  15:19:35,146 - #39 =
+INFO  15:19:35,146 - #14 new
+INFO  15:19:35,146 - #22 int
+INFO  15:19:35,146 - #48 [
+INFO  15:19:35,146 - #23 5
+INFO  15:19:35,146 - #49 ]
+INFO  15:19:35,147 - #42 ;
+INFO  15:19:35,147 - #22 a
+ERROR 15:19:35,147 - 
+Sintaksna greska na liniji 21
+INFO  15:19:35,147 - #45 .
+INFO  15:19:35,147 - #22 y
+INFO  15:19:35,147 - #39 =
+INFO  15:19:35,147 - #14 new
+INFO  15:19:35,147 - #22 int
+INFO  15:19:35,147 - #48 [
+INFO  15:19:35,147 - #23 5
+INFO  15:19:35,148 - #49 ]
+INFO  15:19:35,148 - #42 ;
+INFO  15:19:35,148 - #22 c
+INFO  15:19:35,148 - #39 =
+INFO  15:19:35,148 - #14 new
+INFO  15:19:35,148 - #22 C
+INFO  15:19:35,148 - #42 ;
+INFO  15:19:35,148 - #22 c
+INFO  15:19:35,148 - #45 .
+INFO  15:19:35,148 - #22 theA
+INFO  15:19:35,148 - #39 =
+INFO  15:19:35,148 - #22 a
+INFO  15:19:35,148 - #42 ;
+INFO  15:19:35,148 - #22 x
+INFO  15:19:35,148 - #39 =
+INFO  15:19:35,148 - #14 new
+INFO  15:19:35,148 - #22 int
+INFO  15:19:35,148 - #48 [
+INFO  15:19:35,148 - #23 3
+INFO  15:19:35,148 - #49 ]
+INFO  15:19:35,148 - #42 ;
+INFO  15:19:35,148 - #15 read
+INFO  15:19:35,148 - #46 (
+INFO  15:19:35,149 - #22 c
+INFO  15:19:35,149 - #45 .
+INFO  15:19:35,149 - #22 i
+INFO  15:19:35,149 - #47 )
+INFO  15:19:35,149 - #42 ;
+INFO  15:19:35,149 - #12 do
+INFO  15:19:35,149 - #50 {
+INFO  15:19:35,149 - #15 read
+INFO  15:19:35,149 - #46 (
+INFO  15:19:35,149 - #22 c
+INFO  15:19:35,149 - #45 .
+INFO  15:19:35,149 - #22 x
+INFO  15:19:35,149 - #48 [
+INFO  15:19:35,149 - #22 i
+INFO  15:19:35,149 - #49 ]
+INFO  15:19:35,149 - #47 )
+INFO  15:19:35,149 - #42 ;
+INFO  15:19:35,149 - #15 read
+INFO  15:19:35,149 - #46 (
+INFO  15:19:35,150 - #22 c
+INFO  15:19:35,150 - #45 .
+INFO  15:19:35,150 - #22 theA
+INFO  15:19:35,150 - #45 .
+INFO  15:19:35,150 - #22 x
+INFO  15:19:35,150 - #48 [
+INFO  15:19:35,150 - #22 i
+INFO  15:19:35,150 - #49 ]
+INFO  15:19:35,150 - #47 )
+INFO  15:19:35,150 - #42 ;
+INFO  15:19:35,150 - #22 i
+INFO  15:19:35,150 - #40 ++
+INFO  15:19:35,150 - #42 ;
+INFO  15:19:35,150 - #51 }
+INFO  15:19:35,150 - #13 while
+INFO  15:19:35,150 - #46 (
+INFO  15:19:35,150 - #22 i
+INFO  15:19:35,150 - #35 <
+INFO  15:19:35,150 - #23 5
+INFO  15:19:35,150 - #47 )
+INFO  15:19:35,150 - #42 ;
+INFO  15:19:35,150 - #4 print
+INFO  15:19:35,150 - #46 (
+INFO  15:19:35,150 - #22 c
+INFO  15:19:35,150 - #45 .
+INFO  15:19:35,150 - #22 getValue
+INFO  15:19:35,150 - #46 (
+INFO  15:19:35,150 - #22 c
+INFO  15:19:35,150 - #45 .
+INFO  15:19:35,150 - #22 theA
+INFO  15:19:35,150 - #45 .
+INFO  15:19:35,150 - #22 x
+INFO  15:19:35,150 - #48 [
+INFO  15:19:35,151 - #23 0
+INFO  15:19:35,151 - #49 ]
+INFO  15:19:35,151 - #47 )
+INFO  15:19:35,151 - #47 )
+INFO  15:19:35,151 - #42 ;
+INFO  15:19:35,151 - #22 c
+INFO  15:19:35,151 - #45 .
+INFO  15:19:35,151 - #22 m
+INFO  15:19:35,151 - #46 (
+INFO  15:19:35,151 - #47 )
+INFO  15:19:35,151 - #42 ;
+INFO  15:19:35,151 - #51 }
+INFO  15:19:35,151 - #51 }
+ERROR 15:19:35,151 - Greska u iskazu dodele u liniji 19
+INFO  15:19:35,153 - Program(
+  DeclListClass(
+    DeclListClass(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            MultipleClassFields(
+              NoClassFields(
+              ) [NoClassFields]
+              ClassVariableDel(
+                ClassVariableDecls(
+                  ClassVariableDecl(
+                    Type(
+                    ) [Type]
+                    OneArrayVariableDecl(
+                    ) [OneArrayVariableDecl]
+                  ) [ClassVariableDecl]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [ClassVariableDecls]
+              ) [ClassVariableDel]
+            ) [MultipleClassFields]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      ClassDeclMethodsNoConstr(
+        ClassNameExtends(
+          Type(
+          ) [Type]
+        ) [ClassNameExtends]
+        MultipleClassFields(
+          NoClassFields(
+          ) [NoClassFields]
+          ClassVariableDel(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+          ) [ClassVariableDel]
+        ) [MultipleClassFields]
+        MethodsDecl(
+          MethodDeclStmt(
+            ReturnType(
+              Type(
+              ) [Type]
+            ) [ReturnType]
+            MethodFormParams(
+              FormParam(
+                OneFormParam(
+                  Type(
+                  ) [Type]
+                ) [OneFormParam]
+              ) [FormParam]
+            ) [MethodFormParams]
+            VarDecls(
+              VarDecls(
+                NoVarDecl(
+                ) [NoVarDecl]
+                VarDecl(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneVariableDecl(
+                    ) [OneVariableDecl]
+                  ) [VariableDecl]
+                ) [VarDecl]
+              ) [VarDecls]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                  ) [Type]
+                  OneVariableDecl(
+                  ) [OneVariableDecl]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+            ReturnStmtExpr(
+              ExprPlusAddop(
+                TermFactor(
+                  FactorNoParen(
+                    DesignatorPoint(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [DesignatorPoint]
+                  ) [FactorNoParen]
+                ) [TermFactor]
+                AddOpsList(
+                  NoAddopList(
+                    AddOpPlus(
+                    ) [AddOpPlus]
+                    TermFactor(
+                      FactorNoParen(
+                        DesignatorBracket(
+                          DesignatorPoint(
+                            DesignatorIdent(
+                            ) [DesignatorIdent]
+                          ) [DesignatorPoint]
+                          ExprPlus(
+                            TermFactor(
+                              FactorTypeConst(
+                                NumConst(
+                                ) [NumConst]
+                              ) [FactorTypeConst]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                        ) [DesignatorBracket]
+                      ) [FactorNoParen]
+                    ) [TermFactor]
+                  ) [NoAddopList]
+                  AddOpPlus(
+                  ) [AddOpPlus]
+                  TermFactor(
+                    FactorNoParen(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [FactorNoParen]
+                  ) [TermFactor]
+                ) [AddOpsList]
+              ) [ExprPlusAddop]
+            ) [ReturnStmtExpr]
+          ) [MethodDeclStmt]
+          MethodsDecl(
+            MethodDeclNoStmt(
+              ReturnVoid(
+              ) [ReturnVoid]
+              NoMethodFormParams(
+              ) [NoMethodFormParams]
+              NoVarDecl(
+              ) [NoVarDecl]
+            ) [MethodDeclNoStmt]
+            NoMetodDecl(
+            ) [NoMetodDecl]
+          ) [MethodsDecl]
+        ) [MethodsDecl]
+      ) [ClassDeclMethodsNoConstr]
+    ) [DeclListClass]
+    ClassDeclNoMethods(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        MultipleClassFields(
+          NoClassFields(
+          ) [NoClassFields]
+          ClassVariableDel(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+          ) [ClassVariableDel]
+        ) [MultipleClassFields]
+        ClassVariableDel(
+          ClassVariableDecl(
+            Type(
+            ) [Type]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [ClassVariableDecl]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+    ) [ClassDeclNoMethods]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        VarDecls(
+          VarDecls(
+            VarDecls(
+              VarDecls(
+                NoVarDecl(
+                ) [NoVarDecl]
+                VarDecl(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneVariableDecl(
+                    ) [OneVariableDecl]
+                  ) [VariableDecl]
+                ) [VarDecl]
+              ) [VarDecls]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                  ) [Type]
+                  OneVariableDecl(
+                  ) [OneVariableDecl]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+            VarDecl(
+              VariableDecl(
+                Type(
+                ) [Type]
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [VariableDecl]
+            ) [VarDecl]
+          ) [VarDecls]
+          VarDecl(
+            VariableDecl(
+              Type(
+              ) [Type]
+              OneArrayVariableDecl(
+              ) [OneArrayVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          VariableDecl(
+            Type(
+            ) [Type]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      DesignatorStmt(
+        DesignatorStmtAssign(
+          ErrorAssignStmt(
+          ) [ErrorAssignStmt]
+        ) [DesignatorStmtAssign]
+      ) [DesignatorStmt]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  15:19:35,153 - ===================================
+INFO  15:19:35,154 -  Print count calls = 1
+INFO  15:19:35,155 -  Deklarisanih promenljivih ima = 7

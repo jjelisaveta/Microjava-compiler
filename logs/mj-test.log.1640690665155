@@ -1,0 +1,44 @@
+INFO  12:24:06,263 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  12:24:06,314 - #2 program
+INFO  12:24:06,315 - #22 Program
+INFO  12:24:06,315 - #7 class
+INFO  12:24:06,315 - #22 A
+INFO  12:24:06,316 - #50 {
+INFO  12:24:06,316 - #22 int
+INFO  12:24:06,317 - #22 x
+INFO  12:24:06,319 - #48 [
+INFO  12:24:06,319 - #49 ]
+INFO  12:24:06,319 - #44 ,
+INFO  12:24:06,320 - #22 y
+INFO  12:24:06,320 - #48 [
+INFO  12:24:06,320 - #49 ]
+INFO  12:24:06,320 - #42 ;
+INFO  12:24:06,321 - #51 }
+INFO  12:24:06,321 - #11 const
+INFO  12:24:06,322 - #22 int
+INFO  12:24:06,322 - #22 pi
+INFO  12:24:06,322 - #39 =
+INFO  12:24:06,322 - #23 3
+INFO  12:24:06,322 - #44 ,
+INFO  12:24:06,323 - #22 e
+INFO  12:24:06,324 - #39 =
+INFO  12:24:06,324 - #23 2
+INFO  12:24:06,324 - #42 ;
+INFO  12:24:06,324 - #22 int
+INFO  12:24:06,325 - #22 g
+INFO  12:24:06,325 - #44 ,
+INFO  12:24:06,325 - #22 a
+INFO  12:24:06,326 - #44 ,
+INFO  12:24:06,326 - #23 0
+ERROR 12:24:06,326 - 
+Sintaksna greska na liniji 7
+INFO  12:24:06,326 - #22 n
+INFO  12:24:06,326 - #42 ;
+INFO  12:24:06,326 - #22 int
+INFO  12:24:06,326 - #22 cjujhoh
+INFO  12:24:06,327 - #42 ;
+ERROR 12:24:06,327 - Izvrsen oporavak do ; u liniji 8
+INFO  12:24:06,327 - #51 }
+ERROR 12:24:06,328 - 
+Sintaksna greska na liniji 10
+ERROR 12:24:06,328 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10

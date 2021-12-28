@@ -1,20 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/11/2021 1:9:29
+// 28/11/2021 18:27:14
 
 
-package src.rs.ac.bg.etf.pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public class DeclListVar extends DeclList {
 
     private DeclList DeclList;
-    private VarDecl VarDecl;
+    private GlobalVarDecl GlobalVarDecl;
 
-    public DeclListVar (DeclList DeclList, VarDecl VarDecl) {
+    public DeclListVar (DeclList DeclList, GlobalVarDecl GlobalVarDecl) {
         this.DeclList=DeclList;
         if(DeclList!=null) DeclList.setParent(this);
-        this.VarDecl=VarDecl;
-        if(VarDecl!=null) VarDecl.setParent(this);
+        this.GlobalVarDecl=GlobalVarDecl;
+        if(GlobalVarDecl!=null) GlobalVarDecl.setParent(this);
     }
 
     public DeclList getDeclList() {
@@ -25,12 +25,12 @@ public class DeclListVar extends DeclList {
         this.DeclList=DeclList;
     }
 
-    public VarDecl getVarDecl() {
-        return VarDecl;
+    public GlobalVarDecl getGlobalVarDecl() {
+        return GlobalVarDecl;
     }
 
-    public void setVarDecl(VarDecl VarDecl) {
-        this.VarDecl=VarDecl;
+    public void setGlobalVarDecl(GlobalVarDecl GlobalVarDecl) {
+        this.GlobalVarDecl=GlobalVarDecl;
     }
 
     public void accept(Visitor visitor) {
@@ -39,18 +39,18 @@ public class DeclListVar extends DeclList {
 
     public void childrenAccept(Visitor visitor) {
         if(DeclList!=null) DeclList.accept(visitor);
-        if(VarDecl!=null) VarDecl.accept(visitor);
+        if(GlobalVarDecl!=null) GlobalVarDecl.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DeclList!=null) DeclList.traverseTopDown(visitor);
-        if(VarDecl!=null) VarDecl.traverseTopDown(visitor);
+        if(GlobalVarDecl!=null) GlobalVarDecl.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DeclList!=null) DeclList.traverseBottomUp(visitor);
-        if(VarDecl!=null) VarDecl.traverseBottomUp(visitor);
+        if(GlobalVarDecl!=null) GlobalVarDecl.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -65,8 +65,8 @@ public class DeclListVar extends DeclList {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDecl!=null)
-            buffer.append(VarDecl.toString("  "+tab));
+        if(GlobalVarDecl!=null)
+            buffer.append(GlobalVarDecl.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

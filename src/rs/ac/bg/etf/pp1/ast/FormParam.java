@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/11/2021 1:9:29
+// 28/11/2021 18:27:14
 
 
-package src.rs.ac.bg.etf.pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public class FormParam extends FormPars {
 
-    private Type Type;
+    private OneFormPar OneFormPar;
 
-    public FormParam (Type Type) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public FormParam (OneFormPar OneFormPar) {
+        this.OneFormPar=OneFormPar;
+        if(OneFormPar!=null) OneFormPar.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public OneFormPar getOneFormPar() {
+        return OneFormPar;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setOneFormPar(OneFormPar OneFormPar) {
+        this.OneFormPar=OneFormPar;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class FormParam extends FormPars {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(OneFormPar!=null) OneFormPar.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(OneFormPar!=null) OneFormPar.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(OneFormPar!=null) OneFormPar.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class FormParam extends FormPars {
         buffer.append(tab);
         buffer.append("FormParam(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(OneFormPar!=null)
+            buffer.append(OneFormPar.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

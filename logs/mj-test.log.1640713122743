@@ -1,0 +1,132 @@
+INFO  18:38:31,247 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:38:31,323 - #2 program
+INFO  18:38:31,324 - #22 Program
+INFO  18:38:31,324 - #22 int
+INFO  18:38:31,325 - #22 a
+INFO  18:38:31,325 - #44 ,
+INFO  18:38:31,327 - #22 x
+INFO  18:38:31,327 - #44 ,
+INFO  18:38:31,327 - #22 q1b
+INFO  18:38:31,327 - #44 ,
+INFO  18:38:31,328 - #22 adf
+INFO  18:38:31,328 - #42 ;
+INFO  18:38:31,328 - #7 class
+INFO  18:38:31,328 - #22 B
+INFO  18:38:31,328 - #16 extends
+INFO  18:38:31,328 - #22 A
+INFO  18:38:31,328 - #50 {
+INFO  18:38:31,329 - #22 int
+INFO  18:38:31,329 - #22 s
+INFO  18:38:31,330 - #44 ,
+INFO  18:38:31,330 - #22 f
+INFO  18:38:31,330 - #42 ;
+INFO  18:38:31,330 - #50 {
+INFO  18:38:31,331 - #51 }
+INFO  18:38:31,331 - #51 }
+INFO  18:38:31,332 - #50 {
+INFO  18:38:31,332 - #6 void
+INFO  18:38:31,332 - #22 main
+INFO  18:38:31,332 - #46 (
+INFO  18:38:31,333 - #47 )
+INFO  18:38:31,333 - #50 {
+INFO  18:38:31,334 - #22 a
+INFO  18:38:31,334 - #39 =
+INFO  18:38:31,335 - #22 s
+INFO  18:38:31,336 - #26 +
+INFO  18:38:31,337 - #22 bs
+INFO  18:38:31,338 - #26 +
+INFO  18:38:31,338 - #22 b
+INFO  18:38:31,338 - #26 +
+INFO  18:38:31,338 - #22 sb
+INFO  18:38:31,338 - #22 b
+ERROR 18:38:31,339 - 
+Sintaksna greska na liniji 11
+INFO  18:38:31,339 - #22 ca
+INFO  18:38:31,339 - #22 c
+INFO  18:38:31,339 - #42 ;
+INFO  18:38:31,340 - #51 }
+INFO  18:38:31,340 - #51 }
+ERROR 18:38:31,341 - Greska u iskazu dodele u liniji 10
+INFO  18:38:31,343 - Program(
+  DeclListClass(
+    DeclListVar(
+      NoDeclList(
+      ) [NoDeclList]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                Type(
+                ) [Type]
+                GlobalOneVariableDecl(
+                  OneVariableDecl(
+                  ) [OneVariableDecl]
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ClassVariableDel(
+          ClassVariableDecls(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [ClassVariableDecls]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      OneStmt(
+        DesignatorStmt(
+          DesignatorStmtAssign(
+            ErrorAssignStmt(
+            ) [ErrorAssignStmt]
+          ) [DesignatorStmtAssign]
+        ) [DesignatorStmt]
+      ) [OneStmt]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:38:31,343 - ===================================
+INFO  18:38:31,346 -  Print count calls = 0
+INFO  18:38:31,346 -  Deklarisanih promenljivih ima = 0

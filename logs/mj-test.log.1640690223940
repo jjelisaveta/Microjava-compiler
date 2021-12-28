@@ -1,0 +1,84 @@
+INFO  12:12:09,122 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  12:12:09,177 - #2 program
+INFO  12:12:09,177 - #22 Program
+INFO  12:12:09,177 - #7 class
+INFO  12:12:09,178 - #22 A
+INFO  12:12:09,178 - #50 {
+INFO  12:12:09,179 - #22 int
+INFO  12:12:09,179 - #22 x
+INFO  12:12:09,180 - #48 [
+INFO  12:12:09,180 - #49 ]
+INFO  12:12:09,180 - #44 ,
+INFO  12:12:09,180 - #22 y
+INFO  12:12:09,180 - #48 [
+INFO  12:12:09,180 - #49 ]
+INFO  12:12:09,181 - #42 ;
+INFO  12:12:09,181 - #51 }
+INFO  12:12:09,182 - #11 const
+INFO  12:12:09,182 - #22 int
+INFO  12:12:09,182 - #22 pi
+INFO  12:12:09,182 - #39 =
+INFO  12:12:09,182 - #23 3
+INFO  12:12:09,182 - #44 ,
+INFO  12:12:09,183 - #22 e
+INFO  12:12:09,184 - #39 =
+INFO  12:12:09,184 - #23 2
+INFO  12:12:09,184 - #42 ;
+INFO  12:12:09,184 - #22 int
+INFO  12:12:09,184 - #22 g
+INFO  12:12:09,185 - #44 ,
+INFO  12:12:09,185 - #22 a
+INFO  12:12:09,185 - #26 +
+ERROR 12:12:09,185 - 
+Sintaksna greska na liniji 7
+INFO  12:12:09,185 - #44 ,
+INFO  12:12:09,185 - #22 n
+INFO  12:12:09,185 - #42 ;
+INFO  12:12:09,186 - #50 {
+INFO  12:12:09,186 - #51 }
+ERROR 12:12:09,186 - Izvrsen oporavak do ; u liniji 7
+INFO  12:12:09,188 - Program(
+  DeclListVar(
+    DeclListConst(
+      DeclListClass(
+        NoDeclList(
+        ) [NoDeclList]
+        ClassDeclNoMethods(
+          ClassNameSingle(
+          ) [ClassNameSingle]
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              ArrayVariableDecls(
+                ArrayVariableDecl(
+                  Type(
+                  ) [Type]
+                ) [ArrayVariableDecl]
+              ) [ArrayVariableDecls]
+            ) [VarDecl]
+          ) [VarDecls]
+        ) [ClassDeclNoMethods]
+      ) [DeclListClass]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+            ) [Type]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecl]
+          NumConst(
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ErrorGlobalVarDecl(
+    ) [ErrorGlobalVarDecl]
+  ) [DeclListVar]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  12:12:09,188 - ===================================
+INFO  12:12:09,190 -  Print count calls = 1
+INFO  12:12:09,191 -  Deklarisanih promenljivih ima = 1

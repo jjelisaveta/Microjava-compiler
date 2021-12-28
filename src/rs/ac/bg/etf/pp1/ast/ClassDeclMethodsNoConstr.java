@@ -1,21 +1,21 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/11/2021 1:9:29
+// 28/11/2021 18:27:14
 
 
-package src.rs.ac.bg.etf.pp1.ast;
+package rs.ac.bg.etf.pp1.ast;
 
 public class ClassDeclMethodsNoConstr extends ClassDecl {
 
     private ClassName ClassName;
-    private MultipleVarDecl MultipleVarDecl;
+    private ClassFields ClassFields;
     private MethodDeclList MethodDeclList;
 
-    public ClassDeclMethodsNoConstr (ClassName ClassName, MultipleVarDecl MultipleVarDecl, MethodDeclList MethodDeclList) {
+    public ClassDeclMethodsNoConstr (ClassName ClassName, ClassFields ClassFields, MethodDeclList MethodDeclList) {
         this.ClassName=ClassName;
         if(ClassName!=null) ClassName.setParent(this);
-        this.MultipleVarDecl=MultipleVarDecl;
-        if(MultipleVarDecl!=null) MultipleVarDecl.setParent(this);
+        this.ClassFields=ClassFields;
+        if(ClassFields!=null) ClassFields.setParent(this);
         this.MethodDeclList=MethodDeclList;
         if(MethodDeclList!=null) MethodDeclList.setParent(this);
     }
@@ -28,12 +28,12 @@ public class ClassDeclMethodsNoConstr extends ClassDecl {
         this.ClassName=ClassName;
     }
 
-    public MultipleVarDecl getMultipleVarDecl() {
-        return MultipleVarDecl;
+    public ClassFields getClassFields() {
+        return ClassFields;
     }
 
-    public void setMultipleVarDecl(MultipleVarDecl MultipleVarDecl) {
-        this.MultipleVarDecl=MultipleVarDecl;
+    public void setClassFields(ClassFields ClassFields) {
+        this.ClassFields=ClassFields;
     }
 
     public MethodDeclList getMethodDeclList() {
@@ -50,20 +50,20 @@ public class ClassDeclMethodsNoConstr extends ClassDecl {
 
     public void childrenAccept(Visitor visitor) {
         if(ClassName!=null) ClassName.accept(visitor);
-        if(MultipleVarDecl!=null) MultipleVarDecl.accept(visitor);
+        if(ClassFields!=null) ClassFields.accept(visitor);
         if(MethodDeclList!=null) MethodDeclList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(ClassName!=null) ClassName.traverseTopDown(visitor);
-        if(MultipleVarDecl!=null) MultipleVarDecl.traverseTopDown(visitor);
+        if(ClassFields!=null) ClassFields.traverseTopDown(visitor);
         if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(ClassName!=null) ClassName.traverseBottomUp(visitor);
-        if(MultipleVarDecl!=null) MultipleVarDecl.traverseBottomUp(visitor);
+        if(ClassFields!=null) ClassFields.traverseBottomUp(visitor);
         if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -79,8 +79,8 @@ public class ClassDeclMethodsNoConstr extends ClassDecl {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MultipleVarDecl!=null)
-            buffer.append(MultipleVarDecl.toString("  "+tab));
+        if(ClassFields!=null)
+            buffer.append(ClassFields.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

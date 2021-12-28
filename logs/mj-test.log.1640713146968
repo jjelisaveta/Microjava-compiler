@@ -1,0 +1,168 @@
+INFO  18:38:42,752 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:38:42,861 - #2 program
+INFO  18:38:42,861 - #22 Program
+INFO  18:38:42,861 - #22 int
+INFO  18:38:42,863 - #22 a
+INFO  18:38:42,864 - #44 ,
+INFO  18:38:42,866 - #22 x
+INFO  18:38:42,866 - #44 ,
+INFO  18:38:42,867 - #22 q1b
+INFO  18:38:42,867 - #44 ,
+INFO  18:38:42,867 - #22 adf
+INFO  18:38:42,867 - #42 ;
+INFO  18:38:42,867 - #7 class
+INFO  18:38:42,868 - #22 B
+INFO  18:38:42,868 - #16 extends
+INFO  18:38:42,868 - #22 A
+INFO  18:38:42,869 - #50 {
+INFO  18:38:42,869 - #22 int
+INFO  18:38:42,871 - #22 s
+INFO  18:38:42,871 - #44 ,
+INFO  18:38:42,871 - #22 f
+INFO  18:38:42,871 - #42 ;
+INFO  18:38:42,872 - #50 {
+INFO  18:38:42,873 - #51 }
+INFO  18:38:42,874 - #51 }
+INFO  18:38:42,874 - #50 {
+INFO  18:38:42,874 - #6 void
+INFO  18:38:42,875 - #22 main
+INFO  18:38:42,875 - #46 (
+INFO  18:38:42,876 - #47 )
+INFO  18:38:42,877 - #50 {
+INFO  18:38:42,878 - #22 a
+INFO  18:38:42,878 - #39 =
+INFO  18:38:42,879 - #22 s
+INFO  18:38:42,882 - #26 +
+INFO  18:38:42,882 - #22 bs
+INFO  18:38:42,883 - #26 +
+INFO  18:38:42,884 - #22 b
+INFO  18:38:42,884 - #26 +
+INFO  18:38:42,884 - #22 sb
+INFO  18:38:42,885 - #42 ;
+INFO  18:38:42,885 - #51 }
+INFO  18:38:42,886 - #51 }
+INFO  18:38:42,889 - Program(
+  DeclListClass(
+    DeclListVar(
+      NoDeclList(
+      ) [NoDeclList]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                Type(
+                ) [Type]
+                GlobalOneVariableDecl(
+                  OneVariableDecl(
+                  ) [OneVariableDecl]
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ClassVariableDel(
+          ClassVariableDecls(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [ClassVariableDecls]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      OneStmt(
+        DesignatorStmt(
+          DesignatorStmtAssign(
+            AssignStmt(
+              DesignatorIdent(
+              ) [DesignatorIdent]
+              AssignOperator(
+              ) [AssignOperator]
+              ExprPlusAddop(
+                TermFactor(
+                  FactorNoParen(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                  ) [FactorNoParen]
+                ) [TermFactor]
+                AddOpsList(
+                  AddOpsList(
+                    NoAddopList(
+                      AddOpPlus(
+                      ) [AddOpPlus]
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorIdent(
+                          ) [DesignatorIdent]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [NoAddopList]
+                    AddOpPlus(
+                    ) [AddOpPlus]
+                    TermFactor(
+                      FactorNoParen(
+                        DesignatorIdent(
+                        ) [DesignatorIdent]
+                      ) [FactorNoParen]
+                    ) [TermFactor]
+                  ) [AddOpsList]
+                  AddOpPlus(
+                  ) [AddOpPlus]
+                  TermFactor(
+                    FactorNoParen(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [FactorNoParen]
+                  ) [TermFactor]
+                ) [AddOpsList]
+              ) [ExprPlusAddop]
+            ) [AssignStmt]
+          ) [DesignatorStmtAssign]
+        ) [DesignatorStmt]
+      ) [OneStmt]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:38:42,891 - ===================================
+INFO  18:38:42,895 -  Print count calls = 0
+INFO  18:38:42,895 -  Deklarisanih promenljivih ima = 0

@@ -1,0 +1,70 @@
+INFO  18:33:56,711 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:33:56,785 - #2 program
+INFO  18:33:56,786 - #22 Program
+INFO  18:33:56,786 - #22 int
+INFO  18:33:56,787 - #23 1
+ERROR 18:33:56,788 - 
+Sintaksna greska na liniji 2
+INFO  18:33:56,788 - #22 a
+INFO  18:33:56,788 - #44 ,
+INFO  18:33:56,788 - #22 x
+INFO  18:33:56,789 - #44 ,
+INFO  18:33:56,789 - #22 q1b
+INFO  18:33:56,789 - #44 ,
+INFO  18:33:56,789 - #22 adf
+INFO  18:33:56,789 - #42 ;
+INFO  18:33:56,789 - #7 class
+INFO  18:33:56,789 - #22 B
+INFO  18:33:56,790 - #16 extends
+ERROR 18:33:56,790 - Greska u deklaraciji globalne promenljive u liniji 8
+INFO  18:33:56,791 - #22 A
+INFO  18:33:56,791 - #50 {
+INFO  18:33:56,792 - #22 int
+INFO  18:33:56,793 - #22 s
+INFO  18:33:56,793 - #44 ,
+INFO  18:33:56,794 - #22 f
+INFO  18:33:56,794 - #42 ;
+INFO  18:33:56,794 - #50 {
+INFO  18:33:56,794 - #51 }
+INFO  18:33:56,795 - #51 }
+INFO  18:33:56,795 - #50 {
+INFO  18:33:56,796 - #51 }
+INFO  18:33:56,797 - Program(
+  DeclListClass(
+    DeclListVar(
+      NoDeclList(
+      ) [NoDeclList]
+      ErrorGlobalVarDecl(
+      ) [ErrorGlobalVarDecl]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ClassVariableDel(
+          ClassVariableDecls(
+            ClassVariableDecl(
+              Type(
+              ) [Type]
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [ClassVariableDecls]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  NoMetodDecl(
+  ) [NoMetodDecl]
+) [Program]
+INFO  18:33:56,797 - ===================================
+INFO  18:33:56,800 -  Print count calls = 0
+INFO  18:33:56,801 -  Deklarisanih promenljivih ima = 0

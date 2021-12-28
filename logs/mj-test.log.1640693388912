@@ -1,0 +1,263 @@
+INFO  13:09:25,304 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  13:09:25,370 - #2 program
+INFO  13:09:25,370 - #22 Program
+INFO  13:09:25,370 - #7 class
+INFO  13:09:25,371 - #22 A
+INFO  13:09:25,371 - #50 {
+INFO  13:09:25,372 - #22 int
+INFO  13:09:25,372 - #22 x
+INFO  13:09:25,373 - #48 [
+INFO  13:09:25,373 - #49 ]
+INFO  13:09:25,373 - #44 ,
+INFO  13:09:25,374 - #22 y
+INFO  13:09:25,374 - #48 [
+INFO  13:09:25,374 - #49 ]
+INFO  13:09:25,374 - #42 ;
+INFO  13:09:25,374 - #51 }
+INFO  13:09:25,375 - #11 const
+INFO  13:09:25,375 - #22 int
+INFO  13:09:25,376 - #22 pi
+INFO  13:09:25,376 - #39 =
+INFO  13:09:25,376 - #23 3
+INFO  13:09:25,376 - #44 ,
+INFO  13:09:25,377 - #22 e
+INFO  13:09:25,377 - #39 =
+INFO  13:09:25,377 - #23 2
+INFO  13:09:25,377 - #42 ;
+INFO  13:09:25,377 - #22 int
+INFO  13:09:25,378 - #22 g
+INFO  13:09:25,378 - #44 ,
+INFO  13:09:25,379 - #22 a
+INFO  13:09:25,379 - #44 ,
+INFO  13:09:25,379 - #22 n
+INFO  13:09:25,379 - #42 ;
+INFO  13:09:25,379 - #22 int
+INFO  13:09:25,380 - #22 cjujhoh
+INFO  13:09:25,380 - #42 ;
+INFO  13:09:25,380 - #50 {
+INFO  13:09:25,380 - #6 void
+INFO  13:09:25,380 - #22 main
+INFO  13:09:25,381 - #46 (
+INFO  13:09:25,381 - #22 int
+INFO  13:09:25,381 - #22 ttp
+INFO  13:09:25,381 - #48 [
+INFO  13:09:25,381 - #49 ]
+INFO  13:09:25,381 - #44 ,
+INFO  13:09:25,381 - #22 int
+INFO  13:09:25,382 - #22 ppp
+INFO  13:09:25,382 - #47 )
+INFO  13:09:25,382 - #50 {
+INFO  13:09:25,382 - #9 if
+INFO  13:09:25,382 - #46 (
+INFO  13:09:25,382 - #22 a
+INFO  13:09:25,382 - #26 +
+INFO  13:09:25,383 - #22 vvevr
+INFO  13:09:25,385 - #33 >
+INFO  13:09:25,385 - #22 wedw
+INFO  13:09:25,386 - #47 )
+INFO  13:09:25,387 - #50 {
+INFO  13:09:25,387 - #22 w
+INFO  13:09:25,387 - #40 ++
+INFO  13:09:25,387 - #42 ;
+INFO  13:09:25,387 - #22 jebaosamte
+INFO  13:09:25,387 - #46 (
+INFO  13:09:25,387 - #47 )
+INFO  13:09:25,388 - #42 ;
+INFO  13:09:25,388 - #51 }
+INFO  13:09:25,389 - #10 else
+INFO  13:09:25,389 - #50 {
+INFO  13:09:25,389 - #22 jebalisume
+INFO  13:09:25,389 - #46 (
+INFO  13:09:25,389 - #47 )
+INFO  13:09:25,389 - #42 ;
+INFO  13:09:25,389 - #22 a
+INFO  13:09:25,389 - #40 ++
+INFO  13:09:25,389 - #42 ;
+INFO  13:09:25,389 - #51 }
+INFO  13:09:25,389 - #51 }
+INFO  13:09:25,389 - #51 }
+INFO  13:09:25,392 - Program(
+  DeclListVar(
+    DeclListVar(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecls(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                    OneArrayVariableDecl(
+                    ) [OneArrayVariableDecl]
+                  ) [VariableDecl]
+                  OneArrayVariableDecl(
+                  ) [OneArrayVariableDecl]
+                ) [VariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      GlobalVarDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              Type(
+              ) [Type]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    GlobalVarDecls(
+      GlobalVariableDecl(
+        Type(
+        ) [Type]
+        GlobalOneVariableDecl(
+          OneVariableDecl(
+          ) [OneVariableDecl]
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecl]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            OneArrayFormParam(
+              Type(
+              ) [Type]
+            ) [OneArrayFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+            ) [Type]
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      IfElseStmt(
+        OkIfCondition(
+          ConditionCondTerm(
+            ConditionCondFact(
+              CondFactExprRelop(
+                ExprPlusAddop(
+                  TermFactor(
+                    FactorNoParen(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [FactorNoParen]
+                  ) [TermFactor]
+                  NoAddopList(
+                    AddOpPlus(
+                    ) [AddOpPlus]
+                    TermFactor(
+                      FactorNoParen(
+                        DesignatorIdent(
+                        ) [DesignatorIdent]
+                      ) [FactorNoParen]
+                    ) [TermFactor]
+                  ) [NoAddopList]
+                ) [ExprPlusAddop]
+                RelOpGt(
+                ) [RelOpGt]
+                ExprPlus(
+                  TermFactor(
+                    FactorNoParen(
+                      DesignatorIdent(
+                      ) [DesignatorIdent]
+                    ) [FactorNoParen]
+                  ) [TermFactor]
+                ) [ExprPlus]
+              ) [CondFactExprRelop]
+            ) [ConditionCondFact]
+          ) [ConditionCondTerm]
+        ) [OkIfCondition]
+        MultipleStatements(
+          Stmts(
+            StmtList(
+              OneStmt(
+                DesignatorStmt(
+                  DesignatorStmtInc(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                  ) [DesignatorStmtInc]
+                ) [DesignatorStmt]
+              ) [OneStmt]
+              DesignatorStmt(
+                DesignatorStmtPars(
+                  DesignatorIdent(
+                  ) [DesignatorIdent]
+                  NoActParams(
+                  ) [NoActParams]
+                ) [DesignatorStmtPars]
+              ) [DesignatorStmt]
+            ) [StmtList]
+          ) [Stmts]
+        ) [MultipleStatements]
+        MultipleStatements(
+          Stmts(
+            StmtList(
+              OneStmt(
+                DesignatorStmt(
+                  DesignatorStmtPars(
+                    DesignatorIdent(
+                    ) [DesignatorIdent]
+                    NoActParams(
+                    ) [NoActParams]
+                  ) [DesignatorStmtPars]
+                ) [DesignatorStmt]
+              ) [OneStmt]
+              DesignatorStmt(
+                DesignatorStmtInc(
+                  DesignatorIdent(
+                  ) [DesignatorIdent]
+                ) [DesignatorStmtInc]
+              ) [DesignatorStmt]
+            ) [StmtList]
+          ) [Stmts]
+        ) [MultipleStatements]
+      ) [IfElseStmt]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  13:09:25,392 - ===================================
+INFO  13:09:25,394 -  Print count calls = 1
+INFO  13:09:25,394 -  Deklarisanih promenljivih ima = 1

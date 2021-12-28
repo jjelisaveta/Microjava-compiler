@@ -1,0 +1,435 @@
+INFO  23:27:30,534 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  23:27:30,567 - #2 program
+INFO  23:27:30,567 - #22 Program
+INFO  23:27:30,567 - #7 class
+INFO  23:27:30,568 - #22 A
+INFO  23:27:30,568 - #50 {
+INFO  23:27:30,568 - #22 int
+INFO  23:27:30,568 - #22 x
+INFO  23:27:30,569 - #48 [
+INFO  23:27:30,569 - #49 ]
+INFO  23:27:30,569 - #44 ,
+INFO  23:27:30,569 - #22 y
+INFO  23:27:30,569 - #48 [
+INFO  23:27:30,569 - #49 ]
+INFO  23:27:30,569 - #42 ;
+INFO  23:27:30,569 - #51 }
+INFO  23:27:30,570 - #11 const
+INFO  23:27:30,570 - #22 int
+INFO  23:27:30,571 - #22 pi
+INFO  23:27:30,571 - #39 =
+INFO  23:27:30,571 - #23 3
+INFO  23:27:30,571 - #44 ,
+INFO  23:27:30,571 - #22 e
+INFO  23:27:30,572 - #39 =
+INFO  23:27:30,572 - #23 2
+INFO  23:27:30,572 - #42 ;
+INFO  23:27:30,572 - #7 class
+INFO  23:27:30,572 - #22 B
+INFO  23:27:30,572 - #16 extends
+INFO  23:27:30,572 - #22 A
+INFO  23:27:30,573 - #50 {
+INFO  23:27:30,573 - #22 int
+INFO  23:27:30,573 - #22 i
+INFO  23:27:30,573 - #42 ;
+INFO  23:27:30,573 - #50 {
+INFO  23:27:30,573 - #22 int
+INFO  23:27:30,573 - #22 getValue
+INFO  23:27:30,573 - #46 (
+INFO  23:27:30,573 - #22 int
+INFO  23:27:30,573 - #22 a
+INFO  23:27:30,573 - #47 )
+INFO  23:27:30,574 - #22 int
+INFO  23:27:30,574 - #22 b
+INFO  23:27:30,574 - #42 ;
+INFO  23:27:30,574 - #22 bool
+INFO  23:27:30,574 - #22 c
+INFO  23:27:30,574 - #42 ;
+INFO  23:27:30,574 - #50 {
+INFO  23:27:30,574 - #5 return
+INFO  23:27:30,574 - #18 this
+ERROR 23:27:30,574 - 
+Sintaksna greska na liniji 8
+INFO  23:27:30,574 - #45 .
+INFO  23:27:30,575 - #22 i
+INFO  23:27:30,575 - #26 +
+INFO  23:27:30,575 - #18 this
+INFO  23:27:30,575 - #45 .
+INFO  23:27:30,575 - #22 x
+INFO  23:27:30,575 - #48 [
+INFO  23:27:30,575 - #23 0
+INFO  23:27:30,575 - #49 ]
+INFO  23:27:30,575 - #26 +
+INFO  23:27:30,575 - #22 a
+INFO  23:27:30,575 - #42 ;
+INFO  23:27:30,575 - #51 }
+INFO  23:27:30,576 - #6 void
+INFO  23:27:30,576 - #22 mn
+ERROR 23:27:30,576 - Izvrsen oporavak do ; u liniji 8
+INFO  23:27:30,577 - #46 (
+INFO  23:27:30,577 - #47 )
+INFO  23:27:30,577 - #50 {
+INFO  23:27:30,577 - #22 a
+INFO  23:27:30,577 - #26 +
+ERROR 23:27:30,577 - 
+Sintaksna greska na liniji 10
+INFO  23:27:30,577 - #22 b
+INFO  23:27:30,577 - #42 ;
+INFO  23:27:30,577 - #51 }
+INFO  23:27:30,577 - #51 }
+INFO  23:27:30,577 - #51 }
+ERROR 23:27:30,578 - Izvrsen oporavak do ; u liniji 10
+INFO  23:27:30,578 - #7 class
+INFO  23:27:30,578 - #22 C
+INFO  23:27:30,578 - #16 extends
+INFO  23:27:30,578 - #22 B
+INFO  23:27:30,578 - #50 {
+INFO  23:27:30,578 - #22 A
+INFO  23:27:30,578 - #22 theA
+INFO  23:27:30,578 - #42 ;
+INFO  23:27:30,578 - #22 int
+INFO  23:27:30,578 - #22 a
+INFO  23:27:30,578 - #42 ;
+INFO  23:27:30,578 - #51 }
+INFO  23:27:30,578 - #50 {
+INFO  23:27:30,578 - #6 void
+INFO  23:27:30,578 - #22 main
+INFO  23:27:30,578 - #46 (
+INFO  23:27:30,579 - #47 )
+INFO  23:27:30,579 - #22 A
+INFO  23:27:30,579 - #22 a
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,579 - #22 C
+INFO  23:27:30,579 - #22 c
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,579 - #22 int
+INFO  23:27:30,579 - #22 i
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,579 - #22 int
+INFO  23:27:30,579 - #22 x
+INFO  23:27:30,579 - #48 [
+INFO  23:27:30,579 - #49 ]
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,579 - #22 char
+INFO  23:27:30,579 - #22 ch
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,579 - #50 {
+INFO  23:27:30,579 - #22 a
+INFO  23:27:30,579 - #39 =
+INFO  23:27:30,579 - #14 new
+INFO  23:27:30,579 - #22 A
+INFO  23:27:30,579 - #42 ;
+INFO  23:27:30,580 - #22 a
+ERROR 23:27:30,580 - 
+Sintaksna greska na liniji 18
+INFO  23:27:30,580 - #45 .
+INFO  23:27:30,580 - #22 x
+INFO  23:27:30,580 - #39 =
+INFO  23:27:30,580 - #14 new
+INFO  23:27:30,580 - #22 int
+INFO  23:27:30,580 - #48 [
+INFO  23:27:30,580 - #23 5
+INFO  23:27:30,580 - #49 ]
+INFO  23:27:30,580 - #42 ;
+INFO  23:27:30,580 - #22 a
+INFO  23:27:30,580 - #45 .
+INFO  23:27:30,580 - #22 y
+INFO  23:27:30,580 - #39 =
+INFO  23:27:30,580 - #14 new
+INFO  23:27:30,580 - #22 int
+INFO  23:27:30,580 - #48 [
+INFO  23:27:30,580 - #23 5
+INFO  23:27:30,581 - #49 ]
+INFO  23:27:30,581 - #42 ;
+INFO  23:27:30,581 - #22 c
+INFO  23:27:30,581 - #39 =
+INFO  23:27:30,581 - #14 new
+INFO  23:27:30,581 - #22 C
+INFO  23:27:30,581 - #42 ;
+INFO  23:27:30,581 - #22 c
+INFO  23:27:30,581 - #45 .
+INFO  23:27:30,581 - #22 theA
+INFO  23:27:30,581 - #39 =
+INFO  23:27:30,581 - #22 a
+INFO  23:27:30,581 - #42 ;
+INFO  23:27:30,581 - #22 c
+INFO  23:27:30,581 - #45 .
+INFO  23:27:30,581 - #22 x
+INFO  23:27:30,581 - #39 =
+INFO  23:27:30,581 - #14 new
+INFO  23:27:30,581 - #22 int
+INFO  23:27:30,581 - #48 [
+INFO  23:27:30,581 - #23 5
+INFO  23:27:30,581 - #49 ]
+INFO  23:27:30,581 - #42 ;
+INFO  23:27:30,581 - #22 x
+INFO  23:27:30,581 - #39 =
+INFO  23:27:30,581 - #14 new
+INFO  23:27:30,581 - #22 int
+INFO  23:27:30,581 - #48 [
+INFO  23:27:30,581 - #23 3
+INFO  23:27:30,581 - #49 ]
+INFO  23:27:30,581 - #42 ;
+INFO  23:27:30,581 - #15 read
+INFO  23:27:30,581 - #46 (
+INFO  23:27:30,581 - #22 c
+INFO  23:27:30,582 - #45 .
+INFO  23:27:30,582 - #22 i
+INFO  23:27:30,582 - #47 )
+INFO  23:27:30,582 - #42 ;
+INFO  23:27:30,582 - #22 i
+INFO  23:27:30,582 - #39 =
+INFO  23:27:30,582 - #23 0
+INFO  23:27:30,582 - #42 ;
+INFO  23:27:30,582 - #12 do
+INFO  23:27:30,582 - #50 {
+INFO  23:27:30,582 - #15 read
+INFO  23:27:30,582 - #46 (
+INFO  23:27:30,582 - #22 c
+INFO  23:27:30,582 - #45 .
+INFO  23:27:30,582 - #22 x
+INFO  23:27:30,582 - #48 [
+INFO  23:27:30,582 - #22 i
+INFO  23:27:30,582 - #49 ]
+INFO  23:27:30,582 - #47 )
+INFO  23:27:30,582 - #42 ;
+INFO  23:27:30,582 - #15 read
+INFO  23:27:30,582 - #46 (
+INFO  23:27:30,582 - #22 c
+INFO  23:27:30,582 - #45 .
+INFO  23:27:30,582 - #22 theA
+INFO  23:27:30,582 - #45 .
+INFO  23:27:30,582 - #22 x
+INFO  23:27:30,582 - #48 [
+INFO  23:27:30,582 - #22 i
+INFO  23:27:30,582 - #49 ]
+INFO  23:27:30,582 - #47 )
+INFO  23:27:30,582 - #42 ;
+INFO  23:27:30,582 - #22 i
+INFO  23:27:30,582 - #40 ++
+INFO  23:27:30,583 - #42 ;
+INFO  23:27:30,583 - #51 }
+INFO  23:27:30,583 - #13 while
+INFO  23:27:30,583 - #46 (
+INFO  23:27:30,583 - #22 i
+INFO  23:27:30,583 - #35 <
+INFO  23:27:30,583 - #23 5
+INFO  23:27:30,583 - #47 )
+INFO  23:27:30,583 - #42 ;
+INFO  23:27:30,583 - #4 print
+INFO  23:27:30,583 - #46 (
+INFO  23:27:30,583 - #22 c
+INFO  23:27:30,583 - #45 .
+INFO  23:27:30,583 - #22 getValue
+INFO  23:27:30,583 - #46 (
+INFO  23:27:30,583 - #22 c
+INFO  23:27:30,583 - #45 .
+INFO  23:27:30,583 - #22 theA
+INFO  23:27:30,583 - #45 .
+INFO  23:27:30,583 - #22 x
+INFO  23:27:30,583 - #48 [
+INFO  23:27:30,583 - #23 0
+INFO  23:27:30,583 - #49 ]
+INFO  23:27:30,583 - #47 )
+INFO  23:27:30,583 - #47 )
+INFO  23:27:30,583 - #42 ;
+INFO  23:27:30,583 - #22 c
+INFO  23:27:30,583 - #45 .
+INFO  23:27:30,583 - #22 m
+INFO  23:27:30,583 - #46 (
+INFO  23:27:30,583 - #47 )
+INFO  23:27:30,583 - #42 ;
+INFO  23:27:30,583 - #51 }
+INFO  23:27:30,583 - #51 }
+ERROR 23:27:30,584 - Izvrsen oporavak do ; u liniji 17
+INFO  23:27:30,585 - Program(
+  DeclListClass(
+    DeclListClass(
+      DeclListConst(
+        DeclListClass(
+          NoDeclList(
+          ) [NoDeclList]
+          ClassDeclNoMethods(
+            ClassNameSingle(
+            ) [ClassNameSingle]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                ArrayVariableDecls(
+                  ArrayVariableDecl(
+                    Type(
+                    ) [Type]
+                  ) [ArrayVariableDecl]
+                ) [ArrayVariableDecls]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [ClassDeclNoMethods]
+        ) [DeclListClass]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+              ) [Type]
+              NumConst(
+              ) [NumConst]
+            ) [ConstantDecl]
+            NumConst(
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      ClassDeclMethodsNoConstr(
+        ClassNameExtends(
+          Type(
+          ) [Type]
+        ) [ClassNameExtends]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+              ) [Type]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        MethodsDecl(
+          MethodDecl(
+            ReturnType(
+              Type(
+              ) [Type]
+            ) [ReturnType]
+            MethodFormParams(
+              FormParam(
+                Type(
+                ) [Type]
+              ) [FormParam]
+            ) [MethodFormParams]
+            VarDecls(
+              VarDecls(
+                NoVarDecl(
+                ) [NoVarDecl]
+                VarDecl(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                  ) [VariableDecl]
+                ) [VarDecl]
+              ) [VarDecls]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                  ) [Type]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+            MatchedStmt(
+              ErrorStmt(
+              ) [ErrorStmt]
+            ) [MatchedStmt]
+          ) [MethodDecl]
+          MethodsDecl(
+            MethodDecl(
+              ReturnVoid(
+              ) [ReturnVoid]
+              NoMethodFormParams(
+              ) [NoMethodFormParams]
+              NoVarDecl(
+              ) [NoVarDecl]
+              MatchedStmt(
+                ErrorStmt(
+                ) [ErrorStmt]
+              ) [MatchedStmt]
+            ) [MethodDecl]
+            NoMetodDecl(
+            ) [NoMetodDecl]
+          ) [MethodsDecl]
+        ) [MethodsDecl]
+      ) [ClassDeclMethodsNoConstr]
+    ) [DeclListClass]
+    ClassDeclNoMethods(
+      ClassNameExtends(
+        Type(
+        ) [Type]
+      ) [ClassNameExtends]
+      VarDecls(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+              ) [Type]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          VariableDecl(
+            Type(
+            ) [Type]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [ClassDeclNoMethods]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDecl(
+      ReturnVoid(
+      ) [ReturnVoid]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        VarDecls(
+          VarDecls(
+            VarDecls(
+              VarDecls(
+                NoVarDecl(
+                ) [NoVarDecl]
+                VarDecl(
+                  VariableDecl(
+                    Type(
+                    ) [Type]
+                  ) [VariableDecl]
+                ) [VarDecl]
+              ) [VarDecls]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                  ) [Type]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+            VarDecl(
+              VariableDecl(
+                Type(
+                ) [Type]
+              ) [VariableDecl]
+            ) [VarDecl]
+          ) [VarDecls]
+          VarDecl(
+            ArrayVariableDecl(
+              Type(
+              ) [Type]
+            ) [ArrayVariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          VariableDecl(
+            Type(
+            ) [Type]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      MatchedStmt(
+        ErrorStmt(
+        ) [ErrorStmt]
+      ) [MatchedStmt]
+    ) [MethodDecl]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  23:27:30,585 - ===================================
+INFO  23:27:30,587 -  Print count calls = 1
+INFO  23:27:30,587 -  Deklarisanih promenljivih ima = 11
