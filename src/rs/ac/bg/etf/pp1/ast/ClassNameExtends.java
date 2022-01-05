@@ -1,17 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ClassNameExtends extends ClassName {
 
+    private String I1;
     private Type Type;
 
-    public ClassNameExtends (Type Type) {
+    public ClassNameExtends (String I1, Type Type) {
+        this.I1=I1;
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
+    }
+
+    public String getI1() {
+        return I1;
+    }
+
+    public void setI1(String I1) {
+        this.I1=I1;
     }
 
     public Type getType() {
@@ -44,6 +54,9 @@ public class ClassNameExtends extends ClassName {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ClassNameExtends(\n");
+
+        buffer.append(" "+tab+I1);
+        buffer.append("\n");
 
         if(Type!=null)
             buffer.append(Type.toString("  "+tab));

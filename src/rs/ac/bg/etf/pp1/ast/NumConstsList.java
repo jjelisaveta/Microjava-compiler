@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,10 +8,12 @@ package rs.ac.bg.etf.pp1.ast;
 public class NumConstsList extends NumConstList {
 
     private NumConstList NumConstList;
+    private Integer N2;
 
-    public NumConstsList (NumConstList NumConstList) {
+    public NumConstsList (NumConstList NumConstList, Integer N2) {
         this.NumConstList=NumConstList;
         if(NumConstList!=null) NumConstList.setParent(this);
+        this.N2=N2;
     }
 
     public NumConstList getNumConstList() {
@@ -20,6 +22,14 @@ public class NumConstsList extends NumConstList {
 
     public void setNumConstList(NumConstList NumConstList) {
         this.NumConstList=NumConstList;
+    }
+
+    public Integer getN2() {
+        return N2;
+    }
+
+    public void setN2(Integer N2) {
+        this.N2=N2;
     }
 
     public void accept(Visitor visitor) {
@@ -49,6 +59,9 @@ public class NumConstsList extends NumConstList {
             buffer.append(NumConstList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+N2);
         buffer.append("\n");
 
         buffer.append(tab);

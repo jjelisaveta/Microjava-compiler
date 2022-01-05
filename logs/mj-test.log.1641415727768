@@ -1,0 +1,101 @@
+INFO  21:44:48,216 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  21:44:48,300 - #6 program
+INFO  21:44:48,301 - #5 Program
+INFO  21:44:48,301 - #15 const
+INFO  21:44:48,302 - #5 int
+INFO  21:44:48,302 - #5 a
+INFO  21:44:48,303 - #39 =
+INFO  21:44:48,303 - #2 2
+INFO  21:44:48,304 - #44 ,
+INFO  21:44:48,304 - #5 b
+INFO  21:44:48,304 - #39 =
+INFO  21:44:48,304 - #2 21
+INFO  21:44:48,304 - #42 ;
+INFO  21:44:48,304 - #15 const
+INFO  21:44:48,305 - #5 bool
+INFO  21:44:48,306 - #5 g
+INFO  21:44:48,306 - #39 =
+INFO  21:44:48,306 - #4 true
+INFO  21:44:48,306 - #44 ,
+INFO  21:44:48,306 - #5 l
+INFO  21:44:48,306 - #39 =
+INFO  21:44:48,306 - #4 false
+INFO  21:44:48,306 - #42 ;
+INFO  21:44:48,307 - #50 {
+INFO  21:44:48,307 - #10 void
+INFO  21:44:48,307 - #5 main
+INFO  21:44:48,307 - #46 (
+INFO  21:44:48,308 - #47 )
+INFO  21:44:48,308 - #50 {
+INFO  21:44:48,309 - #51 }
+INFO  21:44:48,309 - #51 }
+INFO  21:44:48,317 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    DeclListConst(
+      NoDeclList(
+      ) [NoDeclList]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ConstDecl(
+      ConstantDecls(
+        ConstantDecl(
+          Type(
+           bool
+          ) [Type]
+         g
+          BoolConst(
+           true
+          ) [BoolConst]
+        ) [ConstantDecl]
+       l
+        BoolConst(
+         false
+        ) [BoolConst]
+      ) [ConstantDecls]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  21:44:48,317 - ===================================
+INFO  21:44:48,320 - aaaa 2
+INFO  21:44:48,320 - aaaa 21
+INFO  21:44:48,320 - Deklarisana konstanta a
+INFO  21:44:48,320 - Deklarisana konstanta b
+INFO  21:44:48,321 - aaaa 1
+INFO  21:44:48,321 - aaaa 0
+INFO  21:44:48,321 - Deklarisana konstanta g
+INFO  21:44:48,321 - Deklarisana konstanta l
+INFO  21:44:48,321 -  Print count calls = 0
+INFO  21:44:48,321 -  Deklarisanih promenljivih ima = 0
+INFO  21:44:48,321 - ===================================

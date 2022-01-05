@@ -92,9 +92,9 @@ import java_cup.runtime.Symbol;
 <COMMENT> . {yybegin(COMMENT);}
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
-[0-9]+  					{ return new_symbol(sym.NUMBER, Integer.parseInt(yytext())); }
+[0-9]+  					{ return new_symbol(sym.NUMBER, new Integer(yytext())); }
+"true" | "false" 			{ return new_symbol(sym.BOOL, new String(yytext())); }
 ([a-zA-Z])[a-zA-Z0-9_]* 	{ return new_symbol (sym.IDENT, yytext()); }
-"true" | "false" 			{ return new_symbol(sym.BOOL, Boolean.valueOf(yytext())); }
 "'"[ -~]"'" 				{ return new_symbol(sym.CHAR, new Character(yytext().charAt(1))); }
 . { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
 

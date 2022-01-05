@@ -1,0 +1,83 @@
+INFO  17:27:46,864 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  17:27:46,907 - #4 program
+INFO  17:27:46,907 - #3 Program
+INFO  17:27:46,907 - #3 int
+INFO  17:27:46,908 - #3 a
+INFO  17:27:46,908 - #44 ,
+INFO  17:27:46,909 - #3 b
+INFO  17:27:46,909 - #44 ,
+INFO  17:27:46,909 - #3 c
+INFO  17:27:46,909 - #44 ,
+INFO  17:27:46,909 - #3 d
+INFO  17:27:46,909 - #42 ;
+INFO  17:27:46,909 - #50 {
+INFO  17:27:46,909 - #8 void
+INFO  17:27:46,909 - #3 main
+INFO  17:27:46,910 - #46 (
+INFO  17:27:46,910 - #47 )
+INFO  17:27:46,910 - #50 {
+INFO  17:27:46,910 - #51 }
+INFO  17:27:46,911 - #51 }
+INFO  17:27:46,915 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListVar(
+    NoDeclList(
+    ) [NoDeclList]
+    GlobalVarDecls(
+      Type(
+       int
+      ) [Type]
+      GlobalVariableDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                 a
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+               b
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneVariableDecl(
+             c
+            ) [OneVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+        GlobalOneVariableDecl(
+          OneVariableDecl(
+           d
+          ) [OneVariableDecl]
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecls]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  17:27:46,915 - ===================================
+INFO  17:27:46,918 - evo ga
+INFO  17:27:46,918 - evo ga
+INFO  17:27:46,918 - evo ga
+INFO  17:27:46,918 - evo ga
+INFO  17:27:46,918 -  Print count calls = 0
+INFO  17:27:46,918 -  Deklarisanih promenljivih ima = 0
+INFO  17:27:46,918 - ===================================

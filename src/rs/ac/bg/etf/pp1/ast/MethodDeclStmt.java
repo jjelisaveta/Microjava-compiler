@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,15 @@ package rs.ac.bg.etf.pp1.ast;
 public class MethodDeclStmt extends MethodDecl {
 
     private MethodReturnValue MethodReturnValue;
+    private String I2;
     private MethodFormPars MethodFormPars;
     private MultipleVarDecl MultipleVarDecl;
     private StatementList StatementList;
 
-    public MethodDeclStmt (MethodReturnValue MethodReturnValue, MethodFormPars MethodFormPars, MultipleVarDecl MultipleVarDecl, StatementList StatementList) {
+    public MethodDeclStmt (MethodReturnValue MethodReturnValue, String I2, MethodFormPars MethodFormPars, MultipleVarDecl MultipleVarDecl, StatementList StatementList) {
         this.MethodReturnValue=MethodReturnValue;
         if(MethodReturnValue!=null) MethodReturnValue.setParent(this);
+        this.I2=I2;
         this.MethodFormPars=MethodFormPars;
         if(MethodFormPars!=null) MethodFormPars.setParent(this);
         this.MultipleVarDecl=MultipleVarDecl;
@@ -29,6 +31,14 @@ public class MethodDeclStmt extends MethodDecl {
 
     public void setMethodReturnValue(MethodReturnValue MethodReturnValue) {
         this.MethodReturnValue=MethodReturnValue;
+    }
+
+    public String getI2() {
+        return I2;
+    }
+
+    public void setI2(String I2) {
+        this.I2=I2;
     }
 
     public MethodFormPars getMethodFormPars() {
@@ -91,6 +101,9 @@ public class MethodDeclStmt extends MethodDecl {
             buffer.append(MethodReturnValue.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+I2);
         buffer.append("\n");
 
         if(MethodFormPars!=null)

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,11 +9,21 @@ public class RecordDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
+    private String I1;
     private MultipleVarDecl MultipleVarDecl;
 
-    public RecordDecl (MultipleVarDecl MultipleVarDecl) {
+    public RecordDecl (String I1, MultipleVarDecl MultipleVarDecl) {
+        this.I1=I1;
         this.MultipleVarDecl=MultipleVarDecl;
         if(MultipleVarDecl!=null) MultipleVarDecl.setParent(this);
+    }
+
+    public String getI1() {
+        return I1;
+    }
+
+    public void setI1(String I1) {
+        this.I1=I1;
     }
 
     public MultipleVarDecl getMultipleVarDecl() {
@@ -62,6 +72,9 @@ public class RecordDecl implements SyntaxNode {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("RecordDecl(\n");
+
+        buffer.append(" "+tab+I1);
+        buffer.append("\n");
 
         if(MultipleVarDecl!=null)
             buffer.append(MultipleVarDecl.toString("  "+tab));

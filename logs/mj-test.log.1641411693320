@@ -1,0 +1,67 @@
+INFO  20:40:54,835 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  20:40:54,909 - #6 program
+INFO  20:40:54,909 - #5 Program
+INFO  20:40:54,909 - #15 const
+INFO  20:40:54,911 - #5 int
+INFO  20:40:54,911 - #5 a
+INFO  20:40:54,912 - #39 =
+INFO  20:40:54,912 - #2 2
+INFO  20:40:54,912 - #44 ,
+INFO  20:40:54,912 - #5 b
+INFO  20:40:54,912 - #39 =
+INFO  20:40:54,912 - #2 21
+INFO  20:40:54,913 - #42 ;
+INFO  20:40:54,913 - #50 {
+INFO  20:40:54,914 - #10 void
+INFO  20:40:54,914 - #5 main
+INFO  20:40:54,914 - #46 (
+INFO  20:40:54,914 - #47 )
+INFO  20:40:54,915 - #50 {
+INFO  20:40:54,915 - #51 }
+INFO  20:40:54,916 - #51 }
+INFO  20:40:54,924 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    NoDeclList(
+    ) [NoDeclList]
+    ConstDecl(
+      ConstantDecls(
+        ConstantDecl(
+          Type(
+           int
+          ) [Type]
+         a
+          NumConst(
+           2
+          ) [NumConst]
+        ) [ConstantDecl]
+       b
+        NumConst(
+         21
+        ) [NumConst]
+      ) [ConstantDecls]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  20:40:54,924 - ===================================
+ERROR 20:40:54,927 - Semanticka greska: konstanta mora biti tipa int, char ili bool.
+INFO  20:40:54,927 - aaaa 2
+INFO  20:40:54,927 - aaaa 21
+INFO  20:40:54,927 -  Print count calls = 0
+INFO  20:40:54,927 -  Deklarisanih promenljivih ima = 0
+INFO  20:40:54,927 - ===================================

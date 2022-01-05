@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class BoolConst extends TypeConst {
 
-    public BoolConst () {
+    private String boolConst;
+
+    public BoolConst (String boolConst) {
+        this.boolConst=boolConst;
+    }
+
+    public String getBoolConst() {
+        return boolConst;
+    }
+
+    public void setBoolConst(String boolConst) {
+        this.boolConst=boolConst;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class BoolConst extends TypeConst {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("BoolConst(\n");
+
+        buffer.append(" "+tab+boolConst);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [BoolConst]");

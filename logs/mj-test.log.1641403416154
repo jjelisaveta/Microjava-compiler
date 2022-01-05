@@ -1,0 +1,85 @@
+INFO  18:02:34,995 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:02:35,032 - #4 program
+INFO  18:02:35,032 - #3 Program
+INFO  18:02:35,032 - #3 int
+INFO  18:02:35,033 - #3 a
+INFO  18:02:35,033 - #44 ,
+INFO  18:02:35,034 - #3 b
+INFO  18:02:35,034 - #44 ,
+INFO  18:02:35,034 - #3 a
+INFO  18:02:35,034 - #48 [
+INFO  18:02:35,034 - #49 ]
+INFO  18:02:35,034 - #44 ,
+INFO  18:02:35,034 - #3 d
+INFO  18:02:35,034 - #42 ;
+INFO  18:02:35,034 - #50 {
+INFO  18:02:35,034 - #8 void
+INFO  18:02:35,035 - #3 main
+INFO  18:02:35,035 - #46 (
+INFO  18:02:35,035 - #47 )
+INFO  18:02:35,035 - #50 {
+INFO  18:02:35,036 - #51 }
+INFO  18:02:35,036 - #51 }
+INFO  18:02:35,040 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListVar(
+    NoDeclList(
+    ) [NoDeclList]
+    GlobalVarDecls(
+      Type(
+       int
+      ) [Type]
+      GlobalVariableDecls(
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                 a
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+               b
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+            OneArrayVariableDecl(
+             a
+            ) [OneArrayVariableDecl]
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+        GlobalOneVariableDecl(
+          OneVariableDecl(
+           d
+          ) [OneVariableDecl]
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecls]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:02:35,040 - ===================================
+ERROR 18:02:35,042 - Semanticka greska: globalni niz a je vec deklarisan
+INFO  18:02:35,042 - Deklarisana globalna promenljiva a
+INFO  18:02:35,042 - Deklarisana globalna promenljiva b
+INFO  18:02:35,042 - Deklarisana globalna promenljiva d
+INFO  18:02:35,042 -  Print count calls = 0
+INFO  18:02:35,042 -  Deklarisanih promenljivih ima = 0
+INFO  18:02:35,043 - ===================================

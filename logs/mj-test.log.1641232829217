@@ -1,0 +1,245 @@
+INFO  18:59:45,688 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:59:45,732 - #4 program
+INFO  18:59:45,732 - #3 Program
+INFO  18:59:45,732 - #3 int
+INFO  18:59:45,733 - #3 a
+INFO  18:59:45,733 - #44 ,
+INFO  18:59:45,734 - #3 x
+INFO  18:59:45,734 - #44 ,
+INFO  18:59:45,734 - #3 q1b
+INFO  18:59:45,734 - #44 ,
+INFO  18:59:45,734 - #2 1
+ERROR 18:59:45,734 - 
+Sintaksna greska na liniji 2
+INFO  18:59:45,734 - #3 adf
+INFO  18:59:45,734 - #42 ;
+INFO  18:59:45,734 - #9 class
+INFO  18:59:45,735 - #3 B
+INFO  18:59:45,735 - #18 extends
+ERROR 18:59:45,735 - Greska u deklaraciji globalne promenljive u liniji 2
+INFO  18:59:45,735 - #3 s
+INFO  18:59:45,736 - #3 A
+ERROR 18:59:45,736 - 
+Sintaksna greska na liniji 4
+INFO  18:59:45,736 - #50 {
+INFO  18:59:45,736 - #3 int
+INFO  18:59:45,736 - #3 s
+INFO  18:59:45,736 - #44 ,
+ERROR 18:59:45,736 - Greska u deklaraciji prosirenja natklase u liniji 4
+INFO  18:59:45,737 - #3 f
+INFO  18:59:45,737 - #42 ;
+INFO  18:59:45,737 - #50 {
+INFO  18:59:45,737 - #51 }
+INFO  18:59:45,737 - #51 }
+INFO  18:59:45,737 - #50 {
+INFO  18:59:45,738 - #8 void
+INFO  18:59:45,738 - #3 main
+INFO  18:59:45,738 - #46 (
+INFO  18:59:45,738 - #3 int
+INFO  18:59:45,738 - #3 b
+INFO  18:59:45,738 - #3 re
+ERROR 18:59:45,738 - 
+Sintaksna greska na liniji 10
+INFO  18:59:45,738 - #44 ,
+INFO  18:59:45,738 - #3 int
+INFO  18:59:45,738 - #3 x
+INFO  18:59:45,739 - #47 )
+ERROR 18:59:45,739 - Greska u deklaraciji formalnog parametra funkcije u liniji 10
+INFO  18:59:45,739 - #50 {
+INFO  18:59:45,740 - #3 a
+INFO  18:59:45,740 - #39 =
+INFO  18:59:45,740 - #26 +
+ERROR 18:59:45,740 - 
+Sintaksna greska na liniji 11
+INFO  18:59:45,740 - #3 s
+INFO  18:59:45,740 - #26 +
+INFO  18:59:45,740 - #3 bs
+INFO  18:59:45,740 - #26 +
+INFO  18:59:45,740 - #3 b
+INFO  18:59:45,740 - #26 +
+INFO  18:59:45,741 - #3 sb
+INFO  18:59:45,741 - #42 ;
+INFO  18:59:45,741 - #11 if
+INFO  18:59:45,741 - #46 (
+INFO  18:59:45,741 - #3 a
+ERROR 18:59:45,741 - Greska u iskazu dodele u liniji 10
+INFO  18:59:45,742 - #39 =
+ERROR 18:59:45,742 - 
+Sintaksna greska na liniji 13
+INFO  18:59:45,742 - #3 eqr
+INFO  18:59:45,742 - #39 =
+INFO  18:59:45,742 - #3 b
+INFO  18:59:45,742 - #47 )
+INFO  18:59:45,742 - #50 {
+INFO  18:59:45,742 - #3 a
+INFO  18:59:45,742 - #40 ++
+ERROR 18:59:45,743 - Greska u logickom izrazu u if konstrukciji u liniji 13
+INFO  18:59:45,743 - #42 ;
+INFO  18:59:45,743 - #3 b
+INFO  18:59:45,743 - #40 ++
+INFO  18:59:45,743 - #42 ;
+INFO  18:59:45,743 - #51 }
+INFO  18:59:45,743 - #12 else
+INFO  18:59:45,744 - #50 {
+INFO  18:59:45,744 - #3 a
+INFO  18:59:45,744 - #40 ++
+INFO  18:59:45,744 - #42 ;
+INFO  18:59:45,744 - #3 b
+INFO  18:59:45,744 - #40 ++
+INFO  18:59:45,744 - #42 ;
+INFO  18:59:45,744 - #51 }
+INFO  18:59:45,744 - #51 }
+INFO  18:59:45,744 - #51 }
+INFO  18:59:45,745 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListClass(
+    DeclListVar(
+      NoDeclList(
+      ) [NoDeclList]
+      GlobalVarDecls(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                GlobalOneVariableDecl(
+                  OneVariableDecl(
+                   a
+                  ) [OneVariableDecl]
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                 x
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+               q1b
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          ErrorGlobalOneVariableDecl(
+          ) [ErrorGlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethodsNoConstr(
+      ErrorClassName(
+       class
+      ) [ErrorClassName]
+      MultipleClassFields(
+        NoClassFields(
+        ) [NoClassFields]
+        ClassVariableDel(
+          ClassVariableDecls(
+            ClassVariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               s
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+            OneVariableDecl(
+             f
+            ) [OneVariableDecl]
+          ) [ClassVariableDecls]
+        ) [ClassVariableDel]
+      ) [MultipleClassFields]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethodsNoConstr]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            ErrorOneArrayFormParam(
+            ) [ErrorOneArrayFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+             int
+            ) [Type]
+           x
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      StmtList(
+        OneStmt(
+          DesignatorStmt(
+            DesignatorStmtAssign(
+              ErrorAssignStmt(
+              ) [ErrorAssignStmt]
+            ) [DesignatorStmtAssign]
+          ) [DesignatorStmt]
+        ) [OneStmt]
+        IfElseStmt(
+          ErrorIfCondition(
+          ) [ErrorIfCondition]
+          MultipleStatements(
+            Stmts(
+              StmtList(
+                OneStmt(
+                  DesignatorStmt(
+                    DesignatorStmtInc(
+                      DesignatorIdent(
+                       a
+                      ) [DesignatorIdent]
+                    ) [DesignatorStmtInc]
+                  ) [DesignatorStmt]
+                ) [OneStmt]
+                DesignatorStmt(
+                  DesignatorStmtInc(
+                    DesignatorIdent(
+                     b
+                    ) [DesignatorIdent]
+                  ) [DesignatorStmtInc]
+                ) [DesignatorStmt]
+              ) [StmtList]
+            ) [Stmts]
+          ) [MultipleStatements]
+          MultipleStatements(
+            Stmts(
+              StmtList(
+                OneStmt(
+                  DesignatorStmt(
+                    DesignatorStmtInc(
+                      DesignatorIdent(
+                       a
+                      ) [DesignatorIdent]
+                    ) [DesignatorStmtInc]
+                  ) [DesignatorStmt]
+                ) [OneStmt]
+                DesignatorStmt(
+                  DesignatorStmtInc(
+                    DesignatorIdent(
+                     b
+                    ) [DesignatorIdent]
+                  ) [DesignatorStmtInc]
+                ) [DesignatorStmt]
+              ) [StmtList]
+            ) [Stmts]
+          ) [MultipleStatements]
+        ) [IfElseStmt]
+      ) [StmtList]
+    ) [MethodDeclStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:59:45,745 - ===================================
+INFO  18:59:45,747 -  Print count calls = 0
+INFO  18:59:45,747 -  Deklarisanih promenljivih ima = 0

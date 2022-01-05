@@ -1,0 +1,79 @@
+INFO  20:50:11,672 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  20:50:11,734 - #6 program
+INFO  20:50:11,734 - #5 Program
+INFO  20:50:11,734 - #15 const
+INFO  20:50:11,735 - #5 int
+INFO  20:50:11,736 - #5 a
+INFO  20:50:11,736 - #39 =
+INFO  20:50:11,736 - #2 2
+INFO  20:50:11,736 - #44 ,
+INFO  20:50:11,737 - #5 b
+INFO  20:50:11,737 - #39 =
+INFO  20:50:11,737 - #2 21
+INFO  20:50:11,737 - #42 ;
+INFO  20:50:11,737 - #15 const
+INFO  20:50:11,738 - #5 bool
+INFO  20:50:11,738 - #5 g
+INFO  20:50:11,738 - #39 =
+INFO  20:50:11,738 - #5 true
+ERROR 20:50:11,738 - 
+Sintaksna greska na liniji 3
+INFO  20:50:11,739 - #42 ;
+INFO  20:50:11,739 - #50 {
+INFO  20:50:11,739 - #10 void
+INFO  20:50:11,739 - #5 main
+ERROR 20:50:11,740 - Greska u deklaraciji globalne promenljive u liniji 8
+INFO  20:50:11,741 - #46 (
+INFO  20:50:11,741 - #47 )
+INFO  20:50:11,741 - #50 {
+INFO  20:50:11,742 - #51 }
+INFO  20:50:11,742 - #51 }
+INFO  20:50:11,748 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListVar(
+    DeclListConst(
+      NoDeclList(
+      ) [NoDeclList]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ErrorGlobalVarDecl(
+    ) [ErrorGlobalVarDecl]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  20:50:11,749 - ===================================
+INFO  20:50:11,751 - aaaa 2
+INFO  20:50:11,751 - aaaa 21
+INFO  20:50:11,751 -  Print count calls = 0
+INFO  20:50:11,752 -  Deklarisanih promenljivih ima = 0
+INFO  20:50:11,752 - ===================================

@@ -41,22 +41,32 @@ scan with {:
 	return s;
 :}
 
+terminal Integer NUMBER;
+terminal Character CHAR;
+terminal String BOOL;
+terminal String IDENT;
+
 terminal PROG, BREAK, PRINT, RETURN, VOID, CLASS, ENUM, IF, ELSE, CONST, DO, WHILE, NEW, READ, EXTENDS, CONTINUE;
-terminal THIS, SUPER, GOTO, RECORD, IDENT, NUMBER, BOOL, CHAR;
+terminal THIS, SUPER, GOTO, RECORD;
 terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
-nonterminal Program, DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
-nonterminal TypeConst, Type, VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
+nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
+nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
 nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
 nonterminal Term, Factor, Designator, Assignop, Relop, Addop, Mulop;
 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
 precedence left ELSE;
 
-Program ::= 		(Program) PROG IDENT DeclList LBRACE MethodDeclList RBRACE
+Program ::= 		(Program) PROG ProgName:p DeclList LBRACE MethodDeclList RBRACE
 					;	
+					
+ProgName ::=		(ProgName) IDENT:progName ;
 
 DeclList ::= 		(DeclListConst) DeclList ConstDecl
 					| 
@@ -74,26 +84,26 @@ MethodDeclList ::= 	(MethodsDecl) MethodDecl MethodDeclList
 					(NoMetodDecl) //epsilon
 					;
 					
-TypeConst ::= 		(NumConst) NUMBER
+TypeConst ::= 		(NumConst) NUMBER:numConst
 					|
-					(CharConst) CHAR
+					(CharConst) CHAR:charConst
 					|
-					(BoolConst) BOOL
+					(BoolConst) BOOL:boolConst
 					;
 	
 
 ConstDecl ::=		(ConstDecl)  ConstDeclList SEMI
 					;
 					
-ConstDeclList ::= 	(ConstantDecls) ConstDeclList COMMA IDENT EQUAL TypeConst
+ConstDeclList ::= 	(ConstantDecls) ConstDeclList COMMA IDENT:constName EQUAL TypeConst:typeConst
 					|
-					(ConstantDecl) CONST Type IDENT EQUAL TypeConst
+					(ConstantDecl) CONST Type IDENT:constName EQUAL TypeConst:typeConst
 					;
 
 				
-OneVarDecl ::= 		(OneVariableDecl) IDENT
+OneVarDecl ::= 		(OneVariableDecl) IDENT:varName
 					|
-					(OneArrayVariableDecl) IDENT LBRACKET RBRACKET
+					(OneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET
 					;
 					
 VarDeclList ::= 	(VariableDecls) VarDeclList COMMA OneVarDecl
@@ -124,7 +134,7 @@ GlobalOneVarDecl ::= (GlobalOneVariableDecl) OneVarDecl
 					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
 					;
 					
-GlobalVarDecl ::=	(GlobalVarDecls) GlobalVarDeclList SEMI
+GlobalVarDecl ::=	(GlobalVarDecls) Type GlobalVarDeclList SEMI
 					|
 					(ErrorGlobalVarDecl) error:e SEMI
 					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
@@ -133,7 +143,7 @@ GlobalVarDecl ::=	(GlobalVarDecls) GlobalVarDeclList SEMI
 					
 GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList COMMA GlobalOneVarDecl
 					|
-					(GlobalVariableDecl) Type GlobalOneVarDecl
+					(GlobalVariableDecl) GlobalOneVarDecl
 					;
 					
 ClassName ::= 		(ClassNameSingle) CLASS IDENT 
@@ -196,7 +206,7 @@ FormPars ::= 		(FormParams) FormPars COMMA OneFormPar
 					(FormParam) OneFormPar
 					;
 					
-Type ::=			(Type) IDENT ;
+Type ::=			(Type) IDENT:typeName ;
 
 Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|

@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class OneNumber extends NumConstList {
 
-    public OneNumber () {
+    private Integer N1;
+
+    public OneNumber (Integer N1) {
+        this.N1=N1;
+    }
+
+    public Integer getN1() {
+        return N1;
+    }
+
+    public void setN1(Integer N1) {
+        this.N1=N1;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class OneNumber extends NumConstList {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("OneNumber(\n");
+
+        buffer.append(" "+tab+N1);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [OneNumber]");

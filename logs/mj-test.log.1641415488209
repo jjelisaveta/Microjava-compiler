@@ -1,0 +1,89 @@
+INFO  21:44:22,187 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  21:44:22,279 - #6 program
+INFO  21:44:22,279 - #5 Program
+INFO  21:44:22,279 - #15 const
+INFO  21:44:22,281 - #5 int
+INFO  21:44:22,281 - #5 a
+INFO  21:44:22,282 - #39 =
+INFO  21:44:22,282 - #2 2
+INFO  21:44:22,282 - #44 ,
+INFO  21:44:22,282 - #5 b
+INFO  21:44:22,282 - #39 =
+INFO  21:44:22,282 - #2 21
+INFO  21:44:22,282 - #42 ;
+INFO  21:44:22,283 - #15 const
+INFO  21:44:22,284 - #5 bool
+INFO  21:44:22,284 - #5 g
+INFO  21:44:22,284 - #39 =
+INFO  21:44:22,284 - #4 true
+INFO  21:44:22,284 - #42 ;
+INFO  21:44:22,284 - #50 {
+INFO  21:44:22,284 - #10 void
+INFO  21:44:22,284 - #5 main
+INFO  21:44:22,285 - #46 (
+INFO  21:44:22,286 - #47 )
+INFO  21:44:22,287 - #50 {
+INFO  21:44:22,287 - #51 }
+INFO  21:44:22,287 - #51 }
+INFO  21:44:22,298 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    DeclListConst(
+      NoDeclList(
+      ) [NoDeclList]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ConstDecl(
+      ConstantDecl(
+        Type(
+         bool
+        ) [Type]
+       g
+        BoolConst(
+         true
+        ) [BoolConst]
+      ) [ConstantDecl]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  21:44:22,298 - ===================================
+INFO  21:44:22,301 - aaaa 2
+INFO  21:44:22,301 - aaaa 21
+INFO  21:44:22,302 - Deklarisana konstanta a
+INFO  21:44:22,302 - Deklarisana konstanta b
+INFO  21:44:22,302 - aaaa 1
+INFO  21:44:22,302 - Deklarisana konstanta g
+INFO  21:44:22,302 -  Print count calls = 0
+INFO  21:44:22,302 -  Deklarisanih promenljivih ima = 0
+INFO  21:44:22,302 - ===================================

@@ -1,21 +1,10 @@
 program Program
-	int a, x, q1b, 1adf;
-
-	class B extends s A {
-		int s, f;
-		{
-		}
-	}
+	int r, e;
+	bool ajkjhb;
+	const int a = 2, b = 21;
+	const bool g = true, l = false;
 	{
-		void main(int b re, int x) {
-			a =+ s+bs+b+sb ; 
+		void main() {
 			
-			if (a =eqr= b) {
-				a++;
-				b++;
-			} else {
-				a++;
-				b++;
-			}
 		}
 	}

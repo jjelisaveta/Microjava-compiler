@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ErrorClassName extends ClassName {
 
-    public ErrorClassName () {
+    private String I1;
+
+    public ErrorClassName (String I1) {
+        this.I1=I1;
+    }
+
+    public String getI1() {
+        return I1;
+    }
+
+    public void setI1(String I1) {
+        this.I1=I1;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class ErrorClassName extends ClassName {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ErrorClassName(\n");
+
+        buffer.append(" "+tab+I1);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [ErrorClassName]");

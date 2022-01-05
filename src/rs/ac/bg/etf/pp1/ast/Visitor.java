@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,7 +11,6 @@ public interface Visitor {
     public void visit(Mulop Mulop);
     public void visit(MethodDecl MethodDecl);
     public void visit(OneFormPar OneFormPar);
-    public void visit(MatchedStatement MatchedStatement);
     public void visit(RecordDeclList RecordDeclList);
     public void visit(Relop Relop);
     public void visit(Assignop Assignop);
@@ -22,14 +21,13 @@ public interface Visitor {
     public void visit(ClassName ClassName);
     public void visit(Addop Addop);
     public void visit(Factor Factor);
-    public void visit(ExprOpt ExprOpt);
     public void visit(CondTerm CondTerm);
     public void visit(GlobalOneVarDecl GlobalOneVarDecl);
     public void visit(GlobalVarDecl GlobalVarDecl);
     public void visit(DeclList DeclList);
+    public void visit(TypeConst TypeConst);
     public void visit(Designator Designator);
     public void visit(ClassVarDeclList ClassVarDeclList);
-    public void visit(TypeConst TypeConst);
     public void visit(Term Term);
     public void visit(Condition Condition);
     public void visit(AssignStatement AssignStatement);
@@ -39,13 +37,11 @@ public interface Visitor {
     public void visit(MultipleVarDecl MultipleVarDecl);
     public void visit(ActParsList ActParsList);
     public void visit(IfCondition IfCondition);
-    public void visit(ElseStatement ElseStatement);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(AddopList AddopList);
     public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
-    public void visit(UnmatchedStatement UnmatchedStatement);
     public void visit(ClassDeclList ClassDeclList);
     public void visit(ClassFields ClassFields);
     public void visit(ClassConstructor ClassConstructor);
@@ -174,6 +170,7 @@ public interface Visitor {
     public void visit(DeclListClass DeclListClass);
     public void visit(DeclListVar DeclListVar);
     public void visit(DeclListConst DeclListConst);
+    public void visit(ProgName ProgName);
     public void visit(Program Program);
 
 }

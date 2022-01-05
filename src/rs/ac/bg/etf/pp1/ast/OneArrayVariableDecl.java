@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class OneArrayVariableDecl extends OneVarDecl {
 
-    public OneArrayVariableDecl () {
+    private String varName;
+
+    public OneArrayVariableDecl (String varName) {
+        this.varName=varName;
+    }
+
+    public String getVarName() {
+        return varName;
+    }
+
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class OneArrayVariableDecl extends OneVarDecl {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("OneArrayVariableDecl(\n");
+
+        buffer.append(" "+tab+varName);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [OneArrayVariableDecl]");

@@ -1,0 +1,146 @@
+INFO  21:49:18,087 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  21:49:18,148 - #6 program
+INFO  21:49:18,148 - #5 Program
+INFO  21:49:18,148 - #5 int
+INFO  21:49:18,149 - #5 r
+INFO  21:49:18,149 - #44 ,
+INFO  21:49:18,150 - #5 e
+INFO  21:49:18,150 - #42 ;
+INFO  21:49:18,150 - #5 bool
+INFO  21:49:18,150 - #5 a
+INFO  21:49:18,151 - #42 ;
+INFO  21:49:18,151 - #15 const
+INFO  21:49:18,151 - #5 int
+INFO  21:49:18,151 - #5 a
+INFO  21:49:18,151 - #39 =
+INFO  21:49:18,151 - #2 2
+INFO  21:49:18,151 - #44 ,
+INFO  21:49:18,151 - #5 b
+INFO  21:49:18,152 - #39 =
+INFO  21:49:18,152 - #2 21
+INFO  21:49:18,152 - #42 ;
+INFO  21:49:18,152 - #15 const
+INFO  21:49:18,153 - #5 bool
+INFO  21:49:18,153 - #5 g
+INFO  21:49:18,153 - #39 =
+INFO  21:49:18,153 - #4 true
+INFO  21:49:18,153 - #44 ,
+INFO  21:49:18,153 - #5 l
+INFO  21:49:18,153 - #39 =
+INFO  21:49:18,153 - #4 false
+INFO  21:49:18,153 - #42 ;
+INFO  21:49:18,154 - #50 {
+INFO  21:49:18,154 - #10 void
+INFO  21:49:18,154 - #5 main
+INFO  21:49:18,154 - #46 (
+INFO  21:49:18,154 - #47 )
+INFO  21:49:18,155 - #50 {
+INFO  21:49:18,155 - #51 }
+INFO  21:49:18,155 - #51 }
+INFO  21:49:18,162 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    DeclListConst(
+      DeclListVar(
+        DeclListVar(
+          NoDeclList(
+          ) [NoDeclList]
+          GlobalVarDecls(
+            Type(
+             int
+            ) [Type]
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                GlobalOneVariableDecl(
+                  OneVariableDecl(
+                   r
+                  ) [OneVariableDecl]
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+                OneVariableDecl(
+                 e
+                ) [OneVariableDecl]
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        GlobalVarDecls(
+          Type(
+           bool
+          ) [Type]
+          GlobalVariableDecl(
+            GlobalOneVariableDecl(
+              OneVariableDecl(
+               a
+              ) [OneVariableDecl]
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ConstDecl(
+      ConstantDecls(
+        ConstantDecl(
+          Type(
+           bool
+          ) [Type]
+         g
+          BoolConst(
+           true
+          ) [BoolConst]
+        ) [ConstantDecl]
+       l
+        BoolConst(
+         false
+        ) [BoolConst]
+      ) [ConstantDecls]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  21:49:18,162 - ===================================
+INFO  21:49:18,165 - Deklarisana globalna promenljiva r
+INFO  21:49:18,165 - Deklarisana globalna promenljiva e
+INFO  21:49:18,165 - Deklarisana globalna promenljiva a
+ERROR 21:49:18,165 - Semanticka greska: konstanta a je vec deklarisana.
+INFO  21:49:18,166 - aaaa 21
+INFO  21:49:18,166 - Deklarisana konstanta b
+INFO  21:49:18,166 - aaaa 1
+INFO  21:49:18,166 - aaaa 0
+INFO  21:49:18,166 - Deklarisana konstanta g
+INFO  21:49:18,166 - Deklarisana konstanta l
+INFO  21:49:18,166 -  Print count calls = 0
+INFO  21:49:18,166 -  Deklarisanih promenljivih ima = 0
+INFO  21:49:18,166 - ===================================

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2021 18:27:14
+// 5/0/2022 20:57:9
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,11 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstantDecls extends ConstDeclList {
 
     private ConstDeclList ConstDeclList;
+    private String constName;
     private TypeConst TypeConst;
 
-    public ConstantDecls (ConstDeclList ConstDeclList, TypeConst TypeConst) {
+    public ConstantDecls (ConstDeclList ConstDeclList, String constName, TypeConst TypeConst) {
         this.ConstDeclList=ConstDeclList;
         if(ConstDeclList!=null) ConstDeclList.setParent(this);
+        this.constName=constName;
         this.TypeConst=TypeConst;
         if(TypeConst!=null) TypeConst.setParent(this);
     }
@@ -23,6 +25,14 @@ public class ConstantDecls extends ConstDeclList {
 
     public void setConstDeclList(ConstDeclList ConstDeclList) {
         this.ConstDeclList=ConstDeclList;
+    }
+
+    public String getConstName() {
+        return constName;
+    }
+
+    public void setConstName(String constName) {
+        this.constName=constName;
     }
 
     public TypeConst getTypeConst() {
@@ -63,6 +73,9 @@ public class ConstantDecls extends ConstDeclList {
             buffer.append(ConstDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+constName);
         buffer.append("\n");
 
         if(TypeConst!=null)
