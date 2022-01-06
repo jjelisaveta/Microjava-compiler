@@ -66,6 +66,8 @@ nonterminal VarDeclList VarDeclList;
 nonterminal ConstDeclList ConstDeclList;
 nonterminal ClassDeclList ClassDeclList;
 nonterminal RecordDeclList RecordDeclList;
+nonterminal RecordVarDecls RecordVarDecls;
+nonterminal RecordName RecordName;
 nonterminal MultipleVarDecl MultipleVarDecl;
 nonterminal ClassVarDeclList ClassVarDeclList;
 nonterminal ClassVarDecl ClassVarDecl;
@@ -75,6 +77,7 @@ nonterminal ClassConstructor ClassConstructor;
 nonterminal ClassMethods ClassMethods;
 nonterminal ConstructorDecl ConstructorDecl;
 nonterminal MethodReturnValue MethodReturnValue;
+nonterminal MethodName MethodName;
 nonterminal MethodFormPars MethodFormPars;
 nonterminal FormPars FormPars;
 nonterminal OneFormPar OneFormPar;
@@ -133,7 +136,6 @@ TypeConst ::= 		(NumConst) NUMBER:numConst {: RESULT=new NumConst(numConst); RES
 					|
 					(BoolConst) BOOL:boolConst {: RESULT=new BoolConst(boolConst); RESULT.setLine(boolConstleft); :}
 					;
-	
 
 ConstDecl ::=		(ConstDecl)  ConstDeclList:C1 SEMI {: RESULT=new ConstDecl(C1); RESULT.setLine(C1left); :}
 					;
@@ -142,8 +144,7 @@ ConstDeclList ::= 	(ConstantDecls) ConstDeclList:C1 COMMA IDENT:constName EQUAL 
 					|
 					(ConstantDecl) CONST Type:T1 IDENT:constName EQUAL TypeConst:typeConst {: RESULT=new ConstantDecl(T1, constName, typeConst); RESULT.setLine(T1left); :}
 					;
-
-				
+			
 OneVarDecl ::= 		(OneVariableDecl) IDENT:varName {: RESULT=new OneVariableDecl(varName); RESULT.setLine(varNameleft); :}
 					|
 					(OneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET {: RESULT=new OneArrayVariableDecl(varName); RESULT.setLine(varNameleft); :}
@@ -151,7 +152,7 @@ OneVarDecl ::= 		(OneVariableDecl) IDENT:varName {: RESULT=new OneVariableDecl(v
 					
 VarDeclList ::= 	(VariableDecls) VarDeclList:V1 COMMA OneVarDecl:O2 {: RESULT=new VariableDecls(V1, O2); RESULT.setLine(V1left); :}
 					|
-					(VariableDecl) Type:T1 OneVarDecl:O2 {: RESULT=new VariableDecl(T1, O2); RESULT.setLine(T1left); :}
+					(VariableDecl) Type:type OneVarDecl:O1 {: RESULT=new VariableDecl(type, O1); RESULT.setLine(typeleft); :}
 					;
 					
 VarDecl ::=			(VarDecl) VarDeclList:V1 SEMI {: RESULT=new VarDecl(V1); RESULT.setLine(V1left); :} ;	
@@ -171,7 +172,9 @@ ClassVarDecl ::=	(ClassVariableDel) ClassVarDeclList:C1 SEMI {: RESULT=new Class
 					;
 					
 					
-GlobalOneVarDecl ::= (GlobalOneVariableDecl) OneVarDecl:O1 {: RESULT=new GlobalOneVariableDecl(O1); RESULT.setLine(O1left); :}
+GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName {: RESULT=new GlobalOneVariableDecl(varName); RESULT.setLine(varNameleft); :}
+					|
+					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET {: RESULT=new GlobalOneArrayVariableDecl(varName); RESULT.setLine(varNameleft); :}
 					|
 					(ErrorGlobalOneVariableDecl) error:e
 					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalOneVariableDecl(); :}
@@ -215,21 +218,29 @@ MultipleVarDecl ::= (VarDecls) MultipleVarDecl:M1 VarDecl:V2 {: RESULT=new VarDe
 					(NoVarDecl) {: RESULT=new NoVarDecl(); :} //epsilon
  					;
  
+RecordName ::= 		(RecordName) RECORD IDENT:recordName {: RESULT=new RecordName(recordName); RESULT.setLine(recordNameleft); :};
  
-RecordDecl ::= 		(RecordDecl) RECORD IDENT:I1 LBRACE MultipleVarDecl:M2 RBRACE {: RESULT=new RecordDecl(I1, M2); RESULT.setLine(I1left); :} ;
+RecordDecl ::= 		(RecordDecl) RecordName:R1 LBRACE RecordVarDecls:R2 RBRACE {: RESULT=new RecordDecl(R1, R2); RESULT.setLine(R1left); :} ;
+
+RecordVarDecls ::=	(RecordVarDecl) RecordVarDecls:R1 VarDecl:V2 {: RESULT=new RecordVarDecl(R1, V2); RESULT.setLine(R1left); :}
+					|
+					(RecordNoVarDecl) {: RESULT=new RecordNoVarDecl(); :} //epsilon
+ 					;
 
 ConstructorDecl ::=	(ConstructorDecl) IDENT:I1 LPAREN RPAREN MultipleVarDecl:M2 LBRACE Statement:S3 RBRACE {: RESULT=new ConstructorDecl(I1, M2, S3); RESULT.setLine(I1left); :} ;
 
-MethodReturnValue ::= (ReturnType) Type:T1 {: RESULT=new ReturnType(T1); RESULT.setLine(T1left); :}
+MethodReturnValue ::= (ReturnType) Type:type {: RESULT=new ReturnType(type); RESULT.setLine(typeleft); :}
 				  	|
-				  	(ReturnVoid) VOID {: RESULT=new ReturnVoid(); :}
+	
+				  	(ReturnVoid) VOID:type {: RESULT=new ReturnVoid(); :}
 				  	;
 
-MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue:M1 IDENT:I2 LPAREN MethodFormPars:M3 RPAREN MultipleVarDecl:M4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDeclStmt(M1, I2, M3, M4, S5); RESULT.setLine(M1left); :} 
+MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue:M1 MethodName:M2 LPAREN MethodFormPars:M3 RPAREN MultipleVarDecl:M4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDeclStmt(M1, M2, M3, M4, S5); RESULT.setLine(M1left); :} 
 					|
-					(MethodDeclNoStmt) MethodReturnValue:M1 IDENT:I2 LPAREN MethodFormPars:M3 RPAREN MultipleVarDecl:M4 LBRACE RBRACE {: RESULT=new MethodDeclNoStmt(M1, I2, M3, M4); RESULT.setLine(M1left); :} 
+					(MethodDeclNoStmt) MethodReturnValue:M1 MethodName:M2 LPAREN MethodFormPars:M3 RPAREN MultipleVarDecl:M4 LBRACE RBRACE {: RESULT=new MethodDeclNoStmt(M1, M2, M3, M4); RESULT.setLine(M1left); :} 
 					;
 
+MethodName ::= (MethodName) IDENT:methodName {: RESULT=new MethodName(methodName); RESULT.setLine(methodNameleft); :} ;
 
 MethodFormPars ::= 	(MethodFormParams) FormPars:F1 {: RESULT=new MethodFormParams(F1); RESULT.setLine(F1left); :}
 					|
@@ -296,7 +307,7 @@ StatementList ::=	(StmtList) StatementList:S1 Statement:S2 {: RESULT=new StmtLis
 					
 DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement:A1 {: RESULT=new DesignatorStmtAssign(A1); RESULT.setLine(A1left); :}
 					|
-					(DesignatorStmtPars) Designator:D1 LPAREN ActParsList:A2 RPAREN {: RESULT=new DesignatorStmtPars(D1, A2); RESULT.setLine(D1left); :} 
+					(DesignatorStmtFuncCall) Designator:D1 LPAREN ActParsList:A2 RPAREN {: RESULT=new DesignatorStmtFuncCall(D1, A2); RESULT.setLine(D1left); :} 
 					|
 					(DesignatorStmtInc) Designator:D1 INC {: RESULT=new DesignatorStmtInc(D1); RESULT.setLine(D1left); :}
 					|

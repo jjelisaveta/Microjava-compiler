@@ -4,6 +4,8 @@ package rs.ac.bg.etf.pp1;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.lang.model.type.NoType;
+
 import org.apache.log4j.Logger;
 
 
@@ -14,32 +16,47 @@ import rs.ac.bg.etf.pp1.ast.CharConst;
 import rs.ac.bg.etf.pp1.ast.ConstDecl;
 import rs.ac.bg.etf.pp1.ast.ConstantDecl;
 import rs.ac.bg.etf.pp1.ast.ConstantDecls;
+import rs.ac.bg.etf.pp1.ast.DesignatorBracket;
+import rs.ac.bg.etf.pp1.ast.GlobalOneArrayVariableDecl;
 import rs.ac.bg.etf.pp1.ast.GlobalOneVarDecl;
+import rs.ac.bg.etf.pp1.ast.GlobalOneVariableDecl;
 import rs.ac.bg.etf.pp1.ast.GlobalVarDeclList;
 import rs.ac.bg.etf.pp1.ast.GlobalVarDecls;
+import rs.ac.bg.etf.pp1.ast.MethodDecl;
+import rs.ac.bg.etf.pp1.ast.MethodDeclNoStmt;
+import rs.ac.bg.etf.pp1.ast.MethodDeclStmt;
+import rs.ac.bg.etf.pp1.ast.MethodName;
+import rs.ac.bg.etf.pp1.ast.MethodReturnValue;
 import rs.ac.bg.etf.pp1.ast.NumConst;
 import rs.ac.bg.etf.pp1.ast.OneArrayVariableDecl;
 import rs.ac.bg.etf.pp1.ast.OneVarDecl;
 import rs.ac.bg.etf.pp1.ast.OneVariableDecl;
 import rs.ac.bg.etf.pp1.ast.ProgName;
 import rs.ac.bg.etf.pp1.ast.Program;
+import rs.ac.bg.etf.pp1.ast.RecordDecl;
+import rs.ac.bg.etf.pp1.ast.RecordName;
+import rs.ac.bg.etf.pp1.ast.ReturnType;
+import rs.ac.bg.etf.pp1.ast.ReturnVoid;
 import rs.ac.bg.etf.pp1.ast.SyntaxNode;
 import rs.ac.bg.etf.pp1.ast.Type;
 import rs.ac.bg.etf.pp1.ast.TypeConst;
+import rs.ac.bg.etf.pp1.ast.VarDecl;
+import rs.ac.bg.etf.pp1.ast.VariableDecl;
 import rs.etf.pp1.symboltable.*;
 
 public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	static final Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
+	static final Struct recordType = Tab.insert(Obj.Type, "record", new Struct(Struct.Class)).getType();
 	
 	int printCallCount = 0;
 	int varDeclCount = 0;
 	Obj currentMethod = null;
+	Obj currentRecord = null;
 	Struct currentType = null;
 	boolean returnFound = false;
 	boolean errorDetected = false;
 	int nVars;
-	
 	
 	List<String> names = new ArrayList<>();
 	List<String> variableTypes = new ArrayList<>();
@@ -91,7 +108,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
 	}
 	
-	public void visit(OneVariableDecl oneVariableDecl) {
+	
+	/* global variables */
+	public void visit(GlobalOneVariableDecl oneVariableDecl) {
 		String varName = oneVariableDecl.getVarName();
 		if (Tab.find(varName) == Tab.noObj &&  !(names.size() > 0 && names.contains(varName))) {   //nije deklarisan
 			names.add(varName);
@@ -102,7 +121,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		
 	}
 	
-	public void visit(OneArrayVariableDecl oneArrayVariableDecl) {
+	public void visit(GlobalOneArrayVariableDecl oneArrayVariableDecl) {
 		String varName = oneArrayVariableDecl.getVarName();
 		if (Tab.find(varName) == Tab.noObj &&  !(names.size() > 0 && names.contains(varName))) {   //nije deklarisan
 			names.add(varName);
@@ -116,18 +135,99 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Struct varType = globalVarDecls.getType().struct;
 		Struct varArrayType = new Struct(Struct.Array, varType);
 		while (!names.isEmpty()) {
-			String varName = names.get(0);
-			if (variableTypes.get(0).equals("var")) {
+			String varName = names.remove(0);
+			String type = variableTypes.remove(0);
+			if (type.equals("var")) {
 				Obj node = Tab.insert(Obj.Var, varName, varType);
-				report_info("Deklarisana globalna promenljiva " + varName, null);
+				report_info("Deklarisano polje u record-u " + varName, null);
 			} else {
 				Tab.insert(Obj.Var, varName, varArrayType);
-				report_info("Deklarisan globalni niz " + varName, null);
+				report_info("Deklarisan niz u record-u " + varName, null);
 			}
-			names.remove(0);
-			variableTypes.remove(0);
 		}
 		
+	}
+	
+	/* methods */
+	public void visit(ReturnType returnType) {
+		currentType = returnType.getType().struct;
+	}
+	
+	public void visit(ReturnVoid returnVoid) {
+		currentType = Tab.noType;
+	}
+	
+	public void visit(MethodName methodName) {
+		String name = methodName.getMethodName();
+		if (Tab.find(name) == Tab.noObj || Tab.find(name).getKind() != Obj.Meth) {
+			currentMethod = Tab.insert(Obj.Meth, name, currentType);
+			currentType = null;
+			//names.add(name);
+			Tab.openScope();
+		} else {
+			report_error("Semanticka greska: metoda sa imenom " + name + " je vec deklarisana.", null);
+		}
+	}
+	
+	public void visit(MethodDeclStmt methodDecl) {
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
+		currentMethod = null;
+		report_info("Ajooj ", null);
+	}
+	
+	public void visit(MethodDeclNoStmt methodDecl) {
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
+		currentMethod = null;
+	}
+	
+	
+	/* local variables */
+	public void visit(OneVariableDecl oneVariableDecl) {
+		String varName = oneVariableDecl.getVarName();
+		if (Tab.find(varName) == Tab.noObj &&  !(names.size() > 0 && names.contains(varName))) {   //nije deklarisan
+			names.add(varName);
+			variableTypes.add("var");
+		} else {
+			report_error("Semanticka greska: lokalna promenljiva " + varName + " je vec deklarisana", null);
+		}
+		
+	}
+	
+	public void visit(OneArrayVariableDecl oneArrayVariableDecl) {
+		String varName = oneArrayVariableDecl.getVarName();
+		if (Tab.find(varName) == Tab.noObj &&  !(names.size() > 0 && names.contains(varName))) {   //nije deklarisan
+			names.add(varName);
+			variableTypes.add("array");
+		} else {
+			report_error("Semanticka greska: lokalni niz " + varName + " je vec deklarisan", null);
+		}
+	}
+	
+	public void visit(VariableDecl variableDecl) {
+		if (Tab.find(variableDecl.getType().getTypeName()) == Tab.noObj) {
+			report_error("Semanticka greska: tip " + variableDecl.getType().getTypeName() + " nije pronadjen u tabeli simbola." , null);
+			return;
+		}
+		currentType = variableDecl.getType().struct;
+	}
+	
+	public void visit(VarDecl varDecl) {
+		Struct varType = currentType;
+		Struct varArrayType = new Struct(Struct.Array, currentType);
+		while (!names.isEmpty()) {
+			String localVarName = names.remove(0);
+			String type = variableTypes.remove(0);
+			if (type.equals("var")) {
+				Obj node = Tab.insert(Obj.Var, localVarName, varType);
+				report_info("Deklarisana lokalna promenljiva " + localVarName, null);
+			} else {
+				Tab.insert(Obj.Var, localVarName, varArrayType);
+				report_info("Deklarisan lokalni niz " + localVarName, null);
+			}
+		}
+		currentType = null;
 	}
 	
 	public void visit(ConstantDecl constantDecl) {
@@ -139,7 +239,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (Tab.find(constName) == Tab.noObj) {
 			names.add(constName);
 			constValues.add(constantDecl.getTypeConst().obj);
-			log.info("aaaa " + constantDecl.getTypeConst().obj.getAdr());
 		}  else {
 			report_error("Semanticka greska: konstanta " + constName + " je vec deklarisana.", null);
 		}
@@ -151,7 +250,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (constantDecls.getTypeConst().obj.getType() == currentType) {
 				names.add(constName);
 				constValues.add(constantDecls.getTypeConst().obj);
-				log.info("aaaa " + constantDecls.getTypeConst().obj.getAdr());
 			} else {
 				report_error("Semanticka greska: konstanta " + constName + " nije odgovarajuceg tipa.", null);
 			}
@@ -165,7 +263,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		while (!names.isEmpty()) {
 			String constName = names.remove(0);
 			Obj constObj = constValues.remove(0);
-			Tab.insert(Obj.Con, constName, currentType);
+			Obj obj = Tab.insert(Obj.Con, constName, currentType);
+			obj.setAdr(constObj.getAdr());
 			report_info("Deklarisana konstanta " + constName, null);
 		}
 		currentType = null;
@@ -187,8 +286,39 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		boolConst.obj.setAdr(intValue);
 	}
 	
-	public void visit(GlobalVarDeclList globalVarDeclList) {
-		
+	/* record */
+	public void visit(RecordName recordName) {
+		String name = recordName.getRecordName();
+		if (Tab.find(name) == Tab.noObj) {
+			currentRecord = Tab.insert(Obj.Type, name, recordType);
+			Tab.openScope();
+		} else {
+			report_error("Semanticka greska: ime " + name + " je vec deklarisano.", null);
+		}
 	}
+	
+	public void visit(RecordDecl recordDecl) {
+		Struct varType = currentType;
+		Struct varArrayType = new Struct(Struct.Array, currentType);
+		while (!names.isEmpty()) {
+			String varName = names.remove(0);
+			String type = variableTypes.remove(0);
+			if (type.equals("var")) {
+				Obj node = Tab.insert(Obj.Fld, varName, varType);
+				report_info("Deklarisana globalna promenljiva " + varName, null);
+			} else {
+				Tab.insert(Obj.Fld, varName, varArrayType);
+				report_info("Deklarisan globalni niz " + varName, null);
+			}
+		}
+		Tab.chainLocalSymbols(currentRecord);
+		Tab.closeScope();
+		currentRecord = null;
+	}
+	
+	
+	/*public void visit(DesignatorBracket designatorBracket) {
+		report_info("Deklarisana konstanta " + constName, null);
+	}*/
 }
 

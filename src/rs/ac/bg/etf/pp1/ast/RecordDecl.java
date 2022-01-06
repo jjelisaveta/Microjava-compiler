@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2022 20:57:9
+// 6/0/2022 18:54:18
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,29 +9,30 @@ public class RecordDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
-    private MultipleVarDecl MultipleVarDecl;
+    private RecordName RecordName;
+    private RecordVarDecls RecordVarDecls;
 
-    public RecordDecl (String I1, MultipleVarDecl MultipleVarDecl) {
-        this.I1=I1;
-        this.MultipleVarDecl=MultipleVarDecl;
-        if(MultipleVarDecl!=null) MultipleVarDecl.setParent(this);
+    public RecordDecl (RecordName RecordName, RecordVarDecls RecordVarDecls) {
+        this.RecordName=RecordName;
+        if(RecordName!=null) RecordName.setParent(this);
+        this.RecordVarDecls=RecordVarDecls;
+        if(RecordVarDecls!=null) RecordVarDecls.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public RecordName getRecordName() {
+        return RecordName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setRecordName(RecordName RecordName) {
+        this.RecordName=RecordName;
     }
 
-    public MultipleVarDecl getMultipleVarDecl() {
-        return MultipleVarDecl;
+    public RecordVarDecls getRecordVarDecls() {
+        return RecordVarDecls;
     }
 
-    public void setMultipleVarDecl(MultipleVarDecl MultipleVarDecl) {
-        this.MultipleVarDecl=MultipleVarDecl;
+    public void setRecordVarDecls(RecordVarDecls RecordVarDecls) {
+        this.RecordVarDecls=RecordVarDecls;
     }
 
     public SyntaxNode getParent() {
@@ -55,16 +56,19 @@ public class RecordDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(MultipleVarDecl!=null) MultipleVarDecl.accept(visitor);
+        if(RecordName!=null) RecordName.accept(visitor);
+        if(RecordVarDecls!=null) RecordVarDecls.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(MultipleVarDecl!=null) MultipleVarDecl.traverseTopDown(visitor);
+        if(RecordName!=null) RecordName.traverseTopDown(visitor);
+        if(RecordVarDecls!=null) RecordVarDecls.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(MultipleVarDecl!=null) MultipleVarDecl.traverseBottomUp(visitor);
+        if(RecordName!=null) RecordName.traverseBottomUp(visitor);
+        if(RecordVarDecls!=null) RecordVarDecls.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,11 +77,14 @@ public class RecordDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("RecordDecl(\n");
 
-        buffer.append(" "+tab+I1);
+        if(RecordName!=null)
+            buffer.append(RecordName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MultipleVarDecl!=null)
-            buffer.append(MultipleVarDecl.toString("  "+tab));
+        if(RecordVarDecls!=null)
+            buffer.append(RecordVarDecls.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

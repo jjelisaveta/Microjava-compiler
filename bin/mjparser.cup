@@ -52,8 +52,8 @@ terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
 nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
-nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
-nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
+nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
+nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
 nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
 nonterminal Term, Factor, Designator, Assignop, Relop, Addop, Mulop;
@@ -90,7 +90,6 @@ TypeConst ::= 		(NumConst) NUMBER:numConst
 					|
 					(BoolConst) BOOL:boolConst
 					;
-	
 
 ConstDecl ::=		(ConstDecl)  ConstDeclList SEMI
 					;
@@ -99,8 +98,7 @@ ConstDeclList ::= 	(ConstantDecls) ConstDeclList COMMA IDENT:constName EQUAL Typ
 					|
 					(ConstantDecl) CONST Type IDENT:constName EQUAL TypeConst:typeConst
 					;
-
-				
+			
 OneVarDecl ::= 		(OneVariableDecl) IDENT:varName
 					|
 					(OneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET
@@ -108,7 +106,7 @@ OneVarDecl ::= 		(OneVariableDecl) IDENT:varName
 					
 VarDeclList ::= 	(VariableDecls) VarDeclList COMMA OneVarDecl
 					|
-					(VariableDecl) Type OneVarDecl
+					(VariableDecl) Type:type OneVarDecl
 					;
 					
 VarDecl ::=			(VarDecl) VarDeclList SEMI ;	
@@ -128,7 +126,9 @@ ClassVarDecl ::=	(ClassVariableDel) ClassVarDeclList SEMI
 					;
 					
 					
-GlobalOneVarDecl ::= (GlobalOneVariableDecl) OneVarDecl
+GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName
+					|
+					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET
 					|
 					(ErrorGlobalOneVariableDecl) error:e
 					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
@@ -172,21 +172,29 @@ MultipleVarDecl ::= (VarDecls) MultipleVarDecl VarDecl
 					(NoVarDecl) //epsilon
  					;
  
+RecordName ::= 		(RecordName) RECORD IDENT:recordName;
  
-RecordDecl ::= 		(RecordDecl) RECORD IDENT LBRACE MultipleVarDecl RBRACE ;
+RecordDecl ::= 		(RecordDecl) RecordName LBRACE RecordVarDecls RBRACE ;
+
+RecordVarDecls ::=	(RecordVarDecl) RecordVarDecls VarDecl
+					|
+					(RecordNoVarDecl) //epsilon
+ 					;
 
 ConstructorDecl ::=	(ConstructorDecl) IDENT LPAREN RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
 
-MethodReturnValue ::= (ReturnType) Type
+MethodReturnValue ::= (ReturnType) Type:type
 				  	|
-				  	(ReturnVoid) VOID
+	
+				  	(ReturnVoid) VOID:type
 				  	;
 
-MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE StatementList RBRACE 
+MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue MethodName LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE StatementList RBRACE 
 					|
-					(MethodDeclNoStmt) MethodReturnValue IDENT LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE RBRACE 
+					(MethodDeclNoStmt) MethodReturnValue MethodName LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE RBRACE 
 					;
 
+MethodName ::= (MethodName) IDENT:methodName ;
 
 MethodFormPars ::= 	(MethodFormParams) FormPars
 					|
@@ -253,7 +261,7 @@ StatementList ::=	(StmtList) StatementList Statement
 					
 DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement
 					|
-					(DesignatorStmtPars) Designator LPAREN ActParsList RPAREN 
+					(DesignatorStmtFuncCall) Designator LPAREN ActParsList RPAREN 
 					|
 					(DesignatorStmtInc) Designator INC
 					|

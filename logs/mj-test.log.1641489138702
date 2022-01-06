@@ -1,0 +1,234 @@
+INFO  18:12:18,489 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:12:18,533 - #6 program
+INFO  18:12:18,533 - #5 Program
+INFO  18:12:18,533 - #5 int
+INFO  18:12:18,534 - #5 r
+INFO  18:12:18,534 - #44 ,
+INFO  18:12:18,534 - #5 e
+INFO  18:12:18,534 - #42 ;
+INFO  18:12:18,535 - #5 bool
+INFO  18:12:18,535 - #5 ajkjhb
+INFO  18:12:18,535 - #42 ;
+INFO  18:12:18,535 - #15 const
+INFO  18:12:18,535 - #5 int
+INFO  18:12:18,535 - #5 a
+INFO  18:12:18,535 - #39 =
+INFO  18:12:18,535 - #2 2
+INFO  18:12:18,535 - #44 ,
+INFO  18:12:18,535 - #5 b
+INFO  18:12:18,535 - #39 =
+INFO  18:12:18,535 - #2 21
+INFO  18:12:18,535 - #42 ;
+INFO  18:12:18,536 - #15 const
+INFO  18:12:18,536 - #5 bool
+INFO  18:12:18,536 - #5 g
+INFO  18:12:18,536 - #39 =
+INFO  18:12:18,536 - #4 true
+INFO  18:12:18,537 - #44 ,
+INFO  18:12:18,537 - #5 l
+INFO  18:12:18,537 - #39 =
+INFO  18:12:18,537 - #4 false
+INFO  18:12:18,537 - #42 ;
+INFO  18:12:18,537 - #25 record
+INFO  18:12:18,537 - #5 rekord
+INFO  18:12:18,537 - #50 {
+INFO  18:12:18,537 - #5 int
+INFO  18:12:18,538 - #5 vadv
+INFO  18:12:18,538 - #42 ;
+INFO  18:12:18,538 - #5 int
+INFO  18:12:18,538 - #5 va
+INFO  18:12:18,539 - #42 ;
+INFO  18:12:18,539 - #51 }
+INFO  18:12:18,539 - #50 {
+INFO  18:12:18,539 - #10 void
+INFO  18:12:18,539 - #5 main
+INFO  18:12:18,540 - #46 (
+INFO  18:12:18,540 - #47 )
+INFO  18:12:18,540 - #5 int
+INFO  18:12:18,541 - #5 pad
+INFO  18:12:18,541 - #42 ;
+INFO  18:12:18,541 - #50 {
+INFO  18:12:18,541 - #51 }
+INFO  18:12:18,541 - #5 int
+INFO  18:12:18,541 - #5 metoda
+INFO  18:12:18,541 - #46 (
+INFO  18:12:18,541 - #5 int
+INFO  18:12:18,541 - #5 vajv
+INFO  18:12:18,541 - #47 )
+INFO  18:12:18,541 - #50 {
+INFO  18:12:18,541 - #51 }
+INFO  18:12:18,541 - #51 }
+INFO  18:12:18,546 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListRecord(
+    DeclListConst(
+      DeclListConst(
+        DeclListVar(
+          DeclListVar(
+            NoDeclList(
+            ) [NoDeclList]
+            GlobalVarDecls(
+              Type(
+               int
+              ) [Type]
+              GlobalVariableDecls(
+                GlobalVariableDecl(
+                  GlobalOneVariableDecl(
+                   r
+                  ) [GlobalOneVariableDecl]
+                ) [GlobalVariableDecl]
+                GlobalOneVariableDecl(
+                 e
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecls]
+            ) [GlobalVarDecls]
+          ) [DeclListVar]
+          GlobalVarDecls(
+            Type(
+             bool
+            ) [Type]
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+               ajkjhb
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        ConstDecl(
+          ConstantDecls(
+            ConstantDecl(
+              Type(
+               int
+              ) [Type]
+             a
+              NumConst(
+               2
+              ) [NumConst]
+            ) [ConstantDecl]
+           b
+            NumConst(
+             21
+            ) [NumConst]
+          ) [ConstantDecls]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             bool
+            ) [Type]
+           g
+            BoolConst(
+             true
+            ) [BoolConst]
+          ) [ConstantDecl]
+         l
+          BoolConst(
+           false
+          ) [BoolConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    RecordDecl(
+      RecordName(
+       rekord
+      ) [RecordName]
+      RecordVarDecl(
+        RecordVarDecl(
+          RecordNoVarDecl(
+          ) [RecordNoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               vadv
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [RecordVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             va
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [RecordVarDecl]
+    ) [RecordDecl]
+  ) [DeclListRecord]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodName(
+       main
+      ) [MethodName]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             pad
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    MethodsDecl(
+      MethodDeclNoStmt(
+        ReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [ReturnType]
+        MethodName(
+         metoda
+        ) [MethodName]
+        MethodFormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             vajv
+            ) [OneFormParam]
+          ) [FormParam]
+        ) [MethodFormParams]
+        NoVarDecl(
+        ) [NoVarDecl]
+      ) [MethodDeclNoStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:12:18,546 - ===================================
+INFO  18:12:18,549 - Deklarisana globalna promenljiva r
+INFO  18:12:18,549 - Deklarisana globalna promenljiva e
+INFO  18:12:18,549 - Deklarisana globalna promenljiva ajkjhb
+INFO  18:12:18,549 - Deklarisana konstanta a
+INFO  18:12:18,549 - Deklarisana konstanta b
+INFO  18:12:18,549 - Deklarisana konstanta g
+INFO  18:12:18,549 - Deklarisana konstanta l
+INFO  18:12:18,549 - Deklarisana lokalna promenljiva vadv
+INFO  18:12:18,550 - Deklarisana lokalna promenljiva va
+INFO  18:12:18,550 - Deklarisana lokalna promenljiva pad
+INFO  18:12:18,550 - Ajooj 
+INFO  18:12:18,550 - Ajooj 
+INFO  18:12:18,550 -  Print count calls = 0
+INFO  18:12:18,550 -  Deklarisanih promenljivih ima = 0
+INFO  18:12:18,550 - ===================================

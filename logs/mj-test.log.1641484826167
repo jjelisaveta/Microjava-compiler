@@ -1,0 +1,184 @@
+INFO  16:58:14,676 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  16:58:14,746 - #6 program
+INFO  16:58:14,747 - #5 Program
+INFO  16:58:14,747 - #5 int
+INFO  16:58:14,748 - #5 r
+INFO  16:58:14,749 - #44 ,
+INFO  16:58:14,749 - #5 e
+INFO  16:58:14,749 - #42 ;
+INFO  16:58:14,749 - #5 bool
+INFO  16:58:14,750 - #5 ajkjhb
+INFO  16:58:14,750 - #42 ;
+INFO  16:58:14,750 - #15 const
+INFO  16:58:14,750 - #5 int
+INFO  16:58:14,750 - #5 a
+INFO  16:58:14,751 - #39 =
+INFO  16:58:14,751 - #2 2
+INFO  16:58:14,751 - #44 ,
+INFO  16:58:14,751 - #5 b
+INFO  16:58:14,751 - #39 =
+INFO  16:58:14,751 - #2 21
+INFO  16:58:14,752 - #42 ;
+INFO  16:58:14,752 - #15 const
+INFO  16:58:14,753 - #5 bool
+INFO  16:58:14,753 - #5 g
+INFO  16:58:14,753 - #39 =
+INFO  16:58:14,753 - #4 true
+INFO  16:58:14,753 - #44 ,
+INFO  16:58:14,754 - #5 l
+INFO  16:58:14,754 - #39 =
+INFO  16:58:14,754 - #4 false
+INFO  16:58:14,754 - #42 ;
+INFO  16:58:14,754 - #50 {
+INFO  16:58:14,754 - #10 void
+INFO  16:58:14,754 - #5 main
+INFO  16:58:14,755 - #46 (
+INFO  16:58:14,756 - #47 )
+INFO  16:58:14,756 - #5 int
+INFO  16:58:14,757 - #5 pad
+INFO  16:58:14,757 - #42 ;
+INFO  16:58:14,758 - #50 {
+INFO  16:58:14,759 - #51 }
+INFO  16:58:14,759 - #5 int
+INFO  16:58:14,759 - #5 metoda
+INFO  16:58:14,760 - #46 (
+INFO  16:58:14,760 - #5 int
+INFO  16:58:14,760 - #5 vajv
+INFO  16:58:14,760 - #47 )
+INFO  16:58:14,760 - #50 {
+INFO  16:58:14,761 - #51 }
+INFO  16:58:14,761 - #51 }
+INFO  16:58:14,769 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    DeclListConst(
+      DeclListVar(
+        DeclListVar(
+          NoDeclList(
+          ) [NoDeclList]
+          GlobalVarDecls(
+            Type(
+             int
+            ) [Type]
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                GlobalOneVariableDecl(
+                 r
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+               e
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        GlobalVarDecls(
+          Type(
+           bool
+          ) [Type]
+          GlobalVariableDecl(
+            GlobalOneVariableDecl(
+             ajkjhb
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ConstDecl(
+      ConstantDecls(
+        ConstantDecl(
+          Type(
+           bool
+          ) [Type]
+         g
+          BoolConst(
+           true
+          ) [BoolConst]
+        ) [ConstantDecl]
+       l
+        BoolConst(
+         false
+        ) [BoolConst]
+      ) [ConstantDecls]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodName(
+       main
+      ) [MethodName]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             pad
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    MethodsDecl(
+      MethodDeclNoStmt(
+        ReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [ReturnType]
+        MethodName(
+         metoda
+        ) [MethodName]
+        MethodFormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             vajv
+            ) [OneFormParam]
+          ) [FormParam]
+        ) [MethodFormParams]
+        NoVarDecl(
+        ) [NoVarDecl]
+      ) [MethodDeclNoStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  16:58:14,770 - ===================================
+INFO  16:58:14,775 - Deklarisana globalna promenljiva r
+INFO  16:58:14,775 - Deklarisana globalna promenljiva e
+INFO  16:58:14,775 - Deklarisana globalna promenljiva ajkjhb
+INFO  16:58:14,775 - Deklarisana konstanta a
+INFO  16:58:14,775 - Deklarisana konstanta b
+INFO  16:58:14,775 - Deklarisana konstanta g
+INFO  16:58:14,776 - Deklarisana konstanta l
+INFO  16:58:14,776 - Deklarisana lokalna promenljiva main

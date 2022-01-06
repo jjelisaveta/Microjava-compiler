@@ -1,25 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2022 20:57:9
+// 6/0/2022 18:54:18
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class GlobalOneVariableDecl extends GlobalOneVarDecl {
 
-    private OneVarDecl OneVarDecl;
+    private String varName;
 
-    public GlobalOneVariableDecl (OneVarDecl OneVarDecl) {
-        this.OneVarDecl=OneVarDecl;
-        if(OneVarDecl!=null) OneVarDecl.setParent(this);
+    public GlobalOneVariableDecl (String varName) {
+        this.varName=varName;
     }
 
-    public OneVarDecl getOneVarDecl() {
-        return OneVarDecl;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setOneVarDecl(OneVarDecl OneVarDecl) {
-        this.OneVarDecl=OneVarDecl;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +26,13 @@ public class GlobalOneVariableDecl extends GlobalOneVarDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(OneVarDecl!=null) OneVarDecl.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(OneVarDecl!=null) OneVarDecl.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(OneVarDecl!=null) OneVarDecl.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,10 +41,7 @@ public class GlobalOneVariableDecl extends GlobalOneVarDecl {
         buffer.append(tab);
         buffer.append("GlobalOneVariableDecl(\n");
 
-        if(OneVarDecl!=null)
-            buffer.append(OneVarDecl.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
+        buffer.append(" "+tab+varName);
         buffer.append("\n");
 
         buffer.append(tab);

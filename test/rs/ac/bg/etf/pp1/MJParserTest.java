@@ -48,10 +48,6 @@ public class MJParserTest {
 			SemanticAnalyzer v = new SemanticAnalyzer();
 			prog.traverseBottomUp(v); 
 	      
-			log.info(" Print count calls = " + v.printCallCount);
-
-			log.info(" Deklarisanih promenljivih ima = " + v.varDeclCount);
-			
 			log.info("===================================");
 			Tab.dump();
 			

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/0/2022 20:57:9
+// 6/0/2022 18:54:18
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -28,6 +28,7 @@ public interface Visitor {
     public void visit(TypeConst TypeConst);
     public void visit(Designator Designator);
     public void visit(ClassVarDeclList ClassVarDeclList);
+    public void visit(RecordVarDecls RecordVarDecls);
     public void visit(Term Term);
     public void visit(Condition Condition);
     public void visit(AssignStatement AssignStatement);
@@ -96,7 +97,7 @@ public interface Visitor {
     public void visit(AssignStmt AssignStmt);
     public void visit(DesignatorStmtDec DesignatorStmtDec);
     public void visit(DesignatorStmtInc DesignatorStmtInc);
-    public void visit(DesignatorStmtPars DesignatorStmtPars);
+    public void visit(DesignatorStmtFuncCall DesignatorStmtFuncCall);
     public void visit(DesignatorStmtAssign DesignatorStmtAssign);
     public void visit(OneStmt OneStmt);
     public void visit(StmtList StmtList);
@@ -125,12 +126,16 @@ public interface Visitor {
     public void visit(OneFormParam OneFormParam);
     public void visit(NoMethodFormParams NoMethodFormParams);
     public void visit(MethodFormParams MethodFormParams);
+    public void visit(MethodName MethodName);
     public void visit(MethodDeclNoStmt MethodDeclNoStmt);
     public void visit(MethodDeclStmt MethodDeclStmt);
     public void visit(ReturnVoid ReturnVoid);
     public void visit(ReturnType ReturnType);
     public void visit(ConstructorDecl ConstructorDecl);
+    public void visit(RecordNoVarDecl RecordNoVarDecl);
+    public void visit(RecordVarDecl RecordVarDecl);
     public void visit(RecordDecl RecordDecl);
+    public void visit(RecordName RecordName);
     public void visit(NoVarDecl NoVarDecl);
     public void visit(VarDecls VarDecls);
     public void visit(NoClassFields NoClassFields);
@@ -146,6 +151,7 @@ public interface Visitor {
     public void visit(ErrorGlobalVarDecl ErrorGlobalVarDecl);
     public void visit(GlobalVarDecls GlobalVarDecls);
     public void visit(ErrorGlobalOneVariableDecl ErrorGlobalOneVariableDecl);
+    public void visit(GlobalOneArrayVariableDecl GlobalOneArrayVariableDecl);
     public void visit(GlobalOneVariableDecl GlobalOneVariableDecl);
     public void visit(ErrorClassVariableDecl ErrorClassVariableDecl);
     public void visit(ErrorClassVariableDeclSemi ErrorClassVariableDeclSemi);

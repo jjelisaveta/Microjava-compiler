@@ -1,0 +1,153 @@
+INFO  16:05:01,051 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  16:05:01,132 - #6 program
+INFO  16:05:01,132 - #5 Program
+INFO  16:05:01,132 - #5 int
+INFO  16:05:01,134 - #5 r
+INFO  16:05:01,134 - #44 ,
+INFO  16:05:01,134 - #5 e
+INFO  16:05:01,135 - #42 ;
+INFO  16:05:01,135 - #5 bool
+INFO  16:05:01,135 - #5 ajkjhb
+INFO  16:05:01,136 - #42 ;
+INFO  16:05:01,136 - #15 const
+INFO  16:05:01,136 - #5 int
+INFO  16:05:01,136 - #5 a
+INFO  16:05:01,136 - #39 =
+INFO  16:05:01,136 - #2 2
+INFO  16:05:01,137 - #44 ,
+INFO  16:05:01,137 - #5 b
+INFO  16:05:01,137 - #39 =
+INFO  16:05:01,137 - #2 21
+INFO  16:05:01,137 - #42 ;
+INFO  16:05:01,137 - #15 const
+INFO  16:05:01,138 - #5 bool
+INFO  16:05:01,139 - #5 g
+INFO  16:05:01,139 - #39 =
+INFO  16:05:01,139 - #4 true
+INFO  16:05:01,139 - #44 ,
+INFO  16:05:01,139 - #5 l
+INFO  16:05:01,139 - #39 =
+INFO  16:05:01,139 - #4 false
+INFO  16:05:01,139 - #42 ;
+INFO  16:05:01,139 - #50 {
+INFO  16:05:01,140 - #10 void
+INFO  16:05:01,140 - #5 main
+INFO  16:05:01,140 - #46 (
+INFO  16:05:01,141 - #47 )
+INFO  16:05:01,141 - #5 int
+INFO  16:05:01,141 - #5 pad
+INFO  16:05:01,142 - #42 ;
+INFO  16:05:01,142 - #50 {
+INFO  16:05:01,143 - #51 }
+INFO  16:05:01,144 - #51 }
+INFO  16:05:01,152 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListConst(
+    DeclListConst(
+      DeclListVar(
+        DeclListVar(
+          NoDeclList(
+          ) [NoDeclList]
+          GlobalVarDecls(
+            Type(
+             int
+            ) [Type]
+            GlobalVariableDecls(
+              GlobalVariableDecl(
+                GlobalOneVariableDecl(
+                 r
+                ) [GlobalOneVariableDecl]
+              ) [GlobalVariableDecl]
+              GlobalOneVariableDecl(
+               e
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecls]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        GlobalVarDecls(
+          Type(
+           bool
+          ) [Type]
+          GlobalVariableDecl(
+            GlobalOneVariableDecl(
+             ajkjhb
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      ConstDecl(
+        ConstantDecls(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           a
+            NumConst(
+             2
+            ) [NumConst]
+          ) [ConstantDecl]
+         b
+          NumConst(
+           21
+          ) [NumConst]
+        ) [ConstantDecls]
+      ) [ConstDecl]
+    ) [DeclListConst]
+    ConstDecl(
+      ConstantDecls(
+        ConstantDecl(
+          Type(
+           bool
+          ) [Type]
+         g
+          BoolConst(
+           true
+          ) [BoolConst]
+        ) [ConstantDecl]
+       l
+        BoolConst(
+         false
+        ) [BoolConst]
+      ) [ConstantDecls]
+    ) [ConstDecl]
+  ) [DeclListConst]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+     main
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             pad
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    NoMetodDecl(
+    ) [NoMetodDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  16:05:01,153 - ===================================
+INFO  16:05:01,157 - Deklarisana globalna promenljiva r
+INFO  16:05:01,158 - Deklarisana globalna promenljiva e
+INFO  16:05:01,158 - Deklarisana globalna promenljiva ajkjhb
+INFO  16:05:01,158 - Deklarisana konstanta a
+INFO  16:05:01,158 - Deklarisana konstanta b
+INFO  16:05:01,158 - Deklarisana konstanta g
+INFO  16:05:01,158 - Deklarisana konstanta l
+INFO  16:05:01,158 - Deklarisana lokalna promenljiva pad
+INFO  16:05:01,159 -  Print count calls = 0
+INFO  16:05:01,159 -  Deklarisanih promenljivih ima = 0
+INFO  16:05:01,159 - ===================================
