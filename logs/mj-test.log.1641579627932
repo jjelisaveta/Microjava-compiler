@@ -1,0 +1,233 @@
+INFO  19:19:52,807 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  19:19:52,848 - #6 program
+INFO  19:19:52,848 - #5 Program
+INFO  19:19:52,848 - #5 int
+INFO  19:19:52,848 - #5 r
+INFO  19:19:52,849 - #44 ,
+INFO  19:19:52,849 - #5 e
+INFO  19:19:52,849 - #42 ;
+INFO  19:19:52,849 - #11 class
+INFO  19:19:52,849 - #5 A
+INFO  19:19:52,849 - #50 {
+INFO  19:19:52,849 - #5 int
+INFO  19:19:52,850 - #5 polje1
+INFO  19:19:52,850 - #44 ,
+INFO  19:19:52,850 - #5 polj2
+INFO  19:19:52,850 - #42 ;
+INFO  19:19:52,850 - #5 char
+INFO  19:19:52,850 - #5 polj3
+INFO  19:19:52,850 - #42 ;
+INFO  19:19:52,850 - #51 }
+INFO  19:19:52,851 - #25 record
+INFO  19:19:52,851 - #5 jao
+INFO  19:19:52,851 - #50 {
+INFO  19:19:52,852 - #5 int
+INFO  19:19:52,852 - #5 uh
+INFO  19:19:52,852 - #44 ,
+INFO  19:19:52,852 - #5 jajajaj
+INFO  19:19:52,852 - #42 ;
+INFO  19:19:52,852 - #5 bool
+INFO  19:19:52,852 - #5 ah
+INFO  19:19:52,852 - #42 ;
+INFO  19:19:52,853 - #51 }
+INFO  19:19:52,853 - #50 {
+INFO  19:19:52,853 - #10 void
+INFO  19:19:52,853 - #5 main
+INFO  19:19:52,853 - #46 (
+INFO  19:19:52,854 - #47 )
+INFO  19:19:52,854 - #5 int
+INFO  19:19:52,855 - #5 pad
+INFO  19:19:52,855 - #42 ;
+INFO  19:19:52,855 - #50 {
+INFO  19:19:52,855 - #51 }
+INFO  19:19:52,855 - #5 int
+INFO  19:19:52,855 - #5 metoda
+INFO  19:19:52,856 - #46 (
+INFO  19:19:52,856 - #5 int
+INFO  19:19:52,856 - #5 vajv
+INFO  19:19:52,856 - #47 )
+INFO  19:19:52,856 - #5 int
+INFO  19:19:52,856 - #5 wiefjqwef
+INFO  19:19:52,856 - #42 ;
+INFO  19:19:52,856 - #50 {
+INFO  19:19:52,856 - #51 }
+INFO  19:19:52,856 - #51 }
+INFO  19:19:52,862 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListRecord(
+    DeclListClass(
+      DeclListVar(
+        NoDeclList(
+        ) [NoDeclList]
+        GlobalVarDecls(
+          Type(
+           int
+          ) [Type]
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+               r
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+             e
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      ClassDeclNoMethods(
+        ClassNameSingle(
+         A
+        ) [ClassNameSingle]
+        ClassFields(
+          MultipleClassFields(
+            MultipleClassFields(
+              NoClassFields(
+              ) [NoClassFields]
+              ClassVariableDeclList(
+                ClassVariableDecls(
+                  ClassVariableDecl(
+                    Type(
+                     int
+                    ) [Type]
+                    OneVariableDecl(
+                     polje1
+                    ) [OneVariableDecl]
+                  ) [ClassVariableDecl]
+                  OneVariableDecl(
+                   polj2
+                  ) [OneVariableDecl]
+                ) [ClassVariableDecls]
+              ) [ClassVariableDeclList]
+            ) [MultipleClassFields]
+            ClassVariableDeclList(
+              ClassVariableDecl(
+                Type(
+                 char
+                ) [Type]
+                OneVariableDecl(
+                 polj3
+                ) [OneVariableDecl]
+              ) [ClassVariableDecl]
+            ) [ClassVariableDeclList]
+          ) [MultipleClassFields]
+        ) [ClassFields]
+      ) [ClassDeclNoMethods]
+    ) [DeclListClass]
+    RecordDecl(
+      RecordName(
+       jao
+      ) [RecordName]
+      RecordVariableDecl(
+        RecordVariableDecl(
+          RecordNoVariableDecl(
+          ) [RecordNoVariableDecl]
+          RecordVariableDeclaration(
+            VariableDecls(
+              VariableDecl(
+                Type(
+                 int
+                ) [Type]
+                OneVariableDecl(
+                 uh
+                ) [OneVariableDecl]
+              ) [VariableDecl]
+              OneVariableDecl(
+               jajajaj
+              ) [OneVariableDecl]
+            ) [VariableDecls]
+          ) [RecordVariableDeclaration]
+        ) [RecordVariableDecl]
+        RecordVariableDeclaration(
+          VariableDecl(
+            Type(
+             bool
+            ) [Type]
+            OneVariableDecl(
+             ah
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [RecordVariableDeclaration]
+      ) [RecordVariableDecl]
+    ) [RecordDecl]
+  ) [DeclListRecord]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodName(
+       main
+      ) [MethodName]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             pad
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    MethodsDecl(
+      MethodDeclNoStmt(
+        ReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [ReturnType]
+        MethodName(
+         metoda
+        ) [MethodName]
+        MethodFormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             vajv
+            ) [OneFormParam]
+          ) [FormParam]
+        ) [MethodFormParams]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               wiefjqwef
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+      ) [MethodDeclNoStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  19:19:52,862 - ===================================
+INFO  19:19:52,864 - Deklarisana globalna promenljiva r
+INFO  19:19:52,864 - Deklarisana globalna promenljiva e
+INFO  19:19:52,864 - Deklarisano polje polje1
+INFO  19:19:52,864 - Deklarisano polje polj2
+INFO  19:19:52,864 - Deklarisano polje polj3
+INFO  19:19:52,864 - Deklarisan record jao
+INFO  19:19:52,864 - Deklarisano polje u record-u uh
+INFO  19:19:52,865 - Deklarisano polje u record-u jajajaj
+INFO  19:19:52,865 - Deklarisano polje u record-u ah
+INFO  19:19:52,865 - Deklarisana lokalna promenljiva pad
+INFO  19:19:52,865 - Deklarisan formalni parametar vajv
+INFO  19:19:52,865 - Deklarisana lokalna promenljiva wiefjqwef
+INFO  19:19:52,865 - ===================================

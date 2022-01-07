@@ -1,13 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/0/2022 18:54:18
+// 7/0/2022 19:17:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class RecordNoVarDecl extends RecordVarDecls {
+public class RecordNoVariableDecl extends RecordVarDecls {
 
-    public RecordNoVarDecl () {
+    public RecordNoVariableDecl () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class RecordNoVarDecl extends RecordVarDecls {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("RecordNoVarDecl(\n");
+        buffer.append("RecordNoVariableDecl(\n");
 
         buffer.append(tab);
-        buffer.append(") [RecordNoVarDecl]");
+        buffer.append(") [RecordNoVariableDecl]");
         return buffer.toString();
     }
 }

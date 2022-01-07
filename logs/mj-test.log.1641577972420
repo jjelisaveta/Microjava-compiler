@@ -1,0 +1,193 @@
+INFO  18:52:36,925 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  18:52:36,986 - #6 program
+INFO  18:52:36,986 - #5 Program
+INFO  18:52:36,986 - #5 int
+INFO  18:52:36,987 - #5 r
+INFO  18:52:36,988 - #44 ,
+INFO  18:52:36,988 - #5 e
+INFO  18:52:36,988 - #42 ;
+INFO  18:52:36,988 - #11 class
+INFO  18:52:36,989 - #5 A
+INFO  18:52:36,989 - #50 {
+INFO  18:52:36,989 - #51 }
+INFO  18:52:36,990 - #25 record
+INFO  18:52:36,990 - #5 jao
+INFO  18:52:36,990 - #50 {
+INFO  18:52:36,990 - #5 int
+INFO  18:52:36,991 - #5 uh
+INFO  18:52:36,991 - #44 ,
+INFO  18:52:36,991 - #5 jajajaj
+INFO  18:52:36,991 - #42 ;
+INFO  18:52:36,991 - #5 bool
+INFO  18:52:36,991 - #5 ah
+INFO  18:52:36,992 - #42 ;
+INFO  18:52:36,992 - #51 }
+INFO  18:52:36,992 - #50 {
+INFO  18:52:36,992 - #10 void
+INFO  18:52:36,993 - #5 main
+INFO  18:52:36,993 - #46 (
+INFO  18:52:36,994 - #47 )
+INFO  18:52:36,994 - #5 int
+INFO  18:52:36,995 - #5 pad
+INFO  18:52:36,995 - #42 ;
+INFO  18:52:36,995 - #50 {
+INFO  18:52:36,995 - #51 }
+INFO  18:52:36,996 - #5 int
+INFO  18:52:36,996 - #5 metoda
+INFO  18:52:36,996 - #46 (
+INFO  18:52:36,996 - #5 int
+INFO  18:52:36,996 - #5 vajv
+INFO  18:52:36,996 - #47 )
+INFO  18:52:36,996 - #5 int
+INFO  18:52:36,996 - #5 wiefjqwef
+INFO  18:52:36,996 - #42 ;
+INFO  18:52:36,996 - #50 {
+INFO  18:52:36,996 - #51 }
+INFO  18:52:36,996 - #51 }
+INFO  18:52:37,002 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListRecord(
+    DeclListClass(
+      DeclListVar(
+        NoDeclList(
+        ) [NoDeclList]
+        GlobalVarDecls(
+          Type(
+           int
+          ) [Type]
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+               r
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+             e
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      ClassDeclNoMethods(
+        ClassNameSingle(
+         A
+        ) [ClassNameSingle]
+        ClassFields(
+          NoClassFields(
+          ) [NoClassFields]
+        ) [ClassFields]
+      ) [ClassDeclNoMethods]
+    ) [DeclListClass]
+    RecordDecl(
+      RecordName(
+       jao
+      ) [RecordName]
+      RecordVariableDecl(
+        RecordVariableDecl(
+          RecordNoVariableDecl(
+          ) [RecordNoVariableDecl]
+          RecordVariableDeclaration(
+            VariableDecls(
+              VariableDecl(
+                Type(
+                 int
+                ) [Type]
+                OneVariableDecl(
+                 uh
+                ) [OneVariableDecl]
+              ) [VariableDecl]
+              OneVariableDecl(
+               jajajaj
+              ) [OneVariableDecl]
+            ) [VariableDecls]
+          ) [RecordVariableDeclaration]
+        ) [RecordVariableDecl]
+        RecordVariableDeclaration(
+          VariableDecl(
+            Type(
+             bool
+            ) [Type]
+            OneVariableDecl(
+             ah
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [RecordVariableDeclaration]
+      ) [RecordVariableDecl]
+    ) [RecordDecl]
+  ) [DeclListRecord]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodName(
+       main
+      ) [MethodName]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             pad
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    MethodsDecl(
+      MethodDeclNoStmt(
+        ReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [ReturnType]
+        MethodName(
+         metoda
+        ) [MethodName]
+        MethodFormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             vajv
+            ) [OneFormParam]
+          ) [FormParam]
+        ) [MethodFormParams]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               wiefjqwef
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+      ) [MethodDeclNoStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  18:52:37,002 - ===================================
+INFO  18:52:37,011 - Deklarisana globalna promenljiva r
+INFO  18:52:37,011 - Deklarisana globalna promenljiva e
+INFO  18:52:37,011 - Deklarisan record jao
+INFO  18:52:37,011 - Deklarisano polje u record-u uh
+INFO  18:52:37,011 - Deklarisano polje u record-u jajajaj
+INFO  18:52:37,011 - Deklarisano polje u record-u ah
+INFO  18:52:37,011 - Deklarisana lokalna promenljiva pad
+INFO  18:52:37,011 - Deklarisan formalni parametar vajv
+INFO  18:52:37,011 - Deklarisana lokalna promenljiva wiefjqwef
+INFO  18:52:37,011 - ===================================

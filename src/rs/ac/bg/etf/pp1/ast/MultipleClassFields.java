@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/0/2022 18:54:18
+// 7/0/2022 19:17:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MultipleClassFields extends ClassFields {
+public class MultipleClassFields extends ClassFieldsDeclList {
 
-    private ClassFields ClassFields;
+    private ClassFieldsDeclList ClassFieldsDeclList;
     private ClassVarDecl ClassVarDecl;
 
-    public MultipleClassFields (ClassFields ClassFields, ClassVarDecl ClassVarDecl) {
-        this.ClassFields=ClassFields;
-        if(ClassFields!=null) ClassFields.setParent(this);
+    public MultipleClassFields (ClassFieldsDeclList ClassFieldsDeclList, ClassVarDecl ClassVarDecl) {
+        this.ClassFieldsDeclList=ClassFieldsDeclList;
+        if(ClassFieldsDeclList!=null) ClassFieldsDeclList.setParent(this);
         this.ClassVarDecl=ClassVarDecl;
         if(ClassVarDecl!=null) ClassVarDecl.setParent(this);
     }
 
-    public ClassFields getClassFields() {
-        return ClassFields;
+    public ClassFieldsDeclList getClassFieldsDeclList() {
+        return ClassFieldsDeclList;
     }
 
-    public void setClassFields(ClassFields ClassFields) {
-        this.ClassFields=ClassFields;
+    public void setClassFieldsDeclList(ClassFieldsDeclList ClassFieldsDeclList) {
+        this.ClassFieldsDeclList=ClassFieldsDeclList;
     }
 
     public ClassVarDecl getClassVarDecl() {
@@ -38,18 +38,18 @@ public class MultipleClassFields extends ClassFields {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ClassFields!=null) ClassFields.accept(visitor);
+        if(ClassFieldsDeclList!=null) ClassFieldsDeclList.accept(visitor);
         if(ClassVarDecl!=null) ClassVarDecl.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ClassFields!=null) ClassFields.traverseTopDown(visitor);
+        if(ClassFieldsDeclList!=null) ClassFieldsDeclList.traverseTopDown(visitor);
         if(ClassVarDecl!=null) ClassVarDecl.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ClassFields!=null) ClassFields.traverseBottomUp(visitor);
+        if(ClassFieldsDeclList!=null) ClassFieldsDeclList.traverseBottomUp(visitor);
         if(ClassVarDecl!=null) ClassVarDecl.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class MultipleClassFields extends ClassFields {
         buffer.append(tab);
         buffer.append("MultipleClassFields(\n");
 
-        if(ClassFields!=null)
-            buffer.append(ClassFields.toString("  "+tab));
+        if(ClassFieldsDeclList!=null)
+            buffer.append(ClassFieldsDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

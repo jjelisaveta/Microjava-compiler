@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/0/2022 18:54:18
+// 7/0/2022 19:17:20
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -25,6 +25,7 @@ public interface Visitor {
     public void visit(GlobalOneVarDecl GlobalOneVarDecl);
     public void visit(GlobalVarDecl GlobalVarDecl);
     public void visit(DeclList DeclList);
+    public void visit(RecordVarDecl RecordVarDecl);
     public void visit(TypeConst TypeConst);
     public void visit(Designator Designator);
     public void visit(ClassVarDeclList ClassVarDeclList);
@@ -40,11 +41,11 @@ public interface Visitor {
     public void visit(IfCondition IfCondition);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
+    public void visit(ClassFieldsDeclList ClassFieldsDeclList);
     public void visit(AddopList AddopList);
     public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ClassDeclList ClassDeclList);
-    public void visit(ClassFields ClassFields);
     public void visit(ClassConstructor ClassConstructor);
     public void visit(Statement Statement);
     public void visit(ClassDecl ClassDecl);
@@ -66,6 +67,7 @@ public interface Visitor {
     public void visit(RelOpNe RelOpNe);
     public void visit(RelOpEq RelOpEq);
     public void visit(AssignOperator AssignOperator);
+    public void visit(DesignatorThis DesignatorThis);
     public void visit(DesignatorIdent DesignatorIdent);
     public void visit(DesignatorBracket DesignatorBracket);
     public void visit(DesignatorPoint DesignatorPoint);
@@ -132,14 +134,16 @@ public interface Visitor {
     public void visit(ReturnVoid ReturnVoid);
     public void visit(ReturnType ReturnType);
     public void visit(ConstructorDecl ConstructorDecl);
-    public void visit(RecordNoVarDecl RecordNoVarDecl);
-    public void visit(RecordVarDecl RecordVarDecl);
+    public void visit(RecordVariableDeclaration RecordVariableDeclaration);
+    public void visit(RecordNoVariableDecl RecordNoVariableDecl);
+    public void visit(RecordVariableDecl RecordVariableDecl);
     public void visit(RecordDecl RecordDecl);
     public void visit(RecordName RecordName);
     public void visit(NoVarDecl NoVarDecl);
     public void visit(VarDecls VarDecls);
     public void visit(NoClassFields NoClassFields);
     public void visit(MultipleClassFields MultipleClassFields);
+    public void visit(ClassFields ClassFields);
     public void visit(ClassDeclNoMethods ClassDeclNoMethods);
     public void visit(ClassDeclMethodsNoConstr ClassDeclMethodsNoConstr);
     public void visit(ClassDeclMethods ClassDeclMethods);
@@ -155,7 +159,7 @@ public interface Visitor {
     public void visit(GlobalOneVariableDecl GlobalOneVariableDecl);
     public void visit(ErrorClassVariableDecl ErrorClassVariableDecl);
     public void visit(ErrorClassVariableDeclSemi ErrorClassVariableDeclSemi);
-    public void visit(ClassVariableDel ClassVariableDel);
+    public void visit(ClassVariableDeclList ClassVariableDeclList);
     public void visit(ClassVariableDecl ClassVariableDecl);
     public void visit(ClassVariableDecls ClassVariableDecls);
     public void visit(VarDecl VarDecl);

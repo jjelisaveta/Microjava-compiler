@@ -51,8 +51,8 @@ terminal THIS, SUPER, GOTO, RECORD;
 terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
-nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
-nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
+nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, ClassFieldsDeclList, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
+nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
 nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
@@ -116,7 +116,7 @@ ClassVarDeclList ::= (ClassVariableDecls) ClassVarDeclList COMMA OneVarDecl
 					(ClassVariableDecl) Type OneVarDecl
 					;
 					
-ClassVarDecl ::=	(ClassVariableDel) ClassVarDeclList SEMI
+ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList SEMI
 					|
 					(ErrorClassVariableDeclSemi) error SEMI:er1
 					{: parser.report_error("Greska 1 u deklaraciji polja unutrasnje klase u liniji " + er1left, null);  :}
@@ -146,9 +146,9 @@ GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList COMMA GlobalOneVarD
 					(GlobalVariableDecl) GlobalOneVarDecl
 					;
 					
-ClassName ::= 		(ClassNameSingle) CLASS IDENT 
+ClassName ::= 		(ClassNameSingle) CLASS IDENT:className
 					|
-					(ClassNameExtends) CLASS IDENT EXTENDS Type
+					(ClassNameExtends) CLASS IDENT:className EXTENDS Type:type
 					|
 					(ErrorClassName) CLASS IDENT error:e
 					{: parser.report_error("Greska u deklaraciji prosirenja natklase u liniji " + eleft, null);  :}
@@ -161,11 +161,13 @@ ClassDecl ::=		(ClassDeclMethods) ClassName LBRACE ClassFields LBRACE Constructo
 					(ClassDeclNoMethods) ClassName LBRACE ClassFields RBRACE
 					;
 					
+ClassFields ::= 	(ClassFields) ClassFieldsDeclList ;
 
-ClassFields ::= 	(MultipleClassFields) ClassFields ClassVarDecl
+ClassFieldsDeclList ::= (MultipleClassFields) ClassFieldsDeclList ClassVarDecl
 					|
 					(NoClassFields) // epsilon
 					;
+
 					
 MultipleVarDecl ::= (VarDecls) MultipleVarDecl VarDecl
 					|
@@ -176,10 +178,12 @@ RecordName ::= 		(RecordName) RECORD IDENT:recordName;
  
 RecordDecl ::= 		(RecordDecl) RecordName LBRACE RecordVarDecls RBRACE ;
 
-RecordVarDecls ::=	(RecordVarDecl) RecordVarDecls VarDecl
+RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls RecordVarDecl
 					|
-					(RecordNoVarDecl) //epsilon
+					(RecordNoVariableDecl) //epsilon
  					;
+ 					
+RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList SEMI;
 
 ConstructorDecl ::=	(ConstructorDecl) IDENT LPAREN RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
 
@@ -201,9 +205,9 @@ MethodFormPars ::= 	(MethodFormParams) FormPars
 					(NoMethodFormParams) //epsilon
 					;
 
-OneFormPar ::= 		(OneFormParam) Type IDENT
+OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName
 					|
-					(OneArrayFormParam) Type IDENT LBRACKET RBRACKET
+					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET
 					|
 					(ErrorOneArrayFormParam) error:e
 					{: parser.report_error("Greska u deklaraciji formalnog parametra funkcije u liniji " + eleft, null);  :}
@@ -336,6 +340,8 @@ Designator ::=		(DesignatorPoint) Designator POINT IDENT
 					(DesignatorBracket) Designator LBRACKET Expr RBRACKET
 					|
 					(DesignatorIdent) IDENT
+					|
+					(DesignatorThis) THIS
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL ;

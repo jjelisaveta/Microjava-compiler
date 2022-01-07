@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/0/2022 18:54:18
+// 7/0/2022 19:17:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ClassVariableDel extends ClassVarDecl {
+public class ClassVariableDeclList extends ClassVarDecl {
 
     private ClassVarDeclList ClassVarDeclList;
 
-    public ClassVariableDel (ClassVarDeclList ClassVarDeclList) {
+    public ClassVariableDeclList (ClassVarDeclList ClassVarDeclList) {
         this.ClassVarDeclList=ClassVarDeclList;
         if(ClassVarDeclList!=null) ClassVarDeclList.setParent(this);
     }
@@ -43,7 +43,7 @@ public class ClassVariableDel extends ClassVarDecl {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ClassVariableDel(\n");
+        buffer.append("ClassVariableDeclList(\n");
 
         if(ClassVarDeclList!=null)
             buffer.append(ClassVarDeclList.toString("  "+tab));
@@ -52,7 +52,7 @@ public class ClassVariableDel extends ClassVarDecl {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ClassVariableDel]");
+        buffer.append(") [ClassVariableDeclList]");
         return buffer.toString();
     }
 }

@@ -1,24 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/0/2022 18:54:18
+// 7/0/2022 19:17:20
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ClassNameSingle extends ClassName {
 
-    private String I1;
+    private String className;
 
-    public ClassNameSingle (String I1) {
-        this.I1=I1;
+    public ClassNameSingle (String className) {
+        this.className=className;
     }
 
-    public String getI1() {
-        return I1;
+    public String getClassName() {
+        return className;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setClassName(String className) {
+        this.className=className;
     }
 
     public void accept(Visitor visitor) {
@@ -41,7 +41,7 @@ public class ClassNameSingle extends ClassName {
         buffer.append(tab);
         buffer.append("ClassNameSingle(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+className);
         buffer.append("\n");
 
         buffer.append(tab);

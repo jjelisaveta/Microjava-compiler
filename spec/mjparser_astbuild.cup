@@ -57,6 +57,7 @@ nonterminal MethodDeclList MethodDeclList;
 nonterminal ConstDecl ConstDecl;
 nonterminal VarDecl VarDecl;
 nonterminal ClassDecl ClassDecl;
+nonterminal ClassFieldsDeclList ClassFieldsDeclList;
 nonterminal RecordDecl RecordDecl;
 nonterminal GlobalVarDecl GlobalVarDecl;
 nonterminal GlobalVarDeclList GlobalVarDeclList;
@@ -67,6 +68,7 @@ nonterminal ConstDeclList ConstDeclList;
 nonterminal ClassDeclList ClassDeclList;
 nonterminal RecordDeclList RecordDeclList;
 nonterminal RecordVarDecls RecordVarDecls;
+nonterminal RecordVarDecl RecordVarDecl;
 nonterminal RecordName RecordName;
 nonterminal MultipleVarDecl MultipleVarDecl;
 nonterminal ClassVarDeclList ClassVarDeclList;
@@ -162,7 +164,7 @@ ClassVarDeclList ::= (ClassVariableDecls) ClassVarDeclList:C1 COMMA OneVarDecl:O
 					(ClassVariableDecl) Type:T1 OneVarDecl:O2 {: RESULT=new ClassVariableDecl(T1, O2); RESULT.setLine(T1left); :}
 					;
 					
-ClassVarDecl ::=	(ClassVariableDel) ClassVarDeclList:C1 SEMI {: RESULT=new ClassVariableDel(C1); RESULT.setLine(C1left); :}
+ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList:C1 SEMI {: RESULT=new ClassVariableDeclList(C1); RESULT.setLine(C1left); :}
 					|
 					(ErrorClassVariableDeclSemi) error SEMI:er1
 					{: parser.report_error("Greska 1 u deklaraciji polja unutrasnje klase u liniji " + er1left, null);  :} {: RESULT=new ErrorClassVariableDeclSemi(); :}
@@ -192,9 +194,9 @@ GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList:G1 COMMA GlobalOneV
 					(GlobalVariableDecl) GlobalOneVarDecl:G1 {: RESULT=new GlobalVariableDecl(G1); RESULT.setLine(G1left); :}
 					;
 					
-ClassName ::= 		(ClassNameSingle) CLASS IDENT:I1 {: RESULT=new ClassNameSingle(I1); RESULT.setLine(I1left); :} 
+ClassName ::= 		(ClassNameSingle) CLASS IDENT:className {: RESULT=new ClassNameSingle(className); RESULT.setLine(classNameleft); :}
 					|
-					(ClassNameExtends) CLASS IDENT:I1 EXTENDS Type:T2 {: RESULT=new ClassNameExtends(I1, T2); RESULT.setLine(I1left); :}
+					(ClassNameExtends) CLASS IDENT:className EXTENDS Type:type {: RESULT=new ClassNameExtends(className, type); RESULT.setLine(classNameleft); :}
 					|
 					(ErrorClassName) CLASS IDENT:I1 error:e
 					{: parser.report_error("Greska u deklaraciji prosirenja natklase u liniji " + eleft, null);  :} {: RESULT=new ErrorClassName(I1); RESULT.setLine(I1left); :}
@@ -207,11 +209,13 @@ ClassDecl ::=		(ClassDeclMethods) ClassName:C1 LBRACE ClassFields:C2 LBRACE Cons
 					(ClassDeclNoMethods) ClassName:C1 LBRACE ClassFields:C2 RBRACE {: RESULT=new ClassDeclNoMethods(C1, C2); RESULT.setLine(C1left); :}
 					;
 					
+ClassFields ::= 	(ClassFields) ClassFieldsDeclList:C1 {: RESULT=new ClassFields(C1); RESULT.setLine(C1left); :} ;
 
-ClassFields ::= 	(MultipleClassFields) ClassFields:C1 ClassVarDecl:C2 {: RESULT=new MultipleClassFields(C1, C2); RESULT.setLine(C1left); :}
+ClassFieldsDeclList ::= (MultipleClassFields) ClassFieldsDeclList:C1 ClassVarDecl:C2 {: RESULT=new MultipleClassFields(C1, C2); RESULT.setLine(C1left); :}
 					|
 					(NoClassFields) {: RESULT=new NoClassFields(); :} // epsilon
 					;
+
 					
 MultipleVarDecl ::= (VarDecls) MultipleVarDecl:M1 VarDecl:V2 {: RESULT=new VarDecls(M1, V2); RESULT.setLine(M1left); :}
 					|
@@ -222,10 +226,12 @@ RecordName ::= 		(RecordName) RECORD IDENT:recordName {: RESULT=new RecordName(r
  
 RecordDecl ::= 		(RecordDecl) RecordName:R1 LBRACE RecordVarDecls:R2 RBRACE {: RESULT=new RecordDecl(R1, R2); RESULT.setLine(R1left); :} ;
 
-RecordVarDecls ::=	(RecordVarDecl) RecordVarDecls:R1 VarDecl:V2 {: RESULT=new RecordVarDecl(R1, V2); RESULT.setLine(R1left); :}
+RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls:R1 RecordVarDecl:R2 {: RESULT=new RecordVariableDecl(R1, R2); RESULT.setLine(R1left); :}
 					|
-					(RecordNoVarDecl) {: RESULT=new RecordNoVarDecl(); :} //epsilon
+					(RecordNoVariableDecl) {: RESULT=new RecordNoVariableDecl(); :} //epsilon
  					;
+ 					
+RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList:V1 SEMI {: RESULT=new RecordVariableDeclaration(V1); RESULT.setLine(V1left); :};
 
 ConstructorDecl ::=	(ConstructorDecl) IDENT:I1 LPAREN RPAREN MultipleVarDecl:M2 LBRACE Statement:S3 RBRACE {: RESULT=new ConstructorDecl(I1, M2, S3); RESULT.setLine(I1left); :} ;
 
@@ -247,9 +253,9 @@ MethodFormPars ::= 	(MethodFormParams) FormPars:F1 {: RESULT=new MethodFormParam
 					(NoMethodFormParams) {: RESULT=new NoMethodFormParams(); :} //epsilon
 					;
 
-OneFormPar ::= 		(OneFormParam) Type:T1 IDENT:I2 {: RESULT=new OneFormParam(T1, I2); RESULT.setLine(T1left); :}
+OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName {: RESULT=new OneFormParam(type, paramName); RESULT.setLine(typeleft); :}
 					|
-					(OneArrayFormParam) Type:T1 IDENT:I2 LBRACKET RBRACKET {: RESULT=new OneArrayFormParam(T1, I2); RESULT.setLine(T1left); :}
+					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET {: RESULT=new OneArrayFormParam(type, paramName); RESULT.setLine(typeleft); :}
 					|
 					(ErrorOneArrayFormParam) error:e
 					{: parser.report_error("Greska u deklaraciji formalnog parametra funkcije u liniji " + eleft, null);  :} {: RESULT=new ErrorOneArrayFormParam(); :}
@@ -382,6 +388,8 @@ Designator ::=		(DesignatorPoint) Designator:D1 POINT IDENT:I2 {: RESULT=new Des
 					(DesignatorBracket) Designator:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorBracket(D1, E2); RESULT.setLine(D1left); :}
 					|
 					(DesignatorIdent) IDENT:I1 {: RESULT=new DesignatorIdent(I1); RESULT.setLine(I1left); :}
+					|
+					(DesignatorThis) THIS {: RESULT=new DesignatorThis(); :}
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;
