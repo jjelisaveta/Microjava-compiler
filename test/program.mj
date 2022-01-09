@@ -3,6 +3,17 @@ program Program
 	class A {
 		int polje1, polje2;
 		char polje3;
+		{
+		A() 
+		int aa; {
+		a++;
+		}
+		
+		void medsdstoda(int abd, char akdj) 
+		char d;{
+		
+		}
+		}
 	}
 	
 	record r

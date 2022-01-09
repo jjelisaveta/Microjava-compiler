@@ -53,7 +53,7 @@ terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, 
 
 nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, ClassFieldsDeclList, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
-nonterminal ClassName, ClassConstructor, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
+nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
 nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
 nonterminal Term, Factor, Designator, Assignop, Relop, Addop, Mulop;
@@ -185,7 +185,9 @@ RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls RecordVarDecl
  					
 RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList SEMI;
 
-ConstructorDecl ::=	(ConstructorDecl) IDENT LPAREN RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
+ConstructorName ::= (ConstructorName) IDENT:className ;
+
+ConstructorDecl ::=	(ConstructorDecl) ConstructorName LPAREN RPAREN MultipleVarDecl LBRACE Statement RBRACE ;
 
 MethodReturnValue ::= (ReturnType) Type:type
 				  	|

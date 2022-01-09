@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 7/0/2022 19:17:20
+// 9/0/2022 19:48:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,24 +9,25 @@ public class ConstructorDecl implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
+    private ConstructorName ConstructorName;
     private MultipleVarDecl MultipleVarDecl;
     private Statement Statement;
 
-    public ConstructorDecl (String I1, MultipleVarDecl MultipleVarDecl, Statement Statement) {
-        this.I1=I1;
+    public ConstructorDecl (ConstructorName ConstructorName, MultipleVarDecl MultipleVarDecl, Statement Statement) {
+        this.ConstructorName=ConstructorName;
+        if(ConstructorName!=null) ConstructorName.setParent(this);
         this.MultipleVarDecl=MultipleVarDecl;
         if(MultipleVarDecl!=null) MultipleVarDecl.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public ConstructorName getConstructorName() {
+        return ConstructorName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setConstructorName(ConstructorName ConstructorName) {
+        this.ConstructorName=ConstructorName;
     }
 
     public MultipleVarDecl getMultipleVarDecl() {
@@ -66,17 +67,20 @@ public class ConstructorDecl implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ConstructorName!=null) ConstructorName.accept(visitor);
         if(MultipleVarDecl!=null) MultipleVarDecl.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ConstructorName!=null) ConstructorName.traverseTopDown(visitor);
         if(MultipleVarDecl!=null) MultipleVarDecl.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ConstructorName!=null) ConstructorName.traverseBottomUp(visitor);
         if(MultipleVarDecl!=null) MultipleVarDecl.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
@@ -87,7 +91,10 @@ public class ConstructorDecl implements SyntaxNode {
         buffer.append(tab);
         buffer.append("ConstructorDecl(\n");
 
-        buffer.append(" "+tab+I1);
+        if(ConstructorName!=null)
+            buffer.append(ConstructorName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(MultipleVarDecl!=null)

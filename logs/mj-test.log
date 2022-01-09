@@ -1,58 +1,85 @@
-INFO  19:21:33,290 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
-INFO  19:21:33,332 - #6 program
-INFO  19:21:33,332 - #5 Program
-INFO  19:21:33,332 - #5 int
-INFO  19:21:33,333 - #5 glob1
-INFO  19:21:33,333 - #44 ,
-INFO  19:21:33,333 - #5 glob2
-INFO  19:21:33,333 - #42 ;
-INFO  19:21:33,333 - #11 class
-INFO  19:21:33,333 - #5 A
-INFO  19:21:33,333 - #50 {
-INFO  19:21:33,333 - #5 int
-INFO  19:21:33,334 - #5 polje1
-INFO  19:21:33,334 - #44 ,
-INFO  19:21:33,334 - #5 polje2
-INFO  19:21:33,334 - #42 ;
-INFO  19:21:33,334 - #5 char
-INFO  19:21:33,334 - #5 polje3
-INFO  19:21:33,334 - #42 ;
-INFO  19:21:33,335 - #51 }
-INFO  19:21:33,335 - #25 record
-INFO  19:21:33,335 - #5 r
-INFO  19:21:33,335 - #50 {
-INFO  19:21:33,336 - #5 int
-INFO  19:21:33,336 - #5 pr1
-INFO  19:21:33,336 - #44 ,
-INFO  19:21:33,336 - #5 pr2
-INFO  19:21:33,336 - #42 ;
-INFO  19:21:33,336 - #5 bool
-INFO  19:21:33,337 - #5 polje3
-INFO  19:21:33,337 - #42 ;
-INFO  19:21:33,337 - #51 }
-INFO  19:21:33,337 - #50 {
-INFO  19:21:33,337 - #10 void
-INFO  19:21:33,337 - #5 main
-INFO  19:21:33,337 - #46 (
-INFO  19:21:33,338 - #47 )
-INFO  19:21:33,338 - #5 int
-INFO  19:21:33,338 - #5 lokaparam1
-INFO  19:21:33,339 - #42 ;
-INFO  19:21:33,339 - #50 {
-INFO  19:21:33,339 - #51 }
-INFO  19:21:33,339 - #5 int
-INFO  19:21:33,339 - #5 metoda
-INFO  19:21:33,339 - #46 (
-INFO  19:21:33,339 - #5 int
-INFO  19:21:33,339 - #5 param1
-INFO  19:21:33,340 - #47 )
-INFO  19:21:33,340 - #5 int
-INFO  19:21:33,340 - #5 lokparam1
-INFO  19:21:33,340 - #42 ;
-INFO  19:21:33,340 - #50 {
-INFO  19:21:33,340 - #51 }
-INFO  19:21:33,340 - #51 }
-INFO  19:21:33,346 - Program(
+INFO  22:39:03,161 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  22:39:03,248 - #6 program
+INFO  22:39:03,248 - #5 Program
+INFO  22:39:03,248 - #5 int
+INFO  22:39:03,249 - #5 glob1
+INFO  22:39:03,250 - #44 ,
+INFO  22:39:03,250 - #5 glob2
+INFO  22:39:03,250 - #42 ;
+INFO  22:39:03,250 - #11 class
+INFO  22:39:03,251 - #5 A
+INFO  22:39:03,251 - #50 {
+INFO  22:39:03,251 - #5 int
+INFO  22:39:03,252 - #5 polje1
+INFO  22:39:03,252 - #44 ,
+INFO  22:39:03,253 - #5 polje2
+INFO  22:39:03,253 - #42 ;
+INFO  22:39:03,253 - #5 char
+INFO  22:39:03,254 - #5 polje3
+INFO  22:39:03,254 - #42 ;
+INFO  22:39:03,254 - #50 {
+INFO  22:39:03,255 - #5 A
+INFO  22:39:03,255 - #46 (
+INFO  22:39:03,256 - #47 )
+INFO  22:39:03,256 - #5 int
+INFO  22:39:03,257 - #5 aa
+INFO  22:39:03,257 - #42 ;
+INFO  22:39:03,257 - #50 {
+INFO  22:39:03,258 - #5 a
+INFO  22:39:03,258 - #40 ++
+INFO  22:39:03,258 - #42 ;
+INFO  22:39:03,258 - #51 }
+INFO  22:39:03,258 - #10 void
+INFO  22:39:03,259 - #5 medsdstoda
+INFO  22:39:03,260 - #46 (
+INFO  22:39:03,261 - #5 int
+INFO  22:39:03,261 - #5 abd
+INFO  22:39:03,261 - #44 ,
+INFO  22:39:03,261 - #5 char
+INFO  22:39:03,261 - #5 akdj
+INFO  22:39:03,261 - #47 )
+INFO  22:39:03,261 - #5 char
+INFO  22:39:03,262 - #5 d
+INFO  22:39:03,262 - #42 ;
+INFO  22:39:03,262 - #50 {
+INFO  22:39:03,262 - #51 }
+INFO  22:39:03,262 - #51 }
+INFO  22:39:03,263 - #51 }
+INFO  22:39:03,264 - #25 record
+INFO  22:39:03,264 - #5 r
+INFO  22:39:03,264 - #50 {
+INFO  22:39:03,265 - #5 int
+INFO  22:39:03,266 - #5 pr1
+INFO  22:39:03,266 - #44 ,
+INFO  22:39:03,266 - #5 pr2
+INFO  22:39:03,266 - #42 ;
+INFO  22:39:03,266 - #5 bool
+INFO  22:39:03,267 - #5 polje3
+INFO  22:39:03,267 - #42 ;
+INFO  22:39:03,267 - #51 }
+INFO  22:39:03,267 - #50 {
+INFO  22:39:03,268 - #10 void
+INFO  22:39:03,268 - #5 main
+INFO  22:39:03,268 - #46 (
+INFO  22:39:03,268 - #47 )
+INFO  22:39:03,269 - #5 int
+INFO  22:39:03,269 - #5 lokaparam1
+INFO  22:39:03,269 - #42 ;
+INFO  22:39:03,270 - #50 {
+INFO  22:39:03,270 - #51 }
+INFO  22:39:03,270 - #5 int
+INFO  22:39:03,270 - #5 metoda
+INFO  22:39:03,270 - #46 (
+INFO  22:39:03,270 - #5 int
+INFO  22:39:03,270 - #5 param1
+INFO  22:39:03,270 - #47 )
+INFO  22:39:03,270 - #5 int
+INFO  22:39:03,270 - #5 lokparam1
+INFO  22:39:03,270 - #42 ;
+INFO  22:39:03,270 - #50 {
+INFO  22:39:03,270 - #51 }
+INFO  22:39:03,270 - #51 }
+INFO  22:39:03,278 - Program(
   ProgName(
    Program
   ) [ProgName]
@@ -77,7 +104,7 @@ INFO  19:21:33,346 - Program(
           ) [GlobalVariableDecls]
         ) [GlobalVarDecls]
       ) [DeclListVar]
-      ClassDeclNoMethods(
+      ClassDeclMethods(
         ClassNameSingle(
          A
         ) [ClassNameSingle]
@@ -114,7 +141,76 @@ INFO  19:21:33,346 - Program(
             ) [ClassVariableDeclList]
           ) [MultipleClassFields]
         ) [ClassFields]
-      ) [ClassDeclNoMethods]
+        ConstructorDecl(
+          ConstructorName(
+           A
+          ) [ConstructorName]
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              VariableDecl(
+                Type(
+                 int
+                ) [Type]
+                OneVariableDecl(
+                 aa
+                ) [OneVariableDecl]
+              ) [VariableDecl]
+            ) [VarDecl]
+          ) [VarDecls]
+          DesignatorStmt(
+            DesignatorStmtInc(
+              DesignatorIdent(
+               a
+              ) [DesignatorIdent]
+            ) [DesignatorStmtInc]
+          ) [DesignatorStmt]
+        ) [ConstructorDecl]
+        MethodsDecl(
+          MethodDeclNoStmt(
+            ReturnVoid(
+            ) [ReturnVoid]
+            MethodName(
+             medsdstoda
+            ) [MethodName]
+            MethodFormParams(
+              FormParams(
+                FormParam(
+                  OneFormParam(
+                    Type(
+                     int
+                    ) [Type]
+                   abd
+                  ) [OneFormParam]
+                ) [FormParam]
+                OneFormParam(
+                  Type(
+                   char
+                  ) [Type]
+                 akdj
+                ) [OneFormParam]
+              ) [FormParams]
+            ) [MethodFormParams]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                   char
+                  ) [Type]
+                  OneVariableDecl(
+                   d
+                  ) [OneVariableDecl]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+          ) [MethodDeclNoStmt]
+          NoMetodDecl(
+          ) [NoMetodDecl]
+        ) [MethodsDecl]
+      ) [ClassDeclMethods]
     ) [DeclListClass]
     RecordDecl(
       RecordName(
@@ -217,17 +313,21 @@ INFO  19:21:33,346 - Program(
     ) [MethodsDecl]
   ) [MethodsDecl]
 ) [Program]
-INFO  19:21:33,346 - ===================================
-INFO  19:21:33,348 - Deklarisana globalna promenljiva glob1
-INFO  19:21:33,348 - Deklarisana globalna promenljiva glob2
-INFO  19:21:33,348 - Deklarisano polje polje1
-INFO  19:21:33,348 - Deklarisano polje polje2
-INFO  19:21:33,348 - Deklarisano polje polje3
-INFO  19:21:33,348 - Deklarisan record r
-INFO  19:21:33,348 - Deklarisano polje u record-u pr1
-INFO  19:21:33,348 - Deklarisano polje u record-u pr2
-INFO  19:21:33,349 - Deklarisano polje u record-u polje3
-INFO  19:21:33,349 - Deklarisana lokalna promenljiva lokaparam1
-INFO  19:21:33,349 - Deklarisan formalni parametar param1
-INFO  19:21:33,349 - Deklarisana lokalna promenljiva lokparam1
-INFO  19:21:33,349 - ===================================
+INFO  22:39:03,279 - ===================================
+INFO  22:39:03,282 - Deklarisana globalna promenljiva glob1
+INFO  22:39:03,283 - Deklarisana globalna promenljiva glob2
+INFO  22:39:03,283 - Deklarisano polje polje1
+INFO  22:39:03,283 - Deklarisano polje polje2
+INFO  22:39:03,283 - Deklarisano polje polje3
+INFO  22:39:03,283 - Deklarisana lokalna promenljiva aa
+INFO  22:39:03,283 - Deklarisan formalni parametar abd
+INFO  22:39:03,284 - Deklarisan formalni parametar akdj
+INFO  22:39:03,284 - Deklarisana lokalna promenljiva d
+INFO  22:39:03,284 - Deklarisan record r
+INFO  22:39:03,284 - Deklarisano polje u record-u pr1
+INFO  22:39:03,284 - Deklarisano polje u record-u pr2
+INFO  22:39:03,284 - Deklarisano polje u record-u polje3
+INFO  22:39:03,284 - Deklarisana lokalna promenljiva lokaparam1
+INFO  22:39:03,284 - Deklarisan formalni parametar param1
+INFO  22:39:03,284 - Deklarisana lokalna promenljiva lokparam1
+INFO  22:39:03,284 - ===================================

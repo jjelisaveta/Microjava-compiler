@@ -76,6 +76,7 @@ nonterminal ClassVarDecl ClassVarDecl;
 nonterminal ClassFields ClassFields;
 nonterminal ClassName ClassName;
 nonterminal ClassConstructor ClassConstructor;
+nonterminal ConstructorName ConstructorName;
 nonterminal ClassMethods ClassMethods;
 nonterminal ConstructorDecl ConstructorDecl;
 nonterminal MethodReturnValue MethodReturnValue;
@@ -233,7 +234,9 @@ RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls:R1 RecordVarDecl:R2 {: RE
  					
 RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList:V1 SEMI {: RESULT=new RecordVariableDeclaration(V1); RESULT.setLine(V1left); :};
 
-ConstructorDecl ::=	(ConstructorDecl) IDENT:I1 LPAREN RPAREN MultipleVarDecl:M2 LBRACE Statement:S3 RBRACE {: RESULT=new ConstructorDecl(I1, M2, S3); RESULT.setLine(I1left); :} ;
+ConstructorName ::= (ConstructorName) IDENT:className {: RESULT=new ConstructorName(className); RESULT.setLine(classNameleft); :} ;
+
+ConstructorDecl ::=	(ConstructorDecl) ConstructorName:C1 LPAREN RPAREN MultipleVarDecl:M2 LBRACE Statement:S3 RBRACE {: RESULT=new ConstructorDecl(C1, M2, S3); RESULT.setLine(C1left); :} ;
 
 MethodReturnValue ::= (ReturnType) Type:type {: RESULT=new ReturnType(type); RESULT.setLine(typeleft); :}
 				  	|

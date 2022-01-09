@@ -13,6 +13,9 @@ import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
 import rs.etf.pp1.symboltable.concepts.*;
 import rs.ac.bg.etf.pp1.ast.BoolConst;
 import rs.ac.bg.etf.pp1.ast.CharConst;
+import rs.ac.bg.etf.pp1.ast.ClassDeclMethods;
+import rs.ac.bg.etf.pp1.ast.ClassDeclMethodsNoConstr;
+import rs.ac.bg.etf.pp1.ast.ClassDeclNoMethods;
 import rs.ac.bg.etf.pp1.ast.ClassFields;
 import rs.ac.bg.etf.pp1.ast.ClassName;
 import rs.ac.bg.etf.pp1.ast.ClassNameExtends;
@@ -22,6 +25,8 @@ import rs.ac.bg.etf.pp1.ast.ClassVariableDeclList;
 import rs.ac.bg.etf.pp1.ast.ConstDecl;
 import rs.ac.bg.etf.pp1.ast.ConstantDecl;
 import rs.ac.bg.etf.pp1.ast.ConstantDecls;
+import rs.ac.bg.etf.pp1.ast.ConstructorDecl;
+import rs.ac.bg.etf.pp1.ast.ConstructorName;
 import rs.ac.bg.etf.pp1.ast.DesignatorBracket;
 import rs.ac.bg.etf.pp1.ast.GlobalOneArrayVariableDecl;
 import rs.ac.bg.etf.pp1.ast.GlobalOneVarDecl;
@@ -173,6 +178,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(MethodName methodName) {
 		String name = methodName.getMethodName();
 		if (Tab.find(name) == Tab.noObj || Tab.find(name).getKind() != Obj.Meth) {
+			if (name.equals("main")) 
+				mainOk = true;
 			currentMethod = Tab.insert(Obj.Meth, name, currentType);
 			currentType = null;
 			//names.add(name);
@@ -197,11 +204,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	/* formal parameters */
 	public void visit(MethodFormParams methodFormParams) {
 		params.clear();
+		if (currentMethod.getName().equals("main")) {
+			report_error("Semanticka greska: main metoda ne sme da ima parametre.", null);
+		} 
+		if (currentMethod.getName().equals("main") && currentMethod.getType() != Tab.noType) {
+			report_error("Semanticka greska: povratna vrednost main metode mora biti void.", null);
+		}
 	}
 	
 	public void visit(OneFormParam oneFormParam) {
 		String paramName = oneFormParam.getParamName();
 		Struct type = oneFormParam.getType().struct;
+		
 		if (Tab.find(paramName) == Tab.noObj) {
 			Obj obj = Tab.insert(Obj.Var, paramName, type);
 			params.add(obj);
@@ -424,14 +438,39 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			}
 		}
 	}
-	
-	//names se popunjava preko OneVarDecl
-	
-	public void visit(ClassFields classFields) {
 		
+	public void visit(ClassDeclMethodsNoConstr classDeclMethodsNoConstr) {
 		Tab.chainLocalSymbols(currentClass);
 		Tab.closeScope();
 	}
+	
+	public void visit(ClassDeclMethods classDeclMethods) {
+		Tab.chainLocalSymbols(currentClass);
+		Tab.closeScope();
+	}
+	
+	public void visit(ClassDeclNoMethods classDeclNoMethods) {
+		Tab.chainLocalSymbols(currentClass);
+		Tab.closeScope();
+	}
+	
+	public void visit(ConstructorName constructorName) {
+		String name = constructorName.getClassName();
+		
+		if (!currentClass.getName().equals(name)) {
+			report_error("Semanticka greska: konstruktor mora imati isto ime kao klasa " + name, null);
+		} else {
+			currentMethod = Tab.insert(Obj.Meth, name+"()", Tab.noType);
+			Tab.openScope();
+		}
+	}
+
+	public void visit(ConstructorDecl constructorDecl) {
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
+	}
+	
+	
 	
 }
 
