@@ -1,26 +1,27 @@
 program Program
+	int a;
 	int glob1, glob2;
 	class A {
+		int a;
 		int polje1, polje2;
 		char polje3;
 		{
-		A() 
-		int aa; {
-		a++;
-		}
+			A() 
+			int a; {
+				a++;
+			}
 		
-		void medsdstoda(int abd, char akdj) 
-		char d;{
+		
+			int metoda() {
+			
+			}
 		
 		}
-		}
+	}
+	record wd{
+		int a;
 	}
 	
-	record r
-	{
-		int pr1, pr2;
-		bool polje3;
-	}
 	{
 		void main()
 		int lokaparam1; {

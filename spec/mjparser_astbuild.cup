@@ -97,17 +97,13 @@ nonterminal ActParsList ActParsList;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
-nonterminal Expr Expr;
 nonterminal AddopList AddopList;
-nonterminal Term Term;
-nonterminal Factor Factor;
-nonterminal Designator Designator;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -249,7 +245,7 @@ MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue:M1 MethodName:M2 LPAREN Meth
 					(MethodDeclNoStmt) MethodReturnValue:M1 MethodName:M2 LPAREN MethodFormPars:M3 RPAREN MultipleVarDecl:M4 LBRACE RBRACE {: RESULT=new MethodDeclNoStmt(M1, M2, M3, M4); RESULT.setLine(M1left); :} 
 					;
 
-MethodName ::= (MethodName) IDENT:methodName {: RESULT=new MethodName(methodName); RESULT.setLine(methodNameleft); :} ;
+MethodName ::= 		(MethodName) IDENT:methodName {: RESULT=new MethodName(methodName); RESULT.setLine(methodNameleft); :} ;
 
 MethodFormPars ::= 	(MethodFormParams) FormPars:F1 {: RESULT=new MethodFormParams(F1); RESULT.setLine(F1left); :}
 					|
@@ -356,11 +352,11 @@ CondFact ::=		(CondFactExpr) Expr:E1 {: RESULT=new CondFactExpr(E1); RESULT.setL
 					
 Expr ::= 			(ExprPlusAddop) Term:T1 AddopList:A2 {: RESULT=new ExprPlusAddop(T1, A2); RESULT.setLine(T1left); :}
 					|
-					(ExprPlus) Term:T1 {: RESULT=new ExprPlus(T1); RESULT.setLine(T1left); :}
+					(ExprPlus) Term:term {: RESULT=new ExprPlus(term); RESULT.setLine(termleft); :}
 					|
 					(ExprMinusAddop) MINUS Term:T1 AddopList:A2 {: RESULT=new ExprMinusAddop(T1, A2); RESULT.setLine(T1left); :}
 					|
-					(ExprMinus) MINUS Term:T1 {: RESULT=new ExprMinus(T1); RESULT.setLine(T1left); :}
+					(ExprMinus) MINUS Term:term {: RESULT=new ExprMinus(term); RESULT.setLine(termleft); :}
 					;
 				
 AddopList ::=		(AddOpsList) AddopList:A1 Addop:A2 Term:T3 {: RESULT=new AddOpsList(A1, A2, T3); RESULT.setLine(A1left); :} 	
@@ -370,14 +366,14 @@ AddopList ::=		(AddOpsList) AddopList:A1 Addop:A2 Term:T3 {: RESULT=new AddOpsLi
 					
 Term ::=			(Terms) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new Terms(T1, M2, F3); RESULT.setLine(T1left); :}
 					|
-					(TermFactor) Factor:F1 {: RESULT=new TermFactor(F1); RESULT.setLine(F1left); :}
+					(TermFactor) Factor:factor {: RESULT=new TermFactor(factor); RESULT.setLine(factorleft); :}
 					;
 					
 Factor ::= 			(FactorNoParen) Designator:D1 {: RESULT=new FactorNoParen(D1); RESULT.setLine(D1left); :}
 					|
 					(FactorParen) Designator:D1 LPAREN ActParsList:A2 RPAREN {: RESULT=new FactorParen(D1, A2); RESULT.setLine(D1left); :}
 					|
-					(FactorTypeConst) TypeConst:T1 {: RESULT=new FactorTypeConst(T1); RESULT.setLine(T1left); :}
+					(FactorTypeConst) TypeConst:typeConst {: RESULT=new FactorTypeConst(typeConst); RESULT.setLine(typeConstleft); :}
 					|
 					(FacorType) NEW Type:T1 {: RESULT=new FacorType(T1); RESULT.setLine(T1left); :} 
 					|

@@ -55,10 +55,10 @@ nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl,
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
-nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, Expr, AddopList;
-nonterminal Term, Factor, Designator, Assignop, Relop, Addop, Mulop;
+nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, AddopList;
+nonterminal Assignop, Relop, Addop, Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -200,7 +200,7 @@ MethodDecl ::= 		(MethodDeclStmt) MethodReturnValue MethodName LPAREN MethodForm
 					(MethodDeclNoStmt) MethodReturnValue MethodName LPAREN MethodFormPars RPAREN MultipleVarDecl LBRACE RBRACE 
 					;
 
-MethodName ::= (MethodName) IDENT:methodName ;
+MethodName ::= 		(MethodName) IDENT:methodName ;
 
 MethodFormPars ::= 	(MethodFormParams) FormPars
 					|
@@ -307,11 +307,11 @@ CondFact ::=		(CondFactExpr) Expr
 					
 Expr ::= 			(ExprPlusAddop) Term AddopList
 					|
-					(ExprPlus) Term
+					(ExprPlus) Term:term
 					|
 					(ExprMinusAddop) MINUS Term AddopList
 					|
-					(ExprMinus) MINUS Term
+					(ExprMinus) MINUS Term:term
 					;
 				
 AddopList ::=		(AddOpsList) AddopList Addop Term 	
@@ -321,14 +321,14 @@ AddopList ::=		(AddOpsList) AddopList Addop Term
 					
 Term ::=			(Terms) Term Mulop Factor
 					|
-					(TermFactor) Factor
+					(TermFactor) Factor:factor
 					;
 					
 Factor ::= 			(FactorNoParen) Designator
 					|
 					(FactorParen) Designator LPAREN ActParsList RPAREN
 					|
-					(FactorTypeConst) TypeConst
+					(FactorTypeConst) TypeConst:typeConst
 					|
 					(FacorType) NEW Type 
 					|

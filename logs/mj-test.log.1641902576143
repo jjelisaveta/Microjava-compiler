@@ -1,0 +1,237 @@
+INFO  12:44:57,962 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  12:44:58,049 - #6 program
+INFO  12:44:58,049 - #5 Program
+INFO  12:44:58,050 - #5 int
+INFO  12:44:58,051 - #5 a
+INFO  12:44:58,051 - #42 ;
+INFO  12:44:58,052 - #5 int
+INFO  12:44:58,052 - #5 glob1
+INFO  12:44:58,052 - #44 ,
+INFO  12:44:58,052 - #5 glob2
+INFO  12:44:58,052 - #42 ;
+INFO  12:44:58,052 - #11 class
+INFO  12:44:58,053 - #5 A
+INFO  12:44:58,053 - #50 {
+INFO  12:44:58,053 - #5 int
+INFO  12:44:58,054 - #5 polje1
+INFO  12:44:58,054 - #44 ,
+INFO  12:44:58,054 - #5 polje2
+INFO  12:44:58,054 - #42 ;
+INFO  12:44:58,055 - #5 char
+INFO  12:44:58,055 - #5 polje3
+INFO  12:44:58,055 - #42 ;
+INFO  12:44:58,055 - #50 {
+INFO  12:44:58,056 - #5 A
+INFO  12:44:58,056 - #46 (
+INFO  12:44:58,057 - #47 )
+INFO  12:44:58,057 - #5 int
+INFO  12:44:58,058 - #5 a
+INFO  12:44:58,058 - #42 ;
+INFO  12:44:58,058 - #50 {
+INFO  12:44:58,059 - #5 a
+INFO  12:44:58,059 - #40 ++
+INFO  12:44:58,059 - #42 ;
+INFO  12:44:58,059 - #51 }
+INFO  12:44:58,059 - #51 }
+INFO  12:44:58,061 - #51 }
+INFO  12:44:58,061 - #50 {
+INFO  12:44:58,061 - #10 void
+INFO  12:44:58,061 - #5 main
+INFO  12:44:58,062 - #46 (
+INFO  12:44:58,063 - #47 )
+INFO  12:44:58,064 - #5 int
+INFO  12:44:58,064 - #5 lokaparam1
+INFO  12:44:58,064 - #42 ;
+INFO  12:44:58,064 - #50 {
+INFO  12:44:58,064 - #51 }
+INFO  12:44:58,065 - #5 int
+INFO  12:44:58,065 - #5 metoda
+INFO  12:44:58,065 - #46 (
+INFO  12:44:58,065 - #5 int
+INFO  12:44:58,065 - #5 param1
+INFO  12:44:58,065 - #47 )
+INFO  12:44:58,066 - #5 int
+INFO  12:44:58,066 - #5 lokparam1
+INFO  12:44:58,066 - #42 ;
+INFO  12:44:58,066 - #50 {
+INFO  12:44:58,066 - #51 }
+INFO  12:44:58,066 - #51 }
+INFO  12:44:58,077 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListClass(
+    DeclListVar(
+      DeclListVar(
+        NoDeclList(
+        ) [NoDeclList]
+        GlobalVarDecls(
+          Type(
+           int
+          ) [Type]
+          GlobalVariableDecl(
+            GlobalOneVariableDecl(
+             a
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+        ) [GlobalVarDecls]
+      ) [DeclListVar]
+      GlobalVarDecls(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableDecls(
+          GlobalVariableDecl(
+            GlobalOneVariableDecl(
+             glob1
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecl]
+          GlobalOneVariableDecl(
+           glob2
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    ClassDeclMethods(
+      ClassNameSingle(
+       A
+      ) [ClassNameSingle]
+      ClassFields(
+        MultipleClassFields(
+          MultipleClassFields(
+            NoClassFields(
+            ) [NoClassFields]
+            ClassVariableDeclList(
+              ClassVariableDecls(
+                ClassVariableDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  OneVariableDecl(
+                   polje1
+                  ) [OneVariableDecl]
+                ) [ClassVariableDecl]
+                OneVariableDecl(
+                 polje2
+                ) [OneVariableDecl]
+              ) [ClassVariableDecls]
+            ) [ClassVariableDeclList]
+          ) [MultipleClassFields]
+          ClassVariableDeclList(
+            ClassVariableDecl(
+              Type(
+               char
+              ) [Type]
+              OneVariableDecl(
+               polje3
+              ) [OneVariableDecl]
+            ) [ClassVariableDecl]
+          ) [ClassVariableDeclList]
+        ) [MultipleClassFields]
+      ) [ClassFields]
+      ConstructorDecl(
+        ConstructorName(
+         A
+        ) [ConstructorName]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               a
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        DesignatorStmt(
+          DesignatorStmtInc(
+            DesignatorIdent(
+             a
+            ) [DesignatorIdent]
+          ) [DesignatorStmtInc]
+        ) [DesignatorStmt]
+      ) [ConstructorDecl]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [ClassDeclMethods]
+  ) [DeclListClass]
+  MethodsDecl(
+    MethodDeclNoStmt(
+      ReturnVoid(
+      ) [ReturnVoid]
+      MethodName(
+       main
+      ) [MethodName]
+      NoMethodFormParams(
+      ) [NoMethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             lokaparam1
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+    ) [MethodDeclNoStmt]
+    MethodsDecl(
+      MethodDeclNoStmt(
+        ReturnType(
+          Type(
+           int
+          ) [Type]
+        ) [ReturnType]
+        MethodName(
+         metoda
+        ) [MethodName]
+        MethodFormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             param1
+            ) [OneFormParam]
+          ) [FormParam]
+        ) [MethodFormParams]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               lokparam1
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+      ) [MethodDeclNoStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  12:44:58,077 - ===================================
+INFO  12:44:58,082 - Deklarisana globalna promenljiva a
+INFO  12:44:58,082 - Deklarisana globalna promenljiva glob1
+INFO  12:44:58,082 - Deklarisana globalna promenljiva glob2
+INFO  12:44:58,082 - Deklarisano polje polje1
+INFO  12:44:58,082 - Deklarisano polje polje2
+INFO  12:44:58,083 - Deklarisano polje polje3
+INFO  12:44:58,083 - Deklarisana lokalna promenljiva a
+INFO  12:44:58,083 - Deklarisana lokalna promenljiva lokaparam1
+INFO  12:44:58,083 - Deklarisan formalni parametar param1 broj 1
+INFO  12:44:58,083 - Deklarisana lokalna promenljiva lokparam1
+INFO  12:44:58,083 - ===================================
