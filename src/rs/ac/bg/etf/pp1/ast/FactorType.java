@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2022 21:45:12
+// 14/0/2022 19:23:14
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class FacorType extends Factor {
+public class FactorType extends Factor {
 
     private Type Type;
 
-    public FacorType (Type Type) {
+    public FactorType (Type Type) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
     }
@@ -43,7 +43,7 @@ public class FacorType extends Factor {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("FacorType(\n");
+        buffer.append("FactorType(\n");
 
         if(Type!=null)
             buffer.append(Type.toString("  "+tab));
@@ -52,7 +52,7 @@ public class FacorType extends Factor {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [FacorType]");
+        buffer.append(") [FactorType]");
         return buffer.toString();
     }
 }

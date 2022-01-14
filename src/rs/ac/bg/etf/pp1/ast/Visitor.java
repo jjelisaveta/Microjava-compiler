@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2022 21:45:12
+// 14/0/2022 19:23:14
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -73,13 +73,13 @@ public interface Visitor {
     public void visit(DesignatorPoint DesignatorPoint);
     public void visit(FactorExpr FactorExpr);
     public void visit(FactorArrayType FactorArrayType);
-    public void visit(FacorType FacorType);
+    public void visit(FactorType FactorType);
     public void visit(FactorTypeConst FactorTypeConst);
     public void visit(FactorParen FactorParen);
     public void visit(FactorNoParen FactorNoParen);
     public void visit(TermFactor TermFactor);
     public void visit(Terms Terms);
-    public void visit(NoAddopList NoAddopList);
+    public void visit(OneAddop OneAddop);
     public void visit(AddOpsList AddOpsList);
     public void visit(ExprMinus ExprMinus);
     public void visit(ExprMinusAddop ExprMinusAddop);

@@ -1,0 +1,355 @@
+INFO  22:30:08,381 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  22:30:08,514 - #6 program
+INFO  22:30:08,514 - #5 Program
+INFO  22:30:08,514 - #5 int
+INFO  22:30:08,516 - #5 a
+INFO  22:30:08,516 - #42 ;
+INFO  22:30:08,517 - #11 class
+INFO  22:30:08,517 - #5 A
+INFO  22:30:08,517 - #50 {
+INFO  22:30:08,517 - #5 int
+INFO  22:30:08,518 - #5 a
+INFO  22:30:08,518 - #42 ;
+INFO  22:30:08,518 - #5 int
+INFO  22:30:08,519 - #5 polje1
+INFO  22:30:08,519 - #44 ,
+INFO  22:30:08,519 - #5 polje2
+INFO  22:30:08,519 - #42 ;
+INFO  22:30:08,519 - #5 char
+INFO  22:30:08,519 - #5 polje3
+INFO  22:30:08,519 - #42 ;
+INFO  22:30:08,520 - #50 {
+INFO  22:30:08,520 - #5 A
+INFO  22:30:08,521 - #46 (
+INFO  22:30:08,521 - #47 )
+INFO  22:30:08,522 - #5 int
+INFO  22:30:08,522 - #5 a
+INFO  22:30:08,522 - #42 ;
+INFO  22:30:08,522 - #50 {
+INFO  22:30:08,523 - #5 a
+INFO  22:30:08,523 - #40 ++
+INFO  22:30:08,523 - #42 ;
+INFO  22:30:08,524 - #51 }
+INFO  22:30:08,524 - #51 }
+INFO  22:30:08,525 - #51 }
+INFO  22:30:08,525 - #5 A
+INFO  22:30:08,525 - #5 niz
+INFO  22:30:08,526 - #48 [
+INFO  22:30:08,526 - #49 ]
+INFO  22:30:08,526 - #42 ;
+INFO  22:30:08,526 - #25 record
+INFO  22:30:08,526 - #5 wd
+INFO  22:30:08,526 - #50 {
+INFO  22:30:08,527 - #5 int
+INFO  22:30:08,528 - #5 a
+INFO  22:30:08,528 - #42 ;
+INFO  22:30:08,528 - #51 }
+INFO  22:30:08,528 - #50 {
+INFO  22:30:08,529 - #5 int
+INFO  22:30:08,529 - #5 metoda
+INFO  22:30:08,529 - #46 (
+INFO  22:30:08,530 - #5 int
+INFO  22:30:08,531 - #5 param1
+INFO  22:30:08,531 - #47 )
+INFO  22:30:08,531 - #5 int
+INFO  22:30:08,531 - #5 lokparam1
+INFO  22:30:08,531 - #42 ;
+INFO  22:30:08,531 - #50 {
+INFO  22:30:08,531 - #9 return
+INFO  22:30:08,531 - #2 3
+INFO  22:30:08,531 - #42 ;
+INFO  22:30:08,532 - #51 }
+INFO  22:30:08,532 - #10 void
+INFO  22:30:08,532 - #5 main
+INFO  22:30:08,533 - #46 (
+INFO  22:30:08,533 - #47 )
+INFO  22:30:08,534 - #5 int
+INFO  22:30:08,534 - #5 lokparam1
+INFO  22:30:08,535 - #42 ;
+INFO  22:30:08,535 - #50 {
+INFO  22:30:08,535 - #5 a
+INFO  22:30:08,535 - #39 =
+INFO  22:30:08,535 - #5 metoda
+INFO  22:30:08,536 - #46 (
+INFO  22:30:08,536 - #5 metoda
+INFO  22:30:08,536 - #46 (
+INFO  22:30:08,536 - #2 5
+INFO  22:30:08,536 - #47 )
+INFO  22:30:08,537 - #47 )
+INFO  22:30:08,537 - #42 ;
+INFO  22:30:08,537 - #51 }
+INFO  22:30:08,537 - #51 }
+INFO  22:30:08,545 - Program(
+  ProgName(
+   Program
+  ) [ProgName]
+  DeclListRecord(
+    DeclListVar(
+      DeclListClass(
+        DeclListVar(
+          NoDeclList(
+          ) [NoDeclList]
+          GlobalVarDecls(
+            Type(
+             int
+            ) [Type]
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+               a
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+          ) [GlobalVarDecls]
+        ) [DeclListVar]
+        ClassDeclMethods(
+          ClassNameSingle(
+           A
+          ) [ClassNameSingle]
+          ClassFields(
+            MultipleClassFields(
+              MultipleClassFields(
+                MultipleClassFields(
+                  NoClassFields(
+                  ) [NoClassFields]
+                  ClassVariableDeclList(
+                    ClassVariableDecl(
+                      Type(
+                       int
+                      ) [Type]
+                      OneVariableDecl(
+                       a
+                      ) [OneVariableDecl]
+                    ) [ClassVariableDecl]
+                  ) [ClassVariableDeclList]
+                ) [MultipleClassFields]
+                ClassVariableDeclList(
+                  ClassVariableDecls(
+                    ClassVariableDecl(
+                      Type(
+                       int
+                      ) [Type]
+                      OneVariableDecl(
+                       polje1
+                      ) [OneVariableDecl]
+                    ) [ClassVariableDecl]
+                    OneVariableDecl(
+                     polje2
+                    ) [OneVariableDecl]
+                  ) [ClassVariableDecls]
+                ) [ClassVariableDeclList]
+              ) [MultipleClassFields]
+              ClassVariableDeclList(
+                ClassVariableDecl(
+                  Type(
+                   char
+                  ) [Type]
+                  OneVariableDecl(
+                   polje3
+                  ) [OneVariableDecl]
+                ) [ClassVariableDecl]
+              ) [ClassVariableDeclList]
+            ) [MultipleClassFields]
+          ) [ClassFields]
+          ConstructorDecl(
+            ConstructorName(
+             A
+            ) [ConstructorName]
+            VarDecls(
+              NoVarDecl(
+              ) [NoVarDecl]
+              VarDecl(
+                VariableDecl(
+                  Type(
+                   int
+                  ) [Type]
+                  OneVariableDecl(
+                   a
+                  ) [OneVariableDecl]
+                ) [VariableDecl]
+              ) [VarDecl]
+            ) [VarDecls]
+            DesignatorStmt(
+              DesignatorStmtInc(
+                DesignatorIdent(
+                 a
+                ) [DesignatorIdent]
+              ) [DesignatorStmtInc]
+            ) [DesignatorStmt]
+          ) [ConstructorDecl]
+          NoMetodDecl(
+          ) [NoMetodDecl]
+        ) [ClassDeclMethods]
+      ) [DeclListClass]
+      GlobalVarDecls(
+        Type(
+         A
+        ) [Type]
+        GlobalVariableDecl(
+          GlobalOneArrayVariableDecl(
+           niz
+          ) [GlobalOneArrayVariableDecl]
+        ) [GlobalVariableDecl]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    RecordDecl(
+      RecordName(
+       wd
+      ) [RecordName]
+      RecordVariableDecl(
+        RecordNoVariableDecl(
+        ) [RecordNoVariableDecl]
+        RecordVariableDeclaration(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             a
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [RecordVariableDeclaration]
+      ) [RecordVariableDecl]
+    ) [RecordDecl]
+  ) [DeclListRecord]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnType(
+        Type(
+         int
+        ) [Type]
+      ) [ReturnType]
+      MethodName(
+       metoda
+      ) [MethodName]
+      MethodFormParams(
+        FormParam(
+          OneFormParam(
+            Type(
+             int
+            ) [Type]
+           param1
+          ) [OneFormParam]
+        ) [FormParam]
+      ) [MethodFormParams]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecl(
+            Type(
+             int
+            ) [Type]
+            OneVariableDecl(
+             lokparam1
+            ) [OneVariableDecl]
+          ) [VariableDecl]
+        ) [VarDecl]
+      ) [VarDecls]
+      OneStmt(
+        ReturnStmtExpr(
+          ExprPlus(
+            TermFactor(
+              FactorTypeConst(
+                NumConst(
+                 3
+                ) [NumConst]
+              ) [FactorTypeConst]
+            ) [TermFactor]
+          ) [ExprPlus]
+        ) [ReturnStmtExpr]
+      ) [OneStmt]
+    ) [MethodDeclStmt]
+    MethodsDecl(
+      MethodDeclStmt(
+        ReturnVoid(
+        ) [ReturnVoid]
+        MethodName(
+         main
+        ) [MethodName]
+        NoMethodFormParams(
+        ) [NoMethodFormParams]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               lokparam1
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+          ) [VarDecl]
+        ) [VarDecls]
+        OneStmt(
+          DesignatorStmt(
+            DesignatorStmtAssign(
+              AssignStmt(
+                DesignatorIdent(
+                 a
+                ) [DesignatorIdent]
+                AssignOperator(
+                ) [AssignOperator]
+                ExprPlus(
+                  TermFactor(
+                    FactorParen(
+                      DesignatorIdent(
+                       metoda
+                      ) [DesignatorIdent]
+                      ActParamsList(
+                        ActParam(
+                          ExprPlus(
+                            TermFactor(
+                              FactorParen(
+                                DesignatorIdent(
+                                 metoda
+                                ) [DesignatorIdent]
+                                ActParamsList(
+                                  ActParam(
+                                    ExprPlus(
+                                      TermFactor(
+                                        FactorTypeConst(
+                                          NumConst(
+                                           5
+                                          ) [NumConst]
+                                        ) [FactorTypeConst]
+                                      ) [TermFactor]
+                                    ) [ExprPlus]
+                                  ) [ActParam]
+                                ) [ActParamsList]
+                              ) [FactorParen]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                        ) [ActParam]
+                      ) [ActParamsList]
+                    ) [FactorParen]
+                  ) [TermFactor]
+                ) [ExprPlus]
+              ) [AssignStmt]
+            ) [DesignatorStmtAssign]
+          ) [DesignatorStmt]
+        ) [OneStmt]
+      ) [MethodDeclStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+INFO  22:30:08,545 - ===================================
+INFO  22:30:08,567 - Deklarisana globalna promenljiva a
+INFO  22:30:08,568 - Deklarisano polje a
+INFO  22:30:08,568 - Deklarisano polje polje1
+INFO  22:30:08,568 - Deklarisano polje polje2
+INFO  22:30:08,568 - Deklarisano polje polje3
+INFO  22:30:08,568 - Deklarisana lokalna promenljiva a
+INFO  22:30:08,568 - Pristup lokalnoj promenljivoj a na liniji 10
+INFO  22:30:08,568 - Deklarisan globalni niz niz
+INFO  22:30:08,569 - Deklarisan record wd
+INFO  22:30:08,569 - Deklarisano polje u record-u a
+INFO  22:30:08,569 - metoda metoda 25
+INFO  22:30:08,569 - Deklarisan formalni parametar param1 broj 1
+INFO  22:30:08,569 - Deklarisana lokalna promenljiva lokparam1
+INFO  22:30:08,569 - metoda main 30
+INFO  22:30:08,570 - Deklarisana lokalna promenljiva lokparam1
+INFO  22:30:08,570 - Pristup globalnoj promenljivoj a na liniji 32
+INFO  22:37:41,118 - Pronadjen poziv funkcije metoda na liniji 32

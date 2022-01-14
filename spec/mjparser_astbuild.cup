@@ -90,20 +90,16 @@ nonterminal NumConstList NumConstList;
 nonterminal Statements Statements;
 nonterminal StatementList StatementList;
 nonterminal IfCondition IfCondition;
-nonterminal DesignatorStatement DesignatorStatement;
 nonterminal AssignStatement AssignStatement;
 nonterminal ActPars ActPars;
 nonterminal ActParsList ActParsList;
 nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
-nonterminal AddopList AddopList;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -361,10 +357,10 @@ Expr ::= 			(ExprPlusAddop) Term:T1 AddopList:A2 {: RESULT=new ExprPlusAddop(T1,
 				
 AddopList ::=		(AddOpsList) AddopList:A1 Addop:A2 Term:T3 {: RESULT=new AddOpsList(A1, A2, T3); RESULT.setLine(A1left); :} 	
 					|
-					(NoAddopList) Addop:A1 Term:T2 {: RESULT=new NoAddopList(A1, T2); RESULT.setLine(A1left); :}
+					(OneAddop) Addop:A1 Term:T2 {: RESULT=new OneAddop(A1, T2); RESULT.setLine(A1left); :}
 					;
 					
-Term ::=			(Terms) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new Terms(T1, M2, F3); RESULT.setLine(T1left); :}
+Term ::=			(Terms) Term:term Mulop:M1 Factor:factor {: RESULT=new Terms(term, M1, factor); RESULT.setLine(termleft); :}
 					|
 					(TermFactor) Factor:factor {: RESULT=new TermFactor(factor); RESULT.setLine(factorleft); :}
 					;
@@ -375,20 +371,20 @@ Factor ::= 			(FactorNoParen) Designator:D1 {: RESULT=new FactorNoParen(D1); RES
 					|
 					(FactorTypeConst) TypeConst:typeConst {: RESULT=new FactorTypeConst(typeConst); RESULT.setLine(typeConstleft); :}
 					|
-					(FacorType) NEW Type:T1 {: RESULT=new FacorType(T1); RESULT.setLine(T1left); :} 
+					(FactorType) NEW Type:T1 {: RESULT=new FactorType(T1); RESULT.setLine(T1left); :} 
 					|
 					(FactorArrayType) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new FactorArrayType(T1, E2); RESULT.setLine(T1left); :}
 					|
 					(FactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :}
 					;
 								
-Designator ::=		(DesignatorPoint) Designator:D1 POINT IDENT:I2 {: RESULT=new DesignatorPoint(D1, I2); RESULT.setLine(D1left); :}
+Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name {: RESULT=new DesignatorPoint(prev, name); RESULT.setLine(prevleft); :}
 					|
-					(DesignatorBracket) Designator:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorBracket(D1, E2); RESULT.setLine(D1left); :}
+					(DesignatorBracket) Designator:prev LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorBracket(prev, E1); RESULT.setLine(prevleft); :}
 					|
-					(DesignatorIdent) IDENT:I1 {: RESULT=new DesignatorIdent(I1); RESULT.setLine(I1left); :}
+					(DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
 					|
-					(DesignatorThis) THIS {: RESULT=new DesignatorThis(); :}
+					(DesignatorThis) THIS:name {: RESULT=new DesignatorThis(); :}
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;

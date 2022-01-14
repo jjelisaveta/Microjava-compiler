@@ -1,16 +1,16 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/0/2022 21:45:12
+// 14/0/2022 19:23:14
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NoAddopList extends AddopList {
+public class OneAddop extends AddopList {
 
     private Addop Addop;
     private Term Term;
 
-    public NoAddopList (Addop Addop, Term Term) {
+    public OneAddop (Addop Addop, Term Term) {
         this.Addop=Addop;
         if(Addop!=null) Addop.setParent(this);
         this.Term=Term;
@@ -57,7 +57,7 @@ public class NoAddopList extends AddopList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NoAddopList(\n");
+        buffer.append("OneAddop(\n");
 
         if(Addop!=null)
             buffer.append(Addop.toString("  "+tab));
@@ -72,7 +72,7 @@ public class NoAddopList extends AddopList {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [NoAddopList]");
+        buffer.append(") [OneAddop]");
         return buffer.toString();
     }
 }

@@ -55,10 +55,10 @@ nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl,
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
-nonterminal DesignatorStatement, AssignStatement, ActPars, ActParsList, Condition, CondTerm, CondFact, AddopList;
+nonterminal AssignStatement, ActPars, ActParsList, Condition;
 nonterminal Assignop, Relop, Addop, Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -316,10 +316,10 @@ Expr ::= 			(ExprPlusAddop) Term AddopList
 				
 AddopList ::=		(AddOpsList) AddopList Addop Term 	
 					|
-					(NoAddopList) Addop Term
+					(OneAddop) Addop Term
 					;
 					
-Term ::=			(Terms) Term Mulop Factor
+Term ::=			(Terms) Term:term Mulop Factor:factor
 					|
 					(TermFactor) Factor:factor
 					;
@@ -330,20 +330,20 @@ Factor ::= 			(FactorNoParen) Designator
 					|
 					(FactorTypeConst) TypeConst:typeConst
 					|
-					(FacorType) NEW Type 
+					(FactorType) NEW Type 
 					|
 					(FactorArrayType) NEW Type LBRACKET Expr RBRACKET
 					|
 					(FactorExpr) LPAREN Expr RPAREN
 					;
 								
-Designator ::=		(DesignatorPoint) Designator POINT IDENT
+Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name
 					|
-					(DesignatorBracket) Designator LBRACKET Expr RBRACKET
+					(DesignatorBracket) Designator:prev LBRACKET Expr RBRACKET
 					|
-					(DesignatorIdent) IDENT
+					(DesignatorIdent) IDENT:name
 					|
-					(DesignatorThis) THIS
+					(DesignatorThis) THIS:name
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL ;

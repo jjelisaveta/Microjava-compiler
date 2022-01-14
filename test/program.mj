@@ -1,6 +1,6 @@
 program Program
 	int a;
-	int glob1, glob2;
+	const int b = 3;
 	class A {
 		int a;
 		int polje1, polje2;
@@ -12,27 +12,37 @@ program Program
 			}
 		
 		
-			int metoda() {
-			
-			}
 		
 		}
 	}
+	A niz[];
 	record wd{
 		int a;
 	}
 	
 	{
-		void main()
-		int lokaparam1; {
-			
-		}
+
 		
 		int metoda(int param1) 
-		int lokparam1;
-		{
-		
+		{ 
+			return 3;		
 		}
+		
+		void nista() {
+			a++;
+		}
+		void main()
+		int lokparam1; {
+			metoda(metoda(metoda(5)));
+			a = a * metoda(a) / 3 + 3;
+			if (a + 1 == 2) {
+				a++;
+			} else if (a != (b * 4) - 3){
+				nista();
+			}
+		}
+		
+		
 		
 		
 	}
