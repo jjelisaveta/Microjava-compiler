@@ -1,13 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/0/2022 19:23:14
+// 16/0/2022 23:10:24
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DesignatorThis extends Designator {
+public class DoKeyword implements SyntaxNode {
 
-    public DesignatorThis () {
+    private SyntaxNode parent;
+    private int line;
+    public DoKeyword () {
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +46,10 @@ public class DesignatorThis extends Designator {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DesignatorThis(\n");
+        buffer.append("DoKeyword(\n");
 
         buffer.append(tab);
-        buffer.append(") [DesignatorThis]");
+        buffer.append(") [DoKeyword]");
         return buffer.toString();
     }
 }

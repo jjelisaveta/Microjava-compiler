@@ -53,7 +53,6 @@ import java_cup.runtime.Symbol;
 "read" 		{ return new_symbol(sym.READ, yytext()); }
 "extends" 	{ return new_symbol(sym.EXTENDS, yytext()); }
 "continue" 	{ return new_symbol(sym.CONTINUE, yytext()); }
-"this" 		{ return new_symbol(sym.THIS, yytext()); }
 "super" 	{ return new_symbol(sym.SUPER, yytext()); }
 "goto" 		{ return new_symbol(sym.GOTO, yytext()); }
 "record" 	{ return new_symbol(sym.RECORD, yytext()); }

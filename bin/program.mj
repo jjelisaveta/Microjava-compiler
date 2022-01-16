@@ -1,43 +1,42 @@
 program Program
 	int a;
-	const int b = 3;
 	class A {
 		int a;
 		int polje1, polje2;
-		char polje3;
 		{
 			A() 
 			int a; {
-				a++;
+				polje1 = polje2 + a;
 			}
-		
+			
+			int met() {
+				return 3;
+			}
 		
 		
 		}
 	}
 	A niz[];
-	record wd{
-		int a;
-	}
-	
 	{
-
-		
 		int metoda(int param1) 
+			int lokparam1;
 		{ 
+			param1 = lokparam1;
 			return 3;		
 		}
 		
 		void nista() {
 			a++;
 		}
+		
 		void main()
-		int lokparam1; {
-			metoda(metoda(metoda(5)));
-			a = a * metoda(a) / 3 + 3;
+		int lokparam1;
+		A objekat; {
+			a = a * metoda(lokparam1) / 3 + 3;
+			objekat = new A;
 			if (a + 1 == 2) {
-				a++;
-			} else if (a != (b * 4) - 3){
+				a = lokparam1;
+			} else if ((a+ 1 == 2) && true){
 				nista();
 			}
 		}

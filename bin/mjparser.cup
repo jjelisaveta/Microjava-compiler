@@ -55,10 +55,10 @@ nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl,
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
-nonterminal AssignStatement, ActPars, ActParsList, Condition;
-nonterminal Assignop, Relop, Addop, Mulop;
+nonterminal AssignStatement, ActPars, ActParsList;
+nonterminal Assignop, Relop, Addop, Mulop, DoKeyword;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -224,7 +224,7 @@ Type ::=			(Type) IDENT:typeName ;
 
 Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
-					(DoStmt) DO Statement WHILE LPAREN Condition RPAREN SEMI
+					(DoStmt) DoKeyword Statement WHILE LPAREN Condition RPAREN SEMI
 					|
 					(BreakStmt) BREAK SEMI
 					|
@@ -246,8 +246,10 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
 					(MultipleStatements)Statements
 					;
+
+DoKeyword ::=		(DoKeyword) DO ;
 					
-IfCondition ::= 	(OkIfCondition) Condition
+IfCondition ::= 	(OkIfCondition) Condition:cond
 					|
 					(ErrorIfCondition) error:e
 					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :}
@@ -304,7 +306,7 @@ CondFact ::=		(CondFactExpr) Expr
 					|
 					(CondFactExprRelop) Expr Relop Expr				
 					;
-					
+					 
 Expr ::= 			(ExprPlusAddop) Term AddopList
 					|
 					(ExprPlus) Term:term
@@ -342,8 +344,6 @@ Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name
 					(DesignatorBracket) Designator:prev LBRACKET Expr RBRACKET
 					|
 					(DesignatorIdent) IDENT:name
-					|
-					(DesignatorThis) THIS:name
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL ;

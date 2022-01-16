@@ -93,13 +93,13 @@ nonterminal IfCondition IfCondition;
 nonterminal AssignStatement AssignStatement;
 nonterminal ActPars ActPars;
 nonterminal ActParsList ActParsList;
-nonterminal Condition Condition;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
+nonterminal DoKeyword DoKeyword;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -265,7 +265,7 @@ Type ::=			(Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(ty
 
 Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 					|
-					(DoStmt) DO Statement:S1 WHILE LPAREN Condition:C2 RPAREN SEMI {: RESULT=new DoStmt(S1, C2); RESULT.setLine(S1left); :}
+					(DoStmt) DoKeyword:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new DoStmt(D1, S2, C3); RESULT.setLine(D1left); :}
 					|
 					(BreakStmt) BREAK SEMI {: RESULT=new BreakStmt(); :}
 					|
@@ -287,8 +287,10 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Desig
 					|
 					(MultipleStatements)Statements:S1 {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
 					;
+
+DoKeyword ::=		(DoKeyword) DO {: RESULT=new DoKeyword(); :} ;
 					
-IfCondition ::= 	(OkIfCondition) Condition:C1 {: RESULT=new OkIfCondition(C1); RESULT.setLine(C1left); :}
+IfCondition ::= 	(OkIfCondition) Condition:cond {: RESULT=new OkIfCondition(cond); RESULT.setLine(condleft); :}
 					|
 					(ErrorIfCondition) error:e
 					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :} {: RESULT=new ErrorIfCondition(); :}
@@ -345,7 +347,7 @@ CondFact ::=		(CondFactExpr) Expr:E1 {: RESULT=new CondFactExpr(E1); RESULT.setL
 					|
 					(CondFactExprRelop) Expr:E1 Relop:R2 Expr:E3 {: RESULT=new CondFactExprRelop(E1, R2, E3); RESULT.setLine(E1left); :}				
 					;
-					
+					 
 Expr ::= 			(ExprPlusAddop) Term:T1 AddopList:A2 {: RESULT=new ExprPlusAddop(T1, A2); RESULT.setLine(T1left); :}
 					|
 					(ExprPlus) Term:term {: RESULT=new ExprPlus(term); RESULT.setLine(termleft); :}
@@ -383,8 +385,6 @@ Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name {: RESULT=new
 					(DesignatorBracket) Designator:prev LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorBracket(prev, E1); RESULT.setLine(prevleft); :}
 					|
 					(DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
-					|
-					(DesignatorThis) THIS:name {: RESULT=new DesignatorThis(); :}
 					;
 									
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;
