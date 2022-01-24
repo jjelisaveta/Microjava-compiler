@@ -6,6 +6,7 @@ program Program
 		{
 			A() 
 			int a; {
+				
 				polje1 = polje2 + a;
 			}
 			
@@ -15,6 +16,10 @@ program Program
 		
 		
 		}
+	}
+	record rec {
+		A a[];
+		int b, c;
 	}
 	A niz[];
 	{
@@ -30,18 +35,13 @@ program Program
 		}
 		
 		void main()
+		rec rec1;
 		int lokparam1;
 		A objekat; {
-			a = a * metoda(lokparam1) / 3 + 3;
-			objekat = new A;
-			if (a + 1 == 2) {
-				a = lokparam1;
-			} else if ((a+ 1 == 2) && true){
-				nista();
-			}
+			rec1.a[3 + 2].met();
+			metoda(3);
 		}
 		
-		
-		
-		
 	}
+	
+

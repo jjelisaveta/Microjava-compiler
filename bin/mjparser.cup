@@ -278,7 +278,7 @@ DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement
 					
 AssignStatement ::= (AssignStmt) Designator Assignop Expr
 					|
-					(ErrorAssignStmt)  error:e
+					(ErrorAssignStmt) Designator Assignop:e  error
 					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :}
 					;
 					
@@ -338,13 +338,14 @@ Factor ::= 			(FactorNoParen) Designator
 					|
 					(FactorExpr) LPAREN Expr RPAREN
 					;
-								
+					
 Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name
 					|
 					(DesignatorBracket) Designator:prev LBRACKET Expr RBRACKET
 					|
 					(DesignatorIdent) IDENT:name
 					;
+
 									
 Assignop ::= 		(AssignOperator) EQUAL ;
 

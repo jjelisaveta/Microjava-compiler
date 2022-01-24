@@ -319,8 +319,8 @@ DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement:A1 {: RESULT=new 
 					
 AssignStatement ::= (AssignStmt) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new AssignStmt(D1, A2, E3); RESULT.setLine(D1left); :}
 					|
-					(ErrorAssignStmt)  error:e
-					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :} {: RESULT=new ErrorAssignStmt(); :}
+					(ErrorAssignStmt) Designator:D1 Assignop:e  error
+					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :} {: RESULT=new ErrorAssignStmt(D1, e); RESULT.setLine(D1left); :}
 					;
 					
 ActPars ::= 		(ActParams) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParams(A1, E2); RESULT.setLine(A1left); :}	
@@ -379,13 +379,14 @@ Factor ::= 			(FactorNoParen) Designator:D1 {: RESULT=new FactorNoParen(D1); RES
 					|
 					(FactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :}
 					;
-								
+					
 Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name {: RESULT=new DesignatorPoint(prev, name); RESULT.setLine(prevleft); :}
 					|
 					(DesignatorBracket) Designator:prev LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorBracket(prev, E1); RESULT.setLine(prevleft); :}
 					|
 					(DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
 					;
+
 									
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;
 
