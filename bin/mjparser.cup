@@ -5,6 +5,9 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
+
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -24,6 +27,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -53,12 +57,12 @@ terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, 
 
 nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, ClassFieldsDeclList, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
-nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodName, MethodFormPars, FormPars, OneFormPar;
+nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
 nonterminal AssignStatement, ActPars, ActParsList;
 nonterminal Assignop, Relop, Addop, Mulop, DoKeyword;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -345,8 +349,7 @@ Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name
 					|
 					(DesignatorIdent) IDENT:name
 					;
-
-									
+		
 Assignop ::= 		(AssignOperator) EQUAL ;
 
 Relop ::= 			(RelOpEq) EQ

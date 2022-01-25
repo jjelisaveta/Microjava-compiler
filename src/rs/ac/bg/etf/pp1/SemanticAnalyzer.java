@@ -19,9 +19,8 @@ import rs.etf.pp1.symboltable.*;
 public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	static final Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
-	//static final Struct recordType = Tab.insert(Obj.Type, "record", new Struct(Struct.Class)).getType();
-	
 	static final int RECORD_FP_POS = 2;
+
 	
 	Obj currentMethod = null;
 	Obj currentRecord = null;
@@ -152,6 +151,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			if (name.equals("main")) 
 				mainOk = true;
 			currentMethod = Tab.insert(Obj.Meth, name, currentType);
+			methodName.obj = currentMethod;
 			currentType = null;
 			//report_info("Definisana metoda " + name + " " + methodName.getLine(), null);
 			Tab.openScope();
@@ -415,7 +415,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			String varName = names.remove(0);
 			String type = variableTypes.remove(0);
 			currentClass.setLevel(currentClass.getLevel() + 1);
-			
 			if (type.equals("var")) {
 				Obj node = Tab.insert(Obj.Fld, varName, varType);
 				node.setFpPos(i);
@@ -425,7 +424,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 				Obj node = Tab.insert(Obj.Fld, varName, varArrayType);
 				node.setFpPos(i);
 				i++;
-				report_info("Deklarisano polje " + varName, null);
+				report_info("Deklarisano polje " + varName + "[]", null);
 			}
 		}
 	}
@@ -926,6 +925,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(MultipleStatements multipleStatements) {
 		
 	}
+	
+	public boolean passed(){
+    	return !errorDetected;
+    }
 	
 }
 

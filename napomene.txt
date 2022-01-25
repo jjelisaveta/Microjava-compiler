@@ -1,0 +1,67 @@
+1. proveriti jel treba setLevel +1 za metode
+
+2. metoda(3)++; - greska u iskazu dodele
+
+PITANJA
+=================================================
+1. greska kod naredbe dodele, kako tacno treba?
+2. da li treba setLevel za const? u kojoj fazi se postavlja setAdr
+
+
+TREBA URADITI
+=================================================
+1. nasledjivanje klasa - ClassNameExtends
+2. izmeniti ispis koriscenja da bude za var globalna promenljiva a ne i za const
+3. srediti designator
+
+NE RADI
+=================================================
+1. dodela vrednosti u globalnu promenljivu
+
+
+program Program
+	int a;
+	class A {
+		int a;
+		int polje1, polje2;
+		{
+			A() 
+			int a; {
+				
+				polje1 = polje2 + a;
+			}
+			
+			int met() {
+				return 3;
+			}
+		
+		
+		}
+	}
+	A niz[];
+	{
+		int metoda(int param1) 
+			int lokparam1;
+		{ 
+			param1 = lokparam1;
+			return 3;		
+		}
+		
+		void nista() {
+			a++;
+		}
+		
+		void main()
+		int lokparam1;
+		A objekat; {
+			
+			
+			metoda(3)++;
+		}
+		
+		
+		
+		
+	}
+	
+

@@ -1,47 +1,29 @@
-program Program
-	int a;
-	class A {
-		int a;
-		int polje1, polje2;
-		{
-			A() 
-			int a; {
-				
-				polje1 = polje2 + a;
-			}
-			
-			int met() {
-				return 3;
-			}
-		
-		
-		}
-	}
-	record rec {
-		A a[];
-		int b, c;
-	}
-	A niz[];
-	{
-		int metoda(int param1) 
-			int lokparam1;
-		{ 
-			param1 = lokparam1;
-			return 3;		
-		}
-		
-		void nista() {
-			a++;
-		}
-		
-		void main()
-		rec rec1;
-		int lokparam1;
-		A objekat; {
-			rec1.a[3 + 2].met();
-			metoda(3);
-		}
-		
-	}
+//Test 302
+
+program test302
+
+const int jedan = 1;
+
+int i;
+bool ibool;
+
+int niz2;
+
+record Test {
+ int niz[];
+ int a;
+}
+
+Test t1, t2;
+
+{
 	
+	void main() 
+	int k;
+	int p; {
+		k = 1;
+		i = 1;
+		print(k);
+	}
+}
 
