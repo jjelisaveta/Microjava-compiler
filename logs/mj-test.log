@@ -1,168 +1,125 @@
-INFO  23:09:27,228 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
-INFO  23:09:27,295 - #6 program
-INFO  23:09:27,295 - #5 test302
-INFO  23:09:27,295 - #15 const
-INFO  23:09:27,296 - #5 int
-INFO  23:09:27,296 - #5 jedan
-INFO  23:09:27,297 - #39 =
-INFO  23:09:27,297 - #2 1
-INFO  23:09:27,297 - #42 ;
-INFO  23:09:27,297 - #5 int
-INFO  23:09:27,298 - #5 i
-INFO  23:09:27,298 - #42 ;
-INFO  23:09:27,298 - #5 bool
-INFO  23:09:27,298 - #5 ibool
-INFO  23:09:27,298 - #42 ;
-INFO  23:09:27,298 - #5 int
-INFO  23:09:27,298 - #5 niz2
-INFO  23:09:27,299 - #42 ;
-INFO  23:09:27,299 - #25 record
-INFO  23:09:27,299 - #5 Test
-INFO  23:09:27,299 - #50 {
-INFO  23:09:27,299 - #5 int
-INFO  23:09:27,300 - #5 niz
-INFO  23:09:27,300 - #48 [
-INFO  23:09:27,300 - #49 ]
-INFO  23:09:27,300 - #42 ;
-INFO  23:09:27,300 - #5 int
-INFO  23:09:27,301 - #5 a
-INFO  23:09:27,301 - #42 ;
-INFO  23:09:27,301 - #51 }
-INFO  23:09:27,301 - #5 Test
-INFO  23:09:27,301 - #5 t1
-INFO  23:09:27,301 - #44 ,
-INFO  23:09:27,301 - #5 t2
-INFO  23:09:27,301 - #42 ;
-INFO  23:09:27,302 - #50 {
-INFO  23:09:27,302 - #10 void
-INFO  23:09:27,302 - #5 main
-INFO  23:09:27,302 - #46 (
-INFO  23:09:27,303 - #47 )
-INFO  23:09:27,303 - #5 int
-INFO  23:09:27,304 - #5 k
-INFO  23:09:27,304 - #42 ;
-INFO  23:09:27,304 - #5 int
-INFO  23:09:27,305 - #5 p
-INFO  23:09:27,305 - #42 ;
-INFO  23:09:27,305 - #50 {
-INFO  23:09:27,305 - #5 k
-INFO  23:09:27,306 - #39 =
-INFO  23:09:27,306 - #2 1
-INFO  23:09:27,306 - #42 ;
-INFO  23:09:27,307 - #5 i
-INFO  23:09:27,307 - #39 =
-INFO  23:09:27,307 - #2 1
-INFO  23:09:27,307 - #42 ;
-INFO  23:09:27,307 - #8 print
-INFO  23:09:27,307 - #46 (
-INFO  23:09:27,307 - #5 k
-INFO  23:09:27,307 - #47 )
-INFO  23:09:27,307 - #42 ;
-INFO  23:09:27,307 - #51 }
-INFO  23:09:27,308 - #51 }
-INFO  23:09:27,314 - Program(
+INFO  22:54:36,582 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  22:54:36,671 - #6 program
+INFO  22:54:36,672 - #5 test302
+INFO  22:54:36,672 - #15 const
+INFO  22:54:36,673 - #5 int
+INFO  22:54:36,673 - #5 jedan
+INFO  22:54:36,674 - #39 =
+INFO  22:54:36,674 - #2 1
+INFO  22:54:36,674 - #42 ;
+INFO  22:54:36,674 - #5 int
+INFO  22:54:36,675 - #5 i
+INFO  22:54:36,676 - #42 ;
+INFO  22:54:36,676 - #5 bool
+INFO  22:54:36,676 - #5 ibool
+INFO  22:54:36,676 - #42 ;
+INFO  22:54:36,677 - #5 int
+INFO  22:54:36,677 - #5 niz
+INFO  22:54:36,677 - #48 [
+INFO  22:54:36,677 - #49 ]
+INFO  22:54:36,677 - #42 ;
+INFO  22:54:36,677 - #50 {
+INFO  22:54:36,677 - #10 void
+INFO  22:54:36,677 - #5 main
+INFO  22:54:36,679 - #46 (
+INFO  22:54:36,679 - #47 )
+INFO  22:54:36,680 - #50 {
+INFO  22:54:36,680 - #5 niz
+INFO  22:54:36,680 - #39 =
+INFO  22:54:36,681 - #18 new
+INFO  22:54:36,681 - #5 int
+INFO  22:54:36,682 - #48 [
+INFO  22:54:36,682 - #2 3
+INFO  22:54:36,682 - #49 ]
+INFO  22:54:36,682 - #42 ;
+INFO  22:54:36,682 - #5 niz
+INFO  22:54:36,683 - #48 [
+INFO  22:54:36,683 - #2 0
+INFO  22:54:36,683 - #49 ]
+INFO  22:54:36,683 - #39 =
+INFO  22:54:36,683 - #2 5
+INFO  22:54:36,683 - #42 ;
+INFO  22:54:36,683 - #5 i
+INFO  22:54:36,684 - #39 =
+INFO  22:54:36,684 - #5 niz
+INFO  22:54:36,684 - #48 [
+INFO  22:54:36,684 - #2 0
+INFO  22:54:36,684 - #49 ]
+INFO  22:54:36,684 - #42 ;
+INFO  22:54:36,684 - #5 niz
+INFO  22:54:36,685 - #48 [
+INFO  22:54:36,685 - #2 1
+INFO  22:54:36,685 - #49 ]
+INFO  22:54:36,685 - #39 =
+INFO  22:54:36,685 - #2 1
+INFO  22:54:36,685 - #42 ;
+INFO  22:54:36,685 - #5 niz
+INFO  22:54:36,685 - #48 [
+INFO  22:54:36,686 - #2 2
+INFO  22:54:36,686 - #49 ]
+INFO  22:54:36,686 - #39 =
+INFO  22:54:36,686 - #2 2
+INFO  22:54:36,686 - #42 ;
+INFO  22:54:36,686 - #8 print
+INFO  22:54:36,686 - #46 (
+INFO  22:54:36,686 - #5 i
+INFO  22:54:36,686 - #47 )
+INFO  22:54:36,686 - #42 ;
+INFO  22:54:36,687 - #51 }
+INFO  22:54:36,687 - #51 }
+INFO  22:54:36,696 - Program(
   ProgName(
    test302
   ) [ProgName]
   DeclListVar(
-    DeclListRecord(
+    DeclListVar(
       DeclListVar(
-        DeclListVar(
-          DeclListVar(
-            DeclListConst(
-              NoDeclList(
-              ) [NoDeclList]
-              ConstDecl(
-                ConstantDecl(
-                  Type(
-                   int
-                  ) [Type]
-                 jedan
-                  NumConst(
-                   1
-                  ) [NumConst]
-                ) [ConstantDecl]
-              ) [ConstDecl]
-            ) [DeclListConst]
-            GlobalVarDecls(
+        DeclListConst(
+          NoDeclList(
+          ) [NoDeclList]
+          ConstDecl(
+            ConstantDecl(
               Type(
                int
               ) [Type]
-              GlobalVariableDecl(
-                GlobalOneVariableDecl(
-                 i
-                ) [GlobalOneVariableDecl]
-              ) [GlobalVariableDecl]
-            ) [GlobalVarDecls]
-          ) [DeclListVar]
-          GlobalVarDecls(
-            Type(
-             bool
-            ) [Type]
-            GlobalVariableDecl(
-              GlobalOneVariableDecl(
-               ibool
-              ) [GlobalOneVariableDecl]
-            ) [GlobalVariableDecl]
-          ) [GlobalVarDecls]
-        ) [DeclListVar]
+             jedan
+              NumConst(
+               1
+              ) [NumConst]
+            ) [ConstantDecl]
+          ) [ConstDecl]
+        ) [DeclListConst]
         GlobalVarDecls(
           Type(
            int
           ) [Type]
           GlobalVariableDecl(
             GlobalOneVariableDecl(
-             niz2
+             i
             ) [GlobalOneVariableDecl]
           ) [GlobalVariableDecl]
         ) [GlobalVarDecls]
       ) [DeclListVar]
-      RecordDecl(
-        RecordName(
-         Test
-        ) [RecordName]
-        RecordVariableDecl(
-          RecordVariableDecl(
-            RecordNoVariableDecl(
-            ) [RecordNoVariableDecl]
-            RecordVariableDeclaration(
-              VariableDecl(
-                Type(
-                 int
-                ) [Type]
-                OneArrayVariableDecl(
-                 niz
-                ) [OneArrayVariableDecl]
-              ) [VariableDecl]
-            ) [RecordVariableDeclaration]
-          ) [RecordVariableDecl]
-          RecordVariableDeclaration(
-            VariableDecl(
-              Type(
-               int
-              ) [Type]
-              OneVariableDecl(
-               a
-              ) [OneVariableDecl]
-            ) [VariableDecl]
-          ) [RecordVariableDeclaration]
-        ) [RecordVariableDecl]
-      ) [RecordDecl]
-    ) [DeclListRecord]
-    GlobalVarDecls(
-      Type(
-       Test
-      ) [Type]
-      GlobalVariableDecls(
+      GlobalVarDecls(
+        Type(
+         bool
+        ) [Type]
         GlobalVariableDecl(
           GlobalOneVariableDecl(
-           t1
+           ibool
           ) [GlobalOneVariableDecl]
         ) [GlobalVariableDecl]
-        GlobalOneVariableDecl(
-         t2
-        ) [GlobalOneVariableDecl]
-      ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    GlobalVarDecls(
+      Type(
+       int
+      ) [Type]
+      GlobalVariableDecl(
+        GlobalOneArrayVariableDecl(
+         niz
+        ) [GlobalOneArrayVariableDecl]
+      ) [GlobalVariableDecl]
     ) [GlobalVarDecls]
   ) [DeclListVar]
   MethodsDecl(
@@ -174,41 +131,125 @@ INFO  23:09:27,314 - Program(
       ) [MethodName]
       NoMethodFormParams(
       ) [NoMethodFormParams]
-      VarDecls(
-        VarDecls(
-          NoVarDecl(
-          ) [NoVarDecl]
-          VarDecl(
-            VariableDecl(
-              Type(
-               int
-              ) [Type]
-              OneVariableDecl(
-               k
-              ) [OneVariableDecl]
-            ) [VariableDecl]
-          ) [VarDecl]
-        ) [VarDecls]
-        VarDecl(
-          VariableDecl(
-            Type(
-             int
-            ) [Type]
-            OneVariableDecl(
-             p
-            ) [OneVariableDecl]
-          ) [VariableDecl]
-        ) [VarDecl]
-      ) [VarDecls]
+      NoVarDecl(
+      ) [NoVarDecl]
       StmtList(
         StmtList(
-          OneStmt(
+          StmtList(
+            StmtList(
+              StmtList(
+                OneStmt(
+                  DesignatorStmt(
+                    DesignatorStmtAssign(
+                      AssignStmt(
+                        DesignatorIdent(
+                         niz
+                        ) [DesignatorIdent]
+                        AssignOperator(
+                        ) [AssignOperator]
+                        ExprPlus(
+                          TermFactor(
+                            FactorArrayType(
+                              Type(
+                               int
+                              ) [Type]
+                              ExprPlus(
+                                TermFactor(
+                                  FactorTypeConst(
+                                    NumConst(
+                                     3
+                                    ) [NumConst]
+                                  ) [FactorTypeConst]
+                                ) [TermFactor]
+                              ) [ExprPlus]
+                            ) [FactorArrayType]
+                          ) [TermFactor]
+                        ) [ExprPlus]
+                      ) [AssignStmt]
+                    ) [DesignatorStmtAssign]
+                  ) [DesignatorStmt]
+                ) [OneStmt]
+                DesignatorStmt(
+                  DesignatorStmtAssign(
+                    AssignStmt(
+                      DesignatorBracket(
+                        DesignatorIdent(
+                         niz
+                        ) [DesignatorIdent]
+                        ExprPlus(
+                          TermFactor(
+                            FactorTypeConst(
+                              NumConst(
+                               0
+                              ) [NumConst]
+                            ) [FactorTypeConst]
+                          ) [TermFactor]
+                        ) [ExprPlus]
+                      ) [DesignatorBracket]
+                      AssignOperator(
+                      ) [AssignOperator]
+                      ExprPlus(
+                        TermFactor(
+                          FactorTypeConst(
+                            NumConst(
+                             5
+                            ) [NumConst]
+                          ) [FactorTypeConst]
+                        ) [TermFactor]
+                      ) [ExprPlus]
+                    ) [AssignStmt]
+                  ) [DesignatorStmtAssign]
+                ) [DesignatorStmt]
+              ) [StmtList]
+              DesignatorStmt(
+                DesignatorStmtAssign(
+                  AssignStmt(
+                    DesignatorIdent(
+                     i
+                    ) [DesignatorIdent]
+                    AssignOperator(
+                    ) [AssignOperator]
+                    ExprPlus(
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorBracket(
+                            DesignatorIdent(
+                             niz
+                            ) [DesignatorIdent]
+                            ExprPlus(
+                              TermFactor(
+                                FactorTypeConst(
+                                  NumConst(
+                                   0
+                                  ) [NumConst]
+                                ) [FactorTypeConst]
+                              ) [TermFactor]
+                            ) [ExprPlus]
+                          ) [DesignatorBracket]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [AssignStmt]
+                ) [DesignatorStmtAssign]
+              ) [DesignatorStmt]
+            ) [StmtList]
             DesignatorStmt(
               DesignatorStmtAssign(
                 AssignStmt(
-                  DesignatorIdent(
-                   k
-                  ) [DesignatorIdent]
+                  DesignatorBracket(
+                    DesignatorIdent(
+                     niz
+                    ) [DesignatorIdent]
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          NumConst(
+                           1
+                          ) [NumConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [DesignatorBracket]
                   AssignOperator(
                   ) [AssignOperator]
                   ExprPlus(
@@ -223,20 +264,31 @@ INFO  23:09:27,314 - Program(
                 ) [AssignStmt]
               ) [DesignatorStmtAssign]
             ) [DesignatorStmt]
-          ) [OneStmt]
+          ) [StmtList]
           DesignatorStmt(
             DesignatorStmtAssign(
               AssignStmt(
-                DesignatorIdent(
-                 i
-                ) [DesignatorIdent]
+                DesignatorBracket(
+                  DesignatorIdent(
+                   niz
+                  ) [DesignatorIdent]
+                  ExprPlus(
+                    TermFactor(
+                      FactorTypeConst(
+                        NumConst(
+                         2
+                        ) [NumConst]
+                      ) [FactorTypeConst]
+                    ) [TermFactor]
+                  ) [ExprPlus]
+                ) [DesignatorBracket]
                 AssignOperator(
                 ) [AssignOperator]
                 ExprPlus(
                   TermFactor(
                     FactorTypeConst(
                       NumConst(
-                       1
+                       2
                       ) [NumConst]
                     ) [FactorTypeConst]
                   ) [TermFactor]
@@ -250,7 +302,7 @@ INFO  23:09:27,314 - Program(
             TermFactor(
               FactorNoParen(
                 DesignatorIdent(
-                 k
+                 i
                 ) [DesignatorIdent]
               ) [FactorNoParen]
             ) [TermFactor]
@@ -262,15 +314,26 @@ INFO  23:09:27,314 - Program(
     ) [NoMetodDecl]
   ) [MethodsDecl]
 ) [Program]
-INFO  23:09:27,315 - ===================================
-INFO  23:09:27,318 - Deklarisan record Test
-INFO  23:09:27,318 - Deklarisano polje u record-u niz
-INFO  23:09:27,318 - Deklarisano polje u record-u a
-INFO  23:09:27,318 - Deklarisana lokalna promenljiva k
-INFO  23:09:27,318 - Deklarisana lokalna promenljiva p
-INFO  23:09:27,318 - Pristup lokalnoj promenljivoj k na liniji 24
-INFO  23:09:27,318 - Pristup globalnoj promenljivoj i na liniji 25
-INFO  23:09:27,318 - Pristup lokalnoj promenljivoj k na liniji 26
-INFO  23:09:27,318 - ===================================
-INFO  23:09:27,321 - ovde
-INFO  23:09:27,321 - Parsiranje uspesno zavrseno!
+INFO  22:54:36,697 - ===================================
+INFO  22:54:36,702 - Pristup globalnoj promenljivoj niz  na liniji 15
+INFO  22:54:36,702 - Pristup globalnoj promenljivoj niz  na liniji 16
+INFO  22:54:36,702 - Pristup elementu niza   na liniji 16
+INFO  22:54:36,702 - Pristup globalnoj promenljivoj i  na liniji 17
+INFO  22:54:36,702 - Pristup globalnoj promenljivoj niz  na liniji 17
+INFO  22:54:36,702 - Pristup elementu niza   na liniji 17
+INFO  22:54:36,702 - Pristup globalnoj promenljivoj niz  na liniji 18
+INFO  22:54:36,702 - Pristup elementu niza   na liniji 18
+INFO  22:54:36,703 - Pristup globalnoj promenljivoj niz  na liniji 19
+INFO  22:54:36,703 - Pristup elementu niza   na liniji 19
+INFO  22:54:36,703 - Pristup globalnoj promenljivoj i  na liniji 20
+INFO  22:54:36,703 - ===================================
+INFO  22:54:36,707 - niz
+INFO  22:54:36,707 - 
+INFO  22:54:36,707 -  je niz!
+INFO  22:54:36,707 - i
+INFO  22:54:36,708 - 
+INFO  22:54:36,708 -  je niz!
+INFO  22:54:36,708 - 
+INFO  22:54:36,708 -  je niz!
+INFO  22:54:36,708 - jedan 1
+INFO  22:54:36,709 - Parsiranje uspesno zavrseno!

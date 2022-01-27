@@ -58,11 +58,11 @@ terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, 
 nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, ClassFieldsDeclList, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
-nonterminal Statement, SingleStatement, NumConstList, Statements, StatementList, IfCondition;
+nonterminal Statement, SingleStatement, Statements, StatementList, IfCondition;
 nonterminal AssignStatement, ActPars, ActParsList;
 nonterminal Assignop, Relop, Addop, Mulop, DoKeyword;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, MinusTerm, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -240,7 +240,7 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
 					(ReadStmt) READ LPAREN Designator RPAREN SEMI
 					|
-					(PrintStmtNum) PRINT LPAREN Expr NumConstList RPAREN SEMI
+					(PrintStmtNum) PRINT LPAREN Expr COMMA NUMBER:numConst RPAREN SEMI
 					|
 					(PrintStmt) PRINT LPAREN Expr RPAREN SEMI
 					|
@@ -257,11 +257,6 @@ IfCondition ::= 	(OkIfCondition) Condition:cond
 					|
 					(ErrorIfCondition) error:e
 					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :}
-					;
-					
-NumConstList ::=	(NumConstsList) NumConstList COMMA NUMBER
-					|
-					(OneNumber) COMMA NUMBER
 					;
 					
 Statements ::=		(Stmts) LBRACE StatementList RBRACE ;
@@ -315,10 +310,12 @@ Expr ::= 			(ExprPlusAddop) Term AddopList
 					|
 					(ExprPlus) Term:term
 					|
-					(ExprMinusAddop) MINUS Term AddopList
+					(ExprMinusAddop) MinusTerm AddopList
 					|
-					(ExprMinus) MINUS Term:term
+					(ExprMinus) MinusTerm
 					;
+				
+MinusTerm ::= 		(MinusTerm) MINUS Term ;
 				
 AddopList ::=		(AddOpsList) AddopList Addop Term 	
 					|

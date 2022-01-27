@@ -1,12 +1,11 @@
-1. proveriti jel treba setLevel +1 za metode
 
-2. metoda(3)++; - greska u iskazu dodele
 
 PITANJA
 =================================================
 1. greska kod naredbe dodele, kako tacno treba?
 2. da li treba setLevel za const? u kojoj fazi se postavlja setAdr
-
+3. sta uraditi kada nisu dobri parametri funkcije?
+4. CG: posebna obrada inc i dec kada je niz?  -dup2?
 
 TREBA URADITI
 =================================================
@@ -63,5 +62,141 @@ program Program
 		
 		
 	}
+	
+	
+//uzeto designator 
+
+
+					
+	/* designator */
+	public void visit(DesignatorIdent designator) {
+		Obj obj = Tab.find(designator.getName());
+    	if(obj == Tab.noObj){
+    		designator.obj = Tab.noObj;
+			report_error("Semanticka greska: Ime "+ designator.getName() + " nije deklarisano! ", null);
+    	} else {
+    		designator.obj = obj;
+	    	if (Tab.currentScope().findSymbol(designator.getName()) != null && designator.obj.getKind() == Obj.Var) {
+	    		if (currentMethod != null 
+	    				&& ((currentClass == null && currentMethod.getLevel() > designator.obj.getAdr()) 
+	    				|| (currentClass != null && currentMethod.getLevel() - 1 > designator.obj.getAdr()))) {
+	    			report_info("Pristup formalnom parametru " + designator.getName() + " na liniji " + designator.getLine(), null);
+	    		} else {
+	    			report_info("Pristup lokalnoj promenljivoj " + designator.getName() + " na liniji " + designator.getLine(), null);
+	    		}
+	    	} else if (designator.obj.getKind() == Obj.Fld ) {
+    			//pristup polju rekorda?
+    			report_info("Pristup polju unutrasnje klase " + designator.getName() + " na liniji " + designator.getLine(), null);
+	    	} else if (obj.getLevel() == 0 && designator.obj.getKind() == Obj.Var) {
+				report_info("Pristup globalnoj promenljivoj " + designator.getName() + " na liniji " + designator.getLine(), null);	
+	    	} 
+	    	
+	    	//jooooj sta sa ovim
+	    	if (designator.obj.getKind() == Obj.Meth) {
+	    		currentMethodCallStack.push(obj);
+	    	}
+    	}
+	}
+	
+	public void visit(DesignatorBracket designator) {
+		Obj obj = Tab.find(designator.getName());
+		if (obj == Tab.noObj) {
+			designator.obj = Tab.noObj;
+			report_error("Semanticka greska: Ime " + designator.obj.getName() +" nije deklarisano ", designator.getParent());
+		} else if (obj.getType().getKind() != Struct.Array) {
+			designator.obj = Tab.noObj;
+			report_error("Semanticka greska: " + designator.obj.getName() +" nije niz ", designator.getParent());
+		} else {
+			if (designator.getExpr().obj.getType() == Tab.intType) {
+				designator.obj = new Obj(Obj.Elem, "", obj.getType().getElemType());
+				report_info("Pristup elementu niza " + designator.obj.getName()+ " ", designator.getParent());
+			} else {
+				designator.obj = Tab.noObj;
+				report_error("Semanticka greska: Izraz u zagradi mora biti tipa int ", designator.getParent());
+			}
+		}
+	}
+	
+	public void visit(DesignatorPointIdent designator) {
+		Obj obj = designator.getDesignator().obj;
+		if(obj == Tab.noObj){
+			report_error("Semanticka greska: Ime " + designator.obj.getName() +" nije deklarisano! ", designator.getParent());
+			//ne moze da se desi - moze ali...
+    	} else {
+    		if (obj.getType().getKind() == Struct.Array) {
+    			//PITANJE: da li treba ime neko i jel treba uopste novi Obj
+    			//jel moze ovo uopste posto je NE MOZE
+    			designator.obj = new Obj(Obj.Elem, "", obj.getType().getElemType());
+	    		report_info("Pristup elementu niza " + designator.obj.getName()+ " ", designator.getParent());
+    		} else {
+    			designator.obj = Tab.noObj;
+    			report_error("Semanticka greska: " + designator.obj.getName() +" nije niz! ", designator.getParent());
+    		}
+    	}
+    	
+    	if (!designator.getExpr().obj.getType().equals(Tab.intType)) {
+			report_error("Semanticka greska: Izraz u zagradama mora biti tipa int ", designator.getParent());
+
+    	}
+	}
+	
+	public void visit(DesignatorPointBracket designator) {
+		Obj obj = designator.getDesignator().obj;
+		//Obj obj = Tab.find(designator.getDesignator().obj.getName());
+    	if(obj == Tab.noObj){
+			report_error("Semanticka greska: Ime " + designator.obj.getName() +" nije deklarisano! ", designator.getParent());
+			//ne moze da se desi - moze ali...
+    	} else {
+    		
+    		if (obj.getType().getKind() == Struct.Array) {
+    			//PITANJE: da li treba ime neko i jel treba uopste novi Obj
+    			designator.obj = new Obj(Obj.Elem, "", obj.getType().getElemType());
+	    		report_info("Pristup elementu niza " + designator.obj.getName()+ " ", designator.getParent());
+    		} else {
+    			designator.obj = Tab.noObj;
+    			report_error("Semanticka greska: " + designator.obj.getName() +" nije niz! ", designator.getParent());
+    		}
+    	}
+    	
+    	if (!designator.getExpr().obj.getType().equals(Tab.intType)) {
+			report_error("Semanticka greska: Izraz u zagradama mora biti tipa int ", designator.getParent());
+
+    	}
+   
+		
+	}	
+	/*
+	public void visit(DesignatorPoint designator) {
+		Obj prevDesignator = designator.getDesignator().obj;
+		if (prevDesignator.getKind() == Obj.Meth) {
+			prevDesignator.getLocalSymbols();
+		}
+		else if (prevDesignator.getType().getKind() == Struct.Class) {
+			boolean ok = false;
+			for (Obj o :prevDesignator.getType().getMembers()) {
+				
+				if (o.getName().equals(designator.getName())) {
+					ok = true;
+					designator.obj = o;
+					if (designator.obj.getKind() == Obj.Meth) {
+			    		currentMethodCallStack.push(o);
+					}
+				//	log.info("og");
+					break;
+				}
+			}
+			if (!ok) {
+				designator.obj = Tab.noObj;
+				if (prevDesignator.getFpPos() == RECORD_FP_POS) 
+					report_error("U record-u " + prevDesignator.getName()+ " ne postoji polje "+ designator.getName(), designator.getParent());
+				else 
+					report_error("U klasi " + prevDesignator.getName()+ " ne postoji polje "+ designator.getName(), designator.getParent());
+			} else  {
+				//ostalo
+				
+			}
+		} 
+	}*/
+	
 	
 

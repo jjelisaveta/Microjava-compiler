@@ -5,11 +5,25 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DoKeyword implements SyntaxNode {
+public class MinusTerm implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    public DoKeyword () {
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+
+    private Term Term;
+
+    public MinusTerm (Term Term) {
+        this.Term=Term;
+        if(Term!=null) Term.setParent(this);
+    }
+
+    public Term getTerm() {
+        return Term;
+    }
+
+    public void setTerm(Term Term) {
+        this.Term=Term;
     }
 
     public SyntaxNode getParent() {
@@ -33,23 +47,32 @@ public class DoKeyword implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(Term!=null) Term.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(Term!=null) Term.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(Term!=null) Term.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DoKeyword(\n");
+        buffer.append("MinusTerm(\n");
+
+        if(Term!=null)
+            buffer.append(Term.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [DoKeyword]");
+        buffer.append(") [MinusTerm]");
         return buffer.toString();
     }
 }

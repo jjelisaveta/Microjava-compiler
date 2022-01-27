@@ -89,7 +89,6 @@ nonterminal FormPars FormPars;
 nonterminal OneFormPar OneFormPar;
 nonterminal Statement Statement;
 nonterminal SingleStatement SingleStatement;
-nonterminal NumConstList NumConstList;
 nonterminal Statements Statements;
 nonterminal StatementList StatementList;
 nonterminal IfCondition IfCondition;
@@ -102,7 +101,7 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal DoKeyword DoKeyword;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, MinusTerm, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
 precedence left ELSE;
@@ -280,7 +279,7 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Desig
 					|
 					(ReadStmt) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
 					|
-					(PrintStmtNum) PRINT LPAREN Expr:E1 NumConstList:N2 RPAREN SEMI {: RESULT=new PrintStmtNum(E1, N2); RESULT.setLine(E1left); :}
+					(PrintStmtNum) PRINT LPAREN Expr:E1 COMMA NUMBER:numConst RPAREN SEMI {: RESULT=new PrintStmtNum(E1, numConst); RESULT.setLine(E1left); :}
 					|
 					(PrintStmt) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new PrintStmt(E1); RESULT.setLine(E1left); :}
 					|
@@ -297,11 +296,6 @@ IfCondition ::= 	(OkIfCondition) Condition:cond {: RESULT=new OkIfCondition(cond
 					|
 					(ErrorIfCondition) error:e
 					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :} {: RESULT=new ErrorIfCondition(); :}
-					;
-					
-NumConstList ::=	(NumConstsList) NumConstList:N1 COMMA NUMBER:N2 {: RESULT=new NumConstsList(N1, N2); RESULT.setLine(N1left); :}
-					|
-					(OneNumber) COMMA NUMBER:N1 {: RESULT=new OneNumber(N1); RESULT.setLine(N1left); :}
 					;
 					
 Statements ::=		(Stmts) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmts(S1); RESULT.setLine(S1left); :} ;
@@ -355,10 +349,12 @@ Expr ::= 			(ExprPlusAddop) Term:T1 AddopList:A2 {: RESULT=new ExprPlusAddop(T1,
 					|
 					(ExprPlus) Term:term {: RESULT=new ExprPlus(term); RESULT.setLine(termleft); :}
 					|
-					(ExprMinusAddop) MINUS Term:T1 AddopList:A2 {: RESULT=new ExprMinusAddop(T1, A2); RESULT.setLine(T1left); :}
+					(ExprMinusAddop) MinusTerm:M1 AddopList:A2 {: RESULT=new ExprMinusAddop(M1, A2); RESULT.setLine(M1left); :}
 					|
-					(ExprMinus) MINUS Term:term {: RESULT=new ExprMinus(term); RESULT.setLine(termleft); :}
+					(ExprMinus) MinusTerm:M1 {: RESULT=new ExprMinus(M1); RESULT.setLine(M1left); :}
 					;
+				
+MinusTerm ::= 		(MinusTerm) MINUS Term:T1 {: RESULT=new MinusTerm(T1); RESULT.setLine(T1left); :} ;
 				
 AddopList ::=		(AddOpsList) AddopList:A1 Addop:A2 Term:T3 {: RESULT=new AddOpsList(A1, A2, T3); RESULT.setLine(A1left); :} 	
 					|
@@ -389,8 +385,7 @@ Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name {: RESULT=new
 					|
 					(DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
 					;
-
-									
+		
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;
 
 Relop ::= 			(RelOpEq) EQ {: RESULT=new RelOpEq(); :}

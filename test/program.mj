@@ -6,24 +6,20 @@ const int jedan = 1;
 
 int i;
 bool ibool;
-
-int niz2;
-
-record Test {
- int niz[];
- int a;
-}
-
-Test t1, t2;
+int niz[];
 
 {
 	
-	void main() 
-	int k;
-	int p; {
-		k = 1;
-		i = 1;
-		print(k);
+	void main()
+	{
+		niz = new int[3];
+		niz[0] = 5;
+		i = niz[0];
+		niz[1] = 1;
+		niz[2] = 2;
+		print(i);	
 	}
 }
+
+
 

@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2022 20:18:17
+// 27/0/2022 22:27:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ExprMinus extends Expr {
 
-    private Term Term;
+    private MinusTerm MinusTerm;
 
-    public ExprMinus (Term Term) {
-        this.Term=Term;
-        if(Term!=null) Term.setParent(this);
+    public ExprMinus (MinusTerm MinusTerm) {
+        this.MinusTerm=MinusTerm;
+        if(MinusTerm!=null) MinusTerm.setParent(this);
     }
 
-    public Term getTerm() {
-        return Term;
+    public MinusTerm getMinusTerm() {
+        return MinusTerm;
     }
 
-    public void setTerm(Term Term) {
-        this.Term=Term;
+    public void setMinusTerm(MinusTerm MinusTerm) {
+        this.MinusTerm=MinusTerm;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class ExprMinus extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Term!=null) Term.accept(visitor);
+        if(MinusTerm!=null) MinusTerm.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Term!=null) Term.traverseTopDown(visitor);
+        if(MinusTerm!=null) MinusTerm.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Term!=null) Term.traverseBottomUp(visitor);
+        if(MinusTerm!=null) MinusTerm.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class ExprMinus extends Expr {
         buffer.append(tab);
         buffer.append("ExprMinus(\n");
 
-        if(Term!=null)
-            buffer.append(Term.toString("  "+tab));
+        if(MinusTerm!=null)
+            buffer.append(MinusTerm.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

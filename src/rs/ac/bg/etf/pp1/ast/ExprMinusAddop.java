@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2022 20:18:17
+// 27/0/2022 22:27:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ExprMinusAddop extends Expr {
 
-    private Term Term;
+    private MinusTerm MinusTerm;
     private AddopList AddopList;
 
-    public ExprMinusAddop (Term Term, AddopList AddopList) {
-        this.Term=Term;
-        if(Term!=null) Term.setParent(this);
+    public ExprMinusAddop (MinusTerm MinusTerm, AddopList AddopList) {
+        this.MinusTerm=MinusTerm;
+        if(MinusTerm!=null) MinusTerm.setParent(this);
         this.AddopList=AddopList;
         if(AddopList!=null) AddopList.setParent(this);
     }
 
-    public Term getTerm() {
-        return Term;
+    public MinusTerm getMinusTerm() {
+        return MinusTerm;
     }
 
-    public void setTerm(Term Term) {
-        this.Term=Term;
+    public void setMinusTerm(MinusTerm MinusTerm) {
+        this.MinusTerm=MinusTerm;
     }
 
     public AddopList getAddopList() {
@@ -38,18 +38,18 @@ public class ExprMinusAddop extends Expr {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Term!=null) Term.accept(visitor);
+        if(MinusTerm!=null) MinusTerm.accept(visitor);
         if(AddopList!=null) AddopList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Term!=null) Term.traverseTopDown(visitor);
+        if(MinusTerm!=null) MinusTerm.traverseTopDown(visitor);
         if(AddopList!=null) AddopList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Term!=null) Term.traverseBottomUp(visitor);
+        if(MinusTerm!=null) MinusTerm.traverseBottomUp(visitor);
         if(AddopList!=null) AddopList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class ExprMinusAddop extends Expr {
         buffer.append(tab);
         buffer.append("ExprMinusAddop(\n");
 
-        if(Term!=null)
-            buffer.append(Term.toString("  "+tab));
+        if(MinusTerm!=null)
+            buffer.append(MinusTerm.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
