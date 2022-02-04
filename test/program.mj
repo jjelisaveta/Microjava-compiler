@@ -3,23 +3,43 @@
 program test302
 
 const int jedan = 1;
-
+const int dva = 2;
 int i;
 bool ibool;
-int niz[];
+
+int niz2[];
+
+record Test {
+ int niz[];
+ int a;
+}
+
+record Drugi {
+	int b;
+	Test test;
+	int c;
+}
+
+Drugi drugi;
+
+Test t1, t2;
 
 {
 	
 	void main()
 	{
-		niz = new int[3];
-		niz[0] = 5;
-		i = niz[0];
-		niz[1] = 1;
-		niz[2] = 2;
-		print(i);	
+		//ne radi
+		drugi = new Drugi;
+		drugi.test = new Test;
+		drugi.test.a = 77;
+		drugi.test.niz = new int[3];
+		//i = 2;
+		drugi.test.niz[0] = 33;
+		//drugi.test.niz[1] = 44;
+		//drugi.test.niz[2] = 55;
+		//print(drugi.test.a);
+		
+		
 	}
 }
-
-
 

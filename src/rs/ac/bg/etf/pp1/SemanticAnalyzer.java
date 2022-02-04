@@ -365,14 +365,19 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		Struct varType = currentType;
 		Struct varArrayType = new Struct(Struct.Array, currentType);
 		
+		int i = 0;
 		while (!names.isEmpty()) {
 			String varName = names.remove(0);
 			String type = variableTypes.remove(0);
 			if (type.equals("var")) {
 				Obj node = Tab.insert(Obj.Fld, varName, varType);
+				node.setFpPos(i);
+				i++;
 				report_info("Deklarisano polje u record-u " + varName, null);
 			} else {
-				Tab.insert(Obj.Fld, varName, varArrayType);
+				Obj node = Tab.insert(Obj.Fld, varName, varArrayType);
+				node.setFpPos(i);
+				i++;
 				report_info("Deklarisano polje u record-u " + varName, null);
 			}
 		}
@@ -470,6 +475,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(FactorParen factorParen) {
+		
 		factorParen.obj = factorParen.getDesignator().obj;
 		report_info("Pronadjen poziv funkcije " + factorParen.obj.getName() + " na liniji " + factorParen.getLine(), null);
 	}
@@ -690,33 +696,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
 	}	
 	
-	/*public void visit(DesignatorBracket designator) {
-		Obj obj = Tab.find(designator.getName());
-		if (obj == Tab.noObj) {
-			designator.obj = Tab.noObj;
-			report_error("Semanticka greska: Ime " + designator.obj.getName() +" nije deklarisano ", designator.getParent());
-		} else if (obj.getType().getKind() != Struct.Array) {
-			designator.obj = Tab.noObj;
-			report_error("Semanticka greska: " + designator.obj.getName() +" nije niz ", designator.getParent());
-		} else {
-			if (designator.getExpr().obj.getType().equals(Tab.intType)) {
-				designator.obj = new Obj(Obj.Elem, "", obj.getType().getElemType());
-				report_info("Pristup elementu niza " + designator.obj.getName()+ " ", designator.getParent());
-			} else {
-				designator.obj = Tab.noObj;
-				report_error("Semanticka greska: Izraz u zagradama mora biti tipa int ", designator.getParent());
-			}
-		}
-	}*/
-	
-
-	
 	public void visit(DesignatorPoint designator) {
 		Obj prevDesignator = designator.getDesignator().obj;
-		/*if (prevDesignator.getKind() == Obj.Meth) {
-			prevDesignator.getLocalSymbols();
-		}
-		else */if (prevDesignator.getType().getKind() == Struct.Class
+		if (prevDesignator.getType().getKind() == Struct.Class
 				|| (prevDesignator.getType().getKind() == Struct.Array && prevDesignator.getType().getElemType().getKind() == Struct.Class)) {
 			boolean ok = false;
 			for (Obj o :prevDesignator.getType().getMembers()) {

@@ -24,38 +24,25 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(Program program) {
-		for (Obj o: program.getProgName().obj.getLocalSymbols()) {
-			if (o.getKind() == Obj.Con) {
-				log.info(o.getName() + " " + o.getAdr());
-				Code.load(o);
-			}
-		}
+	
 	}
 
 	/* constants */
-	/*public void visit(ConstantDecl constantDecl) {
+	public void visit(ConstantDecl constantDecl) {
 		Obj obj = Tab.find(constantDecl.getConstName());
-		constants.add(obj);
+		Code.load(obj);
 	}
 
 	public void visit(ConstantDecls constantDecls) {
 		Obj obj = Tab.find(constantDecls.getConstName());
-		constants.add(obj);
+		Code.load(obj);
 	}
-
-	public void visit(ConstDecl constDecl) {
-		while (!constants.isEmpty()) {
-			Obj constObj = constants.remove(0);
-			Code.load(constObj);
-		}
-	}*/
 
 	/* method declarations */
 	public void visit(MethodName methodName) {
 		if ("main".equalsIgnoreCase(methodName.getMethodName())) {
 			mainPc = Code.pc;
 		}
-
 		methodName.obj.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(methodName.obj.getLevel());
@@ -74,59 +61,94 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	/* desginators */
 	public void visit(DesignatorBracket designatorBracket) {
-		//Code.put(designatorBracket.obj);
 		Obj arrayObj = designatorBracket.getDesignator().obj;
 		// prvo adresa niza, pa indeks
-		Code.load(arrayObj);
-		Code.put(Code.dup_x1);
-		Code.put(Code.pop);
+		log.debug(designatorBracket.getParent().getClass().toString());
+		if (designatorBracket.getDesignator() instanceof DesignatorPoint && !(designatorBracket.getParent() instanceof AssignStmt)) {
+			Code.put(Code.dup_x1); 
+			Code.put(Code.pop);
+			Code.load(arrayObj);
+			log.debug("usao");
+		} else {
+			Code.load(arrayObj);
+			Code.put(Code.dup_x1); 
+			Code.put(Code.pop);
+		}
+	
+		
+		log.info(designatorBracket.obj.getName() + " " + designatorBracket.obj.getType().getKind());
+	}
+
+	public void visit(DesignatorPoint designatorPoint) {
+		Code.load(designatorPoint.getDesignator().obj);
+		log.info(designatorPoint.obj.getName() + " " + designatorPoint.obj.getType().getKind());
+		//mozda ovde razdvojiti
+		
+	}
+	
+	public void visit(DesignatorIdent designatorIdent) {
+		//ne mora jer se poziva FactorNoParen
 	}
 	
 	public void visit(FactorNoParen designator) {
 		Code.load(designator.obj);
+		if (designator.obj.getType().getKind() == Struct.Array) {
+			Code.put(Code.dup_x1); 
+			Code.put(Code.pop);
+		}	
 	}
 
 	public void visit(FactorParen factorParen) {
 		Obj obj = factorParen.obj;
-		// da li treba neka provera
-
-		int addrOffset = obj.getAdr() - Code.mainPc;
-		log.info("call " + obj.getName() + " " + addrOffset);
+		int addrOffset = obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(addrOffset);
 	}
 
 	/* designator statement */
 	public void visit(AssignStmt assignStmt) {
+		
 		Obj designatorObj = assignStmt.getDesignator().obj;
-		log.info(designatorObj.getName());
-		if (designatorObj.getKind() == Obj.Elem) {
-			log.info(" je niz!");
-		}
 		Code.store(designatorObj);
 	}
 	
 	public void visit(DesignatorStmtFuncCall designatorStmtFuncCall) {
 		Obj obj = designatorStmtFuncCall.obj;
-
-		int addrOffset = obj.getAdr() - Code.mainPc;
-		log.info("call " + obj.getName() + " " + addrOffset);
+		int addrOffset = obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(addrOffset);
 	}
 
 	public void visit(DesignatorStmtInc designatorStmtInc) {
+		//stek: adresa, index
+		if (designatorStmtInc.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+		}
 		Code.load(designatorStmtInc.getDesignator().obj);
+		
 		Code.loadConst(1);
 		Code.put(Code.add);
 		Code.store(designatorStmtInc.getDesignator().obj);
 	}
 	
 	public void visit(DesignatorStmtDec designatorStmtDec) {
+		if (designatorStmtDec.getDesignator().obj.getKind() == Obj.Elem) {
+			Code.put(Code.dup2);
+		}
 		Code.load(designatorStmtDec.getDesignator().obj);
 		Code.loadConst(1);
 		Code.put(Code.sub);
 		Code.store(designatorStmtDec.getDesignator().obj);
+	}
+	
+	public void visit(FactorType factorType) {
+		//Code.put(Code.pop);
+		Code.put(Code.new_);
+		log.info(factorType.obj.getType().getMembers().size());
+		int size = 4 * factorType.obj.getType().getMembers().size();
+		Code.put2(size);
+		
+		
 	}
 	
 	public void visit(FactorArrayType factorArrayType) {
@@ -137,6 +159,25 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(0);
 		}
 	}
+	
+	/* relational operators */ 
+	public void visit(CondFactExprRelop condFactExprRelop) {
+		/*Relop relop = condFactExprRelop.getRelop();
+		if (relop instanceof RelOpEq) {
+			Code.put(Code.eq);
+		} else if (relop instanceof RelOpNe) {
+			Code.put(Code.ne);
+		} else if (relop instanceof RelOpGt) {
+			Code.put(Code.gt);
+		} else if (relop instanceof RelOpGe) {
+			Code.put(Code.ge);
+		} else if (relop instanceof RelOpLt) {
+			Code.put(Code.lt);
+		} else if (relop instanceof RelOpLe) {
+			Code.put(Code.le);
+		}*/
+	}
+
 	
 	/* arithmetic operators */
 	public void visit(Terms terms) {
@@ -178,22 +219,15 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	/* type constants */
-	public void visit(NumConst numConst) {
-		Code.load(numConst.obj);
-	}
-
-	public void visit(CharConst charConst) {
-		Code.load(charConst.obj);
-	}
-
-	public void visit(BoolConst boolConst) {
-		Code.load(boolConst.obj);
+	public void visit(FactorTypeConst typeConst) {
+		Code.load(typeConst.obj);
 	}
 
 	/* statements */
 	public void visit(ReturnStmtExpr returnStmtExpr) {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
+		
 	}
 
 	public void visit(ReturnStmt returnStmt) {
@@ -202,8 +236,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(PrintStmt printStmt) {
-		// Code.load(printStmt.getExpr().obj);
-		// Code.load(new Obj(Obj.Con, "width", Tab.intType, 1, 0));
 		if (printStmt.getExpr().obj.getType() == Tab.intType
 				|| printStmt.getExpr().obj.getType().getKind() == Struct.Bool) {
 			Code.loadConst(5);
