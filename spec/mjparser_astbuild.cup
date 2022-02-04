@@ -92,6 +92,7 @@ nonterminal SingleStatement SingleStatement;
 nonterminal Statements Statements;
 nonterminal StatementList StatementList;
 nonterminal IfCondition IfCondition;
+nonterminal DesignatorLBracket DesignatorLBracket;
 nonterminal AssignStatement AssignStatement;
 nonterminal ActPars ActPars;
 nonterminal ActParsList ActParsList;
@@ -381,10 +382,12 @@ Factor ::= 			(FactorNoParen) Designator:D1 {: RESULT=new FactorNoParen(D1); RES
 					
 Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name {: RESULT=new DesignatorPoint(prev, name); RESULT.setLine(prevleft); :}
 					|
-					(DesignatorBracket) Designator:prev LBRACKET Expr:E1 RBRACKET {: RESULT=new DesignatorBracket(prev, E1); RESULT.setLine(prevleft); :}
+					(DesignatorBracket) Designator:prev DesignatorLBracket:lbracket Expr:E1 RBRACKET {: RESULT=new DesignatorBracket(prev, lbracket, E1); RESULT.setLine(prevleft); :}
 					|
 					(DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
 					;
+					
+DesignatorLBracket ::= (DesignatorLBracket) LBRACKET {: RESULT=new DesignatorLBracket(); :} ;
 		
 Assignop ::= 		(AssignOperator) EQUAL {: RESULT=new AssignOperator(); :} ;
 

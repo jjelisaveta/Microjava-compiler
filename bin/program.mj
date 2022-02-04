@@ -33,13 +33,19 @@ Test t1, t2;
 		drugi.test = new Test;
 		drugi.test.a = 77;
 		drugi.test.niz = new int[3];
+		niz2 = new int[7];
+		niz2[6] = 66;
+		niz2[2] = 88;
 		//i = 2;
 		drugi.test.niz[0] = 33;
-		//drugi.test.niz[1] = 44;
-		//drugi.test.niz[2] = 55;
+		drugi.test.niz[1] = 44;
+		drugi.test.niz[2] = 55;
 		//print(drugi.test.a);
+		print(drugi.test.niz[0]);
+		print(drugi.test.niz[2]);
 		
-		
+		print(niz2[2]);
+		print(niz2[6]);
 	}
 }
 

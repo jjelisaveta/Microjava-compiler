@@ -5,9 +5,27 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class RelOpLe extends Relop {
+public class DesignatorLBracket implements SyntaxNode {
 
-    public RelOpLe () {
+    private SyntaxNode parent;
+    private int line;
+    public DesignatorLBracket () {
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +46,10 @@ public class RelOpLe extends Relop {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("RelOpLe(\n");
+        buffer.append("DesignatorLBracket(\n");
 
         buffer.append(tab);
-        buffer.append(") [RelOpLe]");
+        buffer.append(") [DesignatorLBracket]");
         return buffer.toString();
     }
 }

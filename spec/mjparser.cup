@@ -58,7 +58,7 @@ terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, 
 nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl, ClassFieldsDeclList, RecordDecl, GlobalVarDecl, GlobalVarDeclList, GlobalOneVarDecl, OneVarDecl;
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
-nonterminal Statement, SingleStatement, Statements, StatementList, IfCondition;
+nonterminal Statement, SingleStatement, Statements, StatementList, IfCondition, DesignatorLBracket;
 nonterminal AssignStatement, ActPars, ActParsList;
 nonterminal Assignop, Relop, Addop, Mulop, DoKeyword;
 
@@ -342,10 +342,12 @@ Factor ::= 			(FactorNoParen) Designator
 					
 Designator ::=		(DesignatorPoint) Designator:prev POINT IDENT:name
 					|
-					(DesignatorBracket) Designator:prev LBRACKET Expr RBRACKET
+					(DesignatorBracket) Designator:prev DesignatorLBracket:lbracket Expr RBRACKET
 					|
 					(DesignatorIdent) IDENT:name
 					;
+					
+DesignatorLBracket ::= (DesignatorLBracket) LBRACKET ;
 		
 Assignop ::= 		(AssignOperator) EQUAL ;
 

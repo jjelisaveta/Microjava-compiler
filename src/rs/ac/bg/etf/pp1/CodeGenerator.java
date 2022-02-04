@@ -60,11 +60,17 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	/* desginators */
+	public void visit(DesignatorLBracket designatorLBracket) {
+		Obj arrayObj = ((DesignatorBracket) designatorLBracket.getParent()).getDesignator().obj;
+		Code.load(arrayObj);
+		//prvo se ucitava ovo pa onda Expr u zagradi - ne mora dup
+	}
+	
 	public void visit(DesignatorBracket designatorBracket) {
 		Obj arrayObj = designatorBracket.getDesignator().obj;
 		// prvo adresa niza, pa indeks
 		log.debug(designatorBracket.getParent().getClass().toString());
-		if (designatorBracket.getDesignator() instanceof DesignatorPoint && !(designatorBracket.getParent() instanceof AssignStmt)) {
+		/*if (designatorBracket.getDesignator() instanceof DesignatorPoint && !(designatorBracket.getParent() instanceof AssignStmt)) {
 			Code.put(Code.dup_x1); 
 			Code.put(Code.pop);
 			Code.load(arrayObj);
@@ -73,7 +79,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.load(arrayObj);
 			Code.put(Code.dup_x1); 
 			Code.put(Code.pop);
-		}
+		}*/
 	
 		
 		log.info(designatorBracket.obj.getName() + " " + designatorBracket.obj.getType().getKind());
