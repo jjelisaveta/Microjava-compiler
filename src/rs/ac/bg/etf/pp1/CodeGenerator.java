@@ -67,29 +67,11 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(DesignatorBracket designatorBracket) {
-		Obj arrayObj = designatorBracket.getDesignator().obj;
-		// prvo adresa niza, pa indeks
-		log.debug(designatorBracket.getParent().getClass().toString());
-		/*if (designatorBracket.getDesignator() instanceof DesignatorPoint && !(designatorBracket.getParent() instanceof AssignStmt)) {
-			Code.put(Code.dup_x1); 
-			Code.put(Code.pop);
-			Code.load(arrayObj);
-			log.debug("usao");
-		} else {
-			Code.load(arrayObj);
-			Code.put(Code.dup_x1); 
-			Code.put(Code.pop);
-		}*/
-	
-		
-		log.info(designatorBracket.obj.getName() + " " + designatorBracket.obj.getType().getKind());
+		//designator je ucitan kod zagrade, a expr se ucitava posle toga, a pre desginatorBracket
 	}
 
 	public void visit(DesignatorPoint designatorPoint) {
-		Code.load(designatorPoint.getDesignator().obj);
-		log.info(designatorPoint.obj.getName() + " " + designatorPoint.obj.getType().getKind());
-		//mozda ovde razdvojiti
-		
+		Code.load(designatorPoint.getDesignator().obj);		
 	}
 	
 	public void visit(DesignatorIdent designatorIdent) {
@@ -150,11 +132,8 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(FactorType factorType) {
 		//Code.put(Code.pop);
 		Code.put(Code.new_);
-		log.info(factorType.obj.getType().getMembers().size());
 		int size = 4 * factorType.obj.getType().getMembers().size();
 		Code.put2(size);
-		
-		
 	}
 	
 	public void visit(FactorArrayType factorArrayType) {

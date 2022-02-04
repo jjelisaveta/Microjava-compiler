@@ -28,7 +28,7 @@ Test t1, t2;
 	
 	void main()
 	{
-		//ne radi
+		//radi
 		drugi = new Drugi;
 		drugi.test = new Test;
 		drugi.test.a = 77;
@@ -36,7 +36,7 @@ Test t1, t2;
 		niz2 = new int[7];
 		niz2[6] = 66;
 		niz2[2] = 88;
-		//i = 2;
+		i = 2;
 		drugi.test.niz[0] = 33;
 		drugi.test.niz[1] = 44;
 		drugi.test.niz[2] = 55;
@@ -46,6 +46,7 @@ Test t1, t2;
 		
 		print(niz2[2]);
 		print(niz2[6]);
+		print(i);
 	}
 }
 
