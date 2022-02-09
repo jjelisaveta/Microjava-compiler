@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2022 11:43:14
+// 9/1/2022 1:34:24
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -89,6 +89,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFactExpr CondFactExpr) { visit(); }
     public void visit(ConditionCondFact ConditionCondFact) { visit(); }
     public void visit(CondTerms CondTerms) { visit(); }
+    public void visit(Or Or) { visit(); }
     public void visit(ConditionCondTerm ConditionCondTerm) { visit(); }
     public void visit(Conditions Conditions) { visit(); }
     public void visit(NoActParams NoActParams) { visit(); }
@@ -106,7 +107,13 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Stmts Stmts) { visit(); }
     public void visit(ErrorIfCondition ErrorIfCondition) { visit(); }
     public void visit(OkIfCondition OkIfCondition) { visit(); }
-    public void visit(DoKeyword DoKeyword) { visit(); }
+    public void visit(IfElseStmtEnd IfElseStmtEnd) { visit(); }
+    public void visit(IfStmtEnd IfStmtEnd) { visit(); }
+    public void visit(ElseStart ElseStart) { visit(); }
+    public void visit(IfStart IfStart) { visit(); }
+    public void visit(DoCondition DoCondition) { visit(); }
+    public void visit(WhileStart WhileStart) { visit(); }
+    public void visit(DoStart DoStart) { visit(); }
     public void visit(MultipleStatements MultipleStatements) { visit(); }
     public void visit(IfElseStmt IfElseStmt) { visit(); }
     public void visit(IfStmt IfStmt) { visit(); }
@@ -122,7 +129,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Type Type) { visit(); }
     public void visit(FormParam FormParam) { visit(); }
     public void visit(FormParams FormParams) { visit(); }
-    public void visit(ErrorOneArrayFormParam ErrorOneArrayFormParam) { visit(); }
+    public void visit(ErrorOneFormParam ErrorOneFormParam) { visit(); }
     public void visit(OneArrayFormParam OneArrayFormParam) { visit(); }
     public void visit(OneFormParam OneFormParam) { visit(); }
     public void visit(NoMethodFormParams NoMethodFormParams) { visit(); }

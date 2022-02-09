@@ -1,13 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2022 11:43:14
+// 9/1/2022 1:34:23
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ErrorOneArrayFormParam extends OneFormPar {
+public class Or implements SyntaxNode {
 
-    public ErrorOneArrayFormParam () {
+    private SyntaxNode parent;
+    private int line;
+    public Or () {
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +46,10 @@ public class ErrorOneArrayFormParam extends OneFormPar {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ErrorOneArrayFormParam(\n");
+        buffer.append("Or(\n");
 
         buffer.append(tab);
-        buffer.append(") [ErrorOneArrayFormParam]");
+        buffer.append(") [Or]");
         return buffer.toString();
     }
 }

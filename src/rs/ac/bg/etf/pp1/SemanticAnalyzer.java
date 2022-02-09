@@ -853,13 +853,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		//
 	}
 	
-	public void visit(DoKeyword doKeyword) {
+	public void visit(DoStart doStart) {
 		doCnt++;
 		
 	}
 	
 	public void visit(DoStmt doStmt) {
-		if (!doStmt.getCondition().obj.getType().equals(boolType)) {
+		if (!doStmt.getDoCondition().getCondition().obj.getType().equals(boolType)) {
 			report_error("Semanticka greska: tip uslovnog izraza mora biti bool "  , doStmt.getParent());
 		}
 		

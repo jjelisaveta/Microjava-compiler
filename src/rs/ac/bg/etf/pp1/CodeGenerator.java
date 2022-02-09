@@ -2,6 +2,7 @@ package rs.ac.bg.etf.pp1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import org.apache.log4j.Logger;
 
@@ -15,16 +16,22 @@ import rs.etf.pp1.mj.runtime.Run;
 public class CodeGenerator extends VisitorAdaptor {
 
 	private int mainPc;
-	private List<Obj> constants = new ArrayList<>();
-
+	
+	private Obj currentMethod = null;
+	
+	private int conditionRelOp;
+	private List<Integer> conditionOrJumps = new ArrayList<>();
+	private Stack<List<Integer>> conditionAndJumps = new Stack<>();
+	private Stack<Integer> skipElseStack = new Stack<>();
+	
+	private Stack<Integer> doStack = new Stack<>();
+	private Stack<List<Integer>> breakStack = new Stack<>();
+	private Stack<List<Integer>> continueStack = new Stack<>();
+	
 	Logger log = Logger.getLogger(getClass());
 
 	public int getMainPc() {
 		return mainPc;
-	}
-	
-	public void visit(Program program) {
-	
 	}
 
 	/* constants */
@@ -43,6 +50,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if ("main".equalsIgnoreCase(methodName.getMethodName())) {
 			mainPc = Code.pc;
 		}
+		currentMethod = Tab.find(methodName.getMethodName());
 		methodName.obj.setAdr(Code.pc);
 		Code.put(Code.enter);
 		Code.put(methodName.obj.getLevel());
@@ -50,13 +58,25 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 
 	public void visit(MethodDeclStmt methodDecl) {
-		Code.put(Code.exit);
-		Code.put(Code.return_);
+		if (currentMethod.getType().equals(Tab.noType)) {
+			Code.put(Code.exit);
+			Code.put(Code.return_);
+		} else {
+			Code.put(Code.trap);
+			Code.put(1);
+		}
+		currentMethod = null;
 	}
 
 	public void visit(MethodDeclNoStmt methodDecl) {
-		Code.put(Code.exit);
-		Code.put(Code.return_);
+		if (currentMethod.getType().equals(Tab.noType)) {
+			Code.put(Code.exit);
+			Code.put(Code.return_);
+		} else {
+			Code.put(Code.trap);
+			Code.put(1);
+		}
+		currentMethod = null;
 	}
 
 	/* desginators */
@@ -130,7 +150,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(FactorType factorType) {
-		//Code.put(Code.pop);
 		Code.put(Code.new_);
 		int size = 4 * factorType.obj.getType().getMembers().size();
 		Code.put2(size);
@@ -145,24 +164,147 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	/* relational operators */ 
-	public void visit(CondFactExprRelop condFactExprRelop) {
-		/*Relop relop = condFactExprRelop.getRelop();
-		if (relop instanceof RelOpEq) {
-			Code.put(Code.eq);
-		} else if (relop instanceof RelOpNe) {
-			Code.put(Code.ne);
-		} else if (relop instanceof RelOpGt) {
-			Code.put(Code.gt);
-		} else if (relop instanceof RelOpGe) {
-			Code.put(Code.ge);
-		} else if (relop instanceof RelOpLt) {
-			Code.put(Code.lt);
-		} else if (relop instanceof RelOpLe) {
-			Code.put(Code.le);
-		}*/
+	
+	public void visit(DoStart doStart) {
+		log.info("Pocela petlja " + Code.pc);
+		doStack.add(Code.pc);
+		//moraju liste
+		breakStack.push(new ArrayList<>());
+		continueStack.push(new ArrayList<>());
 	}
+	
+	public void visit(WhileStart whileStart) {
+		//novi uslovi
+		conditionAndJumps.push(new ArrayList<>());
+		for (int adr : continueStack.peek()) {
+			Code.fixup(adr);
+		}
+		//peek ili pop??
+	}
+	
+	//sta kad se zavrsi do while
+	
+	public void visit(BreakStmt breakStmt) {
+		Code.putJump(0);
+		breakStack.peek().add(Code.pc - 2);
+	}
+	
+	public void visit(ContinueStmt continueStmt) {
+		Code.putJump(0);
+		continueStack.peek().add(Code.pc - 2);
+	}
+	
+	public void visit(IfStart ifStart) {
+		conditionAndJumps.add(new ArrayList<>());
+	}
+	
+	/* condition */
+	//RELOP
+	public void visit(CondFactExpr condFactExpr) {
+		Code.loadConst(1);
+		conditionRelOp = Code.eq;
+		Code.putFalseJump(conditionRelOp, 0);
+		conditionAndJumps.peek().add(Code.pc - 2);
+	}
+	
+	public void visit(CondFactExprRelop condFactExprRelop) {
+		Code.putFalseJump(conditionRelOp, 0);
+		conditionAndJumps.peek().add(Code.pc - 2);
+	}
+	
+	/*  AND  */
+	public void visit(CondTerms condTerms) {
+		//sve se postavlja u condFact
+	}
+	
+	/* condTerm */
+	public void visit(ConditionCondFact conditionCondFact) {	
+		
+	}
+	
+	/* OR */
+	public void visit(Or or) {
+		Code.putJump(0);
+		conditionOrJumps.add(Code.pc-2);
+		
+		for (int adr: conditionAndJumps.pop()) {
+			Code.fixup(adr);
+		}
+		conditionAndJumps.push(new ArrayList<>());
+	}
+	
+	/* condition OR condTerm */
+	public void visit(Conditions conditions) {
+		
+	}
+	
+	/* condTerm */
+	public void visit(ConditionCondTerm conditionCondTerm) {
+		
+	}
+	
+	public void visit(OkIfCondition okIfCondition) {
+		for (int adr: conditionOrJumps) {
+			Code.fixup(adr);
+		}
+		
+	}
+	
+	public void visit(IfStmtEnd ifStmtEnd) {
+		for (int adr: conditionOrJumps) {
+			Code.fixup(adr);
+		}
+		for (int adr: conditionAndJumps.pop()) {
+			Code.fixup(adr);
+		}
+	}
+	
+	public void visit(ElseStart elseStart) {
+		Code.putJump(0);
 
+		for (int adr: conditionAndJumps.pop()) {
+			Code.fixup(adr);
+		}
+		conditionAndJumps.add(new ArrayList<>());
+		skipElseStack.add(Code.pc - 2);
+	}
+	
+	public void visit(IfElseStmtEnd ifElseStmtEnd) {
+		Code.fixup(skipElseStack.pop());
+		conditionAndJumps.pop();
+	}
+		
+	/* relational operators */ 
+	
+	public void visit(RelOpEq op) {
+		conditionRelOp = Code.eq;
+		//conditionOperators.push(Code.eq);
+	}
+	
+	public void visit(RelOpNe op) {
+		conditionRelOp = Code.ne;
+		//conditionOperators.push(Code.ne);
+	}
+	
+	public void visit(RelOpGt op) {
+		conditionRelOp = Code.gt;
+		//conditionOperators.push(Code.gt);
+	}
+	
+	public void visit(RelOpGe op) {
+		conditionRelOp = Code.ge;
+		//conditionOperators.push(Code.ge);
+	}
+	
+	public void visit(RelOpLt op) {
+		conditionRelOp = Code.lt;
+		//conditionOperators.push(Code.lt);
+	}
+	
+	public void visit(RelOpLe op) {
+		conditionRelOp = Code.le;
+		//conditionOperators.push(Code.le);
+	}
 	
 	/* arithmetic operators */
 	public void visit(Terms terms) {

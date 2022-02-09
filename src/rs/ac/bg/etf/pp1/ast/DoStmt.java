@@ -1,31 +1,34 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2022 11:43:14
+// 9/1/2022 1:34:23
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DoStmt extends Statement {
 
-    private DoKeyword DoKeyword;
+    private DoStart DoStart;
     private Statement Statement;
-    private Condition Condition;
+    private WhileStart WhileStart;
+    private DoCondition DoCondition;
 
-    public DoStmt (DoKeyword DoKeyword, Statement Statement, Condition Condition) {
-        this.DoKeyword=DoKeyword;
-        if(DoKeyword!=null) DoKeyword.setParent(this);
+    public DoStmt (DoStart DoStart, Statement Statement, WhileStart WhileStart, DoCondition DoCondition) {
+        this.DoStart=DoStart;
+        if(DoStart!=null) DoStart.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
+        this.WhileStart=WhileStart;
+        if(WhileStart!=null) WhileStart.setParent(this);
+        this.DoCondition=DoCondition;
+        if(DoCondition!=null) DoCondition.setParent(this);
     }
 
-    public DoKeyword getDoKeyword() {
-        return DoKeyword;
+    public DoStart getDoStart() {
+        return DoStart;
     }
 
-    public void setDoKeyword(DoKeyword DoKeyword) {
-        this.DoKeyword=DoKeyword;
+    public void setDoStart(DoStart DoStart) {
+        this.DoStart=DoStart;
     }
 
     public Statement getStatement() {
@@ -36,12 +39,20 @@ public class DoStmt extends Statement {
         this.Statement=Statement;
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public WhileStart getWhileStart() {
+        return WhileStart;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setWhileStart(WhileStart WhileStart) {
+        this.WhileStart=WhileStart;
+    }
+
+    public DoCondition getDoCondition() {
+        return DoCondition;
+    }
+
+    public void setDoCondition(DoCondition DoCondition) {
+        this.DoCondition=DoCondition;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +60,25 @@ public class DoStmt extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(DoKeyword!=null) DoKeyword.accept(visitor);
+        if(DoStart!=null) DoStart.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
-        if(Condition!=null) Condition.accept(visitor);
+        if(WhileStart!=null) WhileStart.accept(visitor);
+        if(DoCondition!=null) DoCondition.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(DoKeyword!=null) DoKeyword.traverseTopDown(visitor);
+        if(DoStart!=null) DoStart.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(WhileStart!=null) WhileStart.traverseTopDown(visitor);
+        if(DoCondition!=null) DoCondition.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(DoKeyword!=null) DoKeyword.traverseBottomUp(visitor);
+        if(DoStart!=null) DoStart.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(WhileStart!=null) WhileStart.traverseBottomUp(visitor);
+        if(DoCondition!=null) DoCondition.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,8 +87,8 @@ public class DoStmt extends Statement {
         buffer.append(tab);
         buffer.append("DoStmt(\n");
 
-        if(DoKeyword!=null)
-            buffer.append(DoKeyword.toString("  "+tab));
+        if(DoStart!=null)
+            buffer.append(DoStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -85,8 +99,14 @@ public class DoStmt extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(WhileStart!=null)
+            buffer.append(WhileStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(DoCondition!=null)
+            buffer.append(DoCondition.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

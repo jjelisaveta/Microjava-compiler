@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2022 11:43:14
+// 9/1/2022 1:34:24
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -89,6 +89,7 @@ public interface Visitor {
     public void visit(CondFactExpr CondFactExpr);
     public void visit(ConditionCondFact ConditionCondFact);
     public void visit(CondTerms CondTerms);
+    public void visit(Or Or);
     public void visit(ConditionCondTerm ConditionCondTerm);
     public void visit(Conditions Conditions);
     public void visit(NoActParams NoActParams);
@@ -106,7 +107,13 @@ public interface Visitor {
     public void visit(Stmts Stmts);
     public void visit(ErrorIfCondition ErrorIfCondition);
     public void visit(OkIfCondition OkIfCondition);
-    public void visit(DoKeyword DoKeyword);
+    public void visit(IfElseStmtEnd IfElseStmtEnd);
+    public void visit(IfStmtEnd IfStmtEnd);
+    public void visit(ElseStart ElseStart);
+    public void visit(IfStart IfStart);
+    public void visit(DoCondition DoCondition);
+    public void visit(WhileStart WhileStart);
+    public void visit(DoStart DoStart);
     public void visit(MultipleStatements MultipleStatements);
     public void visit(IfElseStmt IfElseStmt);
     public void visit(IfStmt IfStmt);
@@ -122,7 +129,7 @@ public interface Visitor {
     public void visit(Type Type);
     public void visit(FormParam FormParam);
     public void visit(FormParams FormParams);
-    public void visit(ErrorOneArrayFormParam ErrorOneArrayFormParam);
+    public void visit(ErrorOneFormParam ErrorOneFormParam);
     public void visit(OneArrayFormParam OneArrayFormParam);
     public void visit(OneFormParam OneFormParam);
     public void visit(NoMethodFormParams NoMethodFormParams);

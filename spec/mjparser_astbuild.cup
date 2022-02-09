@@ -100,8 +100,14 @@ nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-nonterminal DoKeyword DoKeyword;
-
+nonterminal DoStart DoStart;
+nonterminal DoCondition DoCondition;
+nonterminal IfStart IfStart;
+nonterminal ElseStart ElseStart;
+nonterminal IfElseStmtEnd IfElseStmtEnd;
+nonterminal IfStmtEnd IfStmtEnd;
+nonterminal Or Or;
+nonterminal WhileStart WhileStart;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, MinusTerm, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
@@ -120,12 +126,12 @@ DeclList ::= 		(DeclListConst) DeclList:D1 ConstDecl:C2 {: RESULT=new DeclListCo
 					|
 					(DeclListRecord) DeclList:D1 RecordDecl:R2 {: RESULT=new DeclListRecord(D1, R2); RESULT.setLine(D1left); :}
 					|
-					(NoDeclList) {: RESULT=new NoDeclList(); :} //epsilon
+					(NoDeclList) {: RESULT=new NoDeclList(); :} /* epsilon */
 					;
 
 MethodDeclList ::= 	(MethodsDecl) MethodDecl:M1 MethodDeclList:M2 {: RESULT=new MethodsDecl(M1, M2); RESULT.setLine(M1left); :} 
 					|
-					(NoMetodDecl) {: RESULT=new NoMetodDecl(); :} //epsilon
+					(NoMetodDecl) {: RESULT=new NoMetodDecl(); :} /* epsilon */
 					;
 					
 TypeConst ::= 		(NumConst) NUMBER:numConst {: RESULT=new NumConst(numConst); RESULT.setLine(numConstleft); :}
@@ -209,13 +215,13 @@ ClassFields ::= 	(ClassFields) ClassFieldsDeclList:C1 {: RESULT=new ClassFields(
 
 ClassFieldsDeclList ::= (MultipleClassFields) ClassFieldsDeclList:C1 ClassVarDecl:C2 {: RESULT=new MultipleClassFields(C1, C2); RESULT.setLine(C1left); :}
 					|
-					(NoClassFields) {: RESULT=new NoClassFields(); :} // epsilon
+					(NoClassFields) {: RESULT=new NoClassFields(); :} /* epsilon */
 					;
 
 					
 MultipleVarDecl ::= (VarDecls) MultipleVarDecl:M1 VarDecl:V2 {: RESULT=new VarDecls(M1, V2); RESULT.setLine(M1left); :}
 					|
-					(NoVarDecl) {: RESULT=new NoVarDecl(); :} //epsilon
+					(NoVarDecl) {: RESULT=new NoVarDecl(); :} /* epsilon */
  					;
  
 RecordName ::= 		(RecordName) RECORD IDENT:recordName {: RESULT=new RecordName(recordName); RESULT.setLine(recordNameleft); :};
@@ -224,7 +230,7 @@ RecordDecl ::= 		(RecordDecl) RecordName:R1 LBRACE RecordVarDecls:R2 RBRACE {: R
 
 RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls:R1 RecordVarDecl:R2 {: RESULT=new RecordVariableDecl(R1, R2); RESULT.setLine(R1left); :}
 					|
-					(RecordNoVariableDecl) {: RESULT=new RecordNoVariableDecl(); :} //epsilon
+					(RecordNoVariableDecl) {: RESULT=new RecordNoVariableDecl(); :} /* epsilon */
  					;
  					
 RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList:V1 SEMI {: RESULT=new RecordVariableDeclaration(V1); RESULT.setLine(V1left); :};
@@ -248,15 +254,14 @@ MethodName ::= 		(MethodName) IDENT:methodName {: RESULT=new MethodName(methodNa
 
 MethodFormPars ::= 	(MethodFormParams) FormPars:F1 {: RESULT=new MethodFormParams(F1); RESULT.setLine(F1left); :}
 					|
-					(NoMethodFormParams) {: RESULT=new NoMethodFormParams(); :} //epsilon
+					(NoMethodFormParams) {: RESULT=new NoMethodFormParams(); :} /* epsilon */
 					;
 
 OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName {: RESULT=new OneFormParam(type, paramName); RESULT.setLine(typeleft); :}
 					|
 					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET {: RESULT=new OneArrayFormParam(type, paramName); RESULT.setLine(typeleft); :}
 					|
-					(ErrorOneArrayFormParam) error:e
-					{: parser.report_error("Greska u deklaraciji formalnog parametra funkcije u liniji " + eleft, null);  :} {: RESULT=new ErrorOneArrayFormParam(); :}
+					(ErrorOneFormParam) error:e {: RESULT=new ErrorOneFormParam(); :}
 					;		
 
 FormPars ::= 		(FormParams) FormPars:F1 COMMA OneFormPar:O2 {: RESULT=new FormParams(F1, O2); RESULT.setLine(F1left); :}
@@ -268,7 +273,7 @@ Type ::=			(Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(ty
 
 Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 					|
-					(DoStmt) DoKeyword:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new DoStmt(D1, S2, C3); RESULT.setLine(D1left); :}
+					(DoStmt) DoStart:D1 Statement:S2 WhileStart:W3 LPAREN DoCondition:D4 RPAREN SEMI {: RESULT=new DoStmt(D1, S2, W3, D4); RESULT.setLine(D1left); :}
 					|
 					(BreakStmt) BREAK SEMI {: RESULT=new BreakStmt(); :}
 					|
@@ -284,14 +289,26 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Desig
 					|
 					(PrintStmt) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new PrintStmt(E1); RESULT.setLine(E1left); :}
 					|
-					(IfStmt) IF LPAREN IfCondition:I1 RPAREN Statement:S2 {: RESULT=new IfStmt(I1, S2); RESULT.setLine(I1left); :}
+					(IfStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 IfStmtEnd:I4 {: RESULT=new IfStmt(I1, I2, S3, I4); RESULT.setLine(I1left); :}
 					|
-					(IfElseStmt) IF LPAREN IfCondition:I1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new IfElseStmt(I1, S2, S3); RESULT.setLine(I1left); :}
+					(IfElseStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 ElseStart:E4 Statement:S5 IfElseStmtEnd:I6 {: RESULT=new IfElseStmt(I1, I2, S3, E4, S5, I6); RESULT.setLine(I1left); :}
 					|
-					(MultipleStatements)Statements:S1 {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
+					(MultipleStatements) Statements:S1 {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
 					;
 
-DoKeyword ::=		(DoKeyword) DO {: RESULT=new DoKeyword(); :} ;
+DoStart ::=			(DoStart) DO {: RESULT=new DoStart(); :} ;
+
+WhileStart ::= 		(WhileStart) WHILE {: RESULT=new WhileStart(); :} ;
+
+DoCondition ::=		(DoCondition) Condition:C1 {: RESULT=new DoCondition(C1); RESULT.setLine(C1left); :} ;
+
+IfStart ::=			(IfStart) IF {: RESULT=new IfStart(); :} ;
+
+ElseStart ::= 		(ElseStart) ELSE {: RESULT=new ElseStart(); :} ;
+					
+IfStmtEnd ::= 		(IfStmtEnd) {: RESULT=new IfStmtEnd(); :} /* epsilon */ ;
+
+IfElseStmtEnd ::= 	(IfElseStmtEnd) {: RESULT=new IfElseStmtEnd(); :} /* epsilon */ ;
 					
 IfCondition ::= 	(OkIfCondition) Condition:cond {: RESULT=new OkIfCondition(cond); RESULT.setLine(condleft); :}
 					|
@@ -328,13 +345,15 @@ ActPars ::= 		(ActParams) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParams(A1, E
 					
 ActParsList ::= 	(ActParamsList) ActPars:A1 {: RESULT=new ActParamsList(A1); RESULT.setLine(A1left); :}
 					|
-					(NoActParams) {: RESULT=new NoActParams(); :} // epsilon 
+					(NoActParams) {: RESULT=new NoActParams(); :} /* epsilon */ 
 					;
 					
-Condition ::= 		(Conditions) Condition:C1 OR CondTerm:C2 {: RESULT=new Conditions(C1, C2); RESULT.setLine(C1left); :}
+Condition ::= 		(Conditions) Condition:C1 Or:O2 CondTerm:C3 {: RESULT=new Conditions(C1, O2, C3); RESULT.setLine(C1left); :}
 					|
 					(ConditionCondTerm) CondTerm:C1 {: RESULT=new ConditionCondTerm(C1); RESULT.setLine(C1left); :}
 					;
+					
+Or ::=				(Or) OR {: RESULT=new Or(); :} ;
 
 CondTerm ::=		(CondTerms) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondTerms(C1, C2); RESULT.setLine(C1left); :}
 					|

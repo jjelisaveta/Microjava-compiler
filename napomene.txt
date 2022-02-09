@@ -1,19 +1,14 @@
-
-
 PITANJA
 =================================================
 1. greska kod naredbe dodele, kako tacno treba?
-2. da li treba setLevel za const? u kojoj fazi se postavlja setAdr
-3. sta uraditi kada nisu dobri parametri funkcije?
+2. sta uraditi kada nisu dobri parametri funkcije?
 
 
 TREBA URADITI
 =================================================
 1. nasledjivanje klasa - ClassNameExtends
 2. izmeniti ispis koriscenja da bude za var globalna promenljiva a ne i za const
-3. srediti designator
 
 NE RADI
 =================================================
-1. dodeljivanje niza nizu
-2. puca kad je pogresan poziv fje
+1. puca kad je pogresan poziv fje

@@ -60,8 +60,7 @@ nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVar
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, Statements, StatementList, IfCondition, DesignatorLBracket;
 nonterminal AssignStatement, ActPars, ActParsList;
-nonterminal Assignop, Relop, Addop, Mulop, DoKeyword;
-
+nonterminal Assignop, Relop, Addop, Mulop, DoStart, DoCondition, IfStart, ElseStart, IfElseStmtEnd, IfStmtEnd, Or, WhileStart;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, MinusTerm, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
@@ -80,12 +79,12 @@ DeclList ::= 		(DeclListConst) DeclList ConstDecl
 					|
 					(DeclListRecord) DeclList RecordDecl
 					|
-					(NoDeclList) //epsilon
+					(NoDeclList) /* epsilon */
 					;
 
 MethodDeclList ::= 	(MethodsDecl) MethodDecl MethodDeclList 
 					|
-					(NoMetodDecl) //epsilon
+					(NoMetodDecl) /* epsilon */
 					;
 					
 TypeConst ::= 		(NumConst) NUMBER:numConst
@@ -169,13 +168,13 @@ ClassFields ::= 	(ClassFields) ClassFieldsDeclList ;
 
 ClassFieldsDeclList ::= (MultipleClassFields) ClassFieldsDeclList ClassVarDecl
 					|
-					(NoClassFields) // epsilon
+					(NoClassFields) /* epsilon */
 					;
 
 					
 MultipleVarDecl ::= (VarDecls) MultipleVarDecl VarDecl
 					|
-					(NoVarDecl) //epsilon
+					(NoVarDecl) /* epsilon */
  					;
  
 RecordName ::= 		(RecordName) RECORD IDENT:recordName;
@@ -184,7 +183,7 @@ RecordDecl ::= 		(RecordDecl) RecordName LBRACE RecordVarDecls RBRACE ;
 
 RecordVarDecls ::=	(RecordVariableDecl) RecordVarDecls RecordVarDecl
 					|
-					(RecordNoVariableDecl) //epsilon
+					(RecordNoVariableDecl) /* epsilon */
  					;
  					
 RecordVarDecl ::= 	(RecordVariableDeclaration) VarDeclList SEMI;
@@ -208,15 +207,14 @@ MethodName ::= 		(MethodName) IDENT:methodName ;
 
 MethodFormPars ::= 	(MethodFormParams) FormPars
 					|
-					(NoMethodFormParams) //epsilon
+					(NoMethodFormParams) /* epsilon */
 					;
 
 OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName
 					|
 					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET
 					|
-					(ErrorOneArrayFormParam) error:e
-					{: parser.report_error("Greska u deklaraciji formalnog parametra funkcije u liniji " + eleft, null);  :}
+					(ErrorOneFormParam) error:e
 					;		
 
 FormPars ::= 		(FormParams) FormPars COMMA OneFormPar
@@ -228,7 +226,7 @@ Type ::=			(Type) IDENT:typeName ;
 
 Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
-					(DoStmt) DoKeyword Statement WHILE LPAREN Condition RPAREN SEMI
+					(DoStmt) DoStart Statement WhileStart LPAREN DoCondition RPAREN SEMI
 					|
 					(BreakStmt) BREAK SEMI
 					|
@@ -244,14 +242,26 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					|
 					(PrintStmt) PRINT LPAREN Expr RPAREN SEMI
 					|
-					(IfStmt) IF LPAREN IfCondition RPAREN Statement
+					(IfStmt) IfStart LPAREN IfCondition RPAREN Statement IfStmtEnd
 					|
-					(IfElseStmt) IF LPAREN IfCondition RPAREN Statement ELSE Statement
+					(IfElseStmt) IfStart LPAREN IfCondition RPAREN Statement ElseStart Statement IfElseStmtEnd
 					|
-					(MultipleStatements)Statements
+					(MultipleStatements) Statements
 					;
 
-DoKeyword ::=		(DoKeyword) DO ;
+DoStart ::=			(DoStart) DO ;
+
+WhileStart ::= 		(WhileStart) WHILE ;
+
+DoCondition ::=		(DoCondition) Condition ;
+
+IfStart ::=			(IfStart) IF ;
+
+ElseStart ::= 		(ElseStart) ELSE ;
+					
+IfStmtEnd ::= 		(IfStmtEnd) /* epsilon */ ;
+
+IfElseStmtEnd ::= 	(IfElseStmtEnd) /* epsilon */ ;
 					
 IfCondition ::= 	(OkIfCondition) Condition:cond
 					|
@@ -288,13 +298,15 @@ ActPars ::= 		(ActParams) ActPars COMMA Expr
 					
 ActParsList ::= 	(ActParamsList) ActPars
 					|
-					(NoActParams) // epsilon 
+					(NoActParams) /* epsilon */ 
 					;
 					
-Condition ::= 		(Conditions) Condition OR CondTerm
+Condition ::= 		(Conditions) Condition Or CondTerm
 					|
 					(ConditionCondTerm) CondTerm
 					;
+					
+Or ::=				(Or) OR ;
 
 CondTerm ::=		(CondTerms) CondTerm AND CondFact
 					|

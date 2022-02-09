@@ -1,379 +1,118 @@
-INFO  11:43:32,003 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
-INFO  11:43:32,048 - #6 program
-INFO  11:43:32,048 - #5 test302
-INFO  11:43:32,048 - #15 const
-INFO  11:43:32,049 - #5 int
-INFO  11:43:32,049 - #5 jedan
-INFO  11:43:32,049 - #39 =
-INFO  11:43:32,050 - #2 1
-INFO  11:43:32,050 - #42 ;
-INFO  11:43:32,050 - #15 const
-INFO  11:43:32,050 - #5 int
-INFO  11:43:32,050 - #5 dva
-INFO  11:43:32,050 - #39 =
-INFO  11:43:32,050 - #2 2
-INFO  11:43:32,051 - #42 ;
-INFO  11:43:32,051 - #5 int
-INFO  11:43:32,051 - #5 i
-INFO  11:43:32,051 - #42 ;
-INFO  11:43:32,051 - #5 bool
-INFO  11:43:32,051 - #5 ibool
-INFO  11:43:32,051 - #42 ;
-INFO  11:43:32,051 - #5 int
-INFO  11:43:32,051 - #5 niz2
-INFO  11:43:32,052 - #48 [
-INFO  11:43:32,052 - #49 ]
-INFO  11:43:32,052 - #42 ;
-INFO  11:43:32,052 - #25 record
-INFO  11:43:32,052 - #5 Test
-INFO  11:43:32,052 - #50 {
-INFO  11:43:32,052 - #5 int
-INFO  11:43:32,053 - #5 niz
-INFO  11:43:32,053 - #48 [
-INFO  11:43:32,053 - #49 ]
-INFO  11:43:32,053 - #42 ;
-INFO  11:43:32,053 - #5 int
-INFO  11:43:32,053 - #5 a
-INFO  11:43:32,053 - #42 ;
-INFO  11:43:32,053 - #51 }
-INFO  11:43:32,053 - #25 record
-INFO  11:43:32,054 - #5 Drugi
-INFO  11:43:32,054 - #50 {
-INFO  11:43:32,054 - #5 int
-INFO  11:43:32,054 - #5 b
-INFO  11:43:32,054 - #42 ;
-INFO  11:43:32,054 - #5 Test
-INFO  11:43:32,054 - #5 test
-INFO  11:43:32,054 - #42 ;
-INFO  11:43:32,054 - #5 int
-INFO  11:43:32,054 - #5 c
-INFO  11:43:32,054 - #42 ;
-INFO  11:43:32,054 - #51 }
-INFO  11:43:32,054 - #5 Drugi
-INFO  11:43:32,055 - #5 drugi
-INFO  11:43:32,055 - #42 ;
-INFO  11:43:32,055 - #5 Test
-INFO  11:43:32,055 - #5 t1
-INFO  11:43:32,055 - #44 ,
-INFO  11:43:32,055 - #5 t2
-INFO  11:43:32,055 - #42 ;
-INFO  11:43:32,055 - #50 {
-INFO  11:43:32,055 - #10 void
-INFO  11:43:32,055 - #5 main
-INFO  11:43:32,056 - #46 (
-INFO  11:43:32,056 - #47 )
-INFO  11:43:32,057 - #50 {
-INFO  11:43:32,057 - #5 drugi
-INFO  11:43:32,057 - #39 =
-INFO  11:43:32,057 - #18 new
-INFO  11:43:32,058 - #5 Drugi
-INFO  11:43:32,058 - #42 ;
-INFO  11:43:32,058 - #5 drugi
-INFO  11:43:32,058 - #45 .
-INFO  11:43:32,058 - #5 test
-INFO  11:43:32,058 - #39 =
-INFO  11:43:32,058 - #18 new
-INFO  11:43:32,058 - #5 Test
-INFO  11:43:32,058 - #42 ;
-INFO  11:43:32,058 - #5 drugi
-INFO  11:43:32,058 - #45 .
-INFO  11:43:32,058 - #5 test
-INFO  11:43:32,058 - #45 .
-INFO  11:43:32,058 - #5 a
-INFO  11:43:32,058 - #39 =
-INFO  11:43:32,058 - #2 77
-INFO  11:43:32,058 - #42 ;
-INFO  11:43:32,059 - #5 drugi
-INFO  11:43:32,059 - #45 .
-INFO  11:43:32,059 - #5 test
-INFO  11:43:32,059 - #45 .
-INFO  11:43:32,059 - #5 niz
-INFO  11:43:32,059 - #39 =
-INFO  11:43:32,059 - #18 new
-INFO  11:43:32,059 - #5 int
-INFO  11:43:32,059 - #48 [
-INFO  11:43:32,059 - #2 3
-INFO  11:43:32,059 - #49 ]
-INFO  11:43:32,059 - #42 ;
-INFO  11:43:32,059 - #5 niz2
-INFO  11:43:32,059 - #39 =
-INFO  11:43:32,059 - #18 new
-INFO  11:43:32,059 - #5 int
-INFO  11:43:32,059 - #48 [
-INFO  11:43:32,060 - #2 7
-INFO  11:43:32,060 - #49 ]
-INFO  11:43:32,060 - #42 ;
-INFO  11:43:32,060 - #5 niz2
-INFO  11:43:32,060 - #48 [
-INFO  11:43:32,060 - #2 6
-INFO  11:43:32,060 - #49 ]
-INFO  11:43:32,061 - #39 =
-INFO  11:43:32,061 - #2 66
-INFO  11:43:32,061 - #42 ;
-INFO  11:43:32,061 - #5 niz2
-INFO  11:43:32,061 - #48 [
-INFO  11:43:32,061 - #2 2
-INFO  11:43:32,061 - #49 ]
-INFO  11:43:32,061 - #39 =
-INFO  11:43:32,062 - #2 88
-INFO  11:43:32,062 - #42 ;
-INFO  11:43:32,062 - #5 i
-INFO  11:43:32,062 - #39 =
-INFO  11:43:32,062 - #2 2
-INFO  11:43:32,062 - #42 ;
-INFO  11:43:32,062 - #5 drugi
-INFO  11:43:32,062 - #45 .
-INFO  11:43:32,062 - #5 test
-INFO  11:43:32,062 - #45 .
-INFO  11:43:32,062 - #5 niz
-INFO  11:43:32,062 - #48 [
-INFO  11:43:32,062 - #2 0
-INFO  11:43:32,062 - #49 ]
-INFO  11:43:32,062 - #39 =
-INFO  11:43:32,062 - #2 33
-INFO  11:43:32,063 - #42 ;
-INFO  11:43:32,063 - #5 drugi
-INFO  11:43:32,063 - #45 .
-INFO  11:43:32,063 - #5 test
-INFO  11:43:32,063 - #45 .
-INFO  11:43:32,063 - #5 niz
-INFO  11:43:32,063 - #48 [
-INFO  11:43:32,063 - #2 1
-INFO  11:43:32,063 - #49 ]
-INFO  11:43:32,063 - #39 =
-INFO  11:43:32,063 - #2 44
-INFO  11:43:32,063 - #42 ;
-INFO  11:43:32,063 - #5 drugi
-INFO  11:43:32,063 - #45 .
-INFO  11:43:32,063 - #5 test
-INFO  11:43:32,063 - #45 .
-INFO  11:43:32,063 - #5 niz
-INFO  11:43:32,063 - #48 [
-INFO  11:43:32,063 - #2 2
-INFO  11:43:32,063 - #49 ]
-INFO  11:43:32,063 - #39 =
-INFO  11:43:32,063 - #2 55
-INFO  11:43:32,063 - #42 ;
-INFO  11:43:32,063 - #8 print
-INFO  11:43:32,063 - #46 (
-INFO  11:43:32,063 - #5 drugi
-INFO  11:43:32,063 - #45 .
-INFO  11:43:32,064 - #5 test
-INFO  11:43:32,064 - #45 .
-INFO  11:43:32,064 - #5 niz
-INFO  11:43:32,064 - #48 [
-INFO  11:43:32,064 - #2 0
-INFO  11:43:32,064 - #49 ]
-INFO  11:43:32,064 - #47 )
-INFO  11:43:32,064 - #42 ;
-INFO  11:43:32,064 - #8 print
-INFO  11:43:32,064 - #46 (
-INFO  11:43:32,064 - #5 drugi
-INFO  11:43:32,064 - #45 .
-INFO  11:43:32,064 - #5 test
-INFO  11:43:32,064 - #45 .
-INFO  11:43:32,064 - #5 niz
-INFO  11:43:32,064 - #48 [
-INFO  11:43:32,064 - #2 2
-INFO  11:43:32,064 - #49 ]
-INFO  11:43:32,064 - #47 )
-INFO  11:43:32,064 - #42 ;
-INFO  11:43:32,064 - #8 print
-INFO  11:43:32,064 - #46 (
-INFO  11:43:32,064 - #5 niz2
-INFO  11:43:32,064 - #48 [
-INFO  11:43:32,064 - #2 2
-INFO  11:43:32,064 - #49 ]
-INFO  11:43:32,064 - #47 )
-INFO  11:43:32,064 - #42 ;
-INFO  11:43:32,064 - #8 print
-INFO  11:43:32,065 - #46 (
-INFO  11:43:32,065 - #5 niz2
-INFO  11:43:32,065 - #48 [
-INFO  11:43:32,065 - #2 6
-INFO  11:43:32,065 - #49 ]
-INFO  11:43:32,065 - #47 )
-INFO  11:43:32,065 - #42 ;
-INFO  11:43:32,065 - #8 print
-INFO  11:43:32,065 - #46 (
-INFO  11:43:32,065 - #5 i
-INFO  11:43:32,065 - #47 )
-INFO  11:43:32,065 - #42 ;
-INFO  11:43:32,065 - #51 }
-INFO  11:43:32,065 - #51 }
-INFO  11:43:32,072 - Program(
+INFO  01:37:42,425 - Compiling source file: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\program.mj
+INFO  01:37:42,495 - #6 program
+INFO  01:37:42,496 - #5 test302
+INFO  01:37:42,496 - #15 const
+INFO  01:37:42,497 - #5 int
+INFO  01:37:42,497 - #5 jedan
+INFO  01:37:42,497 - #39 =
+INFO  01:37:42,497 - #2 1
+INFO  01:37:42,498 - #42 ;
+INFO  01:37:42,498 - #5 int
+INFO  01:37:42,499 - #5 i
+INFO  01:37:42,499 - #42 ;
+INFO  01:37:42,499 - #50 {
+INFO  01:37:42,500 - #10 void
+INFO  01:37:42,500 - #5 main
+INFO  01:37:42,500 - #46 (
+INFO  01:37:42,501 - #47 )
+INFO  01:37:42,501 - #5 int
+INFO  01:37:42,502 - #5 a
+INFO  01:37:42,502 - #44 ,
+INFO  01:37:42,502 - #5 b
+INFO  01:37:42,502 - #42 ;
+INFO  01:37:42,502 - #50 {
+INFO  01:37:42,505 - #5 a
+INFO  01:37:42,505 - #39 =
+INFO  01:37:42,505 - #2 3
+INFO  01:37:42,506 - #42 ;
+INFO  01:37:42,507 - #13 if
+INFO  01:37:42,507 - #46 (
+INFO  01:37:42,507 - #2 1
+INFO  01:37:42,508 - #36 <=
+INFO  01:37:42,508 - #2 2
+INFO  01:37:42,509 - #37 &&
+INFO  01:37:42,509 - #2 1
+INFO  01:37:42,509 - #32 !=
+INFO  01:37:42,509 - #2 3
+INFO  01:37:42,510 - #37 &&
+INFO  01:37:42,510 - #2 3
+INFO  01:37:42,510 - #35 <
+INFO  01:37:42,510 - #2 3
+INFO  01:37:42,511 - #37 &&
+INFO  01:37:42,512 - #4 true
+INFO  01:37:42,512 - #37 &&
+INFO  01:37:42,512 - #4 true
+INFO  01:37:42,512 - #38 ||
+INFO  01:37:42,512 - #4 false
+INFO  01:37:42,513 - #38 ||
+INFO  01:37:42,514 - #4 false
+INFO  01:37:42,514 - #37 &&
+INFO  01:37:42,514 - #4 true
+INFO  01:37:42,514 - #47 )
+INFO  01:37:42,514 - #50 {
+INFO  01:37:42,514 - #8 print
+INFO  01:37:42,514 - #46 (
+INFO  01:37:42,514 - #2 1
+INFO  01:37:42,515 - #47 )
+INFO  01:37:42,515 - #42 ;
+INFO  01:37:42,515 - #51 }
+INFO  01:37:42,515 - #14 else
+INFO  01:37:42,515 - #13 if
+INFO  01:37:42,516 - #46 (
+INFO  01:37:42,516 - #5 a
+INFO  01:37:42,516 - #31 ==
+INFO  01:37:42,516 - #2 5
+INFO  01:37:42,518 - #38 ||
+INFO  01:37:42,518 - #5 a
+INFO  01:37:42,518 - #31 ==
+INFO  01:37:42,518 - #2 3
+INFO  01:37:42,518 - #47 )
+INFO  01:37:42,518 - #50 {
+INFO  01:37:42,518 - #8 print
+INFO  01:37:42,518 - #46 (
+INFO  01:37:42,518 - #2 0
+INFO  01:37:42,518 - #47 )
+INFO  01:37:42,518 - #42 ;
+INFO  01:37:42,518 - #51 }
+INFO  01:37:42,518 - #14 else
+INFO  01:37:42,518 - #50 {
+INFO  01:37:42,518 - #8 print
+INFO  01:37:42,519 - #46 (
+INFO  01:37:42,519 - #4 true
+INFO  01:37:42,519 - #47 )
+INFO  01:37:42,519 - #42 ;
+INFO  01:37:42,519 - #51 }
+INFO  01:37:42,519 - #51 }
+INFO  01:37:42,520 - #51 }
+INFO  01:37:42,532 - Program(
   ProgName(
    test302
   ) [ProgName]
   DeclListVar(
-    DeclListVar(
-      DeclListRecord(
-        DeclListRecord(
-          DeclListVar(
-            DeclListVar(
-              DeclListVar(
-                DeclListConst(
-                  DeclListConst(
-                    NoDeclList(
-                    ) [NoDeclList]
-                    ConstDecl(
-                      ConstantDecl(
-                        Type(
-                         int
-                        ) [Type]
-                       jedan
-                        NumConst(
-                         1
-                        ) [NumConst]
-                      ) [ConstantDecl]
-                    ) [ConstDecl]
-                  ) [DeclListConst]
-                  ConstDecl(
-                    ConstantDecl(
-                      Type(
-                       int
-                      ) [Type]
-                     dva
-                      NumConst(
-                       2
-                      ) [NumConst]
-                    ) [ConstantDecl]
-                  ) [ConstDecl]
-                ) [DeclListConst]
-                GlobalVarDecls(
-                  Type(
-                   int
-                  ) [Type]
-                  GlobalVariableDecl(
-                    GlobalOneVariableDecl(
-                     i
-                    ) [GlobalOneVariableDecl]
-                  ) [GlobalVariableDecl]
-                ) [GlobalVarDecls]
-              ) [DeclListVar]
-              GlobalVarDecls(
-                Type(
-                 bool
-                ) [Type]
-                GlobalVariableDecl(
-                  GlobalOneVariableDecl(
-                   ibool
-                  ) [GlobalOneVariableDecl]
-                ) [GlobalVariableDecl]
-              ) [GlobalVarDecls]
-            ) [DeclListVar]
-            GlobalVarDecls(
-              Type(
-               int
-              ) [Type]
-              GlobalVariableDecl(
-                GlobalOneArrayVariableDecl(
-                 niz2
-                ) [GlobalOneArrayVariableDecl]
-              ) [GlobalVariableDecl]
-            ) [GlobalVarDecls]
-          ) [DeclListVar]
-          RecordDecl(
-            RecordName(
-             Test
-            ) [RecordName]
-            RecordVariableDecl(
-              RecordVariableDecl(
-                RecordNoVariableDecl(
-                ) [RecordNoVariableDecl]
-                RecordVariableDeclaration(
-                  VariableDecl(
-                    Type(
-                     int
-                    ) [Type]
-                    OneArrayVariableDecl(
-                     niz
-                    ) [OneArrayVariableDecl]
-                  ) [VariableDecl]
-                ) [RecordVariableDeclaration]
-              ) [RecordVariableDecl]
-              RecordVariableDeclaration(
-                VariableDecl(
-                  Type(
-                   int
-                  ) [Type]
-                  OneVariableDecl(
-                   a
-                  ) [OneVariableDecl]
-                ) [VariableDecl]
-              ) [RecordVariableDeclaration]
-            ) [RecordVariableDecl]
-          ) [RecordDecl]
-        ) [DeclListRecord]
-        RecordDecl(
-          RecordName(
-           Drugi
-          ) [RecordName]
-          RecordVariableDecl(
-            RecordVariableDecl(
-              RecordVariableDecl(
-                RecordNoVariableDecl(
-                ) [RecordNoVariableDecl]
-                RecordVariableDeclaration(
-                  VariableDecl(
-                    Type(
-                     int
-                    ) [Type]
-                    OneVariableDecl(
-                     b
-                    ) [OneVariableDecl]
-                  ) [VariableDecl]
-                ) [RecordVariableDeclaration]
-              ) [RecordVariableDecl]
-              RecordVariableDeclaration(
-                VariableDecl(
-                  Type(
-                   Test
-                  ) [Type]
-                  OneVariableDecl(
-                   test
-                  ) [OneVariableDecl]
-                ) [VariableDecl]
-              ) [RecordVariableDeclaration]
-            ) [RecordVariableDecl]
-            RecordVariableDeclaration(
-              VariableDecl(
-                Type(
-                 int
-                ) [Type]
-                OneVariableDecl(
-                 c
-                ) [OneVariableDecl]
-              ) [VariableDecl]
-            ) [RecordVariableDeclaration]
-          ) [RecordVariableDecl]
-        ) [RecordDecl]
-      ) [DeclListRecord]
-      GlobalVarDecls(
-        Type(
-         Drugi
-        ) [Type]
-        GlobalVariableDecl(
-          GlobalOneVariableDecl(
-           drugi
-          ) [GlobalOneVariableDecl]
-        ) [GlobalVariableDecl]
-      ) [GlobalVarDecls]
-    ) [DeclListVar]
+    DeclListConst(
+      NoDeclList(
+      ) [NoDeclList]
+      ConstDecl(
+        ConstantDecl(
+          Type(
+           int
+          ) [Type]
+         jedan
+          NumConst(
+           1
+          ) [NumConst]
+        ) [ConstantDecl]
+      ) [ConstDecl]
+    ) [DeclListConst]
     GlobalVarDecls(
       Type(
-       Test
+       int
       ) [Type]
-      GlobalVariableDecls(
-        GlobalVariableDecl(
-          GlobalOneVariableDecl(
-           t1
-          ) [GlobalOneVariableDecl]
-        ) [GlobalVariableDecl]
+      GlobalVariableDecl(
         GlobalOneVariableDecl(
-         t2
+         i
         ) [GlobalOneVariableDecl]
-      ) [GlobalVariableDecls]
+      ) [GlobalVariableDecl]
     ) [GlobalVarDecls]
   ) [DeclListVar]
   MethodsDecl(
@@ -385,238 +124,72 @@ INFO  11:43:32,072 - Program(
       ) [MethodName]
       NoMethodFormParams(
       ) [NoMethodFormParams]
-      NoVarDecl(
-      ) [NoVarDecl]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          VariableDecls(
+            VariableDecl(
+              Type(
+               int
+              ) [Type]
+              OneVariableDecl(
+               a
+              ) [OneVariableDecl]
+            ) [VariableDecl]
+            OneVariableDecl(
+             b
+            ) [OneVariableDecl]
+          ) [VariableDecls]
+        ) [VarDecl]
+      ) [VarDecls]
       StmtList(
-        StmtList(
-          StmtList(
-            StmtList(
-              StmtList(
-                StmtList(
-                  StmtList(
-                    StmtList(
-                      StmtList(
-                        StmtList(
-                          StmtList(
-                            StmtList(
-                              StmtList(
-                                StmtList(
-                                  StmtList(
-                                    OneStmt(
-                                      DesignatorStmt(
-                                        DesignatorStmtAssign(
-                                          AssignStmt(
-                                            DesignatorIdent(
-                                             drugi
-                                            ) [DesignatorIdent]
-                                            AssignOperator(
-                                            ) [AssignOperator]
-                                            ExprPlus(
-                                              TermFactor(
-                                                FactorType(
-                                                  Type(
-                                                   Drugi
-                                                  ) [Type]
-                                                ) [FactorType]
-                                              ) [TermFactor]
-                                            ) [ExprPlus]
-                                          ) [AssignStmt]
-                                        ) [DesignatorStmtAssign]
-                                      ) [DesignatorStmt]
-                                    ) [OneStmt]
-                                    DesignatorStmt(
-                                      DesignatorStmtAssign(
-                                        AssignStmt(
-                                          DesignatorPoint(
-                                            DesignatorIdent(
-                                             drugi
-                                            ) [DesignatorIdent]
-                                           test
-                                          ) [DesignatorPoint]
-                                          AssignOperator(
-                                          ) [AssignOperator]
-                                          ExprPlus(
-                                            TermFactor(
-                                              FactorType(
-                                                Type(
-                                                 Test
-                                                ) [Type]
-                                              ) [FactorType]
-                                            ) [TermFactor]
-                                          ) [ExprPlus]
-                                        ) [AssignStmt]
-                                      ) [DesignatorStmtAssign]
-                                    ) [DesignatorStmt]
-                                  ) [StmtList]
-                                  DesignatorStmt(
-                                    DesignatorStmtAssign(
-                                      AssignStmt(
-                                        DesignatorPoint(
-                                          DesignatorPoint(
-                                            DesignatorIdent(
-                                             drugi
-                                            ) [DesignatorIdent]
-                                           test
-                                          ) [DesignatorPoint]
-                                         a
-                                        ) [DesignatorPoint]
-                                        AssignOperator(
-                                        ) [AssignOperator]
-                                        ExprPlus(
-                                          TermFactor(
-                                            FactorTypeConst(
-                                              NumConst(
-                                               77
-                                              ) [NumConst]
-                                            ) [FactorTypeConst]
-                                          ) [TermFactor]
-                                        ) [ExprPlus]
-                                      ) [AssignStmt]
-                                    ) [DesignatorStmtAssign]
-                                  ) [DesignatorStmt]
-                                ) [StmtList]
-                                DesignatorStmt(
-                                  DesignatorStmtAssign(
-                                    AssignStmt(
-                                      DesignatorPoint(
-                                        DesignatorPoint(
-                                          DesignatorIdent(
-                                           drugi
-                                          ) [DesignatorIdent]
-                                         test
-                                        ) [DesignatorPoint]
-                                       niz
-                                      ) [DesignatorPoint]
-                                      AssignOperator(
-                                      ) [AssignOperator]
-                                      ExprPlus(
-                                        TermFactor(
-                                          FactorArrayType(
-                                            Type(
-                                             int
-                                            ) [Type]
-                                            ExprPlus(
-                                              TermFactor(
-                                                FactorTypeConst(
-                                                  NumConst(
-                                                   3
-                                                  ) [NumConst]
-                                                ) [FactorTypeConst]
-                                              ) [TermFactor]
-                                            ) [ExprPlus]
-                                          ) [FactorArrayType]
-                                        ) [TermFactor]
-                                      ) [ExprPlus]
-                                    ) [AssignStmt]
-                                  ) [DesignatorStmtAssign]
-                                ) [DesignatorStmt]
-                              ) [StmtList]
-                              DesignatorStmt(
-                                DesignatorStmtAssign(
-                                  AssignStmt(
-                                    DesignatorIdent(
-                                     niz2
-                                    ) [DesignatorIdent]
-                                    AssignOperator(
-                                    ) [AssignOperator]
-                                    ExprPlus(
-                                      TermFactor(
-                                        FactorArrayType(
-                                          Type(
-                                           int
-                                          ) [Type]
-                                          ExprPlus(
-                                            TermFactor(
-                                              FactorTypeConst(
-                                                NumConst(
-                                                 7
-                                                ) [NumConst]
-                                              ) [FactorTypeConst]
-                                            ) [TermFactor]
-                                          ) [ExprPlus]
-                                        ) [FactorArrayType]
-                                      ) [TermFactor]
-                                    ) [ExprPlus]
-                                  ) [AssignStmt]
-                                ) [DesignatorStmtAssign]
-                              ) [DesignatorStmt]
-                            ) [StmtList]
-                            DesignatorStmt(
-                              DesignatorStmtAssign(
-                                AssignStmt(
-                                  DesignatorBracket(
-                                    DesignatorIdent(
-                                     niz2
-                                    ) [DesignatorIdent]
-                                    DesignatorLBracket(
-                                    ) [DesignatorLBracket]
-                                    ExprPlus(
-                                      TermFactor(
-                                        FactorTypeConst(
-                                          NumConst(
-                                           6
-                                          ) [NumConst]
-                                        ) [FactorTypeConst]
-                                      ) [TermFactor]
-                                    ) [ExprPlus]
-                                  ) [DesignatorBracket]
-                                  AssignOperator(
-                                  ) [AssignOperator]
-                                  ExprPlus(
-                                    TermFactor(
-                                      FactorTypeConst(
-                                        NumConst(
-                                         66
-                                        ) [NumConst]
-                                      ) [FactorTypeConst]
-                                    ) [TermFactor]
-                                  ) [ExprPlus]
-                                ) [AssignStmt]
-                              ) [DesignatorStmtAssign]
-                            ) [DesignatorStmt]
-                          ) [StmtList]
-                          DesignatorStmt(
-                            DesignatorStmtAssign(
-                              AssignStmt(
-                                DesignatorBracket(
-                                  DesignatorIdent(
-                                   niz2
-                                  ) [DesignatorIdent]
-                                  DesignatorLBracket(
-                                  ) [DesignatorLBracket]
-                                  ExprPlus(
-                                    TermFactor(
-                                      FactorTypeConst(
-                                        NumConst(
-                                         2
-                                        ) [NumConst]
-                                      ) [FactorTypeConst]
-                                    ) [TermFactor]
-                                  ) [ExprPlus]
-                                ) [DesignatorBracket]
-                                AssignOperator(
-                                ) [AssignOperator]
-                                ExprPlus(
-                                  TermFactor(
-                                    FactorTypeConst(
-                                      NumConst(
-                                       88
-                                      ) [NumConst]
-                                    ) [FactorTypeConst]
-                                  ) [TermFactor]
-                                ) [ExprPlus]
-                              ) [AssignStmt]
-                            ) [DesignatorStmtAssign]
-                          ) [DesignatorStmt]
-                        ) [StmtList]
-                        DesignatorStmt(
-                          DesignatorStmtAssign(
-                            AssignStmt(
-                              DesignatorIdent(
-                               i
-                              ) [DesignatorIdent]
-                              AssignOperator(
-                              ) [AssignOperator]
+        OneStmt(
+          DesignatorStmt(
+            DesignatorStmtAssign(
+              AssignStmt(
+                DesignatorIdent(
+                 a
+                ) [DesignatorIdent]
+                AssignOperator(
+                ) [AssignOperator]
+                ExprPlus(
+                  TermFactor(
+                    FactorTypeConst(
+                      NumConst(
+                       3
+                      ) [NumConst]
+                    ) [FactorTypeConst]
+                  ) [TermFactor]
+                ) [ExprPlus]
+              ) [AssignStmt]
+            ) [DesignatorStmtAssign]
+          ) [DesignatorStmt]
+        ) [OneStmt]
+        IfElseStmt(
+          IfStart(
+          ) [IfStart]
+          OkIfCondition(
+            Conditions(
+              Conditions(
+                ConditionCondTerm(
+                  CondTerms(
+                    CondTerms(
+                      CondTerms(
+                        CondTerms(
+                          ConditionCondFact(
+                            CondFactExprRelop(
+                              ExprPlus(
+                                TermFactor(
+                                  FactorTypeConst(
+                                    NumConst(
+                                     1
+                                    ) [NumConst]
+                                  ) [FactorTypeConst]
+                                ) [TermFactor]
+                              ) [ExprPlus]
+                              RelOpLe(
+                              ) [RelOpLe]
                               ExprPlus(
                                 TermFactor(
                                   FactorTypeConst(
@@ -626,65 +199,9 @@ INFO  11:43:32,072 - Program(
                                   ) [FactorTypeConst]
                                 ) [TermFactor]
                               ) [ExprPlus]
-                            ) [AssignStmt]
-                          ) [DesignatorStmtAssign]
-                        ) [DesignatorStmt]
-                      ) [StmtList]
-                      DesignatorStmt(
-                        DesignatorStmtAssign(
-                          AssignStmt(
-                            DesignatorBracket(
-                              DesignatorPoint(
-                                DesignatorPoint(
-                                  DesignatorIdent(
-                                   drugi
-                                  ) [DesignatorIdent]
-                                 test
-                                ) [DesignatorPoint]
-                               niz
-                              ) [DesignatorPoint]
-                              DesignatorLBracket(
-                              ) [DesignatorLBracket]
-                              ExprPlus(
-                                TermFactor(
-                                  FactorTypeConst(
-                                    NumConst(
-                                     0
-                                    ) [NumConst]
-                                  ) [FactorTypeConst]
-                                ) [TermFactor]
-                              ) [ExprPlus]
-                            ) [DesignatorBracket]
-                            AssignOperator(
-                            ) [AssignOperator]
-                            ExprPlus(
-                              TermFactor(
-                                FactorTypeConst(
-                                  NumConst(
-                                   33
-                                  ) [NumConst]
-                                ) [FactorTypeConst]
-                              ) [TermFactor]
-                            ) [ExprPlus]
-                          ) [AssignStmt]
-                        ) [DesignatorStmtAssign]
-                      ) [DesignatorStmt]
-                    ) [StmtList]
-                    DesignatorStmt(
-                      DesignatorStmtAssign(
-                        AssignStmt(
-                          DesignatorBracket(
-                            DesignatorPoint(
-                              DesignatorPoint(
-                                DesignatorIdent(
-                                 drugi
-                                ) [DesignatorIdent]
-                               test
-                              ) [DesignatorPoint]
-                             niz
-                            ) [DesignatorPoint]
-                            DesignatorLBracket(
-                            ) [DesignatorLBracket]
+                            ) [CondFactExprRelop]
+                          ) [ConditionCondFact]
+                          CondFactExprRelop(
                             ExprPlus(
                               TermFactor(
                                 FactorTypeConst(
@@ -694,242 +211,244 @@ INFO  11:43:32,072 - Program(
                                 ) [FactorTypeConst]
                               ) [TermFactor]
                             ) [ExprPlus]
-                          ) [DesignatorBracket]
-                          AssignOperator(
-                          ) [AssignOperator]
+                            RelOpNe(
+                            ) [RelOpNe]
+                            ExprPlus(
+                              TermFactor(
+                                FactorTypeConst(
+                                  NumConst(
+                                   3
+                                  ) [NumConst]
+                                ) [FactorTypeConst]
+                              ) [TermFactor]
+                            ) [ExprPlus]
+                          ) [CondFactExprRelop]
+                        ) [CondTerms]
+                        CondFactExprRelop(
                           ExprPlus(
                             TermFactor(
                               FactorTypeConst(
                                 NumConst(
-                                 44
+                                 3
                                 ) [NumConst]
                               ) [FactorTypeConst]
                             ) [TermFactor]
                           ) [ExprPlus]
-                        ) [AssignStmt]
-                      ) [DesignatorStmtAssign]
-                    ) [DesignatorStmt]
-                  ) [StmtList]
-                  DesignatorStmt(
-                    DesignatorStmtAssign(
-                      AssignStmt(
-                        DesignatorBracket(
-                          DesignatorPoint(
-                            DesignatorPoint(
-                              DesignatorIdent(
-                               drugi
-                              ) [DesignatorIdent]
-                             test
-                            ) [DesignatorPoint]
-                           niz
-                          ) [DesignatorPoint]
-                          DesignatorLBracket(
-                          ) [DesignatorLBracket]
+                          RelOpLt(
+                          ) [RelOpLt]
                           ExprPlus(
                             TermFactor(
                               FactorTypeConst(
                                 NumConst(
-                                 2
+                                 3
                                 ) [NumConst]
                               ) [FactorTypeConst]
                             ) [TermFactor]
                           ) [ExprPlus]
-                        ) [DesignatorBracket]
-                        AssignOperator(
-                        ) [AssignOperator]
+                        ) [CondFactExprRelop]
+                      ) [CondTerms]
+                      CondFactExpr(
                         ExprPlus(
                           TermFactor(
                             FactorTypeConst(
-                              NumConst(
-                               55
-                              ) [NumConst]
+                              BoolConst(
+                               true
+                              ) [BoolConst]
                             ) [FactorTypeConst]
                           ) [TermFactor]
                         ) [ExprPlus]
-                      ) [AssignStmt]
-                    ) [DesignatorStmtAssign]
-                  ) [DesignatorStmt]
-                ) [StmtList]
+                      ) [CondFactExpr]
+                    ) [CondTerms]
+                    CondFactExpr(
+                      ExprPlus(
+                        TermFactor(
+                          FactorTypeConst(
+                            BoolConst(
+                             true
+                            ) [BoolConst]
+                          ) [FactorTypeConst]
+                        ) [TermFactor]
+                      ) [ExprPlus]
+                    ) [CondFactExpr]
+                  ) [CondTerms]
+                ) [ConditionCondTerm]
+                Or(
+                ) [Or]
+                ConditionCondFact(
+                  CondFactExpr(
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          BoolConst(
+                           false
+                          ) [BoolConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [CondFactExpr]
+                ) [ConditionCondFact]
+              ) [Conditions]
+              Or(
+              ) [Or]
+              CondTerms(
+                ConditionCondFact(
+                  CondFactExpr(
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          BoolConst(
+                           false
+                          ) [BoolConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [CondFactExpr]
+                ) [ConditionCondFact]
+                CondFactExpr(
+                  ExprPlus(
+                    TermFactor(
+                      FactorTypeConst(
+                        BoolConst(
+                         true
+                        ) [BoolConst]
+                      ) [FactorTypeConst]
+                    ) [TermFactor]
+                  ) [ExprPlus]
+                ) [CondFactExpr]
+              ) [CondTerms]
+            ) [Conditions]
+          ) [OkIfCondition]
+          MultipleStatements(
+            Stmts(
+              OneStmt(
                 PrintStmt(
                   ExprPlus(
                     TermFactor(
-                      FactorNoParen(
-                        DesignatorBracket(
-                          DesignatorPoint(
-                            DesignatorPoint(
-                              DesignatorIdent(
-                               drugi
-                              ) [DesignatorIdent]
-                             test
-                            ) [DesignatorPoint]
-                           niz
-                          ) [DesignatorPoint]
-                          DesignatorLBracket(
-                          ) [DesignatorLBracket]
-                          ExprPlus(
-                            TermFactor(
-                              FactorTypeConst(
-                                NumConst(
-                                 0
-                                ) [NumConst]
-                              ) [FactorTypeConst]
-                            ) [TermFactor]
-                          ) [ExprPlus]
-                        ) [DesignatorBracket]
-                      ) [FactorNoParen]
+                      FactorTypeConst(
+                        NumConst(
+                         1
+                        ) [NumConst]
+                      ) [FactorTypeConst]
                     ) [TermFactor]
                   ) [ExprPlus]
                 ) [PrintStmt]
-              ) [StmtList]
-              PrintStmt(
-                ExprPlus(
-                  TermFactor(
-                    FactorNoParen(
-                      DesignatorBracket(
-                        DesignatorPoint(
-                          DesignatorPoint(
+              ) [OneStmt]
+            ) [Stmts]
+          ) [MultipleStatements]
+          ElseStart(
+          ) [ElseStart]
+          IfElseStmt(
+            IfStart(
+            ) [IfStart]
+            OkIfCondition(
+              Conditions(
+                ConditionCondTerm(
+                  ConditionCondFact(
+                    CondFactExprRelop(
+                      ExprPlus(
+                        TermFactor(
+                          FactorNoParen(
                             DesignatorIdent(
-                             drugi
+                             a
                             ) [DesignatorIdent]
-                           test
-                          ) [DesignatorPoint]
-                         niz
-                        ) [DesignatorPoint]
-                        DesignatorLBracket(
-                        ) [DesignatorLBracket]
-                        ExprPlus(
-                          TermFactor(
-                            FactorTypeConst(
-                              NumConst(
-                               2
-                              ) [NumConst]
-                            ) [FactorTypeConst]
-                          ) [TermFactor]
-                        ) [ExprPlus]
-                      ) [DesignatorBracket]
-                    ) [FactorNoParen]
-                  ) [TermFactor]
-                ) [ExprPlus]
-              ) [PrintStmt]
-            ) [StmtList]
-            PrintStmt(
-              ExprPlus(
-                TermFactor(
-                  FactorNoParen(
-                    DesignatorBracket(
-                      DesignatorIdent(
-                       niz2
-                      ) [DesignatorIdent]
-                      DesignatorLBracket(
-                      ) [DesignatorLBracket]
+                          ) [FactorNoParen]
+                        ) [TermFactor]
+                      ) [ExprPlus]
+                      RelOpEq(
+                      ) [RelOpEq]
                       ExprPlus(
                         TermFactor(
                           FactorTypeConst(
                             NumConst(
-                             2
+                             5
                             ) [NumConst]
                           ) [FactorTypeConst]
                         ) [TermFactor]
                       ) [ExprPlus]
-                    ) [DesignatorBracket]
-                  ) [FactorNoParen]
-                ) [TermFactor]
-              ) [ExprPlus]
-            ) [PrintStmt]
-          ) [StmtList]
-          PrintStmt(
-            ExprPlus(
-              TermFactor(
-                FactorNoParen(
-                  DesignatorBracket(
-                    DesignatorIdent(
-                     niz2
-                    ) [DesignatorIdent]
-                    DesignatorLBracket(
-                    ) [DesignatorLBracket]
+                    ) [CondFactExprRelop]
+                  ) [ConditionCondFact]
+                ) [ConditionCondTerm]
+                Or(
+                ) [Or]
+                ConditionCondFact(
+                  CondFactExprRelop(
+                    ExprPlus(
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorIdent(
+                           a
+                          ) [DesignatorIdent]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                    RelOpEq(
+                    ) [RelOpEq]
                     ExprPlus(
                       TermFactor(
                         FactorTypeConst(
                           NumConst(
-                           6
+                           3
                           ) [NumConst]
                         ) [FactorTypeConst]
                       ) [TermFactor]
                     ) [ExprPlus]
-                  ) [DesignatorBracket]
-                ) [FactorNoParen]
-              ) [TermFactor]
-            ) [ExprPlus]
-          ) [PrintStmt]
-        ) [StmtList]
-        PrintStmt(
-          ExprPlus(
-            TermFactor(
-              FactorNoParen(
-                DesignatorIdent(
-                 i
-                ) [DesignatorIdent]
-              ) [FactorNoParen]
-            ) [TermFactor]
-          ) [ExprPlus]
-        ) [PrintStmt]
+                  ) [CondFactExprRelop]
+                ) [ConditionCondFact]
+              ) [Conditions]
+            ) [OkIfCondition]
+            MultipleStatements(
+              Stmts(
+                OneStmt(
+                  PrintStmt(
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          NumConst(
+                           0
+                          ) [NumConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [PrintStmt]
+                ) [OneStmt]
+              ) [Stmts]
+            ) [MultipleStatements]
+            ElseStart(
+            ) [ElseStart]
+            MultipleStatements(
+              Stmts(
+                OneStmt(
+                  PrintStmt(
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          BoolConst(
+                           true
+                          ) [BoolConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [PrintStmt]
+                ) [OneStmt]
+              ) [Stmts]
+            ) [MultipleStatements]
+            IfElseStmtEnd(
+            ) [IfElseStmtEnd]
+          ) [IfElseStmt]
+          IfElseStmtEnd(
+          ) [IfElseStmtEnd]
+        ) [IfElseStmt]
       ) [StmtList]
     ) [MethodDeclStmt]
     NoMetodDecl(
     ) [NoMetodDecl]
   ) [MethodsDecl]
 ) [Program]
-INFO  11:43:32,073 - ===================================
-INFO  11:43:32,075 - Deklarisan record Test
-INFO  11:43:32,075 - Deklarisano polje u record-u niz
-INFO  11:43:32,076 - Deklarisano polje u record-u a
-INFO  11:43:32,076 - Deklarisan record Drugi
-INFO  11:43:32,076 - Deklarisano polje u record-u b
-INFO  11:43:32,076 - Deklarisano polje u record-u test
-INFO  11:43:32,076 - Deklarisano polje u record-u c
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 32
-INFO  11:43:32,076 - Instanciran je objekat tipa Drugi  na liniji 32
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 33
-INFO  11:43:32,076 - Pristup polju test objekta drugi  na liniji 33
-INFO  11:43:32,076 - Instanciran je objekat tipa Test  na liniji 33
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 34
-INFO  11:43:32,076 - Pristup polju test objekta drugi  na liniji 34
-INFO  11:43:32,076 - Pristup polju a objekta test  na liniji 34
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 35
-INFO  11:43:32,076 - Pristup polju test objekta drugi  na liniji 35
-INFO  11:43:32,076 - Pristup polju niz objekta test  na liniji 35
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj niz2  na liniji 36
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj niz2  na liniji 37
-INFO  11:43:32,076 - Pristup elementu niza   na liniji 37
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj niz2  na liniji 38
-INFO  11:43:32,076 - Pristup elementu niza   na liniji 38
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj i  na liniji 39
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 40
-INFO  11:43:32,076 - Pristup polju test objekta drugi  na liniji 40
-INFO  11:43:32,076 - Pristup polju niz objekta test  na liniji 40
-INFO  11:43:32,076 - Pristup elementu niza   na liniji 40
-INFO  11:43:32,076 - Pristup globalnoj promenljivoj drugi  na liniji 41
-INFO  11:43:32,076 - Pristup polju test objekta drugi  na liniji 41
-INFO  11:43:32,076 - Pristup polju niz objekta test  na liniji 41
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 41
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj drugi  na liniji 42
-INFO  11:43:32,077 - Pristup polju test objekta drugi  na liniji 42
-INFO  11:43:32,077 - Pristup polju niz objekta test  na liniji 42
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 42
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj drugi  na liniji 44
-INFO  11:43:32,077 - Pristup polju test objekta drugi  na liniji 44
-INFO  11:43:32,077 - Pristup polju niz objekta test  na liniji 44
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 44
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj drugi  na liniji 45
-INFO  11:43:32,077 - Pristup polju test objekta drugi  na liniji 45
-INFO  11:43:32,077 - Pristup polju niz objekta test  na liniji 45
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 45
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj niz2  na liniji 47
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 47
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj niz2  na liniji 48
-INFO  11:43:32,077 - Pristup elementu niza   na liniji 48
-INFO  11:43:32,077 - Pristup globalnoj promenljivoj i  na liniji 49
-INFO  11:43:32,077 - ===================================
-INFO  11:43:32,079 - 3
-INFO  11:43:32,080 - 2
-INFO  11:43:32,081 - Parsiranje uspesno zavrseno!
+INFO  01:37:42,533 - ===================================
+INFO  01:37:42,538 - Deklarisana lokalna promenljiva a
+INFO  01:37:42,538 - Deklarisana lokalna promenljiva b
+INFO  01:37:42,538 - Pristup lokalnoj promenljivoj a  na liniji 12
+INFO  01:37:42,539 - Pristup lokalnoj promenljivoj a  na liniji 15
+INFO  01:37:42,539 - Pristup lokalnoj promenljivoj a  na liniji 15
+INFO  01:37:42,539 - ===================================
+INFO  01:37:42,545 - Parsiranje uspesno zavrseno!
