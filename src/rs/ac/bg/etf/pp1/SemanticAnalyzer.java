@@ -79,7 +79,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 	
 	public void visit(Program program) {
-		nVars = Tab.currentScope().getnVars();
+		nVars = Tab.currentScope.getnVars();
+		
+		log.debug(nVars);
 		Tab.chainLocalSymbols(program.getProgName().obj);
 		Tab.closeScope();
 	}
@@ -819,13 +821,13 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		} else {
 			int i = 0;
 			for (Obj param : currentMethodCallStack.peek().getLocalSymbols()) {
-				if (i++ != 0) {
+				//if (i++ != 0) {
 					Obj actParam = params.remove(0);
 					
 					if (!myAssignableTo(actParam.getType(), param.getType())) {
 						report_error("Greska na liniji " + actParsList.getLine()+ " : parametar "+ param.getName() +" nije odgovarajuceg tipa!", null);
 					}
-				}
+				//}
 			}
 		}
 		params.clear();
@@ -836,6 +838,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Semanticka greska: parametri metode "+ currentMethodCallStack.peek().getName() +" nisu "
 					+ "ispravni! " + currentMethodCallStack.peek().getLevel() + " params.size()=" + params.size(), noActParams.getParent());
 		}
+
 		params.clear();
 	}
 	

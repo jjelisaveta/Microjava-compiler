@@ -33,6 +33,22 @@ public class CodeGenerator extends VisitorAdaptor {
 	public int getMainPc() {
 		return mainPc;
 	}
+	
+	public void defineFunctionOrd() {
+		
+	}
+	
+	public void defineFunctionChr() {
+		
+	}
+	
+	public void defineFunctionLen() {
+		
+	}
+	
+	public void visit(Program program) {		
+		log.debug(Code.dataSize);
+	}
 
 	/* constants */
 	public void visit(ConstantDecl constantDecl) {
@@ -49,6 +65,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(MethodName methodName) {
 		if ("main".equalsIgnoreCase(methodName.getMethodName())) {
 			mainPc = Code.pc;
+		}
+		if ("ord".equalsIgnoreCase(methodName.getMethodName())) {
+			log.debug("evooo");
 		}
 		currentMethod = Tab.find(methodName.getMethodName());
 		methodName.obj.setAdr(Code.pc);
@@ -83,6 +102,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorLBracket designatorLBracket) {
 		Obj arrayObj = ((DesignatorBracket) designatorLBracket.getParent()).getDesignator().obj;
 		Code.load(arrayObj);
+		
 		//prvo se ucitava ovo pa onda Expr u zagradi - ne mora dup
 	}
 	
@@ -100,22 +120,27 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(FactorNoParen designator) {
 		Code.load(designator.obj);
-		if (designator.obj.getType().getKind() == Struct.Array) {
+		/*if (designator.obj.getType().getKind() == Struct.Array) {
 			Code.put(Code.dup_x1); 
 			Code.put(Code.pop);
-		}	
+			//Code.put(Code.dup);
+		}	*/
 	}
 
 	public void visit(FactorParen factorParen) {
 		Obj obj = factorParen.obj;
 		int addrOffset = obj.getAdr() - Code.pc;
-		Code.put(Code.call);
-		Code.put2(addrOffset);
+		if (!obj.getName().equals("ord") && !obj.getName().equals("chr") && !obj.getName().equals("len")) {
+			Code.put(Code.call);
+			Code.put2(addrOffset);
+		}
+		if (obj.getName().equals("len")) {
+			Code.put(Code.arraylength);
+		}
 	}
 
 	/* designator statement */
 	public void visit(AssignStmt assignStmt) {
-		
 		Obj designatorObj = assignStmt.getDesignator().obj;
 		Code.store(designatorObj);
 	}
@@ -123,8 +148,13 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorStmtFuncCall designatorStmtFuncCall) {
 		Obj obj = designatorStmtFuncCall.obj;
 		int addrOffset = obj.getAdr() - Code.pc;
-		Code.put(Code.call);
-		Code.put2(addrOffset);
+		if (!obj.getName().equals("ord") && !obj.getName().equals("chr") && !obj.getName().equals("len")) {
+			Code.put(Code.call);
+			Code.put2(addrOffset);
+		}
+		if (obj.getName().equals("len")) {
+			Code.put(Code.arraylength);
+		}
 	}
 
 	public void visit(DesignatorStmtInc designatorStmtInc) {
@@ -151,51 +181,17 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(FactorType factorType) {
 		Code.put(Code.new_);
-		int size = 4 * factorType.obj.getType().getMembers().size();
+		int size = 4 * (factorType.obj.getType().getMembers().size());
 		Code.put2(size);
 	}
 	
 	public void visit(FactorArrayType factorArrayType) {
 		Code.put(Code.newarray);
 		if (factorArrayType.getType().struct.getKind() == Struct.Char) {
-			Code.put(1);
-		} else {
 			Code.put(0);
+		} else {
+			Code.put(1);
 		}
-	}
-	
-	
-	public void visit(DoStart doStart) {
-		log.info("Pocela petlja " + Code.pc);
-		doStack.add(Code.pc);
-		//moraju liste
-		breakStack.push(new ArrayList<>());
-		continueStack.push(new ArrayList<>());
-	}
-	
-	public void visit(WhileStart whileStart) {
-		//novi uslovi
-		conditionAndJumps.push(new ArrayList<>());
-		for (int adr : continueStack.peek()) {
-			Code.fixup(adr);
-		}
-		//peek ili pop??
-	}
-	
-	//sta kad se zavrsi do while
-	
-	public void visit(BreakStmt breakStmt) {
-		Code.putJump(0);
-		breakStack.peek().add(Code.pc - 2);
-	}
-	
-	public void visit(ContinueStmt continueStmt) {
-		Code.putJump(0);
-		continueStack.peek().add(Code.pc - 2);
-	}
-	
-	public void visit(IfStart ifStart) {
-		conditionAndJumps.add(new ArrayList<>());
 	}
 	
 	/* condition */
@@ -243,11 +239,16 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 	}
 	
+	
+	public void visit(IfStart ifStart) {
+		conditionAndJumps.add(new ArrayList<>());
+	}
+	
+	
 	public void visit(OkIfCondition okIfCondition) {
 		for (int adr: conditionOrJumps) {
 			Code.fixup(adr);
 		}
-		
 	}
 	
 	public void visit(IfStmtEnd ifStmtEnd) {
@@ -257,6 +258,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		for (int adr: conditionAndJumps.pop()) {
 			Code.fixup(adr);
 		}
+		conditionOrJumps.clear();
+
 	}
 	
 	public void visit(ElseStart elseStart) {
@@ -272,6 +275,65 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(IfElseStmtEnd ifElseStmtEnd) {
 		Code.fixup(skipElseStack.pop());
 		conditionAndJumps.pop();
+		conditionOrJumps.clear();
+	}
+	
+
+	public void visit(DoStart doStart) {
+		doStack.add(Code.pc);
+		//moraju liste
+		breakStack.push(new ArrayList<>());
+		continueStack.push(new ArrayList<>());
+	}
+	
+	
+	
+	public void visit(WhileStart whileStart) {
+		//novi uslovi
+		conditionAndJumps.push(new ArrayList<>());
+		for (int adr : continueStack.pop()) {
+			Code.fixup(adr);
+		}
+		//peek ili pop??
+	}
+	
+	public void visit(DoCondition doCondition) {
+		
+	}
+	 
+	public void visit(DoStmt doStmt) {
+		int doStart = doStack.pop();
+		
+		Code.put(Code.jmp);
+		Code.put2(doStart - Code.pc + 1);
+		
+		for (int adr : conditionAndJumps.pop()) {
+			Code.fixup(adr);
+		}
+		for (int adr : conditionOrJumps) {
+			//umesto fixup
+			Code.put2(adr, (doStart - adr + 1));
+		}
+	
+		//Code.put(Code.jmp);
+		//Code.fixup()
+		//ne radi kad je jedan uslov bez ||
+		
+		for (int adr : breakStack.pop()) {
+			Code.fixup(adr);
+		}
+	}
+	
+	//sta kad se zavrsi do while
+	
+	public void visit(BreakStmt breakStmt) {
+		Code.putJump(0);
+		breakStack.peek().add(Code.pc - 2);
+	}
+	
+	public void visit(ContinueStmt continueStmt) {
+		Code.putJump(0);
+		continueStack.peek().add(Code.pc - 2);
 	}
 		
 	/* relational operators */ 
