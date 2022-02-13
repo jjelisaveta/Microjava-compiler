@@ -15,6 +15,7 @@ import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
+import rs.etf.pp1.symboltable.visitors.SymbolTableVisitor;
 
 public class Compiler {
 
@@ -24,7 +25,8 @@ public class Compiler {
 	}
 	
 	public static void tsdump() {
-		
+		SymbolTableVisitor stv = new SymTableVisitor();
+		Tab.dump(stv);
 	}
 
 	
@@ -66,9 +68,8 @@ public class Compiler {
 	      
 			
 			log.info("===================================================");
-			Tab.dump();
+			//Tab.dump();
 			tsdump();
-			
 
 			
 			if(!p.errorDetected && v.passed()){

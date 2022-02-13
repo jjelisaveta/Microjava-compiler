@@ -43,6 +43,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	Logger log = Logger.getLogger(getClass());
 
 	public void report_error(String message, SyntaxNode info) {
+	
 		errorDetected = true;
 		StringBuilder msg = new StringBuilder(message);
 		int line = (info == null) ? 0: info.getLine();
@@ -821,13 +822,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		} else {
 			int i = 0;
 			for (Obj param : currentMethodCallStack.peek().getLocalSymbols()) {
-				//if (i++ != 0) {
+				log.debug("a " + param.getName() + currentMethodCallStack.peek().getLevel());
+				if (i++ < currentMethodCallStack.peek().getLevel()) {
 					Obj actParam = params.remove(0);
-					
+					log.debug("b");	
 					if (!myAssignableTo(actParam.getType(), param.getType())) {
 						report_error("Greska na liniji " + actParsList.getLine()+ " : parametar "+ param.getName() +" nije odgovarajuceg tipa!", null);
 					}
-				//}
+				}
 			}
 		}
 		params.clear();

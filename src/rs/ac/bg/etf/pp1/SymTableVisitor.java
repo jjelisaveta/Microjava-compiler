@@ -69,6 +69,7 @@ public class SymTableVisitor extends SymbolTableVisitor {
 	@Override
 	public void visitStructNode(Struct structToVisit) {
 		switch (structToVisit.getKind()) {
+			//dodati lep ispis za bool?
 			case Struct.None:
 				sb.append("notype");
 				break;
@@ -103,6 +104,7 @@ public class SymTableVisitor extends SymbolTableVisitor {
 				}
 				break;
 			case Struct.Class:
+				//dodati za record?
 				sb.append("Class [");
 				for (Obj obj : structToVisit.getMembers()) {
 					obj.accept(this);

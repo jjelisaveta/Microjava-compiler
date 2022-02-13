@@ -453,6 +453,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		} else {
 			Code.put(Code.bread);
 		}
+		Code.store(readStmt.getDesignator().obj);
 	}
 
 }
