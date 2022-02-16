@@ -122,10 +122,10 @@ ClassVarDeclList ::= (ClassVariableDecls) ClassVarDeclList COMMA OneVarDecl
 ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList SEMI
 					|
 					(ErrorClassVariableDeclSemi) error SEMI:er1
-					{: parser.report_error("Greska 1 u deklaraciji polja unutrasnje klase u liniji " + er1left, null);  :}
+					{: parser.report_error("Oporavak od greske u deklaraciji polja unutrasnje klase na liniji " + er1left, null);  :}
 					|
 					(ErrorClassVariableDecl) error:er2
-					{: parser.report_error("Greska 2 u deklaraciji polja unutrasnje klase u liniji " + er2left, null);  :}
+					{: parser.report_error("Oporavak od greske u deklaraciji polja unutrasnje klase na liniji " + er2left, null);  :}
 					;
 					
 					
@@ -134,19 +134,20 @@ GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName
 					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET
 					|
 					(ErrorGlobalOneVariableDecl) error:e
-					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
+					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :}
 					;
 					
 GlobalVarDecl ::=	(GlobalVarDecls) Type GlobalVarDeclList SEMI
 					|
-					(ErrorGlobalVarDecl) error:e SEMI
-					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :}
+					(ErrorGlobalVariableDecl) error:e SEMI
+					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :}
 					;
 					
-					
+					 
 GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList COMMA GlobalOneVarDecl
 					|
 					(GlobalVariableDecl) GlobalOneVarDecl
+					
 					;
 					
 ClassName ::= 		(ClassNameSingle) CLASS IDENT:className
@@ -154,7 +155,7 @@ ClassName ::= 		(ClassNameSingle) CLASS IDENT:className
 					(ClassNameExtends) CLASS IDENT:className EXTENDS Type:type
 					|
 					(ErrorClassName) CLASS IDENT error:e
-					{: parser.report_error("Greska u deklaraciji prosirenja natklase u liniji " + eleft, null);  :}
+					{: parser.report_error("Oporavak od greske u deklaraciji prosirenja natklase na liniji " + eleft, null);  :}
 					;
 					
 ClassDecl ::=		(ClassDeclMethods) ClassName LBRACE ClassFields LBRACE ConstructorDecl MethodDeclList RBRACE RBRACE
@@ -215,7 +216,8 @@ OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName
 					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET
 					|
 					(ErrorOneFormParam) error:e
-					;		
+					{: parser.report_error("Oporavak od greske u deklaraciji formalnog parametra funkcije na liniji " + eleft, null);  :}
+					;
 
 FormPars ::= 		(FormParams) FormPars COMMA OneFormPar
 					|
@@ -224,7 +226,12 @@ FormPars ::= 		(FormParams) FormPars COMMA OneFormPar
 					
 Type ::=			(Type) IDENT:typeName ;
 
-Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
+Statement ::=		(StmtSingleStatement) SingleStatement
+					|
+					(StmtMultipleStatements) Statements
+					;
+
+SingleStatement ::= (DesignatorStmt) DesignatorStatement SEMI
 					|
 					(DoStmt) DoStart Statement WhileStart LPAREN DoCondition RPAREN SEMI
 					|
@@ -245,8 +252,6 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement SEMI
 					(IfStmt) IfStart LPAREN IfCondition RPAREN Statement IfStmtEnd
 					|
 					(IfElseStmt) IfStart LPAREN IfCondition RPAREN Statement ElseStart Statement IfElseStmtEnd
-					|
-					(MultipleStatements) Statements
 					;
 
 DoStart ::=			(DoStart) DO ;
@@ -266,7 +271,7 @@ IfElseStmtEnd ::= 	(IfElseStmtEnd) /* epsilon */ ;
 IfCondition ::= 	(OkIfCondition) Condition:cond
 					|
 					(ErrorIfCondition) error:e
-					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :}
+					{: parser.report_error("Oporavak od greske u logickom izrazu u if konstrukciji na liniji " + eleft, null);  :}
 					;
 					
 Statements ::=		(Stmts) LBRACE StatementList RBRACE ;
@@ -287,8 +292,8 @@ DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement
 					
 AssignStatement ::= (AssignStmt) Designator Assignop Expr
 					|
-					(ErrorAssignStmt) Designator Assignop:e  error
-					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :}
+					(ErrorAssignStmt) error:e
+					{: parser.report_error("Oporavak od greske u iskazu dodele na liniji " + eleft, null);  :}
 					;
 					
 ActPars ::= 		(ActParams) ActPars COMMA Expr	

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/1/2022 22:37:7
+// 16/1/2022 1:43:21
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -114,7 +114,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DoCondition DoCondition) { visit(); }
     public void visit(WhileStart WhileStart) { visit(); }
     public void visit(DoStart DoStart) { visit(); }
-    public void visit(MultipleStatements MultipleStatements) { visit(); }
     public void visit(IfElseStmt IfElseStmt) { visit(); }
     public void visit(IfStmt IfStmt) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }
@@ -126,6 +125,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(BreakStmt BreakStmt) { visit(); }
     public void visit(DoStmt DoStmt) { visit(); }
     public void visit(DesignatorStmt DesignatorStmt) { visit(); }
+    public void visit(StmtMultipleStatements StmtMultipleStatements) { visit(); }
+    public void visit(StmtSingleStatement StmtSingleStatement) { visit(); }
     public void visit(Type Type) { visit(); }
     public void visit(FormParam FormParam) { visit(); }
     public void visit(FormParams FormParams) { visit(); }
@@ -159,7 +160,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ClassNameSingle ClassNameSingle) { visit(); }
     public void visit(GlobalVariableDecl GlobalVariableDecl) { visit(); }
     public void visit(GlobalVariableDecls GlobalVariableDecls) { visit(); }
-    public void visit(ErrorGlobalVarDecl ErrorGlobalVarDecl) { visit(); }
+    public void visit(ErrorGlobalVariableDecl ErrorGlobalVariableDecl) { visit(); }
     public void visit(GlobalVarDecls GlobalVarDecls) { visit(); }
     public void visit(ErrorGlobalOneVariableDecl ErrorGlobalOneVariableDecl) { visit(); }
     public void visit(GlobalOneArrayVariableDecl GlobalOneArrayVariableDecl) { visit(); }

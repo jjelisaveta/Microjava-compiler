@@ -1,0 +1,45 @@
+program test_3_ispis 
+	const int jedan = 1;
+	
+	int i;
+	int niz[];
+	char c;
+	bool b;
+	
+	record R {
+		int niz[];
+		int t;
+	}
+	R r;
+
+{
+
+	int funkcija(int param1, int param2)
+	int lok1, lok2;
+	int lok3;
+	{	
+		lok1 = param2;
+		lok3 = param2;
+		i = param1;
+		return param2 + param1;
+	}
+
+	void main()
+	int lok; {
+		niz = new int[2];
+		
+		r = new R;
+		r.niz = new int[3];
+		r.niz[0] = jedan * 2;
+		r.niz[1] = jedan + jedan + jedan;
+		r.niz[2] = 4;
+		
+		niz[0] = 1;
+		niz[1] = 2;
+		i = niz[1] * niz[0];
+		
+		lok = funkcija(5, niz[0]);		
+		funkcija(r.niz[1], 4);
+		
+	}
+}

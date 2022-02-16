@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/1/2022 22:37:7
+// 16/1/2022 1:43:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ContinueStmt extends Statement {
+public class ContinueStmt extends SingleStatement {
 
     public ContinueStmt () {
     }

@@ -32,7 +32,7 @@ public class Compiler {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Logger log = Logger.getLogger(MJParserTest.class);
+		Logger log = Logger.getLogger(Compiler.class);
 		
 		if (args.length < 2) {
 			log.error("Nedovoljan broj argumenata.");
@@ -55,20 +55,21 @@ public class Compiler {
 	        } else {
 	        	log.info("Parsiranje uspesno zavrseno.");
 	        }
-	        
+
+			
 	        Program prog = (Program)(s.value); 
 	        Tab.init();
 			// ispis sintaksnog stabla
 			log.info(prog.toString(""));
-			log.info("===================================================");
-
+			System.out.println("\n======================= SEMANTIC ANALYSIS ========================");
 			// ispis prepoznatih programskih konstrukcija
 			SemanticAnalyzer v = new SemanticAnalyzer();
 			prog.traverseBottomUp(v); 
-	      
+			System.out.println("\n======================= SYNTAX ANALYSIS ========================");
+			System.out.println(v.getCounters());
 			
-			log.info("===================================================");
-			//Tab.dump();
+			
+			//log.info("\n===================== SADRZAJ TABELE SIMBOLA =====================");
 			tsdump();
 
 			

@@ -47,7 +47,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(Program program) {		
-		log.debug(Code.dataSize);
 	}
 
 	/* constants */
@@ -65,9 +64,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(MethodName methodName) {
 		if ("main".equalsIgnoreCase(methodName.getMethodName())) {
 			mainPc = Code.pc;
-		}
-		if ("ord".equalsIgnoreCase(methodName.getMethodName())) {
-			log.debug("evooo");
 		}
 		currentMethod = Tab.find(methodName.getMethodName());
 		methodName.obj.setAdr(Code.pc);

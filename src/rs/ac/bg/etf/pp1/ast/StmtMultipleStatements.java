@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/1/2022 22:37:7
+// 16/1/2022 1:43:21
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MultipleStatements extends Statement {
+public class StmtMultipleStatements extends Statement {
 
     private Statements Statements;
 
-    public MultipleStatements (Statements Statements) {
+    public StmtMultipleStatements (Statements Statements) {
         this.Statements=Statements;
         if(Statements!=null) Statements.setParent(this);
     }
@@ -43,7 +43,7 @@ public class MultipleStatements extends Statement {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("MultipleStatements(\n");
+        buffer.append("StmtMultipleStatements(\n");
 
         if(Statements!=null)
             buffer.append(Statements.toString("  "+tab));
@@ -52,7 +52,7 @@ public class MultipleStatements extends Statement {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [MultipleStatements]");
+        buffer.append(") [StmtMultipleStatements]");
         return buffer.toString();
     }
 }

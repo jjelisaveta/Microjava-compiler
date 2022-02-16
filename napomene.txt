@@ -8,6 +8,8 @@ TREBA URADITI
 =================================================
 1. nasledjivanje klasa - ClassNameExtends
 2. izmeniti ispis koriscenja da bude za var globalna promenljiva a ne i za const
+3. provera jednakosti tipova za niz
+4. assignable tp
 
 NE RADI
 =================================================

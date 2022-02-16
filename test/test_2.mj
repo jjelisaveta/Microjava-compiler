@@ -1,0 +1,29 @@
+program test_3_fail 
+	const int jedan = 1;
+	
+	int glob1, glob2, glob3;
+	int glob4;
+
+{
+
+	int funkcija(int param1, int param2) {
+		return param2 + param1;
+	}
+
+	void main() {
+		glob1 = 1;
+		if (glob1 == 1 && 1 == 1) {
+			glob1++;
+		}
+
+		print(glob1);
+		if (glob1 == 2) {
+			glob1++;
+		} 
+		glob1 = 4;
+		print(glob1);
+		
+	}
+
+
+}

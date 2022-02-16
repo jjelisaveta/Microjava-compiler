@@ -169,10 +169,10 @@ ClassVarDeclList ::= (ClassVariableDecls) ClassVarDeclList:C1 COMMA OneVarDecl:O
 ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList:C1 SEMI {: RESULT=new ClassVariableDeclList(C1); RESULT.setLine(C1left); :}
 					|
 					(ErrorClassVariableDeclSemi) error SEMI:er1
-					{: parser.report_error("Greska 1 u deklaraciji polja unutrasnje klase u liniji " + er1left, null);  :} {: RESULT=new ErrorClassVariableDeclSemi(); :}
+					{: parser.report_error("Oporavak od greske u deklaraciji polja unutrasnje klase na liniji " + er1left, null);  :} {: RESULT=new ErrorClassVariableDeclSemi(); :}
 					|
 					(ErrorClassVariableDecl) error:er2
-					{: parser.report_error("Greska 2 u deklaraciji polja unutrasnje klase u liniji " + er2left, null);  :} {: RESULT=new ErrorClassVariableDecl(); :}
+					{: parser.report_error("Oporavak od greske u deklaraciji polja unutrasnje klase na liniji " + er2left, null);  :} {: RESULT=new ErrorClassVariableDecl(); :}
 					;
 					
 					
@@ -181,19 +181,20 @@ GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName {: RESULT=new GlobalO
 					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET {: RESULT=new GlobalOneArrayVariableDecl(varName); RESULT.setLine(varNameleft); :}
 					|
 					(ErrorGlobalOneVariableDecl) error:e
-					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalOneVariableDecl(); :}
+					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalOneVariableDecl(); :}
 					;
 					
 GlobalVarDecl ::=	(GlobalVarDecls) Type:T1 GlobalVarDeclList:G2 SEMI {: RESULT=new GlobalVarDecls(T1, G2); RESULT.setLine(T1left); :}
 					|
-					(ErrorGlobalVarDecl) error:e SEMI
-					{: parser.report_error("Greska u deklaraciji globalne promenljive u liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalVarDecl(); :}
+					(ErrorGlobalVariableDecl) error:e SEMI
+					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalVariableDecl(); :}
 					;
 					
-					
+					 
 GlobalVarDeclList ::=(GlobalVariableDecls) GlobalVarDeclList:G1 COMMA GlobalOneVarDecl:G2 {: RESULT=new GlobalVariableDecls(G1, G2); RESULT.setLine(G1left); :}
 					|
 					(GlobalVariableDecl) GlobalOneVarDecl:G1 {: RESULT=new GlobalVariableDecl(G1); RESULT.setLine(G1left); :}
+					
 					;
 					
 ClassName ::= 		(ClassNameSingle) CLASS IDENT:className {: RESULT=new ClassNameSingle(className); RESULT.setLine(classNameleft); :}
@@ -201,7 +202,7 @@ ClassName ::= 		(ClassNameSingle) CLASS IDENT:className {: RESULT=new ClassNameS
 					(ClassNameExtends) CLASS IDENT:className EXTENDS Type:type {: RESULT=new ClassNameExtends(className, type); RESULT.setLine(classNameleft); :}
 					|
 					(ErrorClassName) CLASS IDENT:I1 error:e
-					{: parser.report_error("Greska u deklaraciji prosirenja natklase u liniji " + eleft, null);  :} {: RESULT=new ErrorClassName(I1); RESULT.setLine(I1left); :}
+					{: parser.report_error("Oporavak od greske u deklaraciji prosirenja natklase na liniji " + eleft, null);  :} {: RESULT=new ErrorClassName(I1); RESULT.setLine(I1left); :}
 					;
 					
 ClassDecl ::=		(ClassDeclMethods) ClassName:C1 LBRACE ClassFields:C2 LBRACE ConstructorDecl:C3 MethodDeclList:M4 RBRACE RBRACE {: RESULT=new ClassDeclMethods(C1, C2, C3, M4); RESULT.setLine(C1left); :}
@@ -261,8 +262,9 @@ OneFormPar ::= 		(OneFormParam) Type:type IDENT:paramName {: RESULT=new OneFormP
 					|
 					(OneArrayFormParam) Type:type IDENT:paramName LBRACKET RBRACKET {: RESULT=new OneArrayFormParam(type, paramName); RESULT.setLine(typeleft); :}
 					|
-					(ErrorOneFormParam) error:e {: RESULT=new ErrorOneFormParam(); :}
-					;		
+					(ErrorOneFormParam) error:e
+					{: parser.report_error("Oporavak od greske u deklaraciji formalnog parametra funkcije na liniji " + eleft, null);  :} {: RESULT=new ErrorOneFormParam(); :}
+					;
 
 FormPars ::= 		(FormParams) FormPars:F1 COMMA OneFormPar:O2 {: RESULT=new FormParams(F1, O2); RESULT.setLine(F1left); :}
 					|
@@ -271,7 +273,12 @@ FormPars ::= 		(FormParams) FormPars:F1 COMMA OneFormPar:O2 {: RESULT=new FormPa
 					
 Type ::=			(Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :} ;
 
-Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
+Statement ::=		(StmtSingleStatement) SingleStatement:S1 {: RESULT=new StmtSingleStatement(S1); RESULT.setLine(S1left); :}
+					|
+					(StmtMultipleStatements) Statements:S1 {: RESULT=new StmtMultipleStatements(S1); RESULT.setLine(S1left); :}
+					;
+
+SingleStatement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new DesignatorStmt(D1); RESULT.setLine(D1left); :}
 					|
 					(DoStmt) DoStart:D1 Statement:S2 WhileStart:W3 LPAREN DoCondition:D4 RPAREN SEMI {: RESULT=new DoStmt(D1, S2, W3, D4); RESULT.setLine(D1left); :}
 					|
@@ -292,8 +299,6 @@ Statement ::= 		(DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new Desig
 					(IfStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 IfStmtEnd:I4 {: RESULT=new IfStmt(I1, I2, S3, I4); RESULT.setLine(I1left); :}
 					|
 					(IfElseStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 ElseStart:E4 Statement:S5 IfElseStmtEnd:I6 {: RESULT=new IfElseStmt(I1, I2, S3, E4, S5, I6); RESULT.setLine(I1left); :}
-					|
-					(MultipleStatements) Statements:S1 {: RESULT=new MultipleStatements(S1); RESULT.setLine(S1left); :}
 					;
 
 DoStart ::=			(DoStart) DO {: RESULT=new DoStart(); :} ;
@@ -313,7 +318,7 @@ IfElseStmtEnd ::= 	(IfElseStmtEnd) {: RESULT=new IfElseStmtEnd(); :} /* epsilon 
 IfCondition ::= 	(OkIfCondition) Condition:cond {: RESULT=new OkIfCondition(cond); RESULT.setLine(condleft); :}
 					|
 					(ErrorIfCondition) error:e
-					{: parser.report_error("Greska u logickom izrazu u if konstrukciji u liniji " + eleft, null);  :} {: RESULT=new ErrorIfCondition(); :}
+					{: parser.report_error("Oporavak od greske u logickom izrazu u if konstrukciji na liniji " + eleft, null);  :} {: RESULT=new ErrorIfCondition(); :}
 					;
 					
 Statements ::=		(Stmts) LBRACE StatementList:S1 RBRACE {: RESULT=new Stmts(S1); RESULT.setLine(S1left); :} ;
@@ -334,8 +339,8 @@ DesignatorStatement ::= (DesignatorStmtAssign) AssignStatement:A1 {: RESULT=new 
 					
 AssignStatement ::= (AssignStmt) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new AssignStmt(D1, A2, E3); RESULT.setLine(D1left); :}
 					|
-					(ErrorAssignStmt) Designator:D1 Assignop:e  error
-					{: parser.report_error("Greska u iskazu dodele u liniji " + eleft, null);  :} {: RESULT=new ErrorAssignStmt(D1, e); RESULT.setLine(D1left); :}
+					(ErrorAssignStmt) error:e
+					{: parser.report_error("Oporavak od greske u iskazu dodele na liniji " + eleft, null);  :} {: RESULT=new ErrorAssignStmt(); :}
 					;
 					
 ActPars ::= 		(ActParams) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParams(A1, E2); RESULT.setLine(A1left); :}	
