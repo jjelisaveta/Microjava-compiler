@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 16/1/2022 1:43:21
+// 19/1/2022 0:13:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -71,6 +71,7 @@ public interface Visitor {
     public void visit(DesignatorBracket DesignatorBracket);
     public void visit(DesignatorPoint DesignatorPoint);
     public void visit(FactorExpr FactorExpr);
+    public void visit(FactorMatrixType FactorMatrixType);
     public void visit(FactorArrayType FactorArrayType);
     public void visit(FactorType FactorType);
     public void visit(FactorTypeConst FactorTypeConst);
@@ -114,6 +115,8 @@ public interface Visitor {
     public void visit(DoCondition DoCondition);
     public void visit(WhileStart WhileStart);
     public void visit(DoStart DoStart);
+    public void visit(Label Label);
+    public void visit(MaxArrStmt MaxArrStmt);
     public void visit(IfElseStmt IfElseStmt);
     public void visit(IfStmt IfStmt);
     public void visit(PrintStmt PrintStmt);
@@ -122,7 +125,10 @@ public interface Visitor {
     public void visit(ReturnStmt ReturnStmt);
     public void visit(ReturnStmtExpr ReturnStmtExpr);
     public void visit(ContinueStmt ContinueStmt);
+    public void visit(BreakLabelStmt BreakLabelStmt);
+    public void visit(BreakNumStmt BreakNumStmt);
     public void visit(BreakStmt BreakStmt);
+    public void visit(DoLabelStmt DoLabelStmt);
     public void visit(DoStmt DoStmt);
     public void visit(DesignatorStmt DesignatorStmt);
     public void visit(StmtMultipleStatements StmtMultipleStatements);
@@ -163,6 +169,8 @@ public interface Visitor {
     public void visit(ErrorGlobalVariableDecl ErrorGlobalVariableDecl);
     public void visit(GlobalVarDecls GlobalVarDecls);
     public void visit(ErrorGlobalOneVariableDecl ErrorGlobalOneVariableDecl);
+    public void visit(GlobalOneMatrix GlobalOneMatrix);
+    public void visit(FinalArray FinalArray);
     public void visit(GlobalOneArrayVariableDecl GlobalOneArrayVariableDecl);
     public void visit(GlobalOneVariableDecl GlobalOneVariableDecl);
     public void visit(ErrorClassVariableDecl ErrorClassVariableDecl);

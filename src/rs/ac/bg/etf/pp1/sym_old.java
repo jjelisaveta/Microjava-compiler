@@ -58,6 +58,8 @@ public class sym_old {
 	public static final int RBRACKET = 48;
 	public static final int LBRACE = 49;
 	public static final int RBRACE = 50;
+	public static final int MAXARR = 51;
 	
-	public static final int EOF = 51;
+	
+	public static final int EOF = 52;
 }

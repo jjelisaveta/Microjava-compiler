@@ -1,0 +1,476 @@
+INFO  01:59:12,302 - Kompajluje se izvorni fajl: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\test2.mj
+INFO  01:59:12,383 - #6 program
+INFO  01:59:12,383 - #5 test_3_fail
+INFO  01:59:12,383 - #15 const
+INFO  01:59:12,385 - #5 int
+INFO  01:59:12,385 - #5 jedan
+INFO  01:59:12,386 - #39 =
+INFO  01:59:12,386 - #2 1
+INFO  01:59:12,386 - #42 ;
+INFO  01:59:12,386 - #5 int
+INFO  01:59:12,387 - #5 glob1
+INFO  01:59:12,388 - #44 ,
+INFO  01:59:12,388 - #5 glob2
+INFO  01:59:12,388 - #44 ,
+INFO  01:59:12,388 - #5 glob3
+INFO  01:59:12,388 - #42 ;
+INFO  01:59:12,388 - #5 int
+INFO  01:59:12,389 - #5 glob4
+INFO  01:59:12,389 - #42 ;
+INFO  01:59:12,389 - #50 {
+INFO  01:59:12,389 - #5 int
+INFO  01:59:12,389 - #5 funkcija
+INFO  01:59:12,390 - #46 (
+INFO  01:59:12,390 - #5 int
+INFO  01:59:12,390 - #5 param1
+INFO  01:59:12,391 - #44 ,
+INFO  01:59:12,391 - #5 int
+INFO  01:59:12,391 - #5 param2
+INFO  01:59:12,391 - #47 )
+INFO  01:59:12,391 - #50 {
+INFO  01:59:12,392 - #9 return
+INFO  01:59:12,392 - #5 param2
+INFO  01:59:12,392 - #26 +
+INFO  01:59:12,393 - #5 param1
+INFO  01:59:12,393 - #42 ;
+INFO  01:59:12,394 - #51 }
+INFO  01:59:12,394 - #10 void
+INFO  01:59:12,394 - #5 main
+INFO  01:59:12,395 - #46 (
+INFO  01:59:12,395 - #47 )
+INFO  01:59:12,396 - #50 {
+INFO  01:59:12,396 - #5 glob1
+INFO  01:59:12,396 - #39 =
+INFO  01:59:12,396 - #2 1
+INFO  01:59:12,397 - #42 ;
+INFO  01:59:12,398 - #13 if
+INFO  01:59:12,398 - #46 (
+INFO  01:59:12,399 - #5 glob1
+INFO  01:59:12,399 - #31 ==
+INFO  01:59:12,399 - #2 1
+INFO  01:59:12,400 - #37 &&
+INFO  01:59:12,400 - #2 1
+INFO  01:59:12,401 - #31 ==
+INFO  01:59:12,401 - #2 1
+INFO  01:59:12,401 - #47 )
+INFO  01:59:12,402 - #50 {
+INFO  01:59:12,402 - #5 glob1
+INFO  01:59:12,402 - #40 ++
+INFO  01:59:12,402 - #42 ;
+INFO  01:59:12,402 - #51 }
+INFO  01:59:12,402 - #8 print
+INFO  01:59:12,403 - #46 (
+INFO  01:59:12,403 - #5 glob1
+INFO  01:59:12,403 - #47 )
+INFO  01:59:12,403 - #42 ;
+INFO  01:59:12,404 - #13 if
+INFO  01:59:12,404 - #46 (
+INFO  01:59:12,404 - #5 glob1
+INFO  01:59:12,404 - #31 ==
+INFO  01:59:12,404 - #2 2
+INFO  01:59:12,404 - #47 )
+INFO  01:59:12,404 - #50 {
+INFO  01:59:12,404 - #5 glob1
+INFO  01:59:12,404 - #40 ++
+INFO  01:59:12,404 - #42 ;
+INFO  01:59:12,404 - #51 }
+INFO  01:59:12,404 - #5 glob1
+INFO  01:59:12,404 - #39 =
+INFO  01:59:12,405 - #2 4
+INFO  01:59:12,405 - #42 ;
+INFO  01:59:12,405 - #8 print
+INFO  01:59:12,405 - #46 (
+INFO  01:59:12,405 - #5 glob1
+INFO  01:59:12,405 - #47 )
+INFO  01:59:12,405 - #42 ;
+INFO  01:59:12,405 - #51 }
+INFO  01:59:12,405 - #51 }
+INFO  01:59:12,407 - Parsiranje uspesno zavrseno.
+INFO  01:59:12,414 - Program(
+  ProgName(
+   test_3_fail
+  ) [ProgName]
+  DeclListVar(
+    DeclListVar(
+      DeclListConst(
+        NoDeclList(
+        ) [NoDeclList]
+        ConstDecl(
+          ConstantDecl(
+            Type(
+             int
+            ) [Type]
+           jedan
+            NumConst(
+             1
+            ) [NumConst]
+          ) [ConstantDecl]
+        ) [ConstDecl]
+      ) [DeclListConst]
+      GlobalVarDecls(
+        Type(
+         int
+        ) [Type]
+        GlobalVariableDecls(
+          GlobalVariableDecls(
+            GlobalVariableDecl(
+              GlobalOneVariableDecl(
+               glob1
+              ) [GlobalOneVariableDecl]
+            ) [GlobalVariableDecl]
+            GlobalOneVariableDecl(
+             glob2
+            ) [GlobalOneVariableDecl]
+          ) [GlobalVariableDecls]
+          GlobalOneVariableDecl(
+           glob3
+          ) [GlobalOneVariableDecl]
+        ) [GlobalVariableDecls]
+      ) [GlobalVarDecls]
+    ) [DeclListVar]
+    GlobalVarDecls(
+      Type(
+       int
+      ) [Type]
+      GlobalVariableDecl(
+        GlobalOneVariableDecl(
+         glob4
+        ) [GlobalOneVariableDecl]
+      ) [GlobalVariableDecl]
+    ) [GlobalVarDecls]
+  ) [DeclListVar]
+  MethodsDecl(
+    MethodDeclStmt(
+      ReturnType(
+        Type(
+         int
+        ) [Type]
+      ) [ReturnType]
+      MethodName(
+       funkcija
+      ) [MethodName]
+      MethodFormParams(
+        FormParams(
+          FormParam(
+            OneFormParam(
+              Type(
+               int
+              ) [Type]
+             param1
+            ) [OneFormParam]
+          ) [FormParam]
+          OneFormParam(
+            Type(
+             int
+            ) [Type]
+           param2
+          ) [OneFormParam]
+        ) [FormParams]
+      ) [MethodFormParams]
+      NoVarDecl(
+      ) [NoVarDecl]
+      OneStmt(
+        StmtSingleStatement(
+          ReturnStmtExpr(
+            ExprPlusAddop(
+              TermFactor(
+                FactorNoParen(
+                  DesignatorIdent(
+                   param2
+                  ) [DesignatorIdent]
+                ) [FactorNoParen]
+              ) [TermFactor]
+              OneAddop(
+                AddOpPlus(
+                ) [AddOpPlus]
+                TermFactor(
+                  FactorNoParen(
+                    DesignatorIdent(
+                     param1
+                    ) [DesignatorIdent]
+                  ) [FactorNoParen]
+                ) [TermFactor]
+              ) [OneAddop]
+            ) [ExprPlusAddop]
+          ) [ReturnStmtExpr]
+        ) [StmtSingleStatement]
+      ) [OneStmt]
+    ) [MethodDeclStmt]
+    MethodsDecl(
+      MethodDeclStmt(
+        ReturnVoid(
+        ) [ReturnVoid]
+        MethodName(
+         main
+        ) [MethodName]
+        NoMethodFormParams(
+        ) [NoMethodFormParams]
+        NoVarDecl(
+        ) [NoVarDecl]
+        StmtList(
+          StmtList(
+            StmtList(
+              StmtList(
+                StmtList(
+                  OneStmt(
+                    StmtSingleStatement(
+                      DesignatorStmt(
+                        DesignatorStmtAssign(
+                          AssignStmt(
+                            DesignatorIdent(
+                             glob1
+                            ) [DesignatorIdent]
+                            AssignOperator(
+                            ) [AssignOperator]
+                            ExprPlus(
+                              TermFactor(
+                                FactorTypeConst(
+                                  NumConst(
+                                   1
+                                  ) [NumConst]
+                                ) [FactorTypeConst]
+                              ) [TermFactor]
+                            ) [ExprPlus]
+                          ) [AssignStmt]
+                        ) [DesignatorStmtAssign]
+                      ) [DesignatorStmt]
+                    ) [StmtSingleStatement]
+                  ) [OneStmt]
+                  StmtSingleStatement(
+                    IfStmt(
+                      IfStart(
+                      ) [IfStart]
+                      OkIfCondition(
+                        ConditionCondTerm(
+                          CondTerms(
+                            ConditionCondFact(
+                              CondFactExprRelop(
+                                ExprPlus(
+                                  TermFactor(
+                                    FactorNoParen(
+                                      DesignatorIdent(
+                                       glob1
+                                      ) [DesignatorIdent]
+                                    ) [FactorNoParen]
+                                  ) [TermFactor]
+                                ) [ExprPlus]
+                                RelOpEq(
+                                ) [RelOpEq]
+                                ExprPlus(
+                                  TermFactor(
+                                    FactorTypeConst(
+                                      NumConst(
+                                       1
+                                      ) [NumConst]
+                                    ) [FactorTypeConst]
+                                  ) [TermFactor]
+                                ) [ExprPlus]
+                              ) [CondFactExprRelop]
+                            ) [ConditionCondFact]
+                            CondFactExprRelop(
+                              ExprPlus(
+                                TermFactor(
+                                  FactorTypeConst(
+                                    NumConst(
+                                     1
+                                    ) [NumConst]
+                                  ) [FactorTypeConst]
+                                ) [TermFactor]
+                              ) [ExprPlus]
+                              RelOpEq(
+                              ) [RelOpEq]
+                              ExprPlus(
+                                TermFactor(
+                                  FactorTypeConst(
+                                    NumConst(
+                                     1
+                                    ) [NumConst]
+                                  ) [FactorTypeConst]
+                                ) [TermFactor]
+                              ) [ExprPlus]
+                            ) [CondFactExprRelop]
+                          ) [CondTerms]
+                        ) [ConditionCondTerm]
+                      ) [OkIfCondition]
+                      StmtMultipleStatements(
+                        Stmts(
+                          OneStmt(
+                            StmtSingleStatement(
+                              DesignatorStmt(
+                                DesignatorStmtInc(
+                                  DesignatorIdent(
+                                   glob1
+                                  ) [DesignatorIdent]
+                                ) [DesignatorStmtInc]
+                              ) [DesignatorStmt]
+                            ) [StmtSingleStatement]
+                          ) [OneStmt]
+                        ) [Stmts]
+                      ) [StmtMultipleStatements]
+                      IfStmtEnd(
+                      ) [IfStmtEnd]
+                    ) [IfStmt]
+                  ) [StmtSingleStatement]
+                ) [StmtList]
+                StmtSingleStatement(
+                  PrintStmt(
+                    ExprPlus(
+                      TermFactor(
+                        FactorNoParen(
+                          DesignatorIdent(
+                           glob1
+                          ) [DesignatorIdent]
+                        ) [FactorNoParen]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [PrintStmt]
+                ) [StmtSingleStatement]
+              ) [StmtList]
+              StmtSingleStatement(
+                IfStmt(
+                  IfStart(
+                  ) [IfStart]
+                  OkIfCondition(
+                    ConditionCondTerm(
+                      ConditionCondFact(
+                        CondFactExprRelop(
+                          ExprPlus(
+                            TermFactor(
+                              FactorNoParen(
+                                DesignatorIdent(
+                                 glob1
+                                ) [DesignatorIdent]
+                              ) [FactorNoParen]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                          RelOpEq(
+                          ) [RelOpEq]
+                          ExprPlus(
+                            TermFactor(
+                              FactorTypeConst(
+                                NumConst(
+                                 2
+                                ) [NumConst]
+                              ) [FactorTypeConst]
+                            ) [TermFactor]
+                          ) [ExprPlus]
+                        ) [CondFactExprRelop]
+                      ) [ConditionCondFact]
+                    ) [ConditionCondTerm]
+                  ) [OkIfCondition]
+                  StmtMultipleStatements(
+                    Stmts(
+                      OneStmt(
+                        StmtSingleStatement(
+                          DesignatorStmt(
+                            DesignatorStmtInc(
+                              DesignatorIdent(
+                               glob1
+                              ) [DesignatorIdent]
+                            ) [DesignatorStmtInc]
+                          ) [DesignatorStmt]
+                        ) [StmtSingleStatement]
+                      ) [OneStmt]
+                    ) [Stmts]
+                  ) [StmtMultipleStatements]
+                  IfStmtEnd(
+                  ) [IfStmtEnd]
+                ) [IfStmt]
+              ) [StmtSingleStatement]
+            ) [StmtList]
+            StmtSingleStatement(
+              DesignatorStmt(
+                DesignatorStmtAssign(
+                  AssignStmt(
+                    DesignatorIdent(
+                     glob1
+                    ) [DesignatorIdent]
+                    AssignOperator(
+                    ) [AssignOperator]
+                    ExprPlus(
+                      TermFactor(
+                        FactorTypeConst(
+                          NumConst(
+                           4
+                          ) [NumConst]
+                        ) [FactorTypeConst]
+                      ) [TermFactor]
+                    ) [ExprPlus]
+                  ) [AssignStmt]
+                ) [DesignatorStmtAssign]
+              ) [DesignatorStmt]
+            ) [StmtSingleStatement]
+          ) [StmtList]
+          StmtSingleStatement(
+            PrintStmt(
+              ExprPlus(
+                TermFactor(
+                  FactorNoParen(
+                    DesignatorIdent(
+                     glob1
+                    ) [DesignatorIdent]
+                  ) [FactorNoParen]
+                ) [TermFactor]
+              ) [ExprPlus]
+            ) [PrintStmt]
+          ) [StmtSingleStatement]
+        ) [StmtList]
+      ) [MethodDeclStmt]
+      NoMetodDecl(
+      ) [NoMetodDecl]
+    ) [MethodsDecl]
+  ) [MethodsDecl]
+) [Program]
+
+======================= SEMANTIC ANALYSIS ========================
+INFO  01:59:12,420 - Pristup formalnom parametru param2 (Var param2:int, 1, 1) na liniji 10
+INFO  01:59:12,420 - Pristup formalnom parametru param1 (Var param1:int, 0, 1) na liniji 10
+INFO  01:59:12,420 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 14
+INFO  01:59:12,420 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 15
+INFO  01:59:12,420 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 16
+INFO  01:59:12,420 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 19
+INFO  01:59:12,421 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 20
+INFO  01:59:12,421 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 21
+INFO  01:59:12,421 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 23
+INFO  01:59:12,421 - Pristup globalnoj promenljivoj glob1  (Var glob1:int, 0, 0) na liniji 24
+
+======================= SYNTAX ANALYSIS ========================
+0	classes
+0	records
+2	methods in the program
+4	global variables
+1	global constants
+0	global arrays
+0	local variables in main
+0	function calls
+
+=====================SYMBOL TABLE DUMP=========================
+Type int:int, -1, -1 
+Type char:char, -1, -1 
+Con eol:char, 10, 0 
+Con null:Class [], 0, 0 
+Meth chr:char, 0, 1 
+	Var i:int, 0, 1 
+
+Meth ord:int, 0, 1 
+	Var ch:char, 0, 1 
+
+Meth len:int, 0, 1 
+	Var arr:Arr of notype, 0, 1 
+
+Type bool:bool, 0, 1 
+Prog test_3_fail:notype, 0, 1 
+	Con jedan:int, 1, 0 
+	Var glob1:int, 0, 0 
+	Var glob2:int, 1, 0 
+	Var glob3:int, 2, 0 
+	Var glob4:int, 3, 0 
+	Meth funkcija:int, 0, 2 
+		Var param1:int, 0, 1 
+		Var param2:int, 1, 1 
+
+	Meth main:notype, 0, 0 
+
+
+
+INFO  01:59:12,425 - Parsiranje uspesno zavrseno!

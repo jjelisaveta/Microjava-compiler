@@ -56,12 +56,14 @@ import java_cup.runtime.Symbol;
 "super" 	{ return new_symbol(sym.SUPER, yytext()); }
 "goto" 		{ return new_symbol(sym.GOTO, yytext()); }
 "record" 	{ return new_symbol(sym.RECORD, yytext()); }
+"final"		{ return new_symbol(sym.FINAL, yytext()); }
 
 "+"			{ return new_symbol(sym.PLUS, yytext()); }
 "-"			{ return new_symbol(sym.MINUS, yytext()); }
 "*"			{ return new_symbol(sym.MUL, yytext()); }
 "/"			{ return new_symbol(sym.DIV, yytext()); }
 "%"			{ return new_symbol(sym.MOD, yytext()); }
+"#"			{ return new_symbol(sym.MAXARR, yytext()); }
 
 "=="		{ return new_symbol(sym.EQ, yytext()); }
 "!="		{ return new_symbol(sym.NE, yytext()); }
@@ -86,6 +88,8 @@ import java_cup.runtime.Symbol;
 "]"			{ return new_symbol(sym.RBRACKET, yytext()); }
 "{" 		{ return new_symbol(sym.LBRACE, yytext()); }
 "}"			{ return new_symbol(sym.RBRACE, yytext()); }
+
+
 
 "//" {yybegin(COMMENT);}
 <COMMENT> . {yybegin(COMMENT);}

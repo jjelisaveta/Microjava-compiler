@@ -1,0 +1,71 @@
+program test3_grammar
+	const int jedan = 1;
+	int i;
+	int niz[];
+	char c;
+	bool b;
+	
+	record R {
+		int i;
+		char c;
+	}
+	
+	R r;
+
+{
+
+	int funkcija(int param) {
+		if (param == 0) {
+			return 1;
+		} else {
+			return param;
+		}
+	}
+	
+	void main()
+	int lok;
+	{
+		b = true;
+		i = 0;
+		c = 'a';
+		
+		
+		if (b) {
+			print(1);
+		} else {
+			print(0);
+		}
+		lok = 0;
+		do {
+			i++;
+			if (i == 2 && true) continue;
+			lok++;
+			if (false || i == 4) break;
+		} while (i < 10);
+		print(i);
+		print(lok);
+		
+		r = new R;
+		r.i = 5;
+		r.c = 'a'; 
+		
+		print(eol);
+		
+		niz = new int[2];
+		niz[0] = 1;
+		niz[1] = i * jedan + r.i;
+		print(niz[1]);
+		niz[1]++;
+		print(niz[1]);
+		
+		print(eol);
+		
+		lok = funkcija(0);
+		print(lok);
+		lok = funkcija(i);
+		print(lok);
+		
+		
+		
+	}
+}

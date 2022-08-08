@@ -1,44 +1,18 @@
-program test_3_ispis 
-	const int jedan = 1;
-	const int dva = '2';
-	
+// Test301
+
+program test301
+
+	const int nula = 0;
+	int final niz[];
 	int i;
-	int niz[];
-	char c;
-	bool b;
 	
-	tip t;
-
 {
-
-	int funkcija(int param1, int param2)
-	int lok1, lok2;
-	int lok3;
-	{	
-		lok1 = param2;
-		lok3 = param2;
-		i = param1;
-		return param2 + param1;
-	}
-
-	void main()
-	int lok; {
-		niz = new int[2];
-		
-		jedan = 2;
-		i = 'i';
-		
-		c = 'r';
-		//c++;
-		
+	void main()	
+	{
+		niz = new int[4];
 		niz[0] = 1;
-		niz[1] = 2;
-		i = niz[1] * niz[0];
-		
-		//funkcijaKojaNePostoji();
-		
-		lok = funkcija(5, niz[0]);		
-		funkcija(r.niz[1], 4);
-		
+		niz[0] = 3;
 	}
 }
+
+

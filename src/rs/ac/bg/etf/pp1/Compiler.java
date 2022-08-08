@@ -34,6 +34,7 @@ public class Compiler {
 		
 		Logger log = Logger.getLogger(Compiler.class);
 		
+		
 		if (args.length < 2) {
 			log.error("Nedovoljan broj argumenata.");
 			return;

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 16/1/2022 1:43:21
+// 19/1/2022 0:13:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -71,6 +71,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorBracket DesignatorBracket) { visit(); }
     public void visit(DesignatorPoint DesignatorPoint) { visit(); }
     public void visit(FactorExpr FactorExpr) { visit(); }
+    public void visit(FactorMatrixType FactorMatrixType) { visit(); }
     public void visit(FactorArrayType FactorArrayType) { visit(); }
     public void visit(FactorType FactorType) { visit(); }
     public void visit(FactorTypeConst FactorTypeConst) { visit(); }
@@ -114,6 +115,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DoCondition DoCondition) { visit(); }
     public void visit(WhileStart WhileStart) { visit(); }
     public void visit(DoStart DoStart) { visit(); }
+    public void visit(Label Label) { visit(); }
+    public void visit(MaxArrStmt MaxArrStmt) { visit(); }
     public void visit(IfElseStmt IfElseStmt) { visit(); }
     public void visit(IfStmt IfStmt) { visit(); }
     public void visit(PrintStmt PrintStmt) { visit(); }
@@ -122,7 +125,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ReturnStmt ReturnStmt) { visit(); }
     public void visit(ReturnStmtExpr ReturnStmtExpr) { visit(); }
     public void visit(ContinueStmt ContinueStmt) { visit(); }
+    public void visit(BreakLabelStmt BreakLabelStmt) { visit(); }
+    public void visit(BreakNumStmt BreakNumStmt) { visit(); }
     public void visit(BreakStmt BreakStmt) { visit(); }
+    public void visit(DoLabelStmt DoLabelStmt) { visit(); }
     public void visit(DoStmt DoStmt) { visit(); }
     public void visit(DesignatorStmt DesignatorStmt) { visit(); }
     public void visit(StmtMultipleStatements StmtMultipleStatements) { visit(); }
@@ -163,6 +169,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ErrorGlobalVariableDecl ErrorGlobalVariableDecl) { visit(); }
     public void visit(GlobalVarDecls GlobalVarDecls) { visit(); }
     public void visit(ErrorGlobalOneVariableDecl ErrorGlobalOneVariableDecl) { visit(); }
+    public void visit(GlobalOneMatrix GlobalOneMatrix) { visit(); }
+    public void visit(FinalArray FinalArray) { visit(); }
     public void visit(GlobalOneArrayVariableDecl GlobalOneArrayVariableDecl) { visit(); }
     public void visit(GlobalOneVariableDecl GlobalOneVariableDecl) { visit(); }
     public void visit(ErrorClassVariableDecl ErrorClassVariableDecl) { visit(); }

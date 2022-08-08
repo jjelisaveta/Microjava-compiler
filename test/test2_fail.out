@@ -1,0 +1,106 @@
+INFO  01:58:33,020 - Kompajluje se izvorni fajl: C:\VII_semestar\PP1\Domaci\workspace\MJCompiler\test\test2_fail.mj
+INFO  01:58:33,093 - #6 program
+INFO  01:58:33,093 - #5 test_3_fail
+INFO  01:58:33,093 - #15 const
+INFO  01:58:33,094 - #5 int
+INFO  01:58:33,094 - #5 jedan
+INFO  01:58:33,095 - #39 =
+INFO  01:58:33,095 - #2 1
+INFO  01:58:33,095 - #42 ;
+INFO  01:58:33,095 - #5 int
+INFO  01:58:33,096 - #5 glob1
+INFO  01:58:33,096 - #44 ,
+INFO  01:58:33,097 - #2 2
+ERROR 01:58:33,097 - 
+Sintaksna greska na liniji 4
+INFO  01:58:33,097 - #5 glob
+INFO  01:58:33,097 - #44 ,
+INFO  01:58:33,097 - #5 glob3
+INFO  01:58:33,098 - #42 ;
+INFO  01:58:33,098 - #5 int
+ERROR 01:58:33,098 - Oporavak od greske u deklaraciji globalne promenljive na liniji 4
+INFO  01:58:33,100 - #2 4
+ERROR 01:58:33,100 - 
+Sintaksna greska na liniji 5
+INFO  01:58:33,100 - #5 glob
+INFO  01:58:33,100 - #42 ;
+INFO  01:58:33,100 - #50 {
+INFO  01:58:33,100 - #5 int
+INFO  01:58:33,100 - #5 funkcija
+ERROR 01:58:33,100 - Oporavak od greske u deklaraciji globalne promenljive na liniji 8
+INFO  01:58:33,102 - #46 (
+INFO  01:58:33,103 - #5 int
+INFO  01:58:33,103 - #44 ,
+ERROR 01:58:33,103 - 
+Sintaksna greska na liniji 9
+INFO  01:58:33,103 - #5 int
+INFO  01:58:33,103 - #5 param2
+INFO  01:58:33,103 - #47 )
+ERROR 01:58:33,103 - Oporavak od greske u deklaraciji formalnog parametra funkcije na liniji 9
+INFO  01:58:33,105 - #50 {
+INFO  01:58:33,105 - #9 return
+INFO  01:58:33,106 - #5 param2
+INFO  01:58:33,106 - #26 +
+INFO  01:58:33,106 - #2 5
+INFO  01:58:33,108 - #42 ;
+INFO  01:58:33,108 - #51 }
+INFO  01:58:33,108 - #10 void
+INFO  01:58:33,109 - #5 main
+INFO  01:58:33,110 - #46 (
+INFO  01:58:33,110 - #47 )
+INFO  01:58:33,110 - #50 {
+INFO  01:58:33,110 - #5 glob1
+INFO  01:58:33,110 - #39 =
+INFO  01:58:33,111 - #2 1
+INFO  01:58:33,111 - #42 ;
+INFO  01:58:33,112 - #13 if
+INFO  01:58:33,112 - #46 (
+INFO  01:58:33,112 - #5 glob1
+INFO  01:58:33,112 - #31 ==
+INFO  01:58:33,113 - #2 1
+INFO  01:58:33,113 - #37 &&
+INFO  01:58:33,114 - #2 1
+INFO  01:58:33,114 - #31 ==
+INFO  01:58:33,114 - #2 1
+INFO  01:58:33,114 - #2 0
+ERROR 01:58:33,114 - 
+Sintaksna greska na liniji 15
+INFO  01:58:33,114 - #47 )
+INFO  01:58:33,115 - #50 {
+INFO  01:58:33,115 - #5 glob1
+INFO  01:58:33,115 - #40 ++
+ERROR 01:58:33,115 - Oporavak od greske u logickom izrazu u if konstrukciji na liniji 15
+INFO  01:58:33,116 - #42 ;
+INFO  01:58:33,116 - #51 }
+INFO  01:58:33,116 - #8 print
+INFO  01:58:33,118 - #46 (
+INFO  01:58:33,118 - #5 glob1
+INFO  01:58:33,118 - #47 )
+INFO  01:58:33,118 - #42 ;
+INFO  01:58:33,118 - #13 if
+INFO  01:58:33,118 - #46 (
+INFO  01:58:33,118 - #5 glob1
+INFO  01:58:33,118 - #31 ==
+INFO  01:58:33,118 - #2 2
+INFO  01:58:33,119 - #47 )
+INFO  01:58:33,119 - #50 {
+INFO  01:58:33,119 - #5 glob1
+INFO  01:58:33,119 - #40 ++
+INFO  01:58:33,119 - #42 ;
+INFO  01:58:33,119 - #51 }
+INFO  01:58:33,119 - #5 glob1
+INFO  01:58:33,119 - #39 =
+INFO  01:58:33,119 - #5 f
+INFO  01:58:33,120 - #2 2
+ERROR 01:58:33,120 - 
+Sintaksna greska na liniji 23
+INFO  01:58:33,120 - #42 ;
+INFO  01:58:33,120 - #8 print
+INFO  01:58:33,120 - #46 (
+INFO  01:58:33,120 - #5 glob1
+ERROR 01:58:33,120 - Oporavak od greske u iskazu dodele na liniji 14
+INFO  01:58:33,121 - #47 )
+INFO  01:58:33,121 - #42 ;
+INFO  01:58:33,121 - #51 }
+INFO  01:58:33,121 - #51 }
+ERROR 01:58:33,124 - Parsiranje NIJE uspesno zavrseno. Postoje sintaksne greske.

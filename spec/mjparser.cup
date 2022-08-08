@@ -51,7 +51,7 @@ terminal String BOOL;
 terminal String IDENT;
 
 terminal PROG, BREAK, PRINT, RETURN, VOID, CLASS, ENUM, IF, ELSE, CONST, DO, WHILE, NEW, READ, EXTENDS, CONTINUE;
-terminal THIS, SUPER, GOTO, RECORD;
+terminal THIS, SUPER, GOTO, RECORD, MAXARR, FINAL;
 terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
@@ -59,7 +59,7 @@ nonterminal DeclList, MethodDecl, MethodDeclList, ConstDecl, VarDecl, ClassDecl,
 nonterminal VarDeclList, ConstDeclList, ClassDeclList, RecordDeclList, RecordVarDecls, RecordVarDecl, RecordName, MultipleVarDecl, ClassVarDeclList, ClassVarDecl, ClassFields;
 nonterminal ClassName, ClassConstructor, ConstructorName, ClassMethods, ConstructorDecl, MethodReturnValue, MethodFormPars, FormPars, OneFormPar;
 nonterminal Statement, SingleStatement, Statements, StatementList, IfCondition, DesignatorLBracket;
-nonterminal AssignStatement, ActPars, ActParsList;
+nonterminal AssignStatement, ActPars, ActParsList, Label;
 nonterminal Assignop, Relop, Addop, Mulop, DoStart, DoCondition, IfStart, ElseStart, IfElseStmtEnd, IfStmtEnd, Or, WhileStart;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj TypeConst,ProgName, Program, MethodName, Designator, Expr, Factor, Term, MinusTerm, AddopList, DesignatorStatement, CondFact, CondTerm, Condition;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
@@ -132,6 +132,10 @@ ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList SEMI
 GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName
 					|
 					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET
+					|
+					(FinalArray) FINAL IDENT:varName LBRACKET RBRACKET
+					|
+					(GlobalOneMatrix) IDENT:varName LBRACKET RBRACKET LBRACKET RBRACKET
 					|
 					(ErrorGlobalOneVariableDecl) error:e
 					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :}
@@ -235,7 +239,13 @@ SingleStatement ::= (DesignatorStmt) DesignatorStatement SEMI
 					|
 					(DoStmt) DoStart Statement WhileStart LPAREN DoCondition RPAREN SEMI
 					|
+					(DoLabelStmt) Label DoStart Statement WhileStart LPAREN DoCondition RPAREN SEMI
+					|
 					(BreakStmt) BREAK SEMI
+					|
+					(BreakNumStmt) BREAK MAXARR NUMBER:numConst SEMI 
+					|
+					(BreakLabelStmt) BREAK IDENT:label SEMI
 					|
 					(ContinueStmt) CONTINUE SEMI
 					|
@@ -252,6 +262,11 @@ SingleStatement ::= (DesignatorStmt) DesignatorStatement SEMI
 					(IfStmt) IfStart LPAREN IfCondition RPAREN Statement IfStmtEnd
 					|
 					(IfElseStmt) IfStart LPAREN IfCondition RPAREN Statement ElseStart Statement IfElseStmtEnd
+					|
+					(MaxArrStmt) MAXARR Designator SEMI
+					;
+					
+Label ::= 			(Label) IDENT COLON 
 					;
 
 DoStart ::=			(DoStart) DO ;
@@ -353,6 +368,8 @@ Factor ::= 			(FactorNoParen) Designator
 					(FactorType) NEW Type 
 					|
 					(FactorArrayType) NEW Type LBRACKET Expr RBRACKET
+					|
+					(FactorMatrixType) NEW Type LBRACKET Expr:e1 RBRACKET LBRACKET Expr:e2 RBRACKET
 					|
 					(FactorExpr) LPAREN Expr RPAREN
 					;

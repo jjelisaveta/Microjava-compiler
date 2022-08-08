@@ -199,6 +199,26 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}
 	}
 
+	public void visit(GlobalOneMatrix oneArrayVariableDecl) {
+		String varName = oneArrayVariableDecl.getVarName();
+		if (Tab.find(varName) == Tab.noObj && !(names.size() > 0 && names.contains(varName))) {
+			names.add(varName);
+			variableTypes.add("mat");
+		} else {
+			report_error("Semanticka greska: Ime " + varName + " je vec deklarisano", oneArrayVariableDecl.getParent());
+		}
+	}
+
+	public void visit(FinalArray finalArray) {
+		String varName = finalArray.getVarName();
+		if (Tab.find(varName) == Tab.noObj && !(names.size() > 0 && names.contains(varName))) {
+			names.add(varName);
+			variableTypes.add("final");
+		} else {
+			report_error("Semanticka greska: Ime " + varName + " je vec deklarisano", finalArray.getParent());
+		}
+		
+	}
 	public void visit(GlobalVarDecls globalVarDecls) {
 		Struct varType = globalVarDecls.getType().struct;
 		Struct varArrayType = new Struct(Struct.Array, varType);
@@ -208,9 +228,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			String type = variableTypes.remove(0);
 			if (type.equals("var")) {
 				Obj obj = Tab.insert(Obj.Var, varName, varType);
-			} else {
+			} else if (type.equals("array")){
 				globalArrayCnt++;
 				Obj obj = Tab.insert(Obj.Var, varName, varArrayType);
+			} else if (type.equals("final")) {
+				Obj obj = Tab.insert(Obj.Var, varName, varArrayType);
+				obj.setFpPos(5);
+			} else {
+				Struct varArrayTypeArray = new Struct(Struct.Array, varArrayType);
+				Obj obj = Tab.insert(Obj.Var, varName, varArrayTypeArray);
 			}
 		}
 	}
@@ -339,6 +365,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Semanticka greska: Ime " + varName + " je vec deklarisano", oneArrayVariableDecl.getParent());
 		}
 	}
+	
 
 	public void visit(VariableDecl variableDecl) {
 		if (Tab.find(variableDecl.getType().getTypeName()) == Tab.noObj) {
@@ -566,7 +593,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(FactorParen factorParen) {
 		factorParen.obj = factorParen.getDesignator().obj;
 		methodCallCnt++;
-		report_info_obj("Poziv funkcije " + factorParen.obj.getName(), factorParen.getParent(), factorParen.obj);
+		if (factorParen.obj != Tab.noObj)
+			report_info_obj("Poziv funkcije " + factorParen.obj.getName(), factorParen.getParent(), factorParen.obj);
 	}
 
 	public void visit(FactorTypeConst factorTypeConst) {
@@ -586,6 +614,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(FactorArrayType factorType) {
 		if (factorType.getType().struct != Tab.noType) {
 			factorType.obj = new Obj(Obj.Var, "", new Struct(Struct.Array, factorType.getType().struct));
+		}
+	}
+	
+	public void visit(FactorMatrixType factorType) {
+		if (factorType.getType().struct != Tab.noType) {
+			factorType.obj = new Obj(Obj.Var, "", new Struct(Struct.Array, new Struct(Struct.Array, factorType.getType().struct)));
 		}
 	}
 
@@ -765,6 +799,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	public void visit(DesignatorBracket designator) {
 		Obj obj = designator.getDesignator().obj;
 		if (obj == Tab.noObj) {
+			designator.obj = Tab.noObj;
 			report_error("Semanticka greska: Ime " + obj.getName() + " nije deklarisano",
 					designator.getParent());
 		} else {
@@ -832,7 +867,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		if (Obj.Meth == func.getKind()) {
 			methodCallCnt++;
 			currentMethodCallStack.pop();
-			report_info_obj("Poziv funkcije " + func.getName(), designatorStmtFuncCall.getParent(), func);
+			if (func != Tab.noObj)
+				report_info_obj("Poziv funkcije " + func.getName(), designatorStmtFuncCall.getParent(), func);
 			designatorStmtFuncCall.obj = func;
 		} else {
 			report_error("Semanticka greska: ime " + func.getName() + " nije ime funkcije",
@@ -917,6 +953,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 			report_error("Semanticka greska: Parametri metode " + currentMethodCallStack.peek().getName() + " nisu "
 					+ "ispravni", actParsList.getParent());
 		} else {
+			//if ()
 			int i = 0;
 			for (Obj param : currentMethodCallStack.peek().getLocalSymbols()) {
 				if (i++ < currentMethodCallStack.peek().getLevel()) {
@@ -950,6 +987,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	}
 
 	/* statement */
+	
+	public void visit(MaxArrStmt maxArrStmt) {
+		Obj obj = maxArrStmt.getDesignator().obj;
+	}
 
 	public void visit(DoStart doStart) {
 		doCnt++;
@@ -964,6 +1005,14 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
 	public void visit(BreakStmt breakStmt) {
 		if (doCnt == 0) {
+			report_error("Semanticka greska: Naredba break moze biti pozvana samo iz okruzujuce do naredbe",
+					breakStmt.getParent());
+		}
+	}
+	
+	public void visit(BreakNumStmt breakStmt) {
+		int num = breakStmt.getNumConst();
+		if (doCnt < num || doCnt == 0) {
 			report_error("Semanticka greska: Naredba break moze biti pozvana samo iz okruzujuce do naredbe",
 					breakStmt.getParent());
 		}
@@ -996,6 +1045,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 					returnStmt.getParent());
 		} else {
 			returnFound = true;
+			if (!myAssignableTo(Tab.noType, currentMethod.getType())) {
+				report_error(
+						"Semanticka greska: izraz u return naredbi mora biti istog tipa kao povratna vrednost funkcije",
+						returnStmt.getParent());
+			}
 		}
 	}
 

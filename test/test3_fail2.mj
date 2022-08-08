@@ -1,0 +1,46 @@
+program test_3_fail2
+	const int jedan = 1;
+	int i;
+	int niz[];
+	char c;
+	
+	record R {
+		int p1, p2;
+	}
+	
+	R r;
+
+{
+
+	int funkcija(int param) {
+		if (param == 0) {
+			return 'v';
+		} else {
+			return;
+		}
+	}
+	
+	void main()
+	{
+		i = 3;
+		c = 'a';
+		
+		if (i + 2) {
+			print(1);
+		} else {
+			print(0);
+		}
+		
+		do {
+			i++;
+		} while ('i');
+		
+		i = new int;
+		
+		niz = new int[2];
+		niz[c] = 1;
+		read(niz);
+		if (niz[0] == 'n') 
+			print(niz);
+	}
+}

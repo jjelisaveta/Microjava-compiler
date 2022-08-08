@@ -1,0 +1,58 @@
+program test_3_ispis 
+	const int jedan = 1;
+	const int dva = '2';
+	
+	int i;
+	int niz[];
+	char c;
+	bool b;
+	
+	tip t;
+
+{
+
+	int dummy(int r) {
+		r++;
+		return r;
+	}
+	int funkcija(int param1, int param2)
+	int lok1, lok2;
+	int lok3;
+	{	
+		lok1 = param2;
+		lok3 = param2;
+		i = param1;
+		return param2 + param1;
+	}
+
+	void main()
+	int lok; {
+		niz = new int[2];
+		
+		jedan = 2;
+		i = 'i';
+		
+		c = 'r';
+		c++;
+		
+		if (c == 'r') {
+			print(1);
+		} else {
+			continue;
+		}
+		niz[0] = 1;
+		niz[1] = 2;
+		i = niz[1] * niz[0];
+		
+		funkcijaKojaNePostoji();
+		
+		i = funkcijaKojaNePostoji2();
+		
+		lok = funkcija(5, niz[0]);		
+		funkcija(rniz.r[1], 4);
+		
+		break;
+		
+		
+	}
+}

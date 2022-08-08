@@ -51,7 +51,7 @@ terminal String BOOL;
 terminal String IDENT;
 
 terminal PROG, BREAK, PRINT, RETURN, VOID, CLASS, ENUM, IF, ELSE, CONST, DO, WHILE, NEW, READ, EXTENDS, CONTINUE;
-terminal THIS, SUPER, GOTO, RECORD;
+terminal THIS, SUPER, GOTO, RECORD, MAXARR, FINAL;
 terminal PLUS, MINUS, MUL, DIV, MOD, EQ, NE, GT, GE, LT, LE, AND, OR, EQUAL, INC, DEC;
 terminal SEMI, COLON, COMMA, POINT, LPAREN, RPAREN, LBRACKET, RBRACKET, LBRACE, RBRACE;
 
@@ -96,6 +96,7 @@ nonterminal DesignatorLBracket DesignatorLBracket;
 nonterminal AssignStatement AssignStatement;
 nonterminal ActPars ActPars;
 nonterminal ActParsList ActParsList;
+nonterminal Label Label;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
@@ -179,6 +180,10 @@ ClassVarDecl ::=	(ClassVariableDeclList) ClassVarDeclList:C1 SEMI {: RESULT=new 
 GlobalOneVarDecl ::= (GlobalOneVariableDecl) IDENT:varName {: RESULT=new GlobalOneVariableDecl(varName); RESULT.setLine(varNameleft); :}
 					|
 					(GlobalOneArrayVariableDecl) IDENT:varName LBRACKET RBRACKET {: RESULT=new GlobalOneArrayVariableDecl(varName); RESULT.setLine(varNameleft); :}
+					|
+					(FinalArray) FINAL IDENT:varName LBRACKET RBRACKET {: RESULT=new FinalArray(varName); RESULT.setLine(varNameleft); :}
+					|
+					(GlobalOneMatrix) IDENT:varName LBRACKET RBRACKET LBRACKET RBRACKET {: RESULT=new GlobalOneMatrix(varName); RESULT.setLine(varNameleft); :}
 					|
 					(ErrorGlobalOneVariableDecl) error:e
 					{: parser.report_error("Oporavak od greske u deklaraciji globalne promenljive na liniji " + eleft, null);  :} {: RESULT=new ErrorGlobalOneVariableDecl(); :}
@@ -282,7 +287,13 @@ SingleStatement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new D
 					|
 					(DoStmt) DoStart:D1 Statement:S2 WhileStart:W3 LPAREN DoCondition:D4 RPAREN SEMI {: RESULT=new DoStmt(D1, S2, W3, D4); RESULT.setLine(D1left); :}
 					|
+					(DoLabelStmt) Label:L1 DoStart:D2 Statement:S3 WhileStart:W4 LPAREN DoCondition:D5 RPAREN SEMI {: RESULT=new DoLabelStmt(L1, D2, S3, W4, D5); RESULT.setLine(L1left); :}
+					|
 					(BreakStmt) BREAK SEMI {: RESULT=new BreakStmt(); :}
+					|
+					(BreakNumStmt) BREAK MAXARR NUMBER:numConst SEMI {: RESULT=new BreakNumStmt(numConst); RESULT.setLine(numConstleft); :} 
+					|
+					(BreakLabelStmt) BREAK IDENT:label SEMI {: RESULT=new BreakLabelStmt(label); RESULT.setLine(labelleft); :}
 					|
 					(ContinueStmt) CONTINUE SEMI {: RESULT=new ContinueStmt(); :}
 					|
@@ -299,6 +310,11 @@ SingleStatement ::= (DesignatorStmt) DesignatorStatement:D1 SEMI {: RESULT=new D
 					(IfStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 IfStmtEnd:I4 {: RESULT=new IfStmt(I1, I2, S3, I4); RESULT.setLine(I1left); :}
 					|
 					(IfElseStmt) IfStart:I1 LPAREN IfCondition:I2 RPAREN Statement:S3 ElseStart:E4 Statement:S5 IfElseStmtEnd:I6 {: RESULT=new IfElseStmt(I1, I2, S3, E4, S5, I6); RESULT.setLine(I1left); :}
+					|
+					(MaxArrStmt) MAXARR Designator:D1 SEMI {: RESULT=new MaxArrStmt(D1); RESULT.setLine(D1left); :}
+					;
+					
+Label ::= 			(Label) IDENT:I1 COLON {: RESULT=new Label(I1); RESULT.setLine(I1left); :} 
 					;
 
 DoStart ::=			(DoStart) DO {: RESULT=new DoStart(); :} ;
@@ -400,6 +416,8 @@ Factor ::= 			(FactorNoParen) Designator:D1 {: RESULT=new FactorNoParen(D1); RES
 					(FactorType) NEW Type:T1 {: RESULT=new FactorType(T1); RESULT.setLine(T1left); :} 
 					|
 					(FactorArrayType) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new FactorArrayType(T1, E2); RESULT.setLine(T1left); :}
+					|
+					(FactorMatrixType) NEW Type:T1 LBRACKET Expr:e1 RBRACKET LBRACKET Expr:e2 RBRACKET {: RESULT=new FactorMatrixType(T1, e1, e2); RESULT.setLine(T1left); :}
 					|
 					(FactorExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :}
 					;
